@@ -1,6 +1,18 @@
 # Change Log
 All notable changes to this project will be documented in this file. Syntax according to http://keepachangelog.com/
 
+## [1.2.0-DEV]
+### Added
+
+### Fixed
+
+### Updated
+- Refactor version handling: Version in ext_emconf=templatebootstrap-version, everything else fetched by git (tags, branch) to avoid update conflicts.
+
+### Removed
+
+
+
 ## [1.2.0]
 ### Added
 - Add missing attribute "accesskey" to skiplinks.
