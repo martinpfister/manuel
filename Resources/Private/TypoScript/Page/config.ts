@@ -45,9 +45,8 @@ config {
     headerComment (
         Stämpfli AG // www.staempfli.com
 
-Package version {$plugin.templatebootstrap.packageVersion}
-Revision {$plugin.templatebootstrap.revision}
-Bootstrap package version {$plugin.templatebootstrap.bootstrapPackageVersion}
+Package version: {$plugin.templatebootstrap.packageVersion}
+Bootstrap package version: {$plugin.templatebootstrap.bootstrapPackageVersion}
     )
 
 

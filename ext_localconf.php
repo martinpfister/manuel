@@ -23,17 +23,17 @@ $userTSConfig = str_replace('###PACKAGE_KEY###', $_EXTKEY, $userTSConfig);
 ExtensionManagementUtility::addUserTSConfig($userTSConfig);
 
 # Register constants to use package key and version in TS later
-ExtensionManagementUtility::addTypoScriptConstants('plugin.templatebootstrap.packageKey='. $_EXTKEY);
-ExtensionManagementUtility::addTypoScriptConstants('plugin.templatebootstrap.packageVersion='. ExtensionManagementUtility::getExtensionVersion($_EXTKEY));
 if (TYPO3_MODE === 'FE') {
-    $revision = exec('git "' . ExtensionManagementUtility::extPath($_EXTKEY) . '" rev-parse HEAD');
+    $packageVersion = exec('git -C "' . ExtensionManagementUtility::extPath($_EXTKEY) . '" describe --tags --always --long');
+    $packageVersion .= ' ('. exec('git -C "' . ExtensionManagementUtility::extPath($_EXTKEY) . '" rev-parse --abbrev-ref HEAD') .')';
 } else {
-    $revision = '(only available in FE mode)';
+    $packageVersion = '(only available in FE mode)';
 }
-ExtensionManagementUtility::addTypoScriptConstants('plugin.templatebootstrap.revision='. $revision);
+ExtensionManagementUtility::addTypoScriptConstants('plugin.templatebootstrap.packageKey='. $_EXTKEY);
+ExtensionManagementUtility::addTypoScriptConstants('plugin.templatebootstrap.packageVersion='. $packageVersion);
 
 # Do not change this. It is used to identify which templatebootstrap version this package is originally derived from.
-ExtensionManagementUtility::addTypoScriptConstants('plugin.templatebootstrap.bootstrapPackageVersion=1.2.0');
+ExtensionManagementUtility::addTypoScriptConstants('plugin.templatebootstrap.bootstrapPackageVersion='. ExtensionManagementUtility::getExtensionVersion($_EXTKEY));
 
 # Load constants & setup according to chosen environment
 $environment = $settings['environment'];
