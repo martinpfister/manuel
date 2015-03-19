@@ -24,8 +24,8 @@ ExtensionManagementUtility::addUserTSConfig($userTSConfig);
 
 # Register constants to use package key and version in TS later
 if (TYPO3_MODE === 'FE') {
-    $packageVersion = exec('git -C "' . ExtensionManagementUtility::extPath($_EXTKEY) . '" describe --tags --always --long');
-    $packageVersion .= ' ('. exec('git -C "' . ExtensionManagementUtility::extPath($_EXTKEY) . '" rev-parse --abbrev-ref HEAD') .')';
+    $packageVersion = exec('cd "' . ExtensionManagementUtility::extPath($_EXTKEY) . '"; git describe --tags --always --long');
+    $packageVersion .= ' ('. exec('cd "' . ExtensionManagementUtility::extPath($_EXTKEY) . '"; git rev-parse --abbrev-ref HEAD') .')';
 } else {
     $packageVersion = '(only available in FE mode)';
 }
