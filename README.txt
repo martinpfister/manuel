@@ -7,7 +7,6 @@
 - Add origin to templatebootstrap ("git remote add templatebootstrap ssh://stash.staempfli.com/scm/TYPO3/templatebootstrap.git")
 - Fetch files from (non-default) origin "templatebootstrap": "git pull templatebootstrap master"
 - Change property 'title' in ext_emconf.php
-- Change version to '0.0.1' (probably). On website launch, this needs to be changed to 1.0.0
 - Activate extension in the extension manager
 - Choose "Site environment" in extension configuration accordingly. Skim through the other options as well.
 - Install extension "realurl"
