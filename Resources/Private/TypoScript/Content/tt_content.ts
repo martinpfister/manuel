@@ -39,50 +39,101 @@ tt_content {
     # Implement foundation's "block grid"
     image.20 {
 
-        # Handle columns
-        addClassesCol.override >
-        rendering.noCaption {
-            columnStdWrap.wrap = <li class="csc-textpic-imagecolumn###CLASSES###">|</li>
+        # Render dimensions definition.
+        # Set maximum widths.
+        1.file {
+            width >
+            maxW.field = imagewidth
+            maxH.field = imageheight
 
-            rowStdWrap >
-            rowStdWrap.wrap = |
-            rowStdWrap.cObject = CASE
-            rowStdWrap.append = TEXT
-            rowStdWrap.append.value = |</ul>
-            rowStdWrap.cObject {
-
-                stdWrap.noTrimWrap = |<ul class="csc-textpic-imagerow |">|
-                key.field = imagecols
-                1 = TEXT
-                1.value = small-block-grid-1
-                2 = TEXT
-                2.value = small-block-grid-1 medium-block-grid-2
-                3 = TEXT
-                3.value = small-block-grid-1 medium-block-grid-2 large-block-grid-3
-                4 = TEXT
-                4.value = small-block-grid-1 medium-block-grid-2 large-block-grid-4
-                5 = TEXT
-                5.value = small-block-grid-1 medium-block-grid-2 large-block-grid-5
-                6 = TEXT
-                6.value = small-block-grid-1 medium-block-grid-2 large-block-grid-6
-                7 = TEXT
-                7.value = small-block-grid-1 medium-block-grid-2 large-block-grid-7
-                8 = TEXT
-                8.value = small-block-grid-1 medium-block-grid-2 large-block-grid-8
+            # Override max width by the general max render
+            # width, if it is smaller. - and yes, the field
+            # name in this case IS "imageWidth"!
+            maxW.override = {$imageRenderingMaxWidth}
+            maxW.override.if {
+                value = {$imageRenderingMaxWidth}
+                isLessThan.field = imageWidth
             }
-            noRowsStdWrap < .rowStdWrap
-            noRowsStdWrap.cObject.stdWrap.noTrimWrap = |<ul class="csc-textpic-imagerow csc-textpic-imagerow-none |">|
-            lastRowStdWrap < .rowStdWrap
-            lastRowStdWrap.cObject.stdWrap.noTrimWrap = |<ul class="csc-textpic-imagerow csc-textpic-imagerow-last |">|
-
         }
-        rendering.splitCaption.rowStdWrap.wrap < .rendering.noCaption.rowStdWrap
-        rendering.splitCaption.noRowsStdWrap.wrap < .rendering.noCaption.noRowsStdWrap
-        rendering.splitCaption.lastRowStdWrap.wrap < .rendering.noCaption.lastRowStdWrap
-        rendering.splitCaption.columnStdWrap.wrap < .rendering.noCaption.columnStdWrap.wrap
 
-        # Handle rows
-        imageColumnStdWrap.dataWrap = <li class="csc-textpic-imagecolumn" style="width:{register:columnwidth}px;">|</li>
+        # Delete max width depending on number of columns.
+        # Dimensions are set via 1.file object (see previous section)!
+        maxW >
+        maxWInText >
+
+        # Reset spacings as those are handled by CSS.
+        colSpace = 0
+        textMargin = 0
+
+        # Additional classes
+        addClasses =
+        addClassesCol =
+
+        # Basic image "row" wraps.
+        imageStdWrap >
+        imageStdWrap {
+            dataWrap = <div class="csc-textpic-imagewrap ###CLASSES###" ###ATTRIBUTES###>|</div>
+
+            dataWrap.replacement {
+                10 {
+                    search = ###CLASSES###
+                    replace =
+                    replace.override.cObject = COA
+                    replace.override.cObject {
+                        10 = TEXT
+                        10.value = has-{field:imagecols}-columns
+                        20 = TEXT
+                        20.value = rowsDisabled
+                        20.if.isTrue.field = image_noRows
+                        20.noTrimWrap = | ||
+                    }
+
+                }
+                20 {
+                    search = ###ATTRIBUTES###
+                    replace =
+                    replace.override = style="max-width:{field:imagewidth}px;"
+                    replace.override.if.isPositive.field = imagewidth
+                }
+            }
+        }
+
+        # Disabled image rows
+        # (set by editor via backend)
+        # This basically enables to user to render the images
+        # top-down instead of left-right. We use the same wrap-definitions as for
+        # the regular rendering (left-right a.k.a. imageStdWrap).
+        imageStdWrapNoWidth >
+        imageStdWrapNoWidth < .imageStdWrap
+
+
+        # Wrap every image column, even if there is just one.
+        imageColumnStdWrap >
+        imageColumnStdWrap.wrap = <div class="csc-textpic-imagecolumn">|</div>
+
+
+        # Our own render method & wraps
+        renderMethod = figure
+        rendering.figure >
+        rendering.figure {
+            imageRowStdWrap.dataWrap = <div class="csc-textpic-imagerow">|</div>
+            imageLastRowStdWrap.dataWrap = <div class="csc-textpic-imagerow csc-textpic-imagerow-last">|</div>
+            imageColumnStdWrap.wrap = <div class="csc-textpic-imagecolumn">|</div>
+            noRowsStdWrap.wrap = |
+
+            # Single image wrap
+            oneImageStdWrap.dataWrap = <figure class="csc-textpic-image">|</figure>
+            oneImageStdWrap.dataWrap.override = <div class="csc-textpic-imagecolumn"><figure class="csc-textpic-image">|</figure></div>
+            oneImageStdWrap.dataWrap.override.if.isFalse.field = image_noRows
+
+            # Image captions
+            caption.wrap = <figcaption>|</figcaption>
+            caption.required = 1
+
+            # Image tag & edit icons
+            imgTagStdWrap.wrap = |
+            editIconsStdWrap.wrap = <div>|</div>
+        }
     }
 
 

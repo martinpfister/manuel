@@ -63,6 +63,9 @@ site {
 
 
 # **********************************************************
-#    Max image widths
+#    Image rendering settings
 # **********************************************************
-styles.content.imgtext.maxW = 1200
+# Set this the the max width ANY rendered image should have. Will
+# be downsized by browser when needed. Usually, this is the
+# main content column width.
+imageRenderingMaxWidth = 1200

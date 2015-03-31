@@ -4,26 +4,22 @@
     commonly used formatting such as no
     bullet lists in menus.
 **********************************************/
-
-
-/*********************************************
-    Image scaling
-    FF compatibility
-**********************************************/
-div.csc-textpic {
-    figure.csc-textpic-image { display:block; }
-    .csc-textpic-imagewrap { max-width:100%; }
+// Clear every content element
+.element:after {
+    display:table;
+    content:' ';
+    clear:both;
 }
 
 
 /*********************************************
-    Image captions
+    Image / textpic settings
+    (styling further down below)
 **********************************************/
-figcaption.csc-textpic-caption {
-    display:block;
-    padding-top:1%;
-    font-size:$small-font-size;
-}
+$pictureSpacing:$column-gutter / 2;         // Spacing between images
+$pictureVsTextSpacing:$column-gutter;       // Spacing between images & text (for textpic elements)
+$textpic-intext-defaultMaxWidth:50%;        // Picture container max default width (for textpic elements), if no width defined by editor.
+$enableImageColumnsMediaQuery:$medium-up;   // Screen size allowing multiple columns.
 
 
 /*********************************************
@@ -73,5 +69,157 @@ iframe * {
     a:hover {
         top:20000px;
         outline:0 none;
+    }
+}
+
+
+/*********************************************
+    Image / textpic styling
+**********************************************/
+// Image scaling FF compatibility
+div.csc-textpic {
+    figure.csc-textpic-image { display:block; }
+    .csc-textpic-imagewrap { max-width:100%; }
+}
+
+// Resetting some default css_styled_content styles
+// Any changes must be implemented carefully as
+// css_styled_content initially defines properties
+// very specifically!
+div.csc-textpic {
+    overflow:initial;
+    .csc-textpic-imagewrap {
+        margin-bottom:$pictureVsTextSpacing;
+        float:none;
+
+        .csc-textpic-imagecolumn {
+            margin-right:0;
+            overflow:initial;
+            float:none;
+        }
+        .csc-textpic-imagerow,
+        .csc-textpic-imagerow-last,
+        .csc-textpic-imagecolumn {
+            .csc-textpic-image {
+                margin-bottom:$pictureSpacing;
+            }
+        }
+    }
+}
+
+// Add margins (in the shape of paddings) to the images
+@media #{$enableImageColumnsMediaQuery} {
+    div.csc-textpic {
+        .csc-textpic-imagewrap {
+            margin:0 (-$pictureSpacing / 2) ($pictureVsTextSpacing - $pictureSpacing) 0;
+        }
+
+        // Create block grid
+        .csc-textpic-imagewrap {
+
+            $maxNumberOfColumns:10;
+            $numberOfColumns:2;
+            @while $numberOfColumns <= $maxNumberOfColumns {
+                &.has-#{$numberOfColumns}-columns {
+                    max-width:none;
+                }
+                &.has-#{$numberOfColumns}-columns .csc-textpic-imagecolumn {
+                    width:100% / $numberOfColumns;
+                    display:block;
+                    float:left;
+                    height:auto;
+                    clear:none;
+                    margin:0;
+                    padding:0 $pictureSpacing/2;
+
+                    &:nth-of-type(#{$numberOfColumns}n+1) {
+                        clear:both;
+                    }
+                }
+
+                $numberOfColumns:$numberOfColumns+1;
+            }
+        } // csc-textpic-imagewrap
+    } // csc-textpic
+}
+
+/*********************************************
+    Image captions
+**********************************************/
+figcaption.csc-textpic-caption {
+    display:block;
+    padding-top:1%;
+    font-size:$small-font-size;
+}
+
+
+/*********************************************
+    Picture / text display for large views
+**********************************************/
+@media #{$enableImageColumnsMediaQuery} {
+
+    div.csc-textpic {
+
+        // Clear content element after, if there are floated elements
+        &.csc-textpic-intext-right,
+        &.csc-textpic-intext-right-nowrap,
+        &.csc-textpic-intext-left,
+        &.csc-textpic-intext-left-nowrap {
+
+            &:after {
+                display:table;
+                content:' ';
+                clear:both;
+            }
+            // Set default max width of image container.
+            // This might get overridden via T3 inline-CSS on the element itself.
+            div.csc-textpic-imagewrap {
+                max-width:$textpic-intext-defaultMaxWidth;
+            }
+        }
+
+        // Pictures aligned right
+        &.csc-textpic-right,
+        &.csc-textpic-intext-right,
+        &.csc-textpic-intext-right-nowrap {
+            // Float image container & compensate negative margins introduced by block grid
+            // in order to get the correct distance to the text.
+            .csc-textpic-imagewrap {
+                margin-right:-($pictureSpacing / 2);
+                margin-left:$pictureVsTextSpacing - ($pictureSpacing / 2);
+                float:right;
+
+                // Do not compensate for picture containers that only have 1 column as
+                // there haven't been any negative margins set (no horizontal spacing
+                // needed).
+                &.has-1-columns {
+                    margin-right:0;
+                    margin-left:$pictureVsTextSpacing;
+                }
+            }
+        }
+
+        // Pictures aligned left
+        // (see comments above).
+        &.csc-textpic-left,
+        &.csc-textpic-intext-left,
+        &.csc-textpic-intext-left-nowrap {
+            .csc-textpic-imagewrap {
+                margin-left:-$pictureSpacing / 2;
+                margin-right:$pictureVsTextSpacing - ($pictureSpacing / 2);
+                float:left;
+
+                &.has-1-columns {
+                    margin-left:0;
+                    margin-right:$pictureVsTextSpacing;
+                }
+            }
+        }
+
+        // Display text as "inline-block", if images
+        // are aligned left (without wrap)
+        &.csc-textpic-intext-left-nowrap .csc-textpic-text {
+            display:inline-block;
+        }
     }
 }

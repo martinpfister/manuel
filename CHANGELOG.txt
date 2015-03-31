@@ -3,6 +3,7 @@ All notable changes to this project will be documented in this file. Syntax acco
 
 ## [1.2.0-DEV]
 ### Added
+- Cleaner textpic rendering, image size (display & rendering) handling, responsiveness.
 
 ### Fixed
 
@@ -10,7 +11,7 @@ All notable changes to this project will be documented in this file. Syntax acco
 - Refactor version handling: Version in ext_emconf=templatebootstrap-version, everything else fetched by git (tags, branch) to avoid update conflicts.
 
 ### Removed
-
+- Replace "styles.content.imgtext.maxW" by "imageRenderingMaxWidth" which is used in templatebootstrap image rendering definition.
 
 
 ## [1.2.0]
