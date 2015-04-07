@@ -4,7 +4,7 @@
 - Create a new repository
 - Make an initial commit
 - Clone repository locally
-- Add origin to templatebootstrap ("git remote add templatebootstrap ssh://stash.staempfli.com/scm/TYPO3/templatebootstrap.git")
+- Add origin to templatebootstrap ("git remote add templatebootstrap ssh://git@stash.staempfli.com:7999/typo3/templatebootstrap.git")
 - Fetch files from (non-default) origin "templatebootstrap": "git pull templatebootstrap master"
 - Change property 'title' in ext_emconf.php
 - Activate extension in the extension manager
