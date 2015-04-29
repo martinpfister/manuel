@@ -36,6 +36,7 @@ site {
     # Languages
     languageUids = 0,1,2
     languageLabels = Deutsch |*| Français |*| Italiano
+    languageSwitcher = &L=0 || &L=1 || &L=2
 
     # Compress / merge CSS / JS
     compressAndMergeAssets = 1
