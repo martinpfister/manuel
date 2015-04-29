@@ -27,8 +27,8 @@ class PostInstallFileHandler {
         $environment = trim($newConfiguration['environment']['value']);
 
         // Quit, if this feature is not enabled at all
-        $writeRobots = boolval($newConfiguration['writerobots']['value']);
-        if(!$writeRobots) { return; }
+        $writeRobots = abs(intval($newConfiguration['writerobots']['value']));
+        if($writeRobots !== 1) { return; }
 
         // If no environment has been chosen, write log and exit.
         if (empty($environment) || $environment == 'none') {
