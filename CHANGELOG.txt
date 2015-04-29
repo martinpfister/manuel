@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file. Syntax acco
 - Cleaner textpic rendering, image size (display & rendering) handling, responsiveness.
 
 ### Fixed
+- Changed "boolval" type casting in PostInstallFileHandler to intval() in order to support older PHP versions.
 
 ### Updated
 - Refactor version handling: Version in ext_emconf=templatebootstrap-version, everything else fetched by git (tags, branch) to avoid update conflicts.
