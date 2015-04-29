@@ -27,8 +27,7 @@ class PostInstallFileHandler {
         $environment = trim($newConfiguration['environment']['value']);
 
         // Quit, if this feature is not enabled at all
-        $writeRobots = abs(intval($newConfiguration['writerobots']['value']));
-        if($writeRobots !== 1) { return; }
+        if(!intval($newConfiguration['writerobots']['value'])) { return; }
 
         // If no environment has been chosen, write log and exit.
         if (empty($environment) || $environment == 'none') {
@@ -46,7 +45,7 @@ class PostInstallFileHandler {
         // Write robots, txt if it doesn't exist yet.
         if (!$robotsExists) {
             $replaceRobots = true;
-        // Decide whether to write robots, if the whole content
+            // Decide whether to write robots, if the whole content
         } else {
             $robotsContent = trim(file_get_contents($robotsPath));
             $markerBeginPos = strpos($robotsContent, $robotsTemplateStartMarker);
@@ -111,8 +110,8 @@ class PostInstallFileHandler {
             $currentConfiguration['enableCustomErrorHandling'] = false;
         }
         // rewrite configuration, if necessary.
-        $enableCustomErrorHandler = boolval($newConfiguration['enableCustomErrorHandling']['value']);
-        if ($enableCustomErrorHandler == true) {
+        $enableCustomErrorHandler = intval($newConfiguration['enableCustomErrorHandling']['value']);
+        if ($enableCustomErrorHandler) {
             $errorHandlerReference = 'USER_FUNCTION:typo3conf/ext/' . $packageKey . '/Classes/Utility/PageNotFoundHandler.php:Staempfli\\Templatebootstrap\\Utility\\PageNotFoundHandler->pageNotFound';
             if ($errorHandlerReference !== $GLOBALS['TYPO3_CONF_VARS']['FE']['pageNotFound_handling']) {
                 $fileContentLines[] = '$GLOBALS[\'TYPO3_CONF_VARS\'][\'FE\'][\'pageNotFound_handling\'] = \''. $errorHandlerReference .'\';';
@@ -121,7 +120,7 @@ class PostInstallFileHandler {
 
 
         // trustedHostsPattern
-        if (boolval($newConfiguration['generateTrustedHostsPattern']['value'])) {
+        if (intval($newConfiguration['generateTrustedHostsPattern']['value'])) {
             $finalPattern = 'SERVER_NAME';
             $domainsResult = $GLOBALS['TYPO3_DB']->exec_SELECTquery('*', 'sys_domain', NULL);
             if ($GLOBALS['TYPO3_DB']->sql_num_rows($domainsResult)) {
