@@ -62,7 +62,6 @@ site {
     }
 }
 
-
 # **********************************************************
 #    Image rendering settings
 # **********************************************************
@@ -70,3 +69,57 @@ site {
 # be downsized by browser when needed. Usually, this is the
 # main content column width.
 imageRenderingMaxWidth = 1200
+
+
+# **********************************************************
+#    Icon rendering definitions
+#
+#    Notices:
+#    - sizes are integer only. Icons will all be square.
+#    - iconSourceVersion is "default" per default. Override
+#      without (!) file extension and it will load
+#      packagekey-[iconSourceVersion].ai You may - for example -
+#      want to include the company claim for larger sizes.
+# **********************************************************
+site.icons {
+
+    /*
+    XXX {
+        size = 111
+        relAttribute = icon
+        additionalAttributes = myattr="myvalue"
+        iconSourceVersion = larger
+        colorOverlay = #cccccc
+        backgroundColor = #ff0000
+    }
+    */
+    1.size = 72
+    1.relAttribute = apple-touch-icon
+
+    2.size = 114
+    2.relAttribute = apple-touch-icon
+
+    3.size = 144
+    3.relAttribute = apple-touch-icon
+
+    4.size = 180
+    4.relAttribute = apple-touch-icon
+
+    5.size = 32
+    5.additionalAttributes = type="image/png"
+
+    6.size = 96
+    6.additionalAttributes = type="image/png"
+
+    7.size = 192
+    7.iconSourceVersion = larger
+    7.additionalAttributes = type="image/png"
+
+    8.size = 256
+    8.iconSourceVersion = larger
+    8.additionalAttributes = type="image/png"
+
+    # You may specify up to 15 icons here.
+    # If you need more, extend Page/page_icons.ts
+
+}

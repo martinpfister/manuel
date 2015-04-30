@@ -3,9 +3,17 @@
 module.exports = function(grunt) {
 
     var path = require('path');
-    var fullPath = path.resolve('../../../').split(path.sep);
-    var packageKey = fullPath[fullPath.length-1];
+    var packagePath = path.resolve('../../../');
+    var packagePathSplit = packagePath.split(path.sep);
+    var packageKey = packagePathSplit[packagePathSplit.length-1];
+
     var compressableImageFormats = 'jpg,gif,svg,jpeg,png';
+
+    // Icon file paths
+    var iconSourceFile = '../../Private/IconSources/default.ai';
+    var iconSourceFileAbsolute = path.resolve(iconSourceFile +'[0]');
+    var faviconTargetFileAbsolute = path.resolve(packagePath +'/Resources/Public/Template/images/favicon.ico');
+    var packageIconTargetFileAbsolute = path.resolve(packagePath + '/ext_icon.gif');
 
 
     grunt.initConfig({
@@ -64,6 +72,18 @@ module.exports = function(grunt) {
             }
         },
 
+        // Command line tasks
+        // Mainly used for image / icon generation.
+        exec: {
+            generateFavicon: {
+                command: 'convert -colorspace RGB -background transparent -define icon:auto-resize "' + iconSourceFileAbsolute + '" "'+ faviconTargetFileAbsolute +'"'
+            },
+            generatePackageIcon: {
+                command: 'convert -colorspace RGB -alpha remove -antialias -background white -resize 32x32 "' + iconSourceFileAbsolute + '" "'+ packageIconTargetFileAbsolute +'"'
+            }
+        },
+
+
         // File change watcher
         watch: {
             grunt: {
@@ -80,6 +100,11 @@ module.exports = function(grunt) {
                 options: {
                     event: ['changed', 'added']
                 }
+            },
+            iconSource: {
+                files: [iconSourceFile],
+                tasks: ['createIcons'],
+                options: { event: ['changed'] }
             }
         }
 
@@ -90,14 +115,16 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-exec');
 
     // Define tasks
     grunt.registerTask('buildCSSWithCompass', ['compass']);
     grunt.registerTask('buildCSSWithoutCompass', ['sass']);
     grunt.registerTask('buildCSS', ['buildCSSWithCompass']);
     grunt.registerTask('compressImageAssets', ['imagemin:imageAssets']);
+    grunt.registerTask('createIcons', ['exec:generateFavicon', 'exec:generatePackageIcon']);
 
     // Define default task
-    grunt.registerTask('default', ['buildCSS', 'compressImageAssets', 'watch']);
+    grunt.registerTask('default', ['buildCSS', 'compressImageAssets', 'createIcons', 'watch']);
 
 }

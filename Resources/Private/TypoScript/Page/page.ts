@@ -18,9 +18,6 @@ page {
         # twitter cards tags (activated/deativated by constant "").
     }
 
-    # Favicon
-    shortcutIcon = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Public/Template/images/favicon.ico
-
     # Page title
     headerData.15 = COA
     headerData.15 {

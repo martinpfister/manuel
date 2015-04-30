@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file. Syntax acco
 ## [1.2.0-DEV]
 ### Added
 - Cleaner textpic rendering, image size (display & rendering) handling, responsiveness.
+- Dynamic .ico & ext_icon.gif generation via grunt
+- Dynamic icon (png) generation for meta icons via TS.
 
 ### Fixed
 - Changed "boolval" type casting in PostInstallFileHandler to intval() in order to support older PHP versions.
@@ -14,7 +16,7 @@ All notable changes to this project will be documented in this file. Syntax acco
 
 ### Removed
 - Replace "styles.content.imgtext.maxW" by "imageRenderingMaxWidth" which is used in templatebootstrap image rendering definition.
-
+- TYPO3 standard favicon definition (page.shortcutIcon)
 
 ## [1.2.0]
 ### Added

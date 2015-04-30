@@ -7,6 +7,7 @@
 <INCLUDE_TYPOSCRIPT: source="FILE:./Page/page_socialmediametatags.ts">
 <INCLUDE_TYPOSCRIPT: source="FILE:./Page/page_felayoutrendering.ts">
 <INCLUDE_TYPOSCRIPT: source="FILE:./Page/page_jscssincludes.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:./Page/page_icons.ts">
 
 # **********************************************************
 # Extensions setups
