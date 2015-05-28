@@ -10,7 +10,7 @@ config {
     index_externals = 1
 
     # remove inline CSS/JS to external
-    removeDefaultJS = 1
+    removeDefaultJS = external
     inlineStyle2TempFile = 1
     compressJs = {$site.compressAndMergeAssets}
     compressCss = {$site.compressAndMergeAssets}
