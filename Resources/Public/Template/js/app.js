@@ -8,6 +8,9 @@ $(function() {
 
     // Init lightbox (fancybox)
     $('.fancybox, .lightbox').fancybox();
+    $('.fancybox-media, .lightbox-media').fancybox({
+        helpers : {media : {}}
+    });
 
     // Init double tap menu
     $('.top-bar-section').doubleTapMenu();
