@@ -6,9 +6,13 @@ All notable changes to this project will be documented in this file. Syntax acco
 - Cleaner textpic rendering, image size (display & rendering) handling, responsiveness.
 - Dynamic .ico & ext_icon.gif generation via grunt
 - Dynamic icon (png) generation for meta icons via TS.
+- Automatically initialize lightbox w/ fancybox "media" helper, if link has been assigned .lightbox-media or .fancybox-media
+- Configurable, css-only hamburger icon (.hamburger-icon) in common styles.
+- Default styles for indexed_search searchbox vs. result list display (hide unwanted contents in each).
 
 ### Fixed
-- Changed "boolval" type casting in PostInstallFileHandler to intval() in order to support older PHP versions.
+- Change "boolval" type casting in PostInstallFileHandler to intval() in order to support older PHP versions.
+- Revert c4dd7bee4c5: Wrong configuration led to broken JS (p.e. linkTo_UnCryptMailTo was not available anymore).
 
 ### Updated
 - Refactor version handling: Version in ext_emconf=templatebootstrap-version, everything else fetched by git (tags, branch) to avoid update conflicts.
