@@ -2,7 +2,8 @@ plugin.tx_indexedsearch {
     templateFile = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Private/Extensions/indexed_search/indexed_search.tmpl
     search {
         targetPid = {$plugin.tx_indexedsearch.targetPid}
-        rootPidList = 1
+        targetPid.data >
+        rootPidList = -1
     }
     show {
         rules = 0
