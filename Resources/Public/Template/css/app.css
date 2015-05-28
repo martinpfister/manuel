@@ -11696,19 +11696,32 @@ figcaption.csc-textpic-caption {
     Forms & form elements
 **********************************************/
 /*********************************************
+    Indexed search
+**********************************************/
+/* line 109, ../sass/_styles.scss */
+.searchbox ~ * {
+  display: none;
+}
+
+/* line 110, ../sass/_styles.scss */
+.element.list-element .tx-indexedsearch .tx-indexedsearch-searchbox {
+  display: none;
+}
+
+/*********************************************
     Footer
 **********************************************/
-/* line 104, ../sass/_styles.scss */
+/* line 115, ../sass/_styles.scss */
 footer.row {
   margin-top: 1rem;
   opacity: 0.5;
 }
-/* line 107, ../sass/_styles.scss */
+/* line 118, ../sass/_styles.scss */
 footer.row * {
   font-size: 0.8rem;
 }
 
-/* line 110, ../sass/_styles.scss */
+/* line 121, ../sass/_styles.scss */
 ul.address {
   list-style-type: none;
 }

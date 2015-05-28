@@ -98,6 +98,17 @@ input[type="reset"] {
     @extend .alert;
 }
 
+
+/*********************************************
+    Indexed search
+**********************************************/
+// Searchbox: Hide any content (result list,
+// etc.) following the search form.
+// .. but hide search form in main content area
+// as it only needs to show the result list.
+.searchbox ~ * { display:none; }
+.element.list-element .tx-indexedsearch .tx-indexedsearch-searchbox { display:none; }
+
 /*********************************************
     Footer
 **********************************************/
