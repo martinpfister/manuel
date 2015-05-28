@@ -22,6 +22,7 @@ All notable changes to this project will be documented in this file. Syntax acco
 - Replace "styles.content.imgtext.maxW" by "imageRenderingMaxWidth" which is used in templatebootstrap image rendering definition.
 - TYPO3 standard favicon definition (page.shortcutIcon)
 
+
 ## [1.2.0]
 ### Added
 - Add missing attribute "accesskey" to skiplinks.
