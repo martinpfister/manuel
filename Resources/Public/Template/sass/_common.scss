@@ -34,6 +34,9 @@ $hamburger-icon-color: $primary-color;
     content:' ';
     clear:both;
 }
+// Allow iFrame widths (p.e. embedded videos)
+// to span 100% max!
+iframe { max-width:100%; }
 
 /*********************************************
     Menus

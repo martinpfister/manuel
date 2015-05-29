@@ -11276,20 +11276,25 @@ th.hide-for-touch {
   clear: both;
 }
 
+/* line 39, ../sass/_common.scss */
+iframe {
+  max-width: 100%;
+}
+
 /*********************************************
     Menus
 **********************************************/
-/* line 41, ../sass/_common.scss */
+/* line 44, ../sass/_common.scss */
 nav ul {
   list-style-type: none;
 }
 
-/* line 42, ../sass/_common.scss */
+/* line 45, ../sass/_common.scss */
 nav a {
   text-decoration: none;
 }
 
-/* line 45, ../sass/_common.scss */
+/* line 48, ../sass/_common.scss */
 .hamburger-icon {
   cursor: pointer;
   display: block;
@@ -11299,7 +11304,7 @@ nav a {
   border-bottom: 2px solid #008CBA;
   padding: 4px 0;
 }
-/* line 55, ../sass/_common.scss */
+/* line 58, ../sass/_common.scss */
 .hamburger-icon:before {
   content: '';
   display: block;
@@ -11310,7 +11315,7 @@ nav a {
 /*********************************************
     Reset box sizing on certain elements
 **********************************************/
-/* line 66, ../sass/_common.scss */
+/* line 69, ../sass/_common.scss */
 .fancybox-wrap,
 .fancybox-wrap *,
 iframe * {
@@ -11320,7 +11325,7 @@ iframe * {
 /*********************************************
     Skiplinks
 **********************************************/
-/* line 76, ../sass/_common.scss */
+/* line 79, ../sass/_common.scss */
 #skiplinks {
   position: absolute;
   z-index: 1000;
@@ -11330,7 +11335,7 @@ iframe * {
   padding: 0;
   list-style-type: none;
 }
-/* line 85, ../sass/_common.scss */
+/* line 88, ../sass/_common.scss */
 #skiplinks a {
   position: absolute;
   display: block;
@@ -11338,13 +11343,13 @@ iframe * {
   text-align: center;
   color: #fff;
 }
-/* line 92, ../sass/_common.scss */
+/* line 95, ../sass/_common.scss */
 #skiplinks a span {
   display: inline-block;
   padding: 7px 10px;
   background: #008CBA;
 }
-/* line 98, ../sass/_common.scss */
+/* line 101, ../sass/_common.scss */
 #skiplinks a:focus,
 #skiplinks a:active,
 #skiplinks a:hover {
@@ -11355,31 +11360,31 @@ iframe * {
 /*********************************************
     Image / textpic styling
 **********************************************/
-/* line 112, ../sass/_common.scss */
+/* line 115, ../sass/_common.scss */
 div.csc-textpic figure.csc-textpic-image {
   display: block;
 }
-/* line 113, ../sass/_common.scss */
+/* line 116, ../sass/_common.scss */
 div.csc-textpic .csc-textpic-imagewrap {
   max-width: 100%;
 }
 
-/* line 120, ../sass/_common.scss */
+/* line 123, ../sass/_common.scss */
 div.csc-textpic {
   overflow: initial;
 }
-/* line 122, ../sass/_common.scss */
+/* line 125, ../sass/_common.scss */
 div.csc-textpic .csc-textpic-imagewrap {
   margin-bottom: 1.875rem;
   float: none;
 }
-/* line 126, ../sass/_common.scss */
+/* line 129, ../sass/_common.scss */
 div.csc-textpic .csc-textpic-imagewrap .csc-textpic-imagecolumn {
   margin-right: 0;
   overflow: initial;
   float: none;
 }
-/* line 134, ../sass/_common.scss */
+/* line 137, ../sass/_common.scss */
 div.csc-textpic .csc-textpic-imagewrap .csc-textpic-imagerow .csc-textpic-image,
 div.csc-textpic .csc-textpic-imagewrap .csc-textpic-imagerow-last .csc-textpic-image,
 div.csc-textpic .csc-textpic-imagewrap .csc-textpic-imagecolumn .csc-textpic-image {
@@ -11387,15 +11392,15 @@ div.csc-textpic .csc-textpic-imagewrap .csc-textpic-imagecolumn .csc-textpic-ima
 }
 
 @media only screen and (min-width: 40.063em) {
-  /* line 144, ../sass/_common.scss */
+  /* line 147, ../sass/_common.scss */
   div.csc-textpic .csc-textpic-imagewrap {
     margin: 0 -0.46875rem 0.9375rem 0;
   }
-  /* line 154, ../sass/_common.scss */
+  /* line 157, ../sass/_common.scss */
   div.csc-textpic .csc-textpic-imagewrap.has-2-columns {
     max-width: none;
   }
-  /* line 157, ../sass/_common.scss */
+  /* line 160, ../sass/_common.scss */
   div.csc-textpic .csc-textpic-imagewrap.has-2-columns .csc-textpic-imagecolumn {
     width: 50%;
     display: block;
@@ -11405,15 +11410,15 @@ div.csc-textpic .csc-textpic-imagewrap .csc-textpic-imagecolumn .csc-textpic-ima
     margin: 0;
     padding: 0 0.46875rem;
   }
-  /* line 166, ../sass/_common.scss */
+  /* line 169, ../sass/_common.scss */
   div.csc-textpic .csc-textpic-imagewrap.has-2-columns .csc-textpic-imagecolumn:nth-of-type(2n+1) {
     clear: both;
   }
-  /* line 154, ../sass/_common.scss */
+  /* line 157, ../sass/_common.scss */
   div.csc-textpic .csc-textpic-imagewrap.has-3-columns {
     max-width: none;
   }
-  /* line 157, ../sass/_common.scss */
+  /* line 160, ../sass/_common.scss */
   div.csc-textpic .csc-textpic-imagewrap.has-3-columns .csc-textpic-imagecolumn {
     width: 33.33333%;
     display: block;
@@ -11423,15 +11428,15 @@ div.csc-textpic .csc-textpic-imagewrap .csc-textpic-imagecolumn .csc-textpic-ima
     margin: 0;
     padding: 0 0.46875rem;
   }
-  /* line 166, ../sass/_common.scss */
+  /* line 169, ../sass/_common.scss */
   div.csc-textpic .csc-textpic-imagewrap.has-3-columns .csc-textpic-imagecolumn:nth-of-type(3n+1) {
     clear: both;
   }
-  /* line 154, ../sass/_common.scss */
+  /* line 157, ../sass/_common.scss */
   div.csc-textpic .csc-textpic-imagewrap.has-4-columns {
     max-width: none;
   }
-  /* line 157, ../sass/_common.scss */
+  /* line 160, ../sass/_common.scss */
   div.csc-textpic .csc-textpic-imagewrap.has-4-columns .csc-textpic-imagecolumn {
     width: 25%;
     display: block;
@@ -11441,15 +11446,15 @@ div.csc-textpic .csc-textpic-imagewrap .csc-textpic-imagecolumn .csc-textpic-ima
     margin: 0;
     padding: 0 0.46875rem;
   }
-  /* line 166, ../sass/_common.scss */
+  /* line 169, ../sass/_common.scss */
   div.csc-textpic .csc-textpic-imagewrap.has-4-columns .csc-textpic-imagecolumn:nth-of-type(4n+1) {
     clear: both;
   }
-  /* line 154, ../sass/_common.scss */
+  /* line 157, ../sass/_common.scss */
   div.csc-textpic .csc-textpic-imagewrap.has-5-columns {
     max-width: none;
   }
-  /* line 157, ../sass/_common.scss */
+  /* line 160, ../sass/_common.scss */
   div.csc-textpic .csc-textpic-imagewrap.has-5-columns .csc-textpic-imagecolumn {
     width: 20%;
     display: block;
@@ -11459,15 +11464,15 @@ div.csc-textpic .csc-textpic-imagewrap .csc-textpic-imagecolumn .csc-textpic-ima
     margin: 0;
     padding: 0 0.46875rem;
   }
-  /* line 166, ../sass/_common.scss */
+  /* line 169, ../sass/_common.scss */
   div.csc-textpic .csc-textpic-imagewrap.has-5-columns .csc-textpic-imagecolumn:nth-of-type(5n+1) {
     clear: both;
   }
-  /* line 154, ../sass/_common.scss */
+  /* line 157, ../sass/_common.scss */
   div.csc-textpic .csc-textpic-imagewrap.has-6-columns {
     max-width: none;
   }
-  /* line 157, ../sass/_common.scss */
+  /* line 160, ../sass/_common.scss */
   div.csc-textpic .csc-textpic-imagewrap.has-6-columns .csc-textpic-imagecolumn {
     width: 16.66667%;
     display: block;
@@ -11477,15 +11482,15 @@ div.csc-textpic .csc-textpic-imagewrap .csc-textpic-imagecolumn .csc-textpic-ima
     margin: 0;
     padding: 0 0.46875rem;
   }
-  /* line 166, ../sass/_common.scss */
+  /* line 169, ../sass/_common.scss */
   div.csc-textpic .csc-textpic-imagewrap.has-6-columns .csc-textpic-imagecolumn:nth-of-type(6n+1) {
     clear: both;
   }
-  /* line 154, ../sass/_common.scss */
+  /* line 157, ../sass/_common.scss */
   div.csc-textpic .csc-textpic-imagewrap.has-7-columns {
     max-width: none;
   }
-  /* line 157, ../sass/_common.scss */
+  /* line 160, ../sass/_common.scss */
   div.csc-textpic .csc-textpic-imagewrap.has-7-columns .csc-textpic-imagecolumn {
     width: 14.28571%;
     display: block;
@@ -11495,15 +11500,15 @@ div.csc-textpic .csc-textpic-imagewrap .csc-textpic-imagecolumn .csc-textpic-ima
     margin: 0;
     padding: 0 0.46875rem;
   }
-  /* line 166, ../sass/_common.scss */
+  /* line 169, ../sass/_common.scss */
   div.csc-textpic .csc-textpic-imagewrap.has-7-columns .csc-textpic-imagecolumn:nth-of-type(7n+1) {
     clear: both;
   }
-  /* line 154, ../sass/_common.scss */
+  /* line 157, ../sass/_common.scss */
   div.csc-textpic .csc-textpic-imagewrap.has-8-columns {
     max-width: none;
   }
-  /* line 157, ../sass/_common.scss */
+  /* line 160, ../sass/_common.scss */
   div.csc-textpic .csc-textpic-imagewrap.has-8-columns .csc-textpic-imagecolumn {
     width: 12.5%;
     display: block;
@@ -11513,15 +11518,15 @@ div.csc-textpic .csc-textpic-imagewrap .csc-textpic-imagecolumn .csc-textpic-ima
     margin: 0;
     padding: 0 0.46875rem;
   }
-  /* line 166, ../sass/_common.scss */
+  /* line 169, ../sass/_common.scss */
   div.csc-textpic .csc-textpic-imagewrap.has-8-columns .csc-textpic-imagecolumn:nth-of-type(8n+1) {
     clear: both;
   }
-  /* line 154, ../sass/_common.scss */
+  /* line 157, ../sass/_common.scss */
   div.csc-textpic .csc-textpic-imagewrap.has-9-columns {
     max-width: none;
   }
-  /* line 157, ../sass/_common.scss */
+  /* line 160, ../sass/_common.scss */
   div.csc-textpic .csc-textpic-imagewrap.has-9-columns .csc-textpic-imagecolumn {
     width: 11.11111%;
     display: block;
@@ -11531,15 +11536,15 @@ div.csc-textpic .csc-textpic-imagewrap .csc-textpic-imagecolumn .csc-textpic-ima
     margin: 0;
     padding: 0 0.46875rem;
   }
-  /* line 166, ../sass/_common.scss */
+  /* line 169, ../sass/_common.scss */
   div.csc-textpic .csc-textpic-imagewrap.has-9-columns .csc-textpic-imagecolumn:nth-of-type(9n+1) {
     clear: both;
   }
-  /* line 154, ../sass/_common.scss */
+  /* line 157, ../sass/_common.scss */
   div.csc-textpic .csc-textpic-imagewrap.has-10-columns {
     max-width: none;
   }
-  /* line 157, ../sass/_common.scss */
+  /* line 160, ../sass/_common.scss */
   div.csc-textpic .csc-textpic-imagewrap.has-10-columns .csc-textpic-imagecolumn {
     width: 10%;
     display: block;
@@ -11549,7 +11554,7 @@ div.csc-textpic .csc-textpic-imagewrap .csc-textpic-imagecolumn .csc-textpic-ima
     margin: 0;
     padding: 0 0.46875rem;
   }
-  /* line 166, ../sass/_common.scss */
+  /* line 169, ../sass/_common.scss */
   div.csc-textpic .csc-textpic-imagewrap.has-10-columns .csc-textpic-imagecolumn:nth-of-type(10n+1) {
     clear: both;
   }
@@ -11557,7 +11562,7 @@ div.csc-textpic .csc-textpic-imagewrap .csc-textpic-imagecolumn .csc-textpic-ima
 /*********************************************
     Image captions
 **********************************************/
-/* line 180, ../sass/_common.scss */
+/* line 183, ../sass/_common.scss */
 figcaption.csc-textpic-caption {
   display: block;
   padding-top: 1%;
@@ -11568,39 +11573,39 @@ figcaption.csc-textpic-caption {
     Picture / text display for large views
 **********************************************/
 @media only screen and (min-width: 40.063em) {
-  /* line 200, ../sass/_common.scss */
+  /* line 203, ../sass/_common.scss */
   div.csc-textpic.csc-textpic-intext-right:after, div.csc-textpic.csc-textpic-intext-right-nowrap:after, div.csc-textpic.csc-textpic-intext-left:after, div.csc-textpic.csc-textpic-intext-left-nowrap:after {
     display: table;
     content: ' ';
     clear: both;
   }
-  /* line 207, ../sass/_common.scss */
+  /* line 210, ../sass/_common.scss */
   div.csc-textpic.csc-textpic-intext-right div.csc-textpic-imagewrap, div.csc-textpic.csc-textpic-intext-right-nowrap div.csc-textpic-imagewrap, div.csc-textpic.csc-textpic-intext-left div.csc-textpic-imagewrap, div.csc-textpic.csc-textpic-intext-left-nowrap div.csc-textpic-imagewrap {
     max-width: 50%;
   }
-  /* line 218, ../sass/_common.scss */
+  /* line 221, ../sass/_common.scss */
   div.csc-textpic.csc-textpic-right .csc-textpic-imagewrap, div.csc-textpic.csc-textpic-intext-right .csc-textpic-imagewrap, div.csc-textpic.csc-textpic-intext-right-nowrap .csc-textpic-imagewrap {
     margin-right: -0.46875rem;
     margin-left: 1.40625rem;
     float: right;
   }
-  /* line 226, ../sass/_common.scss */
+  /* line 229, ../sass/_common.scss */
   div.csc-textpic.csc-textpic-right .csc-textpic-imagewrap.has-1-columns, div.csc-textpic.csc-textpic-intext-right .csc-textpic-imagewrap.has-1-columns, div.csc-textpic.csc-textpic-intext-right-nowrap .csc-textpic-imagewrap.has-1-columns {
     margin-right: 0;
     margin-left: 1.875rem;
   }
-  /* line 238, ../sass/_common.scss */
+  /* line 241, ../sass/_common.scss */
   div.csc-textpic.csc-textpic-left .csc-textpic-imagewrap, div.csc-textpic.csc-textpic-intext-left .csc-textpic-imagewrap, div.csc-textpic.csc-textpic-intext-left-nowrap .csc-textpic-imagewrap {
     margin-left: -0.46875rem;
     margin-right: 1.40625rem;
     float: left;
   }
-  /* line 243, ../sass/_common.scss */
+  /* line 246, ../sass/_common.scss */
   div.csc-textpic.csc-textpic-left .csc-textpic-imagewrap.has-1-columns, div.csc-textpic.csc-textpic-intext-left .csc-textpic-imagewrap.has-1-columns, div.csc-textpic.csc-textpic-intext-left-nowrap .csc-textpic-imagewrap.has-1-columns {
     margin-left: 0;
     margin-right: 1.875rem;
   }
-  /* line 252, ../sass/_common.scss */
+  /* line 255, ../sass/_common.scss */
   div.csc-textpic.csc-textpic-intext-left-nowrap .csc-textpic-text {
     display: inline-block;
   }
