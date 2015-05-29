@@ -17,6 +17,7 @@ All notable changes to this project will be documented in this file. Syntax acco
 ### Updated
 - Refactor version handling: Version in ext_emconf=templatebootstrap-version, everything else fetched by git (tags, branch) to avoid update conflicts.
 - Insert correct remote URL to templateboostrap in README.
+- Usergroups+Filemounts now include a default user, fixed permissions & case-sensitive filemount for cross-platform compatibility.
 
 ### Removed
 - Replace "styles.content.imgtext.maxW" by "imageRenderingMaxWidth" which is used in templatebootstrap image rendering definition.
