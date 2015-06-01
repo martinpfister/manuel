@@ -20,11 +20,22 @@ plugin.tx_indexedsearch {
             pi_list_browseresults_prev = «zurück
             pi_list_browseresults_next = vorwärts»
         }
-        default < .de
         fr {
             form_searchFor = Chercher
             pi_list_browseresults_prev = «précédent
             pi_list_browseresults_next = suivant»
         }
+        it {
+            form_searchFor = Cercare
+            pi_list_browseresults_prev = «indietro
+            pi_list_browseresults_next = avanti»
+        }
+        en {
+            form_searchFor = Search
+            pi_list_browseresults_prev = «previous
+            pi_list_browseresults_next = next»
+        }
+
+        default < .de
     }
 }
