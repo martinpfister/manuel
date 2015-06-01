@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file. Syntax acco
 - Automatically initialize lightbox w/ fancybox "media" helper, if link has been assigned .lightbox-media or .fancybox-media
 - Configurable, css-only hamburger icon (.hamburger-icon) in common styles.
 - Default styles for indexed_search searchbox vs. result list display (hide unwanted contents in each).
+- 404 and 401 error pages may now be optionally defined on a per-domain/host basis (see error404Uid parameter in extension configuration).
 
 ### Fixed
 - Change "boolval" type casting in PostInstallFileHandler to intval() in order to support older PHP versions.

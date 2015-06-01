@@ -54,13 +54,52 @@ class PageNotFoundHandler {
         // Get 404 page uid
         $error404Uid = 0;
         if (isset($extensionConfiguration['error404Uid'])) {
-            $error404Uid = $extensionConfiguration['error404Uid'];
-        }
+            $error404Uids = GeneralUtility::trimExplode(',', $extensionConfiguration['error404Uid']);
+            if (count($error404Uids) === 1 && substr_count($error404Uids[0], ':') === 0) {
+                $error404Uid = $error404Uids[0];
+
+                // Parse 404 uids on a per-host basis
+            } else {
+                // Iterate through all defined hosts/error page uids
+                foreach($error404Uids as $errorPageHostAndUid) {
+                    $errorPageHostAndUid = GeneralUtility::trimExplode(':', $errorPageHostAndUid);
+                    // Check correct definition format ([host name or part thereof]:[errorpage uid],...)
+                    if (count($errorPageHostAndUid) !== 2) {
+                        continue;
+                        // Host pattern found in current error page definition.
+                    } elseif(substr_count($host, strtolower($errorPageHostAndUid[0])) > 0) {
+                        $error404Uid = $errorPageHostAndUid[1];
+                        break;
+                    }
+                }
+            } // iterate through multiple 404 page definitions
+        } // if 404 page(s) has been set.
+
         // Get 401 page uid
         $error401Uid = 0;
         if (isset($extensionConfiguration['error401Uid'])) {
-            $error401Uid = $extensionConfiguration['error401Uid'];
-        }
+
+            $error401Uids = GeneralUtility::trimExplode(',', $extensionConfiguration['error401Uid']);
+            if (count($error401Uids) === 1 && substr_count($error401Uids[0], ':') === 0) {
+                $error401Uid = $error401Uids[0];
+
+                // Parse 401 uids on a per-host basis
+            } else {
+                // Iterate through all defined hosts/error page uids
+                foreach($error401Uids as $errorPageHostAndUid) {
+                    $errorPageHostAndUid = GeneralUtility::trimExplode(':', $errorPageHostAndUid);
+                    // Check correct definition format ([host name or part thereof]:[errorpage uid],...)
+                    if (count($errorPageHostAndUid) !== 2) {
+                        continue;
+                        // Host pattern found in current error page definition.
+                    } elseif(substr_count($host, strtolower($errorPageHostAndUid[0])) > 0) {
+                        $error401Uid = $errorPageHostAndUid[1];
+                        break;
+                    }
+                }
+            } // iterate through multiple 404 page definitions
+        }  // if 401 page(s) has been set.
+
 
         // Get sys language uid
         $sysLanguageUid = 0;
@@ -142,10 +181,10 @@ class PageNotFoundHandler {
         $title = 'Page Not Found';
         $message = $params['reasonText'] .'.<br /><br />PageNotFoundHandler could not handle the request. Either the maximum number of '.
             'redirects ('. $maxNumberOfRedirects .') have been reached or no target page has been configured. <br /><br />' .
-             '<br />URL: "' . $params['currentUrl'] . '"';
+            '<br />URL: "' . $params['currentUrl'] . '"';
         $messagePage = GeneralUtility::makeInstance('TYPO3\\CMS\\Core\\Messaging\\ErrorpageMessage', $message, $title);
         $messagePage->output();
         die;
     }
 
-}
+} // class PageNotFoundHandler
