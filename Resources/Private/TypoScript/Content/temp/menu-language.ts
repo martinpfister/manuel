@@ -4,6 +4,9 @@ temp.menu-language {
     special.value = {$site.languageUids}
     special.normalWhenNoLanguage = 0
 
+    addQueryString = 1
+    addQueryString.exclude = L,cHash
+
     wrap = <nav class="language"><ul>|</ul></nav>
 
     1 = TMENU
@@ -15,19 +18,8 @@ temp.menu-language {
         NO = 1
         NO {
             wrapItemAndSub = <li class="first">|</li>|*|<li>|</li>|*|<li class="last">|</li>
-            stdWrap.override = {$site.languageLabels}
-
-            # Standardmäßige Verlinkung des Menüs ausschalten
-            # Da diese sonstige GET-Parameter nicht enthält
-            doNotLinkIt = 1
-            # Nun wird der Link mit den aktuellen GET-Parametern neu aufgebaut
-            stdWrap.typolink.parameter.data = page:uid
-            stdWrap.typolink.additionalParams = {$site.languageSwitcher}
-            stdWrap.typolink.addQueryString = 1
-            stdWrap.typolink.addQueryString.exclude = L,id,cHash,no_cache
-            stdWrap.typolink.addQueryString.method = GET
-            stdWrap.typolink.useCacheHash = 1
-            stdWrap.typolink.no_cache = 0
+            stdWrap.cObject = TEXT
+            stdWrap.cObject.value = {$site.languageLabels}
         }
 
         # Active
