@@ -5,7 +5,7 @@ config {
     locale_all = de_CH
     htmlTag_langKey = de
 }
-plugin.tx_indexedsearch._DEFAULT_PI_VARS.lang = 1
+plugin.tx_indexedsearch._DEFAULT_PI_VARS.lang = 0
 
 
 
