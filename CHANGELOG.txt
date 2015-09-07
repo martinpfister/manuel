@@ -1,6 +1,17 @@
 # Change Log
 All notable changes to this project will be documented in this file. Syntax according to http://keepachangelog.com/
 
+## [2.0.0-DEV]
+### Added
+
+### Fixed
+
+### Updated
+
+### Removed
+
+
+
 ## [1.3.0]
 ### Added
 - Cleaner textpic rendering, image size (display & rendering) handling, responsiveness.
