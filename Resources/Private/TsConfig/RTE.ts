@@ -2,8 +2,6 @@
 RTE.classes {
     examplestyle {
         name = LLL:EXT:###PACKAGE_KEY###/Resources/Private/Language/Backend.xlf:rte.classes.examplestyle
-        # Hide in pop-up selector
-        noShow = 1
     }
 }
 
