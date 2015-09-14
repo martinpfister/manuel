@@ -2,6 +2,7 @@
 RTE.classes {
     examplestyle {
         name = LLL:EXT:###PACKAGE_KEY###/Resources/Private/Language/Backend.xlf:rte.classes.examplestyle
+        requires = foo-class,bar-class
     }
 }
 
