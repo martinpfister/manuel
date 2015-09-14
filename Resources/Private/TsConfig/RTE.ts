@@ -8,7 +8,12 @@ RTE.classes {
 
 
 RTE.default {
-    contentCSS = EXT:###PACKAGE_KEY###/Resources/Public/Backend/RTE.css
+
+    contentCSS {
+        mainCSS = EXT:###PACKAGE_KEY###/Resources/Public/Backend/RTE.css
+        # Add more RTE css files as needed
+    }
+
     showButtons = orderedlist,unorderedlist,bold,italic,subscript,superscript,link,unlink,blockstyle,textstyle,chMode,removeformat
     keepButtonGroupTogether = 1
     contextMenu.disabled = 1
