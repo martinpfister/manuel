@@ -12,7 +12,7 @@ page {
 
 
     # JS libs header
-    includeJSlibs {
+    includeJSLibs {
         modernizr = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Public/Template/js/modernizr/modernizr.js
     }
 
