@@ -1,15 +1,5 @@
-#typo3-index-php .t3-login-logo {
+#typo3-index-php .typo3-login-logo {
     margin:8% auto;
     display:block;
     max-height:150px;
-}
-#typo3-index-php #support-info {
-    display:block;
-    padding:3%;
-    margin:5% 0;
-    background:rgba(0,0,0,0.2);
-}
-
-#typo3-index-php #support-info * {
-    color:#fff;
 }
