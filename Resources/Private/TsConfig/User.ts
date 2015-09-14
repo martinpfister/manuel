@@ -26,6 +26,10 @@ options {
         pages = 1
         all = 1
     }
+
+    # Set popup window sizes (element browser)
+    popupWindowSize = 900x900
+    RTE.popupWindowSize = 900x900
 }
 
 
