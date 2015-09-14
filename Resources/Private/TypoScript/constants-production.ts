@@ -1,7 +1,6 @@
 # **********************************************************
 #    Extension constants
 # **********************************************************
-#<INCLUDE_TYPOSCRIPT: source="FILE:./../Extensions/news/constants.ts">
 #<INCLUDE_TYPOSCRIPT: source="FILE:./../Extensions/indexed_search/constants.ts">
 
 
