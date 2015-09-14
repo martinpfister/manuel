@@ -3,7 +3,6 @@ config {
     xmlprologue = none
     xhtml_cleaning = all
     disablePrefixComment = 1
-    meaningfulTempFilePrefix = 100
 
     index_enable = 1
     index_externals = 1
