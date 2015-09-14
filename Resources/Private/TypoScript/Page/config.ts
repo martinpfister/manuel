@@ -1,7 +1,6 @@
 config {
     doctype = html5
     xmlprologue = none
-    xhtml_cleaning = all
     disablePrefixComment = 1
 
     index_enable = 1
