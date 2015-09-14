@@ -21,7 +21,6 @@ page {
     includeJSFooterlibs {
         jQuery = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Public/Template/js/jquery/jquery-1.11.1.min.js
         jQueryCookie = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Public/Template/js/jquery/jquery.cookie.js
-        jQueryCookie = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Public/Template/js/jquery/jquery.cookie.js
         jQueryDoubleTapMenu = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Public/Template/js/jquery/jquery.doubleTapMenu.js
         jQueryToggler = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Public/Template/js/jquery/jquery.toggler.js
 
