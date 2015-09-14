@@ -30,6 +30,9 @@ options {
     # Set popup window sizes (element browser)
     popupWindowSize = 900x900
     RTE.popupWindowSize = 900x900
+
+    # Always show 'extended view' in file list
+    file_list.enableDisplayBigControlPanel = activated
 }
 
 
