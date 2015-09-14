@@ -4,7 +4,6 @@ config {
     xhtml_cleaning = all
     disablePrefixComment = 1
     meaningfulTempFilePrefix = 100
-    noPageTitle = 2
 
     index_enable = 1
     index_externals = 1
@@ -41,6 +40,27 @@ config {
     cache_period = 1200
     sendCacheHeaders = 1
 
+    # Title
+    pageTitle.cObject = COA
+    pageTitle.cObject {
+        10 = TEXT
+        10.value = {$site.pageTitlePrefix}
+        # Insert space character between prefix and page title, if prefix is set
+        10.stdWrap.noTrimWrap = || |
+        10.stdWrap.if.isTrue = {$site.pageTitlePrefix}
+
+        20 = TEXT
+        20.field = subtitle // title
+
+        30 = TEXT
+        30.value = {$site.pageTitleSuffix}
+        # Insert space character between page title and suffix, if suffix is set
+        30.stdWrap.noTrimWrap = | ||
+        30.stdWrap.if.isTrue = {$site.pageTitleSuffix}
+    }
+
+
+    # Version & creator notes in a header comment
     headerComment (
         Stämpfli AG // www.staempfli.com
 

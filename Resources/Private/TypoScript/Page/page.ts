@@ -18,20 +18,6 @@ page {
         # twitter cards tags (activated/deativated by constant "").
     }
 
-    # Page title
-    headerData.15 = COA
-    headerData.15 {
-        wrap = <title>|</title>
-        10 = TEXT
-        10.value = {$site.pageTitlePrefix}
-        # Insert space character between prefix and page title, if prefix is set
-        10.stdWrap.noTrimWrap = || |
-        10.stdWrap.if.isTrue = {$site.pageTitlePrefix}
-        20 = TEXT
-        20.field = subtitle // title
-        30 = TEXT
-        30.value = {$site.pageTitleSuffix}
-    }
 
     # BODY tag classes
     bodyTagCObject = COA
