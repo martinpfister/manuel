@@ -53,13 +53,20 @@ temp.socialmediametacontent {
     page.meta {
         # Facebook Open Graph
         og:title < temp.socialmediametacontent.title
+        og:title.attribute = property
         og:site_name < temp.socialmediametacontent.site_name
+        og:site_name.attribute = property
         # Valid types are "article", "website" or "product"
         og:type < temp.socialmediametacontent.openGraphType
+        og:type.attribute = property
         og:locale < config.locale_all
+        og:locale.attribute = property
         og:description < temp.socialmediametacontent.description
+        og:description.attribute = property
         og:url < temp.socialmediametacontent.url
+        og:url.attribute = property
         og:image < temp.socialmediametacontent.image
+        og:image.attribute = property
 
         # Twitter card
         # Valid types are "summary", "summary_large_image", "photo", "gallery", "app", "player", "product"
