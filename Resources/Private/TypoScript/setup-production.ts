@@ -32,7 +32,6 @@
 <INCLUDE_TYPOSCRIPT: source="FILE:./Content/lib/logo.ts">
 <INCLUDE_TYPOSCRIPT: source="FILE:./Content/lib/menu.ts">
 <INCLUDE_TYPOSCRIPT: source="FILE:./Content/lib/menu-language.ts">
-<INCLUDE_TYPOSCRIPT: source="FILE:./Content/lib/pagetitle.ts">
 <INCLUDE_TYPOSCRIPT: source="FILE:./Content/lib/currentyear.ts">
 <INCLUDE_TYPOSCRIPT: source="FILE:./Content/lib/skiplinks.ts">
 
