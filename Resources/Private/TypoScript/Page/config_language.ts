@@ -1,21 +1,18 @@
 # Default language
 config {
     sys_language_uid = 0
-    language = de
+    sys_language_isocode = de
     locale_all = de_CH
-    htmlTag_langKey = de
 }
 plugin.tx_indexedsearch._DEFAULT_PI_VARS.lang = 0
-
 
 
 # Français
 [globalVar = GP:L=1]
     config {
         sys_language_uid = 1
-        language = fr
+        sys_language_isocode = fr
         locale_all = fr_FR
-        htmlTag_langKey = fr
     }
     plugin.tx_indexedsearch._DEFAULT_PI_VARS.lang = 1
 [global]
@@ -25,9 +22,8 @@ plugin.tx_indexedsearch._DEFAULT_PI_VARS.lang = 0
 [globalVar = GP:L=2]
     config {
         sys_language_uid = 2
-        language = it
+        sys_language_isocode = it
         locale_all = it_IT
-        htmlTag_langKey = it
     }
     plugin.tx_indexedsearch._DEFAULT_PI_VARS.lang = 2
 [global]
@@ -37,9 +33,13 @@ plugin.tx_indexedsearch._DEFAULT_PI_VARS.lang = 0
 [globalVar = GP:L=3]
     config {
         sys_language_uid = 3
-        language = en
+        sys_language_isocode = en
         locale_all = en_GB
-        htmlTag_langKey = en
     }
     plugin.tx_indexedsearch._DEFAULT_PI_VARS.lang = 3
 [global]
+
+
+# Copy language isocode to 'language' and html tag language key
+config.language < config.sys_language_isocode
+config.htmlTag_langKey < config.sys_language_isocode
