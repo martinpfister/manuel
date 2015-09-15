@@ -1,8 +1,34 @@
 # Page template
 page.10 = FLUIDTEMPLATE
 page.10 {
-    partialRootPath = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Private/Partials/
-    layoutRootPath = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Private/Layouts/
+
+    templateRootPaths {
+        10 = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Private/Templates/Page
+    }
+    partialRootPaths {
+        10 = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Private/Partials
+    }
+    layoutRootPaths {
+        10 = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Private/Layouts
+    }
+
+
+    # Get template file name dynamically
+    templateName = TEXT
+    templateName.stdWrap {
+        cObject = TEXT
+        cObject {
+            data = levelfield:-2,backend_layout_next_level,slide
+            override.field = backend_layout
+            # Split selected layout ([extkey]__BackendLayoutName) by '__' and return last part as layout name
+            split {
+                token = __
+                returnKey = 1
+            }
+        }
+        ifEmpty = SingleColumn
+    }
+
 
     # Passing values to FLUIDTEMPLATE for later use
     settings {
@@ -20,20 +46,4 @@ page.10 {
         pagetitle.data = page:title
     }
 
-
-    file.stdWrap.cObject = CASE
-    file.stdWrap.cObject {
-        key.data = levelfield:-1, backend_layout_next_level, slide
-        key.override.field = backend_layout
-
-        # Default layout
-        default = TEXT
-        default.value = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Private/Templates/Page/SingleColumn.html
-
-        # Layouts
-        {$plugin.templatebootstrap.packageKey}__SingleColumn = TEXT
-        {$plugin.templatebootstrap.packageKey}__SingleColumn.value = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Private/Templates/Page/SingleColumn.html
-        {$plugin.templatebootstrap.packageKey}__TwoColumns = TEXT
-        {$plugin.templatebootstrap.packageKey}__TwoColumns.value = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Private/Templates/Page/TwoColumns.html
-    }
 }
