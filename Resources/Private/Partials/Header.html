@@ -1,12 +1,19 @@
-<div class="row">
-    <div class="small-12 medium-6 columns">
-        <f:cObject typoscriptObjectPath="lib.logo" />
-    </div>
-    <div class="small-12 medium-6 columns">
-        <f:cObject typoscriptObjectPath="lib.menu-language" />
-    </div>
-</div>
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 
-<f:cObject typoscriptObjectPath="lib.menu" />
 
-<h1>{pagetitle}</h1>
+    <div class="row">
+        <div class="small-12 medium-6 columns">
+            <f:cObject typoscriptObjectPath="lib.logo" />
+        </div>
+        <div class="small-12 medium-6 columns">
+            <f:cObject typoscriptObjectPath="lib.menu-language" />
+        </div>
+    </div>
+
+    <f:cObject typoscriptObjectPath="lib.menu" />
+
+    <h1>{pagetitle}</h1>
+
+
+</html>
