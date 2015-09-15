@@ -18,7 +18,6 @@ config {
     simulateStaticDocuments = 0
     absRefPrefix = /
     tx_realurl_enable = {$site.enableRealURL}
-    prefixLocalAnchors >
 
     # Spam
     spamProtectEmailAddresses = -2
