@@ -6,18 +6,30 @@ use \TYPO3\CMS\Core\Utility\GeneralUtility;
 use \TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use \TYPO3\CMS\Backend\Sprite\SpriteManager;
 
+
 /******************************
  * Backend skinning
  *****************************/
 
-$GLOBALS['TBE_STYLES']['logo_login'] = '/typo3conf/ext/' . $_EXTKEY . '/Resources/Public/Backend/Skin/img/logo_login.png';
+// Read extension 'backend' configuration
+$backendExtConf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['backend']);
+// Set login logo, if it has not previously been set
+if (empty($backendExtConf['loginLogo'])) {
+	$backendExtConf['loginLogo'] = 'EXT:' . $_EXTKEY . '/Resources/Public/Backend/Skin/img/logo_login.png';
+}
+// Re-serialize 'backend' extension configuration
+$GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['backend'] = serialize($backendExtConf);
 
+
+// Set backend skin
 $GLOBALS['TBE_STYLES']['skins'][$_EXTKEY .'_skin'] = array();
 $GLOBALS['TBE_STYLES']['skins'][$_EXTKEY .'_skin']['name'] = $_EXTKEY .' skin';
 $GLOBALS['TBE_STYLES']['skins'][$_EXTKEY .'_skin']['stylesheetDirectories'] = array(
     'structure' => 'EXT:'. $_EXTKEY .'/Resources/Public/Backend/Skin/',
     'visual' => 'EXT:'. $_EXTKEY .'/Resources/Public/Backend/Skin/',
 );
+
+
 /******************************
  * Embed static TS
  ******************************/
