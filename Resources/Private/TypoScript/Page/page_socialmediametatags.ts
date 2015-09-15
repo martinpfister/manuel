@@ -45,62 +45,6 @@ temp.socialmediametacontent {
 }
 
 
-# **********************************************************
-# Override values for news detail view
-# **********************************************************
-[globalVar = GP:tx_news_pi1|news > 0]
-    temp.socialmediametacontent {
-
-        title >
-        title.cObject = COA
-        title.cObject {
-            10 = TEXT
-            10 {
-                data = GP:tx_news_pi1|news
-                wrap = {DB:tx_news_domain_model_news:|:title}
-                insertData = 1
-                if.isFalse.cObject = TEXT
-                if.isFalse.cObject {
-                    data = GP:tx_news_pi1|news
-                    wrap = {DB:tx_news_domain_model_news:|:alternative_title}
-                    insertData = 1
-                }
-            }
-            20 < .10.if.isFalse.cObject
-        }
-
-        description >
-        description.cObject = COA
-        description.cObject {
-            10 = TEXT
-            10 {
-                data = GP:tx_news_pi1|news
-                wrap = {DB:tx_news_domain_model_news:|:teaser}
-                insertData = 1
-                if.isFalse.cObject = TEXT
-                if.isFalse.cObject {
-                    data = GP:tx_news_pi1|news
-                    wrap = {DB:tx_news_domain_model_news:|:description}
-                    insertData = 1
-                }
-            }
-            20 < .10.if.isFalse.cObject
-        }
-
-
-        image.cObject.references {
-            data =
-            uid.data = GP:tx_news_pi1|news
-            table = tx_news_domain_model_news
-            fieldName = fal_media
-        }
-
-        # Social network specific values
-        openGraphType = article
-    }
-[global]
-
-
 
 # **********************************************************
 # Create tags - if this feature is enabled
