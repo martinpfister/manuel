@@ -127,7 +127,6 @@ class BackendLayoutDataProvider implements \TYPO3\CMS\Backend\View\BackendLayout
 		$configs = Array();
 		$templateBootstrapPackageKey = $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['Staempfli/TemplateBootstrap']['PackageKey'];
 		$directory = GeneralUtility::getFileAbsFileName('EXT:'. $templateBootstrapPackageKey .'/Resources/Private/TypoScript/BackendLayouts/');
-		$templateKeys = Array();
 		$filesOfDirectory = GeneralUtility::getFilesInDir($directory, 'ts', TRUE);
 		foreach ($filesOfDirectory as $file) {
 			$fileBaseName = basename($file);
