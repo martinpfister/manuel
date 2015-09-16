@@ -182,7 +182,7 @@ class PageNotFoundHandler {
         $message = $params['reasonText'] .'.<br /><br />PageNotFoundHandler could not handle the request. Either the maximum number of '.
             'redirects ('. $maxNumberOfRedirects .') have been reached or no target page has been configured. <br /><br />' .
             '<br />URL: "' . $params['currentUrl'] . '"';
-        $messagePage = GeneralUtility::makeInstance('TYPO3\\CMS\\Core\\Messaging\\ErrorpageMessage', $message, $title);
+        $messagePage = GeneralUtility::makeInstance(\TYPO3\CMS\Core\Messaging\ErrorpageMessage::class, $message, $title);
         $messagePage->output();
         die;
     }
