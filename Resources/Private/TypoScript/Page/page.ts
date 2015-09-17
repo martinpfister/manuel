@@ -13,7 +13,11 @@ page {
         keywords.override.data = register:newsKeywords
         description.field = description
         abstract.field = abstract
+
         robots = INDEX,FOLLOW
+        robots.override = NOINDEX.NOFOLLOW
+        robots.override.if.isTrue.field = no_search
+
         # See page_socialmediametatags.ts for facebook open graph and
         # twitter cards tags (activated/deativated by constant "").
     }
