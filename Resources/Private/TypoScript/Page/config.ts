@@ -5,6 +5,7 @@ config {
 
     index_enable = 1
     index_externals = 1
+    index_metatags = 0
 
     # remove inline CSS/JS to external
     removeDefaultJS = external
