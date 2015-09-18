@@ -1,9 +1,33 @@
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:indexed_search/Configuration/TypoScript/setup.txt">
 <INCLUDE_TYPOSCRIPT: source="FILE:./locallangoverrides.ts">
 
+
 # Plugin configuration
 # Mostly copied from the original system extension.
 plugin.tx_indexedsearch {
+
+
+    # Error message, if wrong plugin
+    #(non-fluid-based) has been chosen
+    stdWrap.override {
+        cObject = TEXT
+        cObject.value (
+            <p class="error">ERROR (indexed_search). You've chosen the 'wrong' frontend plugin.
+            Right now, the setup is ready for plugin 2 called 'Indexed search (Extbase & Fluid based)'
+            and would most likely not work with the current plugin.<br /><br />
+            You can remove this message and/or edit the configuration in
+            EXT:{$plugin.templatebootstrap.packageKey}/Resources/Private/Extensions/indexed_search/setup.ts</p>
+        )
+        cObject.insertData = 1
+
+        if.value = indexedsearch_pi2
+        if.equals.field = list_type
+        if.negate = 1
+    }
+
+    # Remove any default styles
+    _CSS_DEFAULT_STYLE >
+
 
     search {
         rootPidList = {$site.pageUids.home}
@@ -68,7 +92,8 @@ plugin.tx_indexedsearch {
 
     }
 
-
+    # Set template/partial/layout paths.
+    # Use original paths as fallback.
     view {
         templateRootPath >
         partialRootPath >
