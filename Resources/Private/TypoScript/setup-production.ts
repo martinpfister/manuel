@@ -12,7 +12,7 @@
 # **********************************************************
 # Extensions setups
 # **********************************************************
-#<INCLUDE_TYPOSCRIPT: source="FILE:./../Extensions/indexed_search/setup.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:./../Extensions/indexed_search/setup.ts">
 
 # **********************************************************
 # Load typoscript template objects
