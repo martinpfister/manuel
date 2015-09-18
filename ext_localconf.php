@@ -32,15 +32,17 @@ if (TYPO3_MODE === 'FE') {
 ExtensionManagementUtility::addTypoScriptConstants('plugin.templatebootstrap.packageKey='. $_EXTKEY);
 ExtensionManagementUtility::addTypoScriptConstants('plugin.templatebootstrap.packageVersion='. $packageVersion);
 
+$environment = $settings['environment'];
+ExtensionManagementUtility::addTypoScriptConstants('plugin.templatebootstrap.environment='. $environment);
+
+
 # Do not change this. It is used to identify which templatebootstrap version this package is originally derived from.
 ExtensionManagementUtility::addTypoScriptConstants('plugin.templatebootstrap.bootstrapPackageVersion='. ExtensionManagementUtility::getExtensionVersion($_EXTKEY));
 
-# Load constants & setup according to chosen environment
-$environment = $settings['environment'];
-if ($environment == 'local' || $environment == 'development' || $environment == 'production') {
-    ExtensionManagementUtility::addTypoScript($_EXTKEY, 'constants', '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:'. $_EXTKEY .'/Resources/Private/TypoScript/constants-'. $environment .'.ts">', $_EXTKEY .'/Configuration/TypoScript/');
-    ExtensionManagementUtility::addTypoScript($_EXTKEY, 'setup', '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:'. $_EXTKEY .'/Resources/Private/TypoScript/setup-'. $environment .'.ts">', $_EXTKEY .'/Configuration/TypoScript/');
-}
+# Load constants & setup
+ExtensionManagementUtility::addTypoScript($_EXTKEY, 'constants', '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:'. $_EXTKEY .'/Resources/Private/TypoScript/constants.ts">', $_EXTKEY .'/Configuration/TypoScript/');
+ExtensionManagementUtility::addTypoScript($_EXTKEY, 'setup', '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:'. $_EXTKEY .'/Resources/Private/TypoScript/setup.ts">', $_EXTKEY .'/Configuration/TypoScript/');
+
 
 # Register extconf variable to use in scripts
 # (such as the layout provider hook)

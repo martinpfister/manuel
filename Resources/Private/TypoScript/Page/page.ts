@@ -14,14 +14,18 @@ page {
         description.field = description
         abstract.field = abstract
 
-        robots = INDEX,FOLLOW
-        robots.override = NOINDEX.NOFOLLOW
-        robots.override.if.isTrue.field = no_search
+        robots = NOINDEX.NOFOLLOW
+        robots.override = INDEX,FOLLOW
+        robots.override.if {
+            isFalse.field = no_search
+            value = development
+            equals = {$plugin.templatebootstrap.environment}
+        }
+
 
         # See page_socialmediametatags.ts for facebook open graph and
         # twitter cards tags (activated/deativated by constant "").
     }
-
 
     # BODY tag classes
     bodyTagCObject = COA
