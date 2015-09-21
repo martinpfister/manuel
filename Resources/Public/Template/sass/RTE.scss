@@ -1,0 +1,82 @@
+/*********************************************
+    This file should only contain styles
+    for the TYPO3 RTE (backend).
+    We'll set some basic formatting
+    according to this site's styles to
+    get the editors closer to the site's
+    styling.
+**********************************************/
+
+/*********************************************
+    Compass
+    See http://compass-style.org/examples/
+    for reference
+**********************************************/
+@import "compass";
+
+/*********************************************
+    Own functions
+**********************************************/
+@import "functions";
+
+/*********************************************
+    Foundation
+**********************************************/
+@import "foundation_settings";
+
+
+/*********************************************
+    Set default values
+**********************************************/
+$primary-color: #222 !default;
+$secondary-color: #e7e7e7 !default;
+$alert-color: #f04124 !default;
+
+$paragraph-font-family: inherit !default;
+$font-family-serif: $paragraph-font-family !default;
+$font-family-sans-serif: $paragraph-font-family !default;
+$paragraph-font-size: 1rem !default;
+$paragraph-line-height: 1.6 !default;
+$paragraph-margin-bottom: rem-calc(20) !default;
+
+$anchor-text-decoration: none !default;
+$anchor-font-color: $primary-color !default;
+
+$list-font-family: $paragraph-font-family !default;
+$list-font-size: $paragraph-font-size !default;
+$list-line-height: $paragraph-line-height !default;
+$list-margin-bottom: $paragraph-margin-bottom !default;
+$list-style-position: outside !default;
+
+
+/*********************************************
+    General / global styles
+**********************************************/
+p {
+  font-size:$paragraph-font-size;
+  font-family:$font-family-sans-serif;
+  line-height:$paragraph-line-height;
+  margin-bottom:$paragraph-margin-bottom;
+}
+i, em { font-family: $font-family-serif; }
+
+a {
+  text-decoration:$anchor-text-decoration;
+  color:$anchor-font-color;
+}
+ul,
+ol,
+dl {
+  font-size: $list-font-size;
+  line-height: $list-line-height;
+  margin-bottom: $list-margin-bottom;
+  list-style-position: $list-style-position;
+  font-family: $list-font-family;
+}
+/*********************************************
+    Custom styles
+**********************************************/
+.examplestyle {
+  border-bottom:1px solid $alert-color;
+  background:$secondary-color;
+}

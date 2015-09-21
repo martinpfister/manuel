@@ -20,32 +20,30 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
 
 
-        // SASS compiler job w/o compass
-        sass: {
-            main: {
-                options: {
-                    sourcemap: true,
-                    unixNewlines: true
-                },
-                files: {
-                    'css/app.css': 'sass/app.scss'
-                }
-            }
-        },
-
-
         // SASS compiler job w/ compass
         compass: {
-            main: {
+            options: {
+                raw:'unixNewlines =:true\n',
+                force: true,
+                relativeAssets: false,
+                httpPath: '/typo3conf/ext/'+ packageKey +'/Resources/Public/Template/',
+                imagesDir:'images',
+                fontsDir:'fonts',
+                sassDir:'sass',
+                sourcemap:true,
+            },
+            // Generate main css
+            app: {
                 options: {
-                    raw:'unixNewlines =:true\n',
-                    force: true,
-                    relativeAssets: false,
-                    httpPath: '/typo3conf/ext/'+ packageKey +'/Resources/Public/Template/',
-                    imagesDir:'images',
-                    fontsDir:'fonts',
-                    sassDir:'sass',
-                    cssDir:'css'
+                    cssDir:'css',
+                    specify: ['sass/app.scss']
+                }
+            },
+            // Generate RTE css
+            rte: {
+                options: {
+                    cssDir:'../Backend/',
+                    specify: ['sass/RTE.scss']
                 }
             }
         },
@@ -111,7 +109,6 @@ module.exports = function(grunt) {
     });
 
     // Load node modules
-    grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
@@ -119,7 +116,6 @@ module.exports = function(grunt) {
 
     // Define tasks
     grunt.registerTask('buildCSSWithCompass', ['compass']);
-    grunt.registerTask('buildCSSWithoutCompass', ['sass']);
     grunt.registerTask('buildCSS', ['buildCSSWithCompass']);
     grunt.registerTask('compressImageAssets', ['imagemin:imageAssets']);
     grunt.registerTask('createIcons', ['exec:generateFavicon', 'exec:generatePackageIcon']);
