@@ -106,7 +106,7 @@ site.icons {
         size = 111
         relAttribute = icon
         additionalAttributes = myattr="myvalue"
-        iconSourceVersion = larger
+        iconSourceFileName = icon-larger
         colorOverlay = #cccccc
         backgroundColor = #ff0000
     }
@@ -130,11 +130,11 @@ site.icons {
     6.additionalAttributes = type="image/png"
 
     7.size = 192
-    7.iconSourceVersion = larger
+    7.iconSourceVersion = icon-larger
     7.additionalAttributes = type="image/png"
 
     8.size = 256
-    8.iconSourceVersion = larger
+    8.iconSourceFileName = icon-larger
     8.additionalAttributes = type="image/png"
 
     # You may specify up to 15 icons here.

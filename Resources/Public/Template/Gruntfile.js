@@ -10,7 +10,7 @@ module.exports = function(grunt) {
     var compressableImageFormats = 'jpg,gif,svg,jpeg,png';
 
     // Icon file paths
-    var iconSourceFile = '../../Private/IconSources/default.ai';
+    var iconSourceFile = '../../Private/LogoSources/icon-default.svg';
     var iconSourceFileAbsolute = path.resolve(iconSourceFile +'[0]');
     var faviconTargetFileAbsolute = path.resolve(packagePath +'/Resources/Public/Template/images/favicon.ico');
     var packageIconTargetFileAbsolute = path.resolve(packagePath + '/ext_icon.gif');
@@ -79,7 +79,7 @@ module.exports = function(grunt) {
                 command: 'convert -colorspace RGB -background transparent -define icon:auto-resize "' + iconSourceFileAbsolute + '" "'+ faviconTargetFileAbsolute +'"'
             },
             generatePackageIcon: {
-                command: 'convert -colorspace RGB -alpha remove -antialias -background white -resize 32x32 "' + iconSourceFileAbsolute + '" "'+ packageIconTargetFileAbsolute +'"'
+                command: 'convert -colorspace RGB -alpha remove -antialias -background white "' + iconSourceFileAbsolute + '" "'+ packageIconTargetFileAbsolute +'"'
             }
         },
 

@@ -1,6 +1,7 @@
 # **********************************************************
 #   This setup generates all the needed icon images
-#   for the site (favicons, hi-res icons, etc.)
+#   for the site (excluding favicon which needs to
+#   be generated locally (grunt).
 #
 #   Structure (roughly):
 #   - 10 Loads REGISTER with icon source file path
@@ -15,7 +16,7 @@ page.headerData.20 {
 
     // Load icon path into register
     10 = LOAD_REGISTER
-    10.iconRelPath = Resources/Private/IconSources
+    10.iconRelPath = Resources/Private/LogoSources
 
     // All the icon renderings grouped by a COA.
     20 = COA
@@ -32,9 +33,9 @@ page.headerData.20 {
             iconSize = {$site.icons.1.size}
             iconSize.insertData = 1
 
-            iconSourceVersion = default
-            iconSourceVersion {
-                override = {$site.icons.1.iconSourceVersion}
+            iconSourceFileName = icon-default
+            iconSourceFileName {
+                override = {$site.icons.1.iconSourceFileName}
                 override.insertData = 1
                 override.required = 1
             }
@@ -68,6 +69,8 @@ page.headerData.20 {
             file {
                 // Force png rendering
                 ext = png
+                # Add crop parameter to force re-rendering svg as png
+                crop = 0,0
 
                 // Collect ImageMagick parameters
                 params.cObject = COA
@@ -107,7 +110,7 @@ page.headerData.20 {
 
                 // Build the path to the original file.
                 // We're using .data property to avoid (invalid) nested curly braces.
-                import.data = PATH:EXT:{$plugin.templatebootstrap.packageKey}/{register:iconRelPath}/{register:iconSourceVersion}.ai
+                import.data = PATH:EXT:{$plugin.templatebootstrap.packageKey}/{register:iconRelPath}/{register:iconSourceFileName}.svg
                 import.data.insertData = 1
 
                 width = {register:iconSize}c
@@ -135,7 +138,7 @@ page.headerData.20 {
     20.20 < .20.10
     20.20.10 {
         iconSize = {$site.icons.2.size}
-        iconSourceVersion.override = {$site.icons.2.iconSourceVersion}
+        iconSourceFileName.override = {$site.icons.2.iconSourceFileName}
         colorOverlay = {$site.icons.2.colorOverlay}
         backgroundColor = {$site.icons.2.backgroundColor}
         relAttribute.override = {$site.icons.2.relAttribute}
@@ -145,7 +148,7 @@ page.headerData.20 {
     20.30 < .20.10
     20.30.10 {
         iconSize = {$site.icons.3.size}
-        iconSourceVersion.override = {$site.icons.3.iconSourceVersion}
+        iconSourceFileName.override = {$site.icons.3.iconSourceFileName}
         colorOverlay = {$site.icons.3.colorOverlay}
         backgroundColor = {$site.icons.3.backgroundColor}
         relAttribute.override = {$site.icons.3.relAttribute}
@@ -155,7 +158,7 @@ page.headerData.20 {
     20.40 < .20.10
     20.40.10 {
         iconSize = {$site.icons.4.size}
-        iconSourceVersion.override = {$site.icons.4.iconSourceVersion}
+        iconSourceFileName.override = {$site.icons.4.iconSourceFileName}
         colorOverlay = {$site.icons.4.colorOverlay}
         backgroundColor = {$site.icons.4.backgroundColor}
         relAttribute.override = {$site.icons.4.relAttribute}
@@ -165,7 +168,7 @@ page.headerData.20 {
     20.50 < .20.10
     20.50.10 {
         iconSize = {$site.icons.5.size}
-        iconSourceVersion.override = {$site.icons.5.iconSourceVersion}
+        iconSourceFileName.override = {$site.icons.5.iconSourceFileName}
         colorOverlay = {$site.icons.5.colorOverlay}
         backgroundColor = {$site.icons.5.backgroundColor}
         relAttribute.override = {$site.icons.5.relAttribute}
@@ -175,7 +178,7 @@ page.headerData.20 {
     20.60 < .20.10
     20.60.10 {
         iconSize = {$site.icons.6.size}
-        iconSourceVersion.override = {$site.icons.6.iconSourceVersion}
+        iconSourceFileName.override = {$site.icons.6.iconSourceFileName}
         colorOverlay = {$site.icons.6.colorOverlay}
         backgroundColor = {$site.icons.6.backgroundColor}
         relAttribute.override = {$site.icons.6.relAttribute}
@@ -185,7 +188,7 @@ page.headerData.20 {
     20.70 < .20.10
     20.70.10 {
         iconSize = {$site.icons.7.size}
-        iconSourceVersion.override = {$site.icons.7.iconSourceVersion}
+        iconSourceFileName.override = {$site.icons.7.iconSourceFileName}
         colorOverlay = {$site.icons.7.colorOverlay}
         backgroundColor = {$site.icons.7.backgroundColor}
         relAttribute.override = {$site.icons.7.relAttribute}
@@ -195,7 +198,7 @@ page.headerData.20 {
     20.80 < .20.10
     20.80.10 {
         iconSize = {$site.icons.8.size}
-        iconSourceVersion.override = {$site.icons.8.iconSourceVersion}
+        iconSourceFileName.override = {$site.icons.8.iconSourceFileName}
         colorOverlay = {$site.icons.8.colorOverlay}
         backgroundColor = {$site.icons.8.backgroundColor}
         relAttribute.override = {$site.icons.8.relAttribute}
@@ -205,7 +208,7 @@ page.headerData.20 {
     20.90 < .20.10
     20.90.10 {
         iconSize = {$site.icons.9.size}
-        iconSourceVersion.override = {$site.icons.9.iconSourceVersion}
+        iconSourceFileName.override = {$site.icons.9.iconSourceFileName}
         colorOverlay = {$site.icons.9.colorOverlay}
         backgroundColor = {$site.icons.9.backgroundColor}
         relAttribute.override = {$site.icons.9.relAttribute}
@@ -215,7 +218,7 @@ page.headerData.20 {
     20.100 < .20.10
     20.100.10 {
         iconSize = {$site.icons.10.size}
-        iconSourceVersion.override = {$site.icons.10.iconSourceVersion}
+        iconSourceFileName.override = {$site.icons.10.iconSourceFileName}
         colorOverlay = {$site.icons.10.colorOverlay}
         backgroundColor = {$site.icons.10.backgroundColor}
         relAttribute.override = {$site.icons.10.relAttribute}
@@ -225,7 +228,7 @@ page.headerData.20 {
     20.110 < .20.10
     20.110.10 {
         iconSize = {$site.icons.11.size}
-        iconSourceVersion.override = {$site.icons.11.iconSourceVersion}
+        iconSourceFileName.override = {$site.icons.11.iconSourceFileName}
         colorOverlay = {$site.icons.11.colorOverlay}
         backgroundColor = {$site.icons.11.backgroundColor}
         relAttribute.override = {$site.icons.11.relAttribute}
@@ -235,7 +238,7 @@ page.headerData.20 {
     20.120 < .20.10
     20.120.10 {
         iconSize = {$site.icons.12.size}
-        iconSourceVersion.override = {$site.icons.12.iconSourceVersion}
+        iconSourceFileName.override = {$site.icons.12.iconSourceFileName}
         colorOverlay = {$site.icons.12.colorOverlay}
         backgroundColor = {$site.icons.12.backgroundColor}
         relAttribute.override = {$site.icons.12.relAttribute}
@@ -245,7 +248,7 @@ page.headerData.20 {
     20.130 < .20.10
     20.130.10 {
         iconSize = {$site.icons.13.size}
-        iconSourceVersion.override = {$site.icons.13.iconSourceVersion}
+        iconSourceFileName.override = {$site.icons.13.iconSourceFileName}
         colorOverlay = {$site.icons.13.colorOverlay}
         backgroundColor = {$site.icons.13.backgroundColor}
         relAttribute.override = {$site.icons.13.relAttribute}
@@ -255,7 +258,7 @@ page.headerData.20 {
     20.140 < .20.10
     20.140.10 {
         iconSize = {$site.icons.14.size}
-        iconSourceVersion.override = {$site.icons.14.iconSourceVersion}
+        iconSourceFileName.override = {$site.icons.14.iconSourceFileName}
         colorOverlay = {$site.icons.14.colorOverlay}
         backgroundColor = {$site.icons.14.backgroundColor}
         relAttribute.override = {$site.icons.14.relAttribute}
@@ -265,7 +268,7 @@ page.headerData.20 {
     20.150 < .20.10
     20.150.10 {
         iconSize = {$site.icons.15.size}
-        iconSourceVersion.override = {$site.icons.15.iconSourceVersion}
+        iconSourceFileName.override = {$site.icons.15.iconSourceFileName}
         colorOverlay = {$site.icons.15.colorOverlay}
         backgroundColor = {$site.icons.15.backgroundColor}
         relAttribute.override = {$site.icons.15.relAttribute}
