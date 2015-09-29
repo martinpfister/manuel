@@ -18,3 +18,6 @@ error401Uid =
 
 # cat=security; type=boolean; label=Generate trusted hosts pattern on next save: Saves pattern (according to sys_domain table) to AdditionalConfiguration.php. Overrides ['SYS']['trustedHostsPattern']! Example:'^(yourfirstdomain.com|yourotherdomain.com)$'. See T3 security guide.
 generateTrustedHostsPattern = 1
+
+# cat=Database entries; type=string; label=Generate CLI backend users: This creates the desired backend users upon next save. Users will be given a random passwords and the user names will be prefixed with _cli_ automatically!
+createCLIUsers = lowlevel,scheduler,crawler

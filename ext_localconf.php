@@ -48,26 +48,55 @@ ExtensionManagementUtility::addTypoScript($_EXTKEY, 'setup', '<INCLUDE_TYPOSCRIP
 # (such as the layout provider hook)
 $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['Staempfli/TemplateBootstrap']['PackageKey'] = $_EXTKEY;
 
+$GLOBALS['TYPO3_CONF_VARS']['LOG']['Staempfli']['TemplateBootstrap']['writerConfiguration'] = array(
+    \TYPO3\CMS\Core\Log\LogLevel::INFO => array(
+        'TYPO3\\CMS\\Core\\Log\\Writer\\DatabaseWriter' => array(),
+    ),
+);
+
+
 # Use signal 'afterExtensionConfigurationWrite' to handle post installation tasks
 if (TYPO3_MODE === 'BE') {
+    GeneralUtility::requireOnce(ExtensionManagementUtility::extPath($_EXTKEY) . 'Classes/Utility/PostInstallInfoLogger.php');
     GeneralUtility::requireOnce(ExtensionManagementUtility::extPath($_EXTKEY) . 'Classes/Utility/PostInstallFileHandler.php');
+    GeneralUtility::requireOnce(ExtensionManagementUtility::extPath($_EXTKEY) . 'Classes/Utility/PostInstallDatabaseHandler.php');
+
     $signalSlotDispatcher = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\SignalSlot\Dispatcher::class);
 
     // Handle/write robots.txt
     $signalSlotDispatcher->connect(
-        'TYPO3\\CMS\\Extensionmanager\\Controller\\ConfigurationController',
+        \TYPO3\CMS\Extensionmanager\Controller\ConfigurationController::class,
         'afterExtensionConfigurationWrite',
-        'Staempfli\\TemplateBootstrap\\Utility\\PostInstallFileHandler',
+        \Staempfli\TemplateBootstrap\Utility\PostInstallFileHandler::class,
         'handleRobotsTxt'
     );
 
     // Handle/write AdditionalConfiguration.php
     $signalSlotDispatcher->connect(
-        'TYPO3\\CMS\\Extensionmanager\\Controller\\ConfigurationController',
+        \TYPO3\CMS\Extensionmanager\Controller\ConfigurationController::class,
         'afterExtensionConfigurationWrite',
-        'Staempfli\\TemplateBootstrap\\Utility\\PostInstallFileHandler',
+        \Staempfli\TemplateBootstrap\Utility\PostInstallFileHandler::class,
         'writeAdditionalConfiguration'
     );
+
+    // Handle creating DB users (cli)
+    $signalSlotDispatcher->connect(
+        \TYPO3\CMS\Extensionmanager\Controller\ConfigurationController::class,
+        'afterExtensionConfigurationWrite',
+        \Staempfli\TemplateBootstrap\Utility\PostInstallDatabaseHandler::class,
+        'createCLIUsers',
+        true
+    );
+
+    // Extend system information toolbar item (in the top bar in TYPO3 backend)
+    $signalSlotDispatcher->connect(
+        \TYPO3\CMS\Backend\Backend\ToolbarItems\SystemInformationToolbarItem::class,
+        'loadMessages',
+        \Staempfli\TemplateBootstrap\Utility\PostInstallInfoLogger::class,
+        'getMessages',
+        true
+    );
+
 
 }
 

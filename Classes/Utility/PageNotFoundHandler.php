@@ -1,5 +1,5 @@
 <?php
-namespace Staempfli\Templatebootstrap\Utility;
+namespace Staempfli\TemplateBootstrap\Utility;
 /***************************************************************
  *  Copyright notice
  *

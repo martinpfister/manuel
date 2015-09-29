@@ -1,42 +1,38 @@
 <?php
-namespace Staempfli\TemplateBootstrap\Utility;
+namespace Staempfli\Templatebootstrap\Utility;
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use Staempfli\TemplateBootstrap\Utility\PostInstallInfoLogger;
 
 class PostInstallFileHandler {
 
 
-    public function getPackageKey() {
-        return $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['Staempfli/TemplateBootstrap']['PackageKey'];
-    }
-
     /**
      * Creates or replaces robots.txt on save.
      *
-     * @param $newConfiguration
-     * @param $configurationController
+     * @param $packageKey
+     * @param $configuration
      */
-    public function handleRobotsTxt($newConfiguration, $configurationController) {
+    public function handleRobotsTxt($packageKey, $configuration) {
         global $BE_USER;
 
-        $packageKey                 = $this->getPackageKey();
         $robotsTemplateStartMarker  = '# Inserted by ext. '. $packageKey .' - start';
         $robotsHint                 = '# (may be overwritten by ext manager as long as the enclosing comments persist)';
         $robotsTemplateEndMarker    = '# Inserted by ext. '. $packageKey .' - end';
-        $environment = trim($newConfiguration['environment']['value']);
+        $environment = trim($configuration['environment']['value']);
 
         // Quit, if this feature is not enabled at all
-        if(!intval($newConfiguration['writerobots']['value'])) { return; }
+        if(!intval($configuration['writerobots']['value'])) { return; }
 
         // If no environment has been chosen, write log and exit.
         if (empty($environment) || $environment == 'none') {
-            $BE_USER->simplelog('(extension configuration) No environment has been chosen. No robots file written.', $packageKey, 0);
+            PostInstallInfoLogger::log('No environment has been chosen. No robots file written. That\'s ok. Just saying.', PostInstallInfoLogger::MESSAGE_TYPE_INFO, 10);
             return;
         }
 
         $robotsPath = GeneralUtility::getFileAbsFileName('robots.txt');
-        $robotsTemplatePath = GeneralUtility::getFileAbsFileName('EXT:'. $packageKey .'/Initialisation/robots/robots-'. $newConfiguration['environment']['value'] .'.txt');
+        $robotsTemplatePath = GeneralUtility::getFileAbsFileName('EXT:'. $packageKey .'/Initialisation/robots/robots-'. $environment .'.txt');
 
         // Load current robots.txt content
         $replaceRobots = false;
@@ -63,7 +59,7 @@ class PostInstallFileHandler {
             // Check existence of template file
             $robotsTemplateExists = is_file($robotsTemplatePath);
             if (!$robotsTemplateExists) {
-                $BE_USER->simplelog('(extension configuration) Template for robots.txt does not exist ('. $robotsTemplatePath .')!.', $packageKey, 2);
+                PostInstallInfoLogger::log('No environment has been chosen. No robots file written.', PostInstallInfoLogger::MESSAGE_TYPE_SYSTEM_ERROR, 10);
                 return;
             }
 
@@ -78,9 +74,9 @@ class PostInstallFileHandler {
 
             // Write log
             if ($written) {
-                $BE_USER->simplelog('(extension configuration) Robots file has been successfully changed.', $packageKey, 0);
+                PostInstallInfoLogger::log('Robots file has been successfully changed.', PostInstallInfoLogger::MESSAGE_TYPE_OK, 10);
             } else {
-                $BE_USER->writeLog('(extension configuration) Attempted to change robots file, but failed!', $packageKey, 2);
+                PostInstallInfoLogger::log('Attempted to change robots file, but failed!', PostInstallInfoLogger::MESSAGE_TYPE_SYSTEM_ERROR, 10);
             }
         } // if replace robots.txt content
 
@@ -94,14 +90,13 @@ class PostInstallFileHandler {
     /**
      * Renders and writes configuration that needs to go into AdditionalConfiguration.php
      *
-     * @param $newConfiguration
-     * @param $configurationController
+     * @param $packageKey
+     * @param $configuration
      */
-    public function writeAdditionalConfiguration($newConfiguration, $configurationController) {
+    public function writeAdditionalConfiguration($packageKey, $configuration) {
         global $BE_USER;
         $fileContentLines = Array();
 
-        $packageKey = $this->getPackageKey();
         $currentConfiguration = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$packageKey]);
 
         // pageNotFound handler
@@ -110,9 +105,9 @@ class PostInstallFileHandler {
             $currentConfiguration['enableCustomErrorHandling'] = false;
         }
         // rewrite configuration, if necessary.
-        $enableCustomErrorHandler = intval($newConfiguration['enableCustomErrorHandling']['value']);
+        $enableCustomErrorHandler = intval($configuration['enableCustomErrorHandling']['value']);
         if ($enableCustomErrorHandler) {
-            $errorHandlerReference = 'USER_FUNCTION:typo3conf/ext/' . $packageKey . '/Classes/Utility/PageNotFoundHandler.php:Staempfli\\Templatebootstrap\\Utility\\PageNotFoundHandler->pageNotFound';
+            $errorHandlerReference = 'USER_FUNCTION:typo3conf/ext/' . $packageKey . '/Classes/Utility/PageNotFoundHandler.php:Staempfli\\TemplateBootstrap\\Utility\\PageNotFoundHandler->pageNotFound';
             if ($errorHandlerReference !== $GLOBALS['TYPO3_CONF_VARS']['FE']['pageNotFound_handling']) {
                 $fileContentLines[] = '$GLOBALS[\'TYPO3_CONF_VARS\'][\'FE\'][\'pageNotFound_handling\'] = \''. $errorHandlerReference .'\';';
             }
@@ -120,7 +115,7 @@ class PostInstallFileHandler {
 
 
         // trustedHostsPattern
-        if (intval($newConfiguration['generateTrustedHostsPattern']['value'])) {
+        if (intval($configuration['generateTrustedHostsPattern']['value'])) {
             $finalPattern = 'SERVER_NAME';
             $domainsResult = $GLOBALS['TYPO3_DB']->exec_SELECTquery('*', 'sys_domain', NULL);
             if ($GLOBALS['TYPO3_DB']->sql_num_rows($domainsResult)) {
@@ -140,7 +135,6 @@ class PostInstallFileHandler {
         // Nothing to write?
         // abort.
         if (!count($fileContentLines)) {
-            $BE_USER->simplelog('(extension configuration) AdditionalConfiguration.php not written. No content for writing configured in ext configuration.', $packageKey, 0);
             return;
         }
 
@@ -159,9 +153,9 @@ class PostInstallFileHandler {
 
         // Write log
         if ($written) {
-            $BE_USER->simplelog('(extension configuration) AdditionalConfiguration.php written.', $packageKey, 0);
+            PostInstallInfoLogger::log('AdditionalConfiguration.php updated.', PostInstallInfoLogger::MESSAGE_TYPE_OK, 20);
         } else {
-            $BE_USER->writeLog('(extension configuration) Attempted to extend AdditionalConfiguration.php, but failed!', $packageKey, 2);
+            PostInstallInfoLogger::log('Attempted to extend AdditionalConfiguration.php, but failed!', PostInstallInfoLogger::MESSAGE_TYPE_SYSTEM_ERROR, 20);
         }
 
     } // writeAdditionalConfiguration
