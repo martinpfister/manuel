@@ -9,12 +9,16 @@ module.exports = function(grunt) {
 
     var compressableImageFormats = 'jpg,gif,svg,jpeg,png';
 
-    // Icon file paths
+    // Icon/logo file paths
+
+    var logoSourceFile = '../../Private/LogoSources/logo-default.svg';
+    var logoSourceFileAbsolute = path.resolve(logoSourceFile +'[0]');
     var iconSourceFile = '../../Private/LogoSources/icon-default.svg';
     var iconSourceFileAbsolute = path.resolve(iconSourceFile +'[0]');
+
     var faviconTargetFileAbsolute = path.resolve(packagePath +'/Resources/Public/Template/images/favicon.ico');
     var packageIconTargetFileAbsolute = path.resolve(packagePath + '/ext_icon.gif');
-
+    var backendLogoTargetFileAbsolute = path.resolve(packagePath +'/Resources/Public/Backend/Skin/img/logo_login.png');
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -78,6 +82,9 @@ module.exports = function(grunt) {
             },
             generatePackageIcon: {
                 command: 'convert -colorspace RGB -alpha remove -antialias -background white "' + iconSourceFileAbsolute + '" "'+ packageIconTargetFileAbsolute +'"'
+            },
+            generateBackendLogo: {
+                command: 'convert -colorspace RGB -alpha remove -antialias -background white "' + logoSourceFileAbsolute + '" "'+ backendLogoTargetFileAbsolute +'"'
             }
         },
 
@@ -101,9 +108,14 @@ module.exports = function(grunt) {
             },
             iconSource: {
                 files: [iconSourceFile],
-                tasks: ['createIcons'],
+                tasks: ['createLogoBasedImages'],
                 options: { event: ['changed'] }
-            }
+            },
+            logoSource: {
+                files: [logoSourceFile],
+                tasks: ['createBackendLogo'],
+                options: { event: ['changed'] }
+            },
         }
 
     });
@@ -119,8 +131,9 @@ module.exports = function(grunt) {
     grunt.registerTask('buildCSS', ['buildCSSWithCompass']);
     grunt.registerTask('compressImageAssets', ['imagemin:imageAssets']);
     grunt.registerTask('createIcons', ['exec:generateFavicon', 'exec:generatePackageIcon']);
+    grunt.registerTask('createBackendLogo', ['exec:generateBackendLogo']);
 
     // Define default task
-    grunt.registerTask('default', ['buildCSS', 'compressImageAssets', 'createIcons', 'watch']);
+    grunt.registerTask('default', ['buildCSS', 'compressImageAssets', 'createIcons', 'createBackendLogo', 'watch']);
 
 }
