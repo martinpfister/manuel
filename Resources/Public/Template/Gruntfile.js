@@ -84,7 +84,7 @@ module.exports = function(grunt) {
                 command: 'convert -colorspace RGB -alpha remove -antialias -background white "' + iconSourceFileAbsolute + '" "'+ packageIconTargetFileAbsolute +'"'
             },
             generateBackendLogo: {
-                command: 'convert -colorspace RGB -alpha remove -antialias -background white "' + logoSourceFileAbsolute + '" "'+ backendLogoTargetFileAbsolute +'"'
+                command: 'convert -colorspace RGB -background transparent -antialias -resize 500 "' + logoSourceFileAbsolute + '" "'+ backendLogoTargetFileAbsolute +'"'
             }
         },
 
