@@ -27,14 +27,16 @@ use TYPO3\CMS\Backend\Utility\BackendUtility;
 class PostInstallInfoLogger {
 
 
+    // Message 'error' types according to the sys_log table definition
     const MESSAGE_TYPE_INFO = 0;
     const MESSAGE_TYPE_USER_ERROR = 1;
     const MESSAGE_TYPE_SYSTEM_ERROR = 2;
     const MESSAGE_TYPE_SECURITY_NOTICE = 3;
-    const MESSAGE_TYPE_OK = 42; // this is not a valid value for the sys_log table, we're writing a '0',
+    const MESSAGE_TYPE_OK = 42; // this is not a valid value for the sys_log table, we'll write a '0',
                                 // but keep the original type in the 'data' field for later use (i.e. styling)!
 
 
+    // This array maps the 'error' types (above) to the T3 core information statuses.
     static $MESSAGE_TYPE_TO_INFOSTATUS_MAP = Array(
         self::MESSAGE_TYPE_INFO => InformationStatus::STATUS_INFO,
         self::MESSAGE_TYPE_USER_ERROR => InformationStatus::STATUS_ERROR,
@@ -44,17 +46,30 @@ class PostInstallInfoLogger {
     );
 
 
+    // This prefix is added to the beginning of every
+    // log entry in order to be able to filter 'em out
+    // for displaying them to the BE user.
     const MESSAGE_PREFIX = '[templatebootstrap (###packageKey###) install]: ';
 
 
+    /**
+     * Gets package key of this 'templatebootstrap' package
+     * @return mixed
+     */
     static function getPackageKey() {
         return $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['Staempfli/TemplateBootstrap']['PackageKey'];
     }
 
+
+    /**
+     * Generates prefix for any logged messages. Contains package key.
+     * @return mixed
+     */
     public static function getMessagePrefix() {
         $prefix = str_replace('###packageKey###', self::getPackageKey(), self::MESSAGE_PREFIX);
         return $prefix;
     }
+
 
     /**
      * Creates a sys_log entry as the writing API is not yet completely finished.
@@ -85,22 +100,30 @@ class PostInstallInfoLogger {
     } // log
 
 
+
+    /**
+     * Gets messages for the 'SystemInformationToolbarItem' signal slot specifically.
+     * @param $packageKey
+     * @param $configuration
+     * @return array|null
+     */
     public function getMessages($packageKey, $configuration) {
         global $BE_USER;
 
+        // Get last backend log access timestamp as this lets us
+        // filter out any old(er) messages.
         if (isset($BE_USER->uc['systeminformation'])) {
             $systemInformationUc = json_decode($BE_USER->uc['systeminformation'], TRUE);
             if (isset($systemInformationUc['system_BelogLog']['lastAccess'])) {
                 $lastSystemLogAccessTimestamp = $systemInformationUc['system_BelogLog']['lastAccess'];
             }
         }
+        // Fall back to the last 24 hours.
         if (!isset($lastSystemLogAccessTimestamp)) {
             $lastSystemLogAccessTimestamp = time()-(3600)*24;
         }
 
-        $packageKey = $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['Staempfli/TemplateBootstrap']['packageKey'];
-
-        // we can't use the extbase repository here as the required TypoScript may not be parsed yet
+        // We can't use the extbase repository here as the required TypoScript may not be parsed yet
         $messagesResult = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
             '*',
             'sys_log',
@@ -108,12 +131,15 @@ class PostInstallInfoLogger {
             '',
             'tstamp DESC');
 
+        // Error getting messages
         if($GLOBALS['TYPO3_DB']->sql_error()){
             return NULL;
 
+        // No messages found
         } elseif ($GLOBALS['TYPO3_DB']->sql_num_rows($messagesResult) === 0) {
             return NULL;
 
+        // Render messages
         } else {
 
             $alreadyCoveredMessageTypes = Array();
@@ -121,13 +147,18 @@ class PostInstallInfoLogger {
             $finalMessages = Array();
 
             while($message = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($messagesResult)) {
+                // Skip this message, if the 'message type' a.k.a. 'action' has already been
+                // covered. P.e. only show latest entry about re-writing robots.txt
                 if (in_array($message['action'], $alreadyCoveredMessageTypes)) { continue; }
                 $alreadyCoveredMessageTypes[] = $message['action'];
 
+                // Track down highest severety over all found messages
                 if ($highestFoundSeverety < $message['error']) {
                     $highestFoundSeverety = $message['error'];
                 }
 
+                // Get 'error' number as message type,
+                // but override with registered message type in 'log_data' field.
                 $displayMessageType = $message['error'];
                 if ($message['log_data'] !== NULL) {
                     $logData = @unserialize($message['log_data']);
@@ -136,18 +167,22 @@ class PostInstallInfoLogger {
                     }
                 }
 
+                // Get message text & render HTML
                 $messageDetails = str_replace(self::getMessagePrefix(), '', $message['details']);
                 $finalMessages[] = '<li class="text-'. self::$MESSAGE_TYPE_TO_INFOSTATUS_MAP[$displayMessageType] .' templatebootstrap-installlog-entry">'. $messageDetails .'</li>';
             }
 
 
+            // Render whole message block
             $allMessagesString =
                 '<span class="templatebootstrap-installlog-title">Extension manager messages for '. self::getPackageKey() .':</span>'
                 . '<ul class="templatebootstrap-installlog">' . implode('', $finalMessages) . '</ul>'
                 . '<a href="'. BackendUtility::getModuleUrl('system_BelogLog') .'"><span class="text-muted">(Dismiss this by visiting the backend log - click this message.)</span></a>';
 
 
-
+            // Return messages as one.
+            // Note: This return structure may not be changed! This is the format as requested
+            // by the API. Also, adding any subarrays will not work!
             return array(
                 array(
                     'module' => 'system_BelogLog', // Tells the message where to go on click

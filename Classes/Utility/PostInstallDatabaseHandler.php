@@ -36,13 +36,14 @@ class PostInstallDatabaseHandler {
      */
     public function createCLIUsers($packageKey, $configuration, $configurationController) {
 
-
+        // Get cli user names that supposedly need to be created
         $userNames = GeneralUtility::trimExplode(',',$configuration['createCLIUsers']['value']);
         foreach($userNames as $userName) {
 
             $cliUserName = '_cli_'. $userName;
             $cliUserNameQuoted = $GLOBALS['TYPO3_DB']->fullQuoteStr($cliUserName, 'be_users');
 
+            // Check, if user exists already
             $userExistsResult = $GLOBALS['TYPO3_DB']->exec_SELECTquery('*', 'be_users', 'username='. $cliUserNameQuoted);
             if ($GLOBALS['TYPO3_DB']->sql_error()) {
 
@@ -110,7 +111,10 @@ class PostInstallDatabaseHandler {
     } // function createCLIUsers
 
 
-
+    /**
+     * Creates random password for cli users. Note that this password is not needed by anyone!
+     * @return string
+     */
     public function getRandomPassword() {
         $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?=)(/&%ç*£àé[]}{-*/+.;:";
         $randomPassword = substr(str_shuffle($chars),0,5) . substr(str_shuffle($chars),0,5) . substr(str_shuffle($chars),0,5) . substr(str_shuffle($chars),0,5);
