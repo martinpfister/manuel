@@ -15,7 +15,7 @@ class PostInstallFileHandler {
      * @param $packageKey
      * @param $configuration
      */
-    public function handleRobotsTxt($packageKey, $configuration, $test) {
+    public function handleRobotsTxt($packageKey, $configuration) {
 
         // Only (re-write) robots.txt on configuration save of template bootstrap package
         if (TemplateBootstrapUtility::getPackageKey() !== $packageKey) { return; }
@@ -65,7 +65,7 @@ class PostInstallFileHandler {
             // Check existence of template file
             $robotsTemplateExists = is_file($robotsTemplatePath);
             if (!$robotsTemplateExists) {
-                PostInstallInfoLogger::log('No environment has been chosen. No robots file written.', PostInstallInfoLogger::MESSAGE_TYPE_SYSTEM_ERROR, 10);
+                PostInstallInfoLogger::log('Wanted to write robots.txt, but there is no template defined for current environment!', PostInstallInfoLogger::MESSAGE_TYPE_SYSTEM_ERROR, 10);
                 return;
             }
 

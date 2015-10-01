@@ -58,6 +58,13 @@ $GLOBALS['TYPO3_CONF_VARS']['LOG']['Staempfli']['TemplateBootstrap']['writerConf
 # Use signal 'afterExtensionConfigurationWrite' to handle post installation tasks
 if (TYPO3_MODE === 'BE') {
 
+    // These classes need to be manually included as the signal slot dispatcher
+    // does not check the autoload configuration!
+    GeneralUtility::requireOnce(ExtensionManagementUtility::extPath($_EXTKEY) . 'Classes/Utility/TemplateBootstrapUtility.php');
+    GeneralUtility::requireOnce(ExtensionManagementUtility::extPath($_EXTKEY) . 'Classes/Utility/PostInstall/PostInstallInfoLogger.php');
+    GeneralUtility::requireOnce(ExtensionManagementUtility::extPath($_EXTKEY) . 'Classes/Utility/PostInstall/PostInstallFileHandler.php');
+    GeneralUtility::requireOnce(ExtensionManagementUtility::extPath($_EXTKEY) . 'Classes/Utility/PostInstall/PostInstallDatabaseHandler.php');
+
     $signalSlotDispatcher = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\SignalSlot\Dispatcher::class);
 
     // Handle/write robots.txt
