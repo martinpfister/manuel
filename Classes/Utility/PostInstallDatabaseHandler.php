@@ -36,6 +36,9 @@ class PostInstallDatabaseHandler {
      */
     public function createCLIUsers($packageKey, $configuration, $configurationController) {
 
+        // Only create CLI users on configuration save of template bootstrap package
+        if (TemplateBootstrapUtility::getPackageKey() !== $packageKey) { return; }
+
         // Get cli user names that supposedly need to be created
         $userNames = GeneralUtility::trimExplode(',',$configuration['createCLIUsers']['value']);
         foreach($userNames as $userName) {

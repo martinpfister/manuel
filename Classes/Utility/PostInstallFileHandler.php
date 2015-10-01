@@ -14,7 +14,12 @@ class PostInstallFileHandler {
      * @param $packageKey
      * @param $configuration
      */
-    public function handleRobotsTxt($packageKey, $configuration) {
+    public function handleRobotsTxt($packageKey, $configuration, $test) {
+
+        // Only (re-write) robots.txt on configuration save of template bootstrap package
+        if (TemplateBootstrapUtility::getPackageKey() !== $packageKey) { return; }
+
+
         global $BE_USER;
 
         $robotsTemplateStartMarker  = '# Inserted by ext. '. $packageKey .' - start';
@@ -94,6 +99,11 @@ class PostInstallFileHandler {
      * @param $configuration
      */
     public function writeAdditionalConfiguration($packageKey, $configuration) {
+
+        // Only write additional configuration on configuration save of template bootstrap package
+        if (TemplateBootstrapUtility::getPackageKey() !== $packageKey) { return; }
+
+
         global $BE_USER;
         $fileContentLines = Array();
 
