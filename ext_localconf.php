@@ -57,10 +57,6 @@ $GLOBALS['TYPO3_CONF_VARS']['LOG']['Staempfli']['TemplateBootstrap']['writerConf
 
 # Use signal 'afterExtensionConfigurationWrite' to handle post installation tasks
 if (TYPO3_MODE === 'BE') {
-    GeneralUtility::requireOnce(ExtensionManagementUtility::extPath($_EXTKEY) . 'Classes/Utility/TemplateBootstrapUtility.php');
-    GeneralUtility::requireOnce(ExtensionManagementUtility::extPath($_EXTKEY) . 'Classes/Utility/PostInstall/PostInstallInfoLogger.php');
-    GeneralUtility::requireOnce(ExtensionManagementUtility::extPath($_EXTKEY) . 'Classes/Utility/PostInstall/PostInstallFileHandler.php');
-    GeneralUtility::requireOnce(ExtensionManagementUtility::extPath($_EXTKEY) . 'Classes/Utility/PostInstall/PostInstallDatabaseHandler.php');
 
     $signalSlotDispatcher = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\SignalSlot\Dispatcher::class);
 
