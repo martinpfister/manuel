@@ -53,20 +53,12 @@ class PostInstallInfoLogger {
 
 
     /**
-     * Gets package key of this 'templatebootstrap' package
-     * @return mixed
-     */
-    static function getPackageKey() {
-        return $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['Staempfli/TemplateBootstrap']['PackageKey'];
-    }
-
-
-    /**
      * Generates prefix for any logged messages. Contains package key.
+     * @var $packageKey Package key to use for the message prefix.
      * @return mixed
      */
-    public static function getMessagePrefix() {
-        $prefix = str_replace('###packageKey###', self::getPackageKey(), self::MESSAGE_PREFIX);
+    public static function getMessagePrefix($packageKey) {
+        $prefix = str_replace('###packageKey###', $packageKey, self::MESSAGE_PREFIX);
         return $prefix;
     }
 
@@ -83,6 +75,9 @@ class PostInstallInfoLogger {
     public static function log($message, $messageType=0, $actionNumber=0) {
         global $BE_USER;
 
+        $postVars = \TYPO3\CMS\Core\Utility\GeneralUtility::_POST('tx_extensionmanager_tools_extensionmanagerextensionmanager');
+        $packageKey = $postVars['extensionKey'];
+
         $data = Array('displayMessageType' => $messageType);
         $errorNumber = $messageType;
 
@@ -93,7 +88,7 @@ class PostInstallInfoLogger {
             $actionNumber,      // action
             $errorNumber,
             0,      // details no
-            self::getMessagePrefix() . $message,
+            self::getMessagePrefix($packageKey) . $message,
             $data // data array
         );
 
@@ -103,12 +98,14 @@ class PostInstallInfoLogger {
 
     /**
      * Gets messages for the 'SystemInformationToolbarItem' signal slot specifically.
-     * @param $packageKey
-     * @param $configuration
+     * @param $originalInformation
+     * @param $class
      * @return array|null
      */
-    public function getMessages($packageKey, $configuration) {
+    public function getTemplateBootstrapLogMessages($originalInformation, $class) {
         global $BE_USER;
+
+        $packageKey = TemplateBootstrapUtility::getPackageKey();
 
         // Get last backend log access timestamp as this lets us
         // filter out any old(er) messages.
@@ -127,7 +124,7 @@ class PostInstallInfoLogger {
         $messagesResult = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
             '*',
             'sys_log',
-            'tstamp >= ' . $lastSystemLogAccessTimestamp . ' AND userid='. $BE_USER->user['uid'] .' AND details LIKE "'. self::getMessagePrefix() .'%"',
+            'tstamp >= ' . $lastSystemLogAccessTimestamp . ' AND userid='. $BE_USER->user['uid'] .' AND details LIKE "'. self::getMessagePrefix($packageKey) .'%"',
             '',
             'tstamp DESC');
 
@@ -168,14 +165,14 @@ class PostInstallInfoLogger {
                 }
 
                 // Get message text & render HTML
-                $messageDetails = str_replace(self::getMessagePrefix(), '', $message['details']);
+                $messageDetails = str_replace(self::getMessagePrefix($packageKey), '', $message['details']);
                 $finalMessages[] = '<li class="text-'. self::$MESSAGE_TYPE_TO_INFOSTATUS_MAP[$displayMessageType] .' templatebootstrap-installlog-entry">'. $messageDetails .'</li>';
             }
 
 
             // Render whole message block
             $allMessagesString =
-                '<span class="templatebootstrap-installlog-title">Extension manager messages for '. self::getPackageKey() .':</span>'
+                '<span class="templatebootstrap-installlog-title">Extension manager messages for '. $packageKey .':</span>'
                 . '<ul class="templatebootstrap-installlog">' . implode('', $finalMessages) . '</ul>'
                 . '<a href="'. BackendUtility::getModuleUrl('system_BelogLog') .'"><span class="text-muted">(Dismiss this by visiting the backend log - click this message.)</span></a>';
 
@@ -196,6 +193,6 @@ class PostInstallInfoLogger {
 
     } //getMessages
 
-} // class PostInstallFileHandler
+} // class PostInstallInfoLogger
 
 ?>

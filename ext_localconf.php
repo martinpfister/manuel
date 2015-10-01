@@ -85,8 +85,7 @@ if (TYPO3_MODE === 'BE') {
         \TYPO3\CMS\Extensionmanager\Controller\ConfigurationController::class,
         'afterExtensionConfigurationWrite',
         \Staempfli\TemplateBootstrap\Utility\PostInstallDatabaseHandler::class,
-        'createCLIUsers',
-        true
+        'createCLIUsers'
     );
 
     // Extend system information toolbar item (in the top bar in TYPO3 backend)
@@ -94,8 +93,7 @@ if (TYPO3_MODE === 'BE') {
         \TYPO3\CMS\Backend\Backend\ToolbarItems\SystemInformationToolbarItem::class,
         'loadMessages',
         \Staempfli\TemplateBootstrap\Utility\PostInstallInfoLogger::class,
-        'getMessages',
-        true
+        'getTemplateBootstrapLogMessages'
     );
 
 
