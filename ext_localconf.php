@@ -58,9 +58,9 @@ $GLOBALS['TYPO3_CONF_VARS']['LOG']['Staempfli']['TemplateBootstrap']['writerConf
 # Use signal 'afterExtensionConfigurationWrite' to handle post installation tasks
 if (TYPO3_MODE === 'BE') {
     GeneralUtility::requireOnce(ExtensionManagementUtility::extPath($_EXTKEY) . 'Classes/Utility/TemplateBootstrapUtility.php');
-    GeneralUtility::requireOnce(ExtensionManagementUtility::extPath($_EXTKEY) . 'Classes/Utility/PostInstallInfoLogger.php');
-    GeneralUtility::requireOnce(ExtensionManagementUtility::extPath($_EXTKEY) . 'Classes/Utility/PostInstallFileHandler.php');
-    GeneralUtility::requireOnce(ExtensionManagementUtility::extPath($_EXTKEY) . 'Classes/Utility/PostInstallDatabaseHandler.php');
+    GeneralUtility::requireOnce(ExtensionManagementUtility::extPath($_EXTKEY) . 'Classes/Utility/PostInstall/PostInstallInfoLogger.php');
+    GeneralUtility::requireOnce(ExtensionManagementUtility::extPath($_EXTKEY) . 'Classes/Utility/PostInstall/PostInstallFileHandler.php');
+    GeneralUtility::requireOnce(ExtensionManagementUtility::extPath($_EXTKEY) . 'Classes/Utility/PostInstall/PostInstallDatabaseHandler.php');
 
     $signalSlotDispatcher = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\SignalSlot\Dispatcher::class);
 
@@ -68,7 +68,7 @@ if (TYPO3_MODE === 'BE') {
     $signalSlotDispatcher->connect(
         \TYPO3\CMS\Extensionmanager\Controller\ConfigurationController::class,
         'afterExtensionConfigurationWrite',
-        \Staempfli\TemplateBootstrap\Utility\PostInstallFileHandler::class,
+        \Staempfli\TemplateBootstrap\Utility\PostInstall\PostInstallFileHandler::class,
         'handleRobotsTxt'
     );
 
@@ -76,7 +76,7 @@ if (TYPO3_MODE === 'BE') {
     $signalSlotDispatcher->connect(
         \TYPO3\CMS\Extensionmanager\Controller\ConfigurationController::class,
         'afterExtensionConfigurationWrite',
-        \Staempfli\TemplateBootstrap\Utility\PostInstallFileHandler::class,
+        \Staempfli\TemplateBootstrap\Utility\PostInstall\PostInstallFileHandler::class,
         'writeAdditionalConfiguration'
     );
 
@@ -84,7 +84,7 @@ if (TYPO3_MODE === 'BE') {
     $signalSlotDispatcher->connect(
         \TYPO3\CMS\Extensionmanager\Controller\ConfigurationController::class,
         'afterExtensionConfigurationWrite',
-        \Staempfli\TemplateBootstrap\Utility\PostInstallDatabaseHandler::class,
+        \Staempfli\TemplateBootstrap\Utility\PostInstall\PostInstallDatabaseHandler::class,
         'createCLIUsers'
     );
 
@@ -92,7 +92,7 @@ if (TYPO3_MODE === 'BE') {
     $signalSlotDispatcher->connect(
         \TYPO3\CMS\Backend\Backend\ToolbarItems\SystemInformationToolbarItem::class,
         'loadMessages',
-        \Staempfli\TemplateBootstrap\Utility\PostInstallInfoLogger::class,
+        \Staempfli\TemplateBootstrap\Utility\PostInstall\PostInstallInfoLogger::class,
         'getTemplateBootstrapLogMessages'
     );
 

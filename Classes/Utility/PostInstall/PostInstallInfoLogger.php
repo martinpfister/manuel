@@ -1,5 +1,5 @@
 <?php
-namespace Staempfli\TemplateBootstrap\Utility;
+namespace Staempfli\TemplateBootstrap\Utility\PostInstall;
 /***************************************************************
  *  Copyright notice
  *
@@ -22,6 +22,7 @@ namespace Staempfli\TemplateBootstrap\Utility;
  ***************************************************************/
 use TYPO3\CMS\Backend\Toolbar\Enumeration\InformationStatus;
 use TYPO3\CMS\Backend\Utility\BackendUtility;
+use Staempfli\TemplateBootstrap\Utility\TemplateBootstrapUtility;
 
 
 class PostInstallInfoLogger {
@@ -191,7 +192,7 @@ class PostInstallInfoLogger {
 
         } // if db query successfully executed with > 0 results
 
-    } //getMessages
+    } //getTemplateBootstrapLogMessages
 
 } // class PostInstallInfoLogger
 

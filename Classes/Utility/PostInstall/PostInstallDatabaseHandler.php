@@ -1,5 +1,5 @@
 <?php
-namespace Staempfli\TemplateBootstrap\Utility;
+namespace Staempfli\TemplateBootstrap\Utility\PostInstall;
 /***************************************************************
  *  Copyright notice
  *
@@ -24,6 +24,8 @@ namespace Staempfli\TemplateBootstrap\Utility;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Package\PackageManager;
+use Staempfli\TemplateBootstrap\Utility\TemplateBootstrapUtility;
+
 
 class PostInstallDatabaseHandler {
 

@@ -1,9 +1,10 @@
 <?php
-namespace Staempfli\Templatebootstrap\Utility;
+namespace Staempfli\Templatebootstrap\Utility\PostInstall;
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use Staempfli\TemplateBootstrap\Utility\PostInstallInfoLogger;
+use Staempfli\TemplateBootstrap\Utility\PostInstall\PostInstallInfoLogger;
+use Staempfli\TemplateBootstrap\Utility\TemplateBootstrapUtility;
 
 class PostInstallFileHandler {
 
@@ -18,7 +19,6 @@ class PostInstallFileHandler {
 
         // Only (re-write) robots.txt on configuration save of template bootstrap package
         if (TemplateBootstrapUtility::getPackageKey() !== $packageKey) { return; }
-
 
         global $BE_USER;
 
@@ -52,6 +52,7 @@ class PostInstallFileHandler {
             $markerBeginPos = strpos($robotsContent, $robotsTemplateStartMarker);
             $markerEndPos = strrpos($robotsContent, $robotsTemplateEndMarker);
             if (empty($robotsContent) || ($markerBeginPos === 0 && $markerEndPos !== false)) {
+                // Only replace robots, if it is empty right now or markers are exactly at the beginning & the end of the robots.txt
                 if (empty($robotsContent) || ($markerEndPos + strlen($robotsTemplateEndMarker) == strlen($robotsContent))) {
                     $replaceRobots = true;
                 }
@@ -73,6 +74,11 @@ class PostInstallFileHandler {
                 . $robotsHint . chr(10)
                 . file_get_contents($robotsTemplatePath) . chr(10)
                 . $robotsTemplateEndMarker;
+
+            // Only re-write robots.txt, if content has changed
+            if ($newRobotsContent === $robotsContent) {
+                return;
+            }
 
             // Write file
             $written = GeneralUtility::writeFile($robotsPath, $newRobotsContent);
