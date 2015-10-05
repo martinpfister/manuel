@@ -113,13 +113,6 @@ class PostInstallFileHandler {
         global $BE_USER;
         $fileContentLines = Array();
 
-        $currentConfiguration = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$packageKey]);
-
-        // pageNotFound handler
-        // set default
-        if (!isset($currentConfiguration['enableCustomErrorHandling'])) {
-            $currentConfiguration['enableCustomErrorHandling'] = false;
-        }
         // rewrite configuration, if necessary.
         $enableCustomErrorHandler = intval($configuration['enableCustomErrorHandling']['value']);
         if ($enableCustomErrorHandler) {
