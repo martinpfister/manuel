@@ -55,7 +55,7 @@ class PostInstallDatabaseHandler {
                 PostInstallInfoLogger::log('Failed to check whether BE user "'
                     . $cliUserName .'" exists. Therefore cancelled. Error: '
                     . $GLOBALS['TYPO3_DB']->sql_error(),
-                    PostInstallInfoLogger::MESSAGE_TYPE_SYSTEM_ERROR, 50);
+                    PostInstallInfoLogger::MESSAGE_TYPE_SYSTEM_ERROR);
 
                 continue;
             }
@@ -69,12 +69,11 @@ class PostInstallDatabaseHandler {
                     if ($updatedError) {
                         PostInstallInfoLogger::log('Failed to reactivate (un-delete) BE user "'.
                             $cliUserName .'". Error: '. $GLOBALS['TYPO3_DB']->sql_error(),
-                            PostInstallInfoLogger::MESSAGE_TYPE_SYSTEM_ERROR, 50
-                        );
+                            PostInstallInfoLogger::MESSAGE_TYPE_SYSTEM_ERROR);
                     } else {
                         PostInstallInfoLogger::log('Reactivated (un-deleted) BE user "'. $cliUserName .'"'
                             . $GLOBALS['TYPO3_DB']->sql_error(),
-                            PostInstallInfoLogger::MESSAGE_TYPE_OK, 50);
+                            PostInstallInfoLogger::MESSAGE_TYPE_OK);
                     }
                 }
 
@@ -101,12 +100,11 @@ class PostInstallDatabaseHandler {
 
             // Failed to create user
             if ($GLOBALS['TYPO3_DB']->sql_error()) {
-                PostInstallInfoLogger::log('Failed to create BE user "'. $cliUserName .'". Error: '. $GLOBALS['TYPO3_DB']->sql_error(), PostInstallInfoLogger::MESSAGE_TYPE_SYSTEM_ERROR, 50);
+                PostInstallInfoLogger::log('Failed to create BE user "'. $cliUserName .'". Error: '. $GLOBALS['TYPO3_DB']->sql_error(), PostInstallInfoLogger::MESSAGE_TYPE_SYSTEM_ERROR);
 
             // User successfully created
             } else {
-                PostInstallInfoLogger::log('Created BE user "'. $cliUserName .'"', PostInstallInfoLogger::MESSAGE_TYPE_OK, 50);
-
+                PostInstallInfoLogger::log('Created BE user "'. $cliUserName .'"', PostInstallInfoLogger::MESSAGE_TYPE_OK);
             }
 
 

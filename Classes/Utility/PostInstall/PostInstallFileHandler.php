@@ -32,7 +32,7 @@ class PostInstallFileHandler {
 
         // If no environment has been chosen, write log and exit.
         if (empty($environment) || $environment == 'none') {
-            PostInstallInfoLogger::log('No environment has been chosen. No robots file written. That\'s ok. Just saying.', PostInstallInfoLogger::MESSAGE_TYPE_INFO, 10);
+            PostInstallInfoLogger::log('No environment has been chosen. No robots file written. That\'s ok. Just saying.', PostInstallInfoLogger::MESSAGE_TYPE_INFO);
             return;
         }
 
@@ -65,7 +65,7 @@ class PostInstallFileHandler {
             // Check existence of template file
             $robotsTemplateExists = is_file($robotsTemplatePath);
             if (!$robotsTemplateExists) {
-                PostInstallInfoLogger::log('Wanted to write robots.txt, but there is no template defined for current environment!', PostInstallInfoLogger::MESSAGE_TYPE_SYSTEM_ERROR, 10);
+                PostInstallInfoLogger::log('Wanted to write robots.txt, but there is no template defined for current environment!', PostInstallInfoLogger::MESSAGE_TYPE_SYSTEM_ERROR);
                 return;
             }
 
@@ -85,9 +85,9 @@ class PostInstallFileHandler {
 
             // Write log
             if ($written) {
-                PostInstallInfoLogger::log('Robots file has been successfully changed.', PostInstallInfoLogger::MESSAGE_TYPE_OK, 10);
+                PostInstallInfoLogger::log('Robots file has been successfully changed.', PostInstallInfoLogger::MESSAGE_TYPE_OK);
             } else {
-                PostInstallInfoLogger::log('Attempted to change robots file, but failed!', PostInstallInfoLogger::MESSAGE_TYPE_SYSTEM_ERROR, 10);
+                PostInstallInfoLogger::log('Attempted to change robots file, but failed!', PostInstallInfoLogger::MESSAGE_TYPE_SYSTEM_ERROR);
             }
         } // if replace robots.txt content
 

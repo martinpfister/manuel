@@ -28,6 +28,19 @@ use Staempfli\TemplateBootstrap\Utility\TemplateBootstrapUtility;
 class PostInstallInfoLogger {
 
 
+
+    // This array maps the calling classes/methods that use this log method
+    // to a unique integer so that we are able to determine the origin of the
+    // log entry later on. We usually only want to show the _latest_ change
+    // made by each method and the action number is the way to do it.
+    static $ACTION_NUMBER_MAP = Array(
+        'Staempfli\Templatebootstrap\Utility\PostInstall\PostInstallFileHandler->handleRobotsTxt'               => 10,
+        'Staempfli\Templatebootstrap\Utility\PostInstall\PostInstallFileHandler->writeAdditionalConfiguration'  => 11,
+        'Staempfli\Templatebootstrap\Utility\PostInstall\PostInstallDatabaseHandler->createCLIUsers'            => 20,
+    );
+
+
+
     // Message 'error' types according to the sys_log table definition
     const MESSAGE_TYPE_INFO = 0;
     const MESSAGE_TYPE_USER_ERROR = 1;
@@ -71,10 +84,22 @@ class PostInstallInfoLogger {
      *
      * @param $message Log message
      * @param $messageType According to constants in this class (MESSAGE_TYPE_*)
-     * @param $actionNumber Optional action number. Used to disinguish message 'origins' later on.
+     * @param $actionNumberOverride
      */
-    public static function log($message, $messageType=0, $actionNumber=0) {
+    public static function log($message, $messageType=0, $actionNumberOverride = NULL) {
         global $BE_USER;
+
+        // Get action number from the static action mapping or from the override value.
+        $actionNumber = 0;
+        if ($actionNumberOverride !== NULL) {
+            $actionNumber = $actionNumberOverride;
+        } else {
+            $backtrace = debug_backtrace();
+            $backtraceClassAndMethod = $backtrace[1]['class'] .'->'. $backtrace[1]['function'];
+            if (isset(self::$ACTION_NUMBER_MAP[$backtraceClassAndMethod])) {
+                $actionNumber = self::$ACTION_NUMBER_MAP[$backtraceClassAndMethod];
+            }
+        }
 
         $postVars = \TYPO3\CMS\Core\Utility\GeneralUtility::_POST('tx_extensionmanager_tools_extensionmanagerextensionmanager');
         $packageKey = $postVars['extensionKey'];
