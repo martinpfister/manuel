@@ -40,7 +40,6 @@ $EM_CONF[$_EXTKEY] = array(
         ),
         'conflicts' => array(),
         'suggests' => array(
-            'news' => '1.3.0-',
             'realurl' => '1.12.1-',
             'gridelements' => '3.0.0-',
         ),
