@@ -85,7 +85,12 @@ class PostInstallFileHandler {
 
             // Write log
             if ($written) {
-                PostInstallInfoLogger::log('Robots file has been successfully changed.', PostInstallInfoLogger::MESSAGE_TYPE_OK);
+                if (!$robotsExists) {
+                    $robotsWrittenTerminology = 'created';
+                } else {
+                    $robotsWrittenTerminology = 'overwritten';
+                }
+                PostInstallInfoLogger::log('Robots file has been successfully '. $robotsWrittenTerminology .'.', PostInstallInfoLogger::MESSAGE_TYPE_OK);
             } else {
                 PostInstallInfoLogger::log('Attempted to change robots file, but failed!', PostInstallInfoLogger::MESSAGE_TYPE_SYSTEM_ERROR);
             }
