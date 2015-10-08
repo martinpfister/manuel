@@ -11611,6 +11611,21 @@ figcaption.csc-textpic-caption {
   }
 }
 /*********************************************
+    Remove list style from lists
+    of fields (form extension)
+**********************************************/
+/* line 266, ../sass/_common.scss */
+form > ol,
+fieldset > ol,
+form ol li ol {
+  list-style-type: none;
+  margin-top: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+}
+
+/*********************************************
     Media query examples
 **********************************************/
 /*@media only screen { }

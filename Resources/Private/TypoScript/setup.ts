@@ -13,6 +13,7 @@
 # Extensions setups
 # **********************************************************
 <INCLUDE_TYPOSCRIPT: source="FILE:./../Extensions/indexed_search/setup.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:./../Extensions/form/setup.ts">
 
 # **********************************************************
 # Load typoscript template objects
@@ -39,7 +40,6 @@
 # T3 content objects render config
 # **********************************************************
 <INCLUDE_TYPOSCRIPT: source="FILE:./Content/tt_content.ts">
-<INCLUDE_TYPOSCRIPT: source="FILE:./Content/mailform.ts">
 
 # **********************************************************
 # Grid elements render config
