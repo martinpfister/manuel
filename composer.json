@@ -1,0 +1,9 @@
+{
+    "name": "staempfli/templatebootstrap",
+    "version": "master",
+    "type": "templatebootstrap",
+    "dist": {
+        "url": "git@stash.staempfli.com:7999/typo3/templatebootstrap.git",
+        "type": "git"
+    }
+}
