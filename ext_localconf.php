@@ -48,12 +48,6 @@ ExtensionManagementUtility::addTypoScript($_EXTKEY, 'setup', '<INCLUDE_TYPOSCRIP
 # (such as the layout provider hook)
 $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['Staempfli/TemplateBootstrap']['PackageKey'] = $_EXTKEY;
 
-$GLOBALS['TYPO3_CONF_VARS']['LOG']['Staempfli']['TemplateBootstrap']['writerConfiguration'] = array(
-    \TYPO3\CMS\Core\Log\LogLevel::INFO => array(
-        'TYPO3\\CMS\\Core\\Log\\Writer\\DatabaseWriter' => array(),
-    ),
-);
-
 
 # Use signal 'afterExtensionConfigurationWrite' to handle post installation tasks
 if (TYPO3_MODE === 'BE') {
