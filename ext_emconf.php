@@ -44,7 +44,15 @@ $EM_CONF[$_EXTKEY] = array(
             'gridelements' => '3.0.0-',
         ),
     ),
-    'suggests' => array(),  // DEPRECATED! Use 'constraints' instead!
+    'autoload' =>
+        array(
+            'psr-4' => array(
+                'Staempfli\\TemplateBootstrap\\' => 'Classes',
+            ),
+            'classmap' => array(
+                'Classes'
+            )
+        )
 );
 
 ?>

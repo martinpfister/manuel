@@ -52,17 +52,15 @@ $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['Staempfli/TemplateBootstrap']['PackageKe
 # Use signal 'afterExtensionConfigurationWrite' to handle post installation tasks
 if (TYPO3_MODE === 'BE') {
 
-    // These classes need to be manually included as the signal slot dispatcher
-    // does not check the autoload configuration!
+    // This class needs to be included manually as we need those down
+    // below already - before any autoload mechanism has been executed.
     GeneralUtility::requireOnce(ExtensionManagementUtility::extPath($_EXTKEY) . 'Classes/Utility/TemplateBootstrapUtility.php');
-    GeneralUtility::requireOnce(ExtensionManagementUtility::extPath($_EXTKEY) . 'Classes/Utility/PostInstall/PostInstallInfoLogger.php');
-    GeneralUtility::requireOnce(ExtensionManagementUtility::extPath($_EXTKEY) . 'Classes/Utility/PostInstall/PostInstallFileHandler.php');
-    GeneralUtility::requireOnce(ExtensionManagementUtility::extPath($_EXTKEY) . 'Classes/Utility/PostInstall/PostInstallDatabaseHandler.php');
-    GeneralUtility::requireOnce(ExtensionManagementUtility::extPath($_EXTKEY) . 'Classes/Utility/GravatarAvatarProvider.php');
+
 
     # Register Gravatar avatar provider
+    GeneralUtility::requireOnce(ExtensionManagementUtility::extPath($_EXTKEY) . 'Classes/Utility/GravatarAvatarProvider.php');
     $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['backend']['avatarProviders']['GravatarProvider'] = [
-        'provider' => \Staempfli\TemplateBootstrap\Utility\GravatarAvatarProvider::class,
+        'provider' => 'Staempfli\\TemplateBootstrap\\Utility\\GravatarAvatarProvider',
         'after' => ['defaultAvatarProvider']
     ];
 
@@ -74,7 +72,7 @@ if (TYPO3_MODE === 'BE') {
     $signalSlotDispatcher->connect(
         \TYPO3\CMS\Extensionmanager\Controller\ConfigurationController::class,
         'afterExtensionConfigurationWrite',
-        \Staempfli\TemplateBootstrap\Utility\PostInstall\PostInstallFileHandler::class,
+        'Staempfli\\TemplateBootstrap\\Utility\\PostInstall\\PostInstallFileHandler',
         'handleRobotsTxt'
     );
 
@@ -82,7 +80,7 @@ if (TYPO3_MODE === 'BE') {
     $signalSlotDispatcher->connect(
         \TYPO3\CMS\Extensionmanager\Controller\ConfigurationController::class,
         'afterExtensionConfigurationWrite',
-        \Staempfli\TemplateBootstrap\Utility\PostInstall\PostInstallFileHandler::class,
+        'Staempfli\\TemplateBootstrap\\Utility\\PostInstall\\PostInstallFileHandler',
         'writeAdditionalConfiguration'
     );
 
@@ -90,7 +88,7 @@ if (TYPO3_MODE === 'BE') {
     $signalSlotDispatcher->connect(
         \TYPO3\CMS\Extensionmanager\Controller\ConfigurationController::class,
         'afterExtensionConfigurationWrite',
-        \Staempfli\TemplateBootstrap\Utility\PostInstall\PostInstallDatabaseHandler::class,
+        'Staempfli\\TemplateBootstrap\\Utility\\PostInstall\\PostInstallDatabaseHandler',
         'createCLIUsers'
     );
 
@@ -98,7 +96,7 @@ if (TYPO3_MODE === 'BE') {
     $signalSlotDispatcher->connect(
         \TYPO3\CMS\Backend\Backend\ToolbarItems\SystemInformationToolbarItem::class,
         'loadMessages',
-        \Staempfli\TemplateBootstrap\Utility\PostInstall\PostInstallInfoLogger::class,
+        'Staempfli\\TemplateBootstrap\\Utility\\PostInstall\\PostInstallInfoLogger',
         'getTemplateBootstrapLogMessages'
     );
 
