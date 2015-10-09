@@ -26,6 +26,15 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class GravatarAvatarProvider implements \TYPO3\CMS\Backend\Backend\Avatar\AvatarProviderInterface {
 
+
+    /**
+     * Tries to fetch 'Gravatar' avatar for a given backend user. Returns
+     * Avatar\Image instance on success, null on failure.
+     *
+     * @param array $backendUser
+     * @param int $size
+     * @return null|object
+     */
     public function getImage(array $backendUser, $size) {
 
         // Get user email address
