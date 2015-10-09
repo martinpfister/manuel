@@ -18,8 +18,7 @@ page.10 {
     templateName.stdWrap {
         cObject = TEXT
         cObject {
-            data = levelfield:-2,backend_layout_next_level,slide
-            override.field = backend_layout
+            data = pagelayout
             # Split selected layout ([extkey]__BackendLayoutName) by '__' and return last part as layout name
             split {
                 token = __
