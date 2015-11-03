@@ -17,6 +17,10 @@ $backendExtConf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['bac
 if (empty($backendExtConf['loginLogo'])) {
 	$backendExtConf['loginLogo'] = 'EXT:' . $_EXTKEY . '/Resources/Public/Backend/Skin/img/logo_login.png';
 }
+// Set login background image, if it has not previously been set
+if (empty($backendExtConf['loginBackgroundImage'])) {
+	$backendExtConf['loginBackgroundImage'] = 'EXT:' . $_EXTKEY . '/Resources/Public/Backend/Skin/img/page_background_login.jpg';
+}
 // Re-serialize 'backend' extension configuration
 $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['backend'] = serialize($backendExtConf);
 
