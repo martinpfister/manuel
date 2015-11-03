@@ -11,9 +11,9 @@ module.exports = function(grunt) {
 
     // Icon/logo file paths
 
-    var logoSourceFile = '../../Private/LogoSources/logo-default.svg';
+    var logoSourceFile = '../../Private/LogoSources/logo-default.ai';
     var logoSourceFileAbsolute = path.resolve(logoSourceFile +'[0]');
-    var iconSourceFile = '../../Private/LogoSources/icon-default.svg';
+    var iconSourceFile = '../../Private/LogoSources/icon-default.ai';
     var iconSourceFileAbsolute = path.resolve(iconSourceFile +'[0]');
 
     var faviconTargetFileAbsolute = path.resolve(packagePath +'/Resources/Public/Template/images/favicon.ico');
@@ -84,7 +84,7 @@ module.exports = function(grunt) {
                 command: 'convert -colorspace RGB -alpha remove -antialias -background white "' + iconSourceFileAbsolute + '" "'+ packageIconTargetFileAbsolute +'"'
             },
             generateBackendLogo: {
-                command: 'convert -colorspace RGB -background transparent -antialias -resize 500 "' + logoSourceFileAbsolute + '" "'+ backendLogoTargetFileAbsolute +'"'
+                command: 'convert -colorspace RGB -background transparent -antialias -density 400 -resize 500 "' + logoSourceFileAbsolute + '" "'+ backendLogoTargetFileAbsolute +'"'
             }
         },
 

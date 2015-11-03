@@ -7,7 +7,7 @@ lib.logo {
     # Main logo
     10 = IMAGE
     10 {
-        file = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Private/LogoSources/logo-default.svg
+        file = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Private/LogoSources/logo-default.ai
         file {
             maxW = 600
             ext = png
@@ -27,7 +27,7 @@ lib.logo {
 
     # Alternative logo on narrow/small screens
     20 < .10
-    20.file = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Private/LogoSources/icon-default.svg
+    20.file = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Private/LogoSources/icon-default.ai
     20.file.maxW >
     20.file.maxH = 100
     20.stdWrap.typolink.ATagParams = id="logo-iconesque" class="show-for-small"

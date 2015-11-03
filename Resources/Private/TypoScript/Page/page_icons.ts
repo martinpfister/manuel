@@ -110,7 +110,7 @@ page.headerData.20 {
 
                 // Build the path to the original file.
                 // We're using .data property to avoid (invalid) nested curly braces.
-                import.data = PATH:EXT:{$plugin.templatebootstrap.packageKey}/{register:iconRelPath}/{register:iconSourceFileName}.svg
+                import.data = PATH:EXT:{$plugin.templatebootstrap.packageKey}/{register:iconRelPath}/{register:iconSourceFileName}.ai
                 import.data.insertData = 1
 
                 width = {register:iconSize}c
