@@ -1,1 +1,1 @@
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:indexed_search/Configuration/TypoScript/constants.txt">
+<INCLUDE_TYPOSCRIPT: source="EXT:indexed_search/Configuration/TypoScript/constants.txt">
