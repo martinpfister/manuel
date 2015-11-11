@@ -12,6 +12,7 @@
 # **********************************************************
 # Extensions setups
 # **********************************************************
+<INCLUDE_TYPOSCRIPT: source="FILE:./../Extensions/fluid_styled_content/setup.ts">
 <INCLUDE_TYPOSCRIPT: source="FILE:./../Extensions/indexed_search/setup.ts">
 <INCLUDE_TYPOSCRIPT: source="FILE:./../Extensions/form/setup.ts">
 
