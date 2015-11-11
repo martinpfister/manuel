@@ -36,6 +36,25 @@ plugin.tx_indexedsearch {
         rootPidList = 1
     }
 
+    // Result list settings.
+    // (i.e. Title & summary cropping, search word highlighting settings)
+    results {
+        titleCropAfter = 50
+        titleCropSignifier = ...
+        summaryCropAfter = 100
+        summaryCropSignifier =
+        hrefInSummaryCropAfter = 60
+        hrefInSummaryCropSignifier = ...
+
+        // Maximum length of a summary to highlight searchwords
+        markupSW_summaryMax = 300
+        // Number of characters kept on both sides of the highlighted searchword
+        markupSW_postPreLgd = 60
+        // Offset of characters from the right side of a highlighted searchword
+        markupSW_postPreLgd_offset = 5
+        markupSW_divider = ...
+    }
+
     settings {
 
         displayRules = 0
