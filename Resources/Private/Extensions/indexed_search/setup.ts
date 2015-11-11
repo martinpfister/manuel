@@ -1,4 +1,4 @@
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:indexed_search/Configuration/TypoScript/setup.txt">
+<INCLUDE_TYPOSCRIPT: source="EXT:indexed_search/Configuration/TypoScript/setup.txt">
 <INCLUDE_TYPOSCRIPT: source="FILE:./locallangoverrides.ts">
 
 
