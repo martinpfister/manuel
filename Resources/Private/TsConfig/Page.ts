@@ -96,6 +96,9 @@ TCEFORM.tt_content {
             27 = LLL:EXT:###PACKAGE_KEY###/Resources/Private/Language/Backend.xlf:tt_content.section_frame.xxlarge-up
         }
     }
+
+    # Image border
+    imageborder.disabled = 1
 }
 
 
