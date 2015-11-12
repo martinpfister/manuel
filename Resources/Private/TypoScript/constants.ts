@@ -64,14 +64,14 @@ site {
 
 # * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 #    Environment-based overrides
-[globalVar = LIT:{$plugin.templatebootstrap.environment} = local]
+[Staempfli\TemplateBootstrap\Utility\EnvironmentCondition = local]
     site {
         url = http://{$plugin.templatebootstrap.packageKey}.local/
         enableRealURL = 0
+        compressAndMergeAssets = 0
     }
-    compressAndMergeAssets = 0
 [global]
-[globalVar = LIT:{$plugin.templatebootstrap.environment} = development]
+[Staempfli\TemplateBootstrap\Utility\EnvironmentCondition = development]
     site {
         url = http://{$plugin.templatebootstrap.packageKey}.dev.staempfli.com/
         enableRealURL = 0
