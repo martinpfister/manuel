@@ -87,7 +87,7 @@ TCEFORM.tt_content {
 #-------------------------------------------------------------------------------
 mod.SHARED {
     defaultLanguageLabel = Deutsch
-    defaultLanguageFlag = ch.gif
+    defaultLanguageFlag = ch
 }
 
 
