@@ -69,6 +69,7 @@ site {
         url = http://{$plugin.templatebootstrap.packageKey}.local/
         enableRealURL = 0
     }
+    compressAndMergeAssets = 0
 [global]
 [globalVar = LIT:{$plugin.templatebootstrap.environment} = development]
     site {
