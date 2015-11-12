@@ -11358,263 +11358,10 @@ iframe * {
 }
 
 /*********************************************
-    Image / textpic styling
-**********************************************/
-/* line 115, ../sass/_common.scss */
-div.csc-textpic figure.csc-textpic-image {
-  display: block;
-}
-/* line 116, ../sass/_common.scss */
-div.csc-textpic .csc-textpic-imagewrap {
-  max-width: 100%;
-}
-
-/* line 123, ../sass/_common.scss */
-div.csc-textpic {
-  overflow: initial;
-}
-/* line 125, ../sass/_common.scss */
-div.csc-textpic .csc-textpic-imagewrap {
-  margin-bottom: 1.875rem;
-  float: none;
-}
-/* line 129, ../sass/_common.scss */
-div.csc-textpic .csc-textpic-imagewrap .csc-textpic-imagecolumn {
-  margin-right: 0;
-  overflow: initial;
-  float: none;
-}
-/* line 137, ../sass/_common.scss */
-div.csc-textpic .csc-textpic-imagewrap .csc-textpic-imagerow .csc-textpic-image,
-div.csc-textpic .csc-textpic-imagewrap .csc-textpic-imagerow-last .csc-textpic-image,
-div.csc-textpic .csc-textpic-imagewrap .csc-textpic-imagecolumn .csc-textpic-image {
-  margin-bottom: 0.9375rem;
-}
-
-@media only screen and (min-width: 40.063em) {
-  /* line 147, ../sass/_common.scss */
-  div.csc-textpic .csc-textpic-imagewrap {
-    margin: 0 -0.46875rem 0.9375rem 0;
-  }
-  /* line 157, ../sass/_common.scss */
-  div.csc-textpic .csc-textpic-imagewrap.has-2-columns {
-    max-width: none;
-  }
-  /* line 160, ../sass/_common.scss */
-  div.csc-textpic .csc-textpic-imagewrap.has-2-columns .csc-textpic-imagecolumn {
-    width: 50%;
-    display: block;
-    float: left;
-    height: auto;
-    clear: none;
-    margin: 0;
-    padding: 0 0.46875rem;
-  }
-  /* line 169, ../sass/_common.scss */
-  div.csc-textpic .csc-textpic-imagewrap.has-2-columns .csc-textpic-imagecolumn:nth-of-type(2n+1) {
-    clear: both;
-  }
-  /* line 157, ../sass/_common.scss */
-  div.csc-textpic .csc-textpic-imagewrap.has-3-columns {
-    max-width: none;
-  }
-  /* line 160, ../sass/_common.scss */
-  div.csc-textpic .csc-textpic-imagewrap.has-3-columns .csc-textpic-imagecolumn {
-    width: 33.33333%;
-    display: block;
-    float: left;
-    height: auto;
-    clear: none;
-    margin: 0;
-    padding: 0 0.46875rem;
-  }
-  /* line 169, ../sass/_common.scss */
-  div.csc-textpic .csc-textpic-imagewrap.has-3-columns .csc-textpic-imagecolumn:nth-of-type(3n+1) {
-    clear: both;
-  }
-  /* line 157, ../sass/_common.scss */
-  div.csc-textpic .csc-textpic-imagewrap.has-4-columns {
-    max-width: none;
-  }
-  /* line 160, ../sass/_common.scss */
-  div.csc-textpic .csc-textpic-imagewrap.has-4-columns .csc-textpic-imagecolumn {
-    width: 25%;
-    display: block;
-    float: left;
-    height: auto;
-    clear: none;
-    margin: 0;
-    padding: 0 0.46875rem;
-  }
-  /* line 169, ../sass/_common.scss */
-  div.csc-textpic .csc-textpic-imagewrap.has-4-columns .csc-textpic-imagecolumn:nth-of-type(4n+1) {
-    clear: both;
-  }
-  /* line 157, ../sass/_common.scss */
-  div.csc-textpic .csc-textpic-imagewrap.has-5-columns {
-    max-width: none;
-  }
-  /* line 160, ../sass/_common.scss */
-  div.csc-textpic .csc-textpic-imagewrap.has-5-columns .csc-textpic-imagecolumn {
-    width: 20%;
-    display: block;
-    float: left;
-    height: auto;
-    clear: none;
-    margin: 0;
-    padding: 0 0.46875rem;
-  }
-  /* line 169, ../sass/_common.scss */
-  div.csc-textpic .csc-textpic-imagewrap.has-5-columns .csc-textpic-imagecolumn:nth-of-type(5n+1) {
-    clear: both;
-  }
-  /* line 157, ../sass/_common.scss */
-  div.csc-textpic .csc-textpic-imagewrap.has-6-columns {
-    max-width: none;
-  }
-  /* line 160, ../sass/_common.scss */
-  div.csc-textpic .csc-textpic-imagewrap.has-6-columns .csc-textpic-imagecolumn {
-    width: 16.66667%;
-    display: block;
-    float: left;
-    height: auto;
-    clear: none;
-    margin: 0;
-    padding: 0 0.46875rem;
-  }
-  /* line 169, ../sass/_common.scss */
-  div.csc-textpic .csc-textpic-imagewrap.has-6-columns .csc-textpic-imagecolumn:nth-of-type(6n+1) {
-    clear: both;
-  }
-  /* line 157, ../sass/_common.scss */
-  div.csc-textpic .csc-textpic-imagewrap.has-7-columns {
-    max-width: none;
-  }
-  /* line 160, ../sass/_common.scss */
-  div.csc-textpic .csc-textpic-imagewrap.has-7-columns .csc-textpic-imagecolumn {
-    width: 14.28571%;
-    display: block;
-    float: left;
-    height: auto;
-    clear: none;
-    margin: 0;
-    padding: 0 0.46875rem;
-  }
-  /* line 169, ../sass/_common.scss */
-  div.csc-textpic .csc-textpic-imagewrap.has-7-columns .csc-textpic-imagecolumn:nth-of-type(7n+1) {
-    clear: both;
-  }
-  /* line 157, ../sass/_common.scss */
-  div.csc-textpic .csc-textpic-imagewrap.has-8-columns {
-    max-width: none;
-  }
-  /* line 160, ../sass/_common.scss */
-  div.csc-textpic .csc-textpic-imagewrap.has-8-columns .csc-textpic-imagecolumn {
-    width: 12.5%;
-    display: block;
-    float: left;
-    height: auto;
-    clear: none;
-    margin: 0;
-    padding: 0 0.46875rem;
-  }
-  /* line 169, ../sass/_common.scss */
-  div.csc-textpic .csc-textpic-imagewrap.has-8-columns .csc-textpic-imagecolumn:nth-of-type(8n+1) {
-    clear: both;
-  }
-  /* line 157, ../sass/_common.scss */
-  div.csc-textpic .csc-textpic-imagewrap.has-9-columns {
-    max-width: none;
-  }
-  /* line 160, ../sass/_common.scss */
-  div.csc-textpic .csc-textpic-imagewrap.has-9-columns .csc-textpic-imagecolumn {
-    width: 11.11111%;
-    display: block;
-    float: left;
-    height: auto;
-    clear: none;
-    margin: 0;
-    padding: 0 0.46875rem;
-  }
-  /* line 169, ../sass/_common.scss */
-  div.csc-textpic .csc-textpic-imagewrap.has-9-columns .csc-textpic-imagecolumn:nth-of-type(9n+1) {
-    clear: both;
-  }
-  /* line 157, ../sass/_common.scss */
-  div.csc-textpic .csc-textpic-imagewrap.has-10-columns {
-    max-width: none;
-  }
-  /* line 160, ../sass/_common.scss */
-  div.csc-textpic .csc-textpic-imagewrap.has-10-columns .csc-textpic-imagecolumn {
-    width: 10%;
-    display: block;
-    float: left;
-    height: auto;
-    clear: none;
-    margin: 0;
-    padding: 0 0.46875rem;
-  }
-  /* line 169, ../sass/_common.scss */
-  div.csc-textpic .csc-textpic-imagewrap.has-10-columns .csc-textpic-imagecolumn:nth-of-type(10n+1) {
-    clear: both;
-  }
-}
-/*********************************************
-    Image captions
-**********************************************/
-/* line 183, ../sass/_common.scss */
-figcaption.csc-textpic-caption {
-  display: block;
-  padding-top: 1%;
-  font-size: 60%;
-}
-
-/*********************************************
-    Picture / text display for large views
-**********************************************/
-@media only screen and (min-width: 40.063em) {
-  /* line 203, ../sass/_common.scss */
-  div.csc-textpic.csc-textpic-intext-right:after, div.csc-textpic.csc-textpic-intext-right-nowrap:after, div.csc-textpic.csc-textpic-intext-left:after, div.csc-textpic.csc-textpic-intext-left-nowrap:after {
-    display: table;
-    content: ' ';
-    clear: both;
-  }
-  /* line 210, ../sass/_common.scss */
-  div.csc-textpic.csc-textpic-intext-right div.csc-textpic-imagewrap, div.csc-textpic.csc-textpic-intext-right-nowrap div.csc-textpic-imagewrap, div.csc-textpic.csc-textpic-intext-left div.csc-textpic-imagewrap, div.csc-textpic.csc-textpic-intext-left-nowrap div.csc-textpic-imagewrap {
-    max-width: 50%;
-  }
-  /* line 221, ../sass/_common.scss */
-  div.csc-textpic.csc-textpic-right .csc-textpic-imagewrap, div.csc-textpic.csc-textpic-intext-right .csc-textpic-imagewrap, div.csc-textpic.csc-textpic-intext-right-nowrap .csc-textpic-imagewrap {
-    margin-right: -0.46875rem;
-    margin-left: 1.40625rem;
-    float: right;
-  }
-  /* line 229, ../sass/_common.scss */
-  div.csc-textpic.csc-textpic-right .csc-textpic-imagewrap.has-1-columns, div.csc-textpic.csc-textpic-intext-right .csc-textpic-imagewrap.has-1-columns, div.csc-textpic.csc-textpic-intext-right-nowrap .csc-textpic-imagewrap.has-1-columns {
-    margin-right: 0;
-    margin-left: 1.875rem;
-  }
-  /* line 241, ../sass/_common.scss */
-  div.csc-textpic.csc-textpic-left .csc-textpic-imagewrap, div.csc-textpic.csc-textpic-intext-left .csc-textpic-imagewrap, div.csc-textpic.csc-textpic-intext-left-nowrap .csc-textpic-imagewrap {
-    margin-left: -0.46875rem;
-    margin-right: 1.40625rem;
-    float: left;
-  }
-  /* line 246, ../sass/_common.scss */
-  div.csc-textpic.csc-textpic-left .csc-textpic-imagewrap.has-1-columns, div.csc-textpic.csc-textpic-intext-left .csc-textpic-imagewrap.has-1-columns, div.csc-textpic.csc-textpic-intext-left-nowrap .csc-textpic-imagewrap.has-1-columns {
-    margin-left: 0;
-    margin-right: 1.875rem;
-  }
-  /* line 255, ../sass/_common.scss */
-  div.csc-textpic.csc-textpic-intext-left-nowrap .csc-textpic-text {
-    display: inline-block;
-  }
-}
-/*********************************************
     Remove list style from lists
     of fields (form extension)
 **********************************************/
-/* line 266, ../sass/_common.scss */
+/* line 114, ../sass/_common.scss */
 form > ol,
 fieldset > ol,
 form ol li ol {
@@ -11625,6 +11372,241 @@ form ol li ol {
   margin-left: auto;
 }
 
+/*********************************************
+    Image / textpic styling
+**********************************************/
+/* line 130, ../sass/_common.scss */
+.ce-textpic figure {
+  display: block;
+}
+/* line 131, ../sass/_common.scss */
+.ce-textpic .ce-media {
+  max-width: 100%;
+}
+
+/* line 135, ../sass/_common.scss */
+.ce-textpic {
+  overflow: initial;
+}
+/* line 138, ../sass/_common.scss */
+.ce-textpic.ce-center .ce-gallery {
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 140, ../sass/_common.scss */
+.ce-textpic .ce-gallery {
+  max-width: 100%;
+  margin-bottom: 1.875rem;
+  float: none;
+}
+/* line 145, ../sass/_common.scss */
+.ce-textpic .ce-gallery .ce-column {
+  margin-right: 0;
+  overflow: initial;
+  float: none;
+}
+/* line 152, ../sass/_common.scss */
+.ce-textpic .ce-gallery .ce-row figure,
+.ce-textpic .ce-gallery .ce-row .ce-media,
+.ce-textpic .ce-gallery .ce-column figure,
+.ce-textpic .ce-gallery .ce-column .ce-media {
+  margin-bottom: 0.9375rem;
+}
+
+@media only screen and (min-width: 40.063em) {
+  /* line 167, ../sass/_common.scss */
+  .ce-textpic .ce-gallery {
+    margin: 0 -0.46875rem 0.9375rem -0.46875rem;
+  }
+  /* line 169, ../sass/_common.scss */
+  .ce-textpic .ce-gallery[data-ce-columns="1"] {
+    margin-left: 0;
+  }
+  /* line 180, ../sass/_common.scss */
+  .ce-textpic .ce-gallery[data-ce-columns="2"] .ce-column {
+    width: 50%;
+    display: block;
+    float: left;
+    height: auto;
+    clear: none;
+    margin: 0;
+    padding: 0 0.46875rem;
+  }
+  /* line 189, ../sass/_common.scss */
+  .ce-textpic .ce-gallery[data-ce-columns="2"] .ce-column:nth-of-type(2n+1) {
+    clear: both;
+  }
+  /* line 180, ../sass/_common.scss */
+  .ce-textpic .ce-gallery[data-ce-columns="3"] .ce-column {
+    width: 33.33333%;
+    display: block;
+    float: left;
+    height: auto;
+    clear: none;
+    margin: 0;
+    padding: 0 0.46875rem;
+  }
+  /* line 189, ../sass/_common.scss */
+  .ce-textpic .ce-gallery[data-ce-columns="3"] .ce-column:nth-of-type(3n+1) {
+    clear: both;
+  }
+  /* line 180, ../sass/_common.scss */
+  .ce-textpic .ce-gallery[data-ce-columns="4"] .ce-column {
+    width: 25%;
+    display: block;
+    float: left;
+    height: auto;
+    clear: none;
+    margin: 0;
+    padding: 0 0.46875rem;
+  }
+  /* line 189, ../sass/_common.scss */
+  .ce-textpic .ce-gallery[data-ce-columns="4"] .ce-column:nth-of-type(4n+1) {
+    clear: both;
+  }
+  /* line 180, ../sass/_common.scss */
+  .ce-textpic .ce-gallery[data-ce-columns="5"] .ce-column {
+    width: 20%;
+    display: block;
+    float: left;
+    height: auto;
+    clear: none;
+    margin: 0;
+    padding: 0 0.46875rem;
+  }
+  /* line 189, ../sass/_common.scss */
+  .ce-textpic .ce-gallery[data-ce-columns="5"] .ce-column:nth-of-type(5n+1) {
+    clear: both;
+  }
+  /* line 180, ../sass/_common.scss */
+  .ce-textpic .ce-gallery[data-ce-columns="6"] .ce-column {
+    width: 16.66667%;
+    display: block;
+    float: left;
+    height: auto;
+    clear: none;
+    margin: 0;
+    padding: 0 0.46875rem;
+  }
+  /* line 189, ../sass/_common.scss */
+  .ce-textpic .ce-gallery[data-ce-columns="6"] .ce-column:nth-of-type(6n+1) {
+    clear: both;
+  }
+  /* line 180, ../sass/_common.scss */
+  .ce-textpic .ce-gallery[data-ce-columns="7"] .ce-column {
+    width: 14.28571%;
+    display: block;
+    float: left;
+    height: auto;
+    clear: none;
+    margin: 0;
+    padding: 0 0.46875rem;
+  }
+  /* line 189, ../sass/_common.scss */
+  .ce-textpic .ce-gallery[data-ce-columns="7"] .ce-column:nth-of-type(7n+1) {
+    clear: both;
+  }
+  /* line 180, ../sass/_common.scss */
+  .ce-textpic .ce-gallery[data-ce-columns="8"] .ce-column {
+    width: 12.5%;
+    display: block;
+    float: left;
+    height: auto;
+    clear: none;
+    margin: 0;
+    padding: 0 0.46875rem;
+  }
+  /* line 189, ../sass/_common.scss */
+  .ce-textpic .ce-gallery[data-ce-columns="8"] .ce-column:nth-of-type(8n+1) {
+    clear: both;
+  }
+  /* line 180, ../sass/_common.scss */
+  .ce-textpic .ce-gallery[data-ce-columns="9"] .ce-column {
+    width: 11.11111%;
+    display: block;
+    float: left;
+    height: auto;
+    clear: none;
+    margin: 0;
+    padding: 0 0.46875rem;
+  }
+  /* line 189, ../sass/_common.scss */
+  .ce-textpic .ce-gallery[data-ce-columns="9"] .ce-column:nth-of-type(9n+1) {
+    clear: both;
+  }
+  /* line 180, ../sass/_common.scss */
+  .ce-textpic .ce-gallery[data-ce-columns="10"] .ce-column {
+    width: 10%;
+    display: block;
+    float: left;
+    height: auto;
+    clear: none;
+    margin: 0;
+    padding: 0 0.46875rem;
+  }
+  /* line 189, ../sass/_common.scss */
+  .ce-textpic .ce-gallery[data-ce-columns="10"] .ce-column:nth-of-type(10n+1) {
+    clear: both;
+  }
+}
+/*********************************************
+    Image captions
+**********************************************/
+/* line 203, ../sass/_common.scss */
+.ce-textpic figcaption {
+  display: block;
+  padding-top: 1%;
+}
+
+/*********************************************
+    Picture / text display for large views
+**********************************************/
+@media only screen and (min-width: 40.063em) {
+  /* line 219, ../sass/_common.scss */
+  .ce-textpic.ce-intext.ce-left .ce-gallery {
+    float: left;
+    margin-right: 1.875rem;
+    margin-bottom: 0.9375rem;
+  }
+  /* line 224, ../sass/_common.scss */
+  .ce-textpic.ce-intext.ce-right .ce-gallery {
+    float: right;
+    margin-bottom: 0.9375rem;
+    margin-left: 1.875rem;
+  }
+  /* line 230, ../sass/_common.scss */
+  .ce-textpic.ce-intext:after {
+    display: table;
+    content: ' ';
+    clear: both;
+  }
+  /* line 237, ../sass/_common.scss */
+  .ce-textpic.ce-intext .ce-gallery {
+    max-width: 70%;
+  }
+  /* line 246, ../sass/_common.scss */
+  .ce-textpic.ce-right.ce-nowrap .ce-gallery {
+    margin-right: -0.46875rem;
+    margin-left: 1.40625rem;
+    float: right;
+  }
+  /* line 254, ../sass/_common.scss */
+  .ce-textpic.ce-right.ce-nowrap .ce-gallery.has-1-columns {
+    margin-right: 0;
+    margin-left: 1.875rem;
+  }
+  /* line 264, ../sass/_common.scss */
+  .ce-textpic.ce-left.ce-nowrap .ce-gallery {
+    margin-left: -0.46875rem;
+    margin-right: 1.40625rem;
+    float: left;
+  }
+  /* line 269, ../sass/_common.scss */
+  .ce-textpic.ce-left.ce-nowrap .ce-gallery.has-1-columns {
+    margin-left: 0;
+    margin-right: 1.875rem;
+  }
+}
 /*********************************************
     Media query examples
 **********************************************/

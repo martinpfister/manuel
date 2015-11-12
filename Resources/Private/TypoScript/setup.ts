@@ -40,7 +40,7 @@
 # **********************************************************
 # T3 content objects render config
 # **********************************************************
-<INCLUDE_TYPOSCRIPT: source="FILE:./Content/tt_content.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:./Content/ce_rendering.ts">
 
 # **********************************************************
 # Grid elements render config

@@ -15,7 +15,7 @@
 // Image / textpic settings
 $pictureSpacing:$column-gutter / 2;         // Spacing between images
 $pictureVsTextSpacing:$column-gutter;       // Spacing between images & text (for textpic elements)
-$textpic-intext-defaultMaxWidth:50%;        // Picture container max default width (for textpic elements), if no width defined by editor.
+$textpic-intext-defaultMaxWidth:70%;        // Picture container max default width (for textpic elements), if no width defined by editor.
 $enableImageColumnsMediaQuery:$medium-up;   // Screen size allowing multiple columns.
 
 // Hamburger icon settings
@@ -108,33 +108,49 @@ iframe * {
 
 
 /*********************************************
+    Remove list style from lists
+    of fields (form extension)
+**********************************************/
+form > ol,
+fieldset > ol,
+form ol li ol {
+    list-style-type:none;
+    margin-top:auto;
+    margin-right:auto;
+    margin-bottom:auto;
+    margin-left:auto;
+}
+
+
+/*********************************************
     Image / textpic styling
 **********************************************/
 // Image scaling FF compatibility
-div.csc-textpic {
-    figure.csc-textpic-image { display:block; }
-    .csc-textpic-imagewrap { max-width:100%; }
+.ce-textpic {
+    figure { display:block; }
+    .ce-media { max-width:100%; }
 }
 
-// Resetting some default css_styled_content styles
-// Any changes must be implemented carefully as
-// css_styled_content initially defines properties
-// very specifically!
-div.csc-textpic {
+// Resetting some default fluid_styled_content styles
+.ce-textpic {
     overflow:initial;
-    .csc-textpic-imagewrap {
+
+    &.ce-center .ce-gallery { margin-left:auto; margin-right:auto; }
+
+    .ce-gallery {
+        max-width:100%;
         margin-bottom:$pictureVsTextSpacing;
         float:none;
 
-        .csc-textpic-imagecolumn {
+        .ce-column {
             margin-right:0;
             overflow:initial;
             float:none;
         }
-        .csc-textpic-imagerow,
-        .csc-textpic-imagerow-last,
-        .csc-textpic-imagecolumn {
-            .csc-textpic-image {
+        .ce-row,
+        .ce-column {
+            figure,
+            .ce-media {
                 margin-bottom:$pictureSpacing;
             }
         }
@@ -143,21 +159,25 @@ div.csc-textpic {
 
 // Add margins (in the shape of paddings) to the images
 @media #{$enableImageColumnsMediaQuery} {
-    div.csc-textpic {
-        .csc-textpic-imagewrap {
-            margin:0 (-$pictureSpacing / 2) ($pictureVsTextSpacing - $pictureSpacing) 0;
+    .ce-textpic {
+
+        // Main gallery positioning
+        // Notice that the negative margins are used in order
+        // to get a proper block grid.
+        .ce-gallery {
+            margin:0 (-$pictureSpacing / 2) ($pictureVsTextSpacing - $pictureSpacing) (-$pictureSpacing / 2);
+            &[data-ce-columns="1"] { margin-left:0; }
         }
 
+
         // Create block grid
-        .csc-textpic-imagewrap {
+        .ce-gallery {
 
             $maxNumberOfColumns:10;
             $numberOfColumns:2;
             @while $numberOfColumns <= $maxNumberOfColumns {
-                &.has-#{$numberOfColumns}-columns {
-                    max-width:none;
-                }
-                &.has-#{$numberOfColumns}-columns .csc-textpic-imagecolumn {
+
+                &[data-ce-columns="#{$numberOfColumns}"] .ce-column {
                     width:100% / $numberOfColumns;
                     display:block;
                     float:left;
@@ -180,10 +200,9 @@ div.csc-textpic {
 /*********************************************
     Image captions
 **********************************************/
-figcaption.csc-textpic-caption {
+.ce-textpic figcaption {
     display:block;
     padding-top:1%;
-    font-size:$small-font-size;
 }
 
 
@@ -192,13 +211,21 @@ figcaption.csc-textpic-caption {
 **********************************************/
 @media #{$enableImageColumnsMediaQuery} {
 
-    div.csc-textpic {
+    .ce-textpic {
 
         // Clear content element after, if there are floated elements
-        &.csc-textpic-intext-right,
-        &.csc-textpic-intext-right-nowrap,
-        &.csc-textpic-intext-left,
-        &.csc-textpic-intext-left-nowrap {
+        &.ce-intext {
+
+            &.ce-left .ce-gallery {
+                float:left;
+                margin-right:$pictureVsTextSpacing;
+                margin-bottom:$pictureVsTextSpacing - $pictureSpacing;
+            }
+            &.ce-right .ce-gallery {
+                float:right;
+                margin-bottom:$pictureVsTextSpacing - $pictureSpacing;
+                margin-left:$pictureVsTextSpacing;
+            }
 
             &:after {
                 display:table;
@@ -207,18 +234,16 @@ figcaption.csc-textpic-caption {
             }
             // Set default max width of image container.
             // This might get overridden via T3 inline-CSS on the element itself.
-            div.csc-textpic-imagewrap {
+            .ce-gallery {
                 max-width:$textpic-intext-defaultMaxWidth;
             }
         }
 
         // Pictures aligned right
-        &.csc-textpic-right,
-        &.csc-textpic-intext-right,
-        &.csc-textpic-intext-right-nowrap {
+        &.ce-right.ce-nowrap {
             // Float image container & compensate negative margins introduced by block grid
             // in order to get the correct distance to the text.
-            .csc-textpic-imagewrap {
+            .ce-gallery {
                 margin-right:-($pictureSpacing / 2);
                 margin-left:$pictureVsTextSpacing - ($pictureSpacing / 2);
                 float:right;
@@ -235,10 +260,8 @@ figcaption.csc-textpic-caption {
 
         // Pictures aligned left
         // (see comments above).
-        &.csc-textpic-left,
-        &.csc-textpic-intext-left,
-        &.csc-textpic-intext-left-nowrap {
-            .csc-textpic-imagewrap {
+        &.ce-left.ce-nowrap {
+            .ce-gallery {
                 margin-left:-$pictureSpacing / 2;
                 margin-right:$pictureVsTextSpacing - ($pictureSpacing / 2);
                 float:left;
@@ -250,25 +273,5 @@ figcaption.csc-textpic-caption {
             }
         }
 
-        // Display text as "inline-block", if images
-        // are aligned left (without wrap)
-        &.csc-textpic-intext-left-nowrap .csc-textpic-text {
-            display:inline-block;
-        }
     }
-}
-
-
-/*********************************************
-    Remove list style from lists
-    of fields (form extension)
-**********************************************/
-form > ol,
-fieldset > ol,
-form ol li ol {
-    list-style-type:none;
-    margin-top:auto;
-    margin-right:auto;
-    margin-bottom:auto;
-    margin-left:auto;
 }
