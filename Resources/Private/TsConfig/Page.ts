@@ -76,26 +76,6 @@ TCEFORM.tt_content {
     layout.keepItems = 0,1
     layout.altLabels.1 = LLL:EXT:###PACKAGE_KEY###/Resources/Private/Language/Backend.xlf:tt_content.layout.examplelayout
 
-    # Frames
-    section_frame {
-        label = LLL:EXT:###PACKAGE_KEY###/Resources/Private/Language/Backend.xlf:tt_content.section_frames
-
-        # Purge all
-        keepItems =
-
-        # Add empty as well as responsive classes
-        addItems {
-            0 =
-            20 = LLL:EXT:###PACKAGE_KEY###/Resources/Private/Language/Backend.xlf:tt_content.section_frame.small-only
-            21 = LLL:EXT:###PACKAGE_KEY###/Resources/Private/Language/Backend.xlf:tt_content.section_frame.medium-only
-            22 = LLL:EXT:###PACKAGE_KEY###/Resources/Private/Language/Backend.xlf:tt_content.section_frame.medium-up
-            23 = LLL:EXT:###PACKAGE_KEY###/Resources/Private/Language/Backend.xlf:tt_content.section_frame.large-only
-            24 = LLL:EXT:###PACKAGE_KEY###/Resources/Private/Language/Backend.xlf:tt_content.section_frame.large-up
-            25 = LLL:EXT:###PACKAGE_KEY###/Resources/Private/Language/Backend.xlf:tt_content.section_frame.xlarge-only
-            26 = LLL:EXT:###PACKAGE_KEY###/Resources/Private/Language/Backend.xlf:tt_content.section_frame.xlarge-up
-            27 = LLL:EXT:###PACKAGE_KEY###/Resources/Private/Language/Backend.xlf:tt_content.section_frame.xxlarge-up
-        }
-    }
 
     # Image border
     imageborder.disabled = 1

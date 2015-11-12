@@ -68,36 +68,6 @@
             </trans-unit>
 
 
-            <!-- CONTENT ELEMENT FRAMES AND NAMES -->
-            <trans-unit id="tt_content.section_frames" xml:space="preserve">
-                <source>Display options</source>
-            </trans-unit>
-            <trans-unit id="tt_content.section_frame.small-only" xml:space="preserve">
-                <source>Show on small sized screens only</source>
-            </trans-unit>
-            <trans-unit id="tt_content.section_frame.medium-only" xml:space="preserve">
-                <source>Show on medium sized screens only</source>
-            </trans-unit>
-            <trans-unit id="tt_content.section_frame.medium-up" xml:space="preserve">
-                <source>Show on medium sized screens (and larger) only</source>
-            </trans-unit>
-            <trans-unit id="tt_content.section_frame.large-only" xml:space="preserve">
-                <source>Show on large sized screens only</source>
-            </trans-unit>
-            <trans-unit id="tt_content.section_frame.large-up" xml:space="preserve">
-                <source>Show on large sized screens (and larger) only</source>
-            </trans-unit>
-            <trans-unit id="tt_content.section_frame.xlarge-only" xml:space="preserve">
-                <source>Show on xlarge sized screens only</source>
-            </trans-unit>
-            <trans-unit id="tt_content.section_frame.xlarge-up" xml:space="preserve">
-                <source>Show on xlarge sized screens (and larger) only</source>
-            </trans-unit>
-            <trans-unit id="tt_content.section_frame.xxlarge-up" xml:space="preserve">
-                <source>Show on xxlarge screens (and larger) only</source>
-            </trans-unit>
-
-
             <!-- GRID ELEMENT LABELS -->
             <trans-unit id="grid_elements.slider" xml:space="preserve">
                 <source>Slider</source>

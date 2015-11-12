@@ -70,45 +70,6 @@
         </trans-unit>
 
 
-        <!-- FRAMES AND NAMES -->
-        <trans-unit id="tt_content.section_frames" xml:space="preserve">
-             <source>Display options</source>
-            <target state="translated">Anzeigeoptionen</target>
-        </trans-unit>
-        <trans-unit id="tt_content.section_frame.small-only" xml:space="preserve">
-            <source>Show on small sized screens only</source>
-            <target state="translated">Nur bei kleiner Auflösung anzeigen</target>
-        </trans-unit>
-        <trans-unit id="tt_content.section_frame.medium-only" xml:space="preserve">
-            <source>Show on medium sized screens only</source>
-            <target state="translated">Nur bei mittlerer Auflösung anzeigen</target>
-        </trans-unit>
-        <trans-unit id="tt_content.section_frame.medium-up" xml:space="preserve">
-            <source>Show on medium sized screens (and larger) only</source>
-            <target state="translated">Bei mittlerer Auflösung und grösser anzeigen</target>
-        </trans-unit>
-        <trans-unit id="tt_content.section_frame.large-only" xml:space="preserve">
-            <source>Show on large sized screens only</source>
-            <target state="translated">Nur bei hoher Auflösung anzeigen</target>
-        </trans-unit>
-        <trans-unit id="tt_content.section_frame.large-up" xml:space="preserve">
-            <source>Show on large sized screens (and larger) only</source>
-            <target state="translated">Bei hoher Auflösung und grösser anzeigen</target>
-        </trans-unit>
-        <trans-unit id="tt_content.section_frame.xlarge-only" xml:space="preserve">
-            <source>Show on xlarge sized screens only</source>
-            <target state="translated">Nur bei sehr hoher Auflösung anzeigen</target>
-        </trans-unit>
-        <trans-unit id="tt_content.section_frame.xlarge-up" xml:space="preserve">
-            <source>Show on xlarge sized screens (and larger) only</source>
-            <target state="translated">Bei sehr hoher Auflösung und grösser anzeigen</target>
-        </trans-unit>
-        <trans-unit id="tt_content.section_frame.xxlarge-up" xml:space="preserve">
-            <source>Show on xxlarge screens (and larger) only</source>
-            <target state="translated">Bei XXL-Auflösung und höher anzeigen</target>
-        </trans-unit>
-
-
         <!-- GRID ELEMENT LABELS -->
         <trans-unit id="grid_elements.slider" xml:space="preserve">
             <source>Slider</source>
