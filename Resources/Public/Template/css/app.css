@@ -11366,79 +11366,135 @@ form ol li ol {
 }
 
 /*********************************************
+    Responsive tables
+    This is an example tested with the
+    default setup. You might want to modify
+    or disable this entirely.
+**********************************************/
+@media only screen and (max-width: 40em) {
+  /* line 127, ../sass/_common.scss */
+  .ce-table[class*="table-header-position"] {
+    border: none;
+  }
+  /* line 130, ../sass/_common.scss */
+  .ce-table[class*="table-header-position"] tr, .ce-table[class*="table-header-position"] td {
+    display: block;
+    padding: initial;
+    margin: initial;
+  }
+  /* line 136, ../sass/_common.scss */
+  .ce-table[class*="table-header-position"] tr,
+  .ce-table[class*="table-header-position"] td,
+  .ce-table[class*="table-header-position"] tr:before,
+  .ce-table[class*="table-header-position"] td:before {
+    line-height: 1.6;
+  }
+  /* line 142, ../sass/_common.scss */
+  .ce-table[class*="table-header-position"] tr th,
+  .ce-table[class*="table-header-position"] thead {
+    display: none;
+  }
+  /* line 146, ../sass/_common.scss */
+  .ce-table[class*="table-header-position"] td:before {
+    display: inline;
+    font-weight: bold;
+  }
+  /* line 151, ../sass/_common.scss */
+  .ce-table[class*="table-header-position"] tr {
+    margin-bottom: 1.25rem;
+  }
+  /* line 155, ../sass/_common.scss */
+  .ce-table[class*="table-header-position"].table-header-position-1 td:before {
+    content: attr(data-columnheader) " (" attr(data-rowheader) "): ";
+  }
+  /* line 157, ../sass/_common.scss */
+  .ce-table[class*="table-header-position"].table-header-position-1 td[data-columnheader=""],
+  .ce-table[class*="table-header-position"].table-header-position-1 td[data-columnheader=""]:before {
+    display: none;
+  }
+  /* line 164, ../sass/_common.scss */
+  .ce-table[class*="table-header-position"].table-header-position-2 tr:first-child {
+    display: none;
+  }
+  /* line 165, ../sass/_common.scss */
+  .ce-table[class*="table-header-position"].table-header-position-2 td:before {
+    content: attr(data-rowheader) " (" attr(data-columnheader) "): ";
+  }
+}
+/*********************************************
     Image / textmedia styling
 **********************************************/
-/* line 124, ../sass/_common.scss */
+/* line 176, ../sass/_common.scss */
 .ce-left .ce-gallery,
 .ce-column {
   float: left;
 }
 
-/* line 126, ../sass/_common.scss */
+/* line 178, ../sass/_common.scss */
 .ce-right .ce-gallery {
   float: right;
 }
 
-/* line 127, ../sass/_common.scss */
+/* line 179, ../sass/_common.scss */
 .ce-center .ce-outer {
   position: relative;
   float: right;
   right: 50%;
 }
 
-/* line 128, ../sass/_common.scss */
+/* line 180, ../sass/_common.scss */
 .ce-center .ce-inner {
   position: relative;
   float: right;
   right: -50%;
 }
 
-/* line 129, ../sass/_common.scss */
+/* line 181, ../sass/_common.scss */
 .ce-gallery figure {
   display: table;
   margin: 0;
 }
 
-/* line 130, ../sass/_common.scss */
+/* line 182, ../sass/_common.scss */
 .ce-gallery figcaption {
   display: table-caption;
   caption-side: bottom;
 }
 
-/* line 131, ../sass/_common.scss */
+/* line 183, ../sass/_common.scss */
 .ce-above .ce-bodytext {
   clear: both;
 }
 
-/* line 135, ../sass/_common.scss */
+/* line 187, ../sass/_common.scss */
 .ce-textpic .ce-media {
   max-width: 100%;
 }
 
-/* line 140, ../sass/_common.scss */
+/* line 192, ../sass/_common.scss */
 .ce-textpic.ce-center .ce-gallery {
   margin-left: auto;
   margin-right: auto;
 }
-/* line 142, ../sass/_common.scss */
+/* line 194, ../sass/_common.scss */
 .ce-textpic .ce-gallery {
   max-width: 100%;
   margin-bottom: 1.875rem;
   float: none;
 }
-/* line 146, ../sass/_common.scss */
+/* line 198, ../sass/_common.scss */
 .ce-textpic .ce-gallery:after {
   display: table;
   content: ' ';
   clear: both;
 }
-/* line 151, ../sass/_common.scss */
+/* line 203, ../sass/_common.scss */
 .ce-textpic .ce-gallery .ce-column {
   margin-right: 0;
   overflow: initial;
   float: none;
 }
-/* line 158, ../sass/_common.scss */
+/* line 210, ../sass/_common.scss */
 .ce-textpic .ce-gallery .ce-row figure,
 .ce-textpic .ce-gallery .ce-row .ce-media,
 .ce-textpic .ce-gallery .ce-column figure,
@@ -11447,15 +11503,15 @@ form ol li ol {
 }
 
 @media only screen and (min-width: 40.063em) {
-  /* line 168, ../sass/_common.scss */
+  /* line 220, ../sass/_common.scss */
   .ce-textpic .ce-gallery {
     margin: 0 -0.46875rem 0.9375rem -0.46875rem;
   }
-  /* line 174, ../sass/_common.scss */
+  /* line 226, ../sass/_common.scss */
   .ce-textpic .ce-gallery[data-ce-columns="1"] {
     margin-left: 0;
   }
-  /* line 181, ../sass/_common.scss */
+  /* line 233, ../sass/_common.scss */
   .ce-textpic .ce-gallery[data-ce-columns="2"] .ce-column {
     width: 50%;
     display: block;
@@ -11465,11 +11521,11 @@ form ol li ol {
     margin: 0;
     padding: 0 0.46875rem;
   }
-  /* line 190, ../sass/_common.scss */
+  /* line 242, ../sass/_common.scss */
   .ce-textpic .ce-gallery[data-ce-columns="2"] .ce-column:nth-of-type(2n+1) {
     clear: both;
   }
-  /* line 181, ../sass/_common.scss */
+  /* line 233, ../sass/_common.scss */
   .ce-textpic .ce-gallery[data-ce-columns="3"] .ce-column {
     width: 33.33333%;
     display: block;
@@ -11479,11 +11535,11 @@ form ol li ol {
     margin: 0;
     padding: 0 0.46875rem;
   }
-  /* line 190, ../sass/_common.scss */
+  /* line 242, ../sass/_common.scss */
   .ce-textpic .ce-gallery[data-ce-columns="3"] .ce-column:nth-of-type(3n+1) {
     clear: both;
   }
-  /* line 181, ../sass/_common.scss */
+  /* line 233, ../sass/_common.scss */
   .ce-textpic .ce-gallery[data-ce-columns="4"] .ce-column {
     width: 25%;
     display: block;
@@ -11493,11 +11549,11 @@ form ol li ol {
     margin: 0;
     padding: 0 0.46875rem;
   }
-  /* line 190, ../sass/_common.scss */
+  /* line 242, ../sass/_common.scss */
   .ce-textpic .ce-gallery[data-ce-columns="4"] .ce-column:nth-of-type(4n+1) {
     clear: both;
   }
-  /* line 181, ../sass/_common.scss */
+  /* line 233, ../sass/_common.scss */
   .ce-textpic .ce-gallery[data-ce-columns="5"] .ce-column {
     width: 20%;
     display: block;
@@ -11507,11 +11563,11 @@ form ol li ol {
     margin: 0;
     padding: 0 0.46875rem;
   }
-  /* line 190, ../sass/_common.scss */
+  /* line 242, ../sass/_common.scss */
   .ce-textpic .ce-gallery[data-ce-columns="5"] .ce-column:nth-of-type(5n+1) {
     clear: both;
   }
-  /* line 181, ../sass/_common.scss */
+  /* line 233, ../sass/_common.scss */
   .ce-textpic .ce-gallery[data-ce-columns="6"] .ce-column {
     width: 16.66667%;
     display: block;
@@ -11521,11 +11577,11 @@ form ol li ol {
     margin: 0;
     padding: 0 0.46875rem;
   }
-  /* line 190, ../sass/_common.scss */
+  /* line 242, ../sass/_common.scss */
   .ce-textpic .ce-gallery[data-ce-columns="6"] .ce-column:nth-of-type(6n+1) {
     clear: both;
   }
-  /* line 181, ../sass/_common.scss */
+  /* line 233, ../sass/_common.scss */
   .ce-textpic .ce-gallery[data-ce-columns="7"] .ce-column {
     width: 14.28571%;
     display: block;
@@ -11535,11 +11591,11 @@ form ol li ol {
     margin: 0;
     padding: 0 0.46875rem;
   }
-  /* line 190, ../sass/_common.scss */
+  /* line 242, ../sass/_common.scss */
   .ce-textpic .ce-gallery[data-ce-columns="7"] .ce-column:nth-of-type(7n+1) {
     clear: both;
   }
-  /* line 181, ../sass/_common.scss */
+  /* line 233, ../sass/_common.scss */
   .ce-textpic .ce-gallery[data-ce-columns="8"] .ce-column {
     width: 12.5%;
     display: block;
@@ -11549,11 +11605,11 @@ form ol li ol {
     margin: 0;
     padding: 0 0.46875rem;
   }
-  /* line 190, ../sass/_common.scss */
+  /* line 242, ../sass/_common.scss */
   .ce-textpic .ce-gallery[data-ce-columns="8"] .ce-column:nth-of-type(8n+1) {
     clear: both;
   }
-  /* line 181, ../sass/_common.scss */
+  /* line 233, ../sass/_common.scss */
   .ce-textpic .ce-gallery[data-ce-columns="9"] .ce-column {
     width: 11.11111%;
     display: block;
@@ -11563,11 +11619,11 @@ form ol li ol {
     margin: 0;
     padding: 0 0.46875rem;
   }
-  /* line 190, ../sass/_common.scss */
+  /* line 242, ../sass/_common.scss */
   .ce-textpic .ce-gallery[data-ce-columns="9"] .ce-column:nth-of-type(9n+1) {
     clear: both;
   }
-  /* line 181, ../sass/_common.scss */
+  /* line 233, ../sass/_common.scss */
   .ce-textpic .ce-gallery[data-ce-columns="10"] .ce-column {
     width: 10%;
     display: block;
@@ -11577,7 +11633,7 @@ form ol li ol {
     margin: 0;
     padding: 0 0.46875rem;
   }
-  /* line 190, ../sass/_common.scss */
+  /* line 242, ../sass/_common.scss */
   .ce-textpic .ce-gallery[data-ce-columns="10"] .ce-column:nth-of-type(10n+1) {
     clear: both;
   }
@@ -11585,7 +11641,7 @@ form ol li ol {
 /*********************************************
     Image captions
 **********************************************/
-/* line 203, ../sass/_common.scss */
+/* line 255, ../sass/_common.scss */
 .ce-textpic figcaption {
   padding-top: 1%;
 }
@@ -11594,46 +11650,46 @@ form ol li ol {
     Picture / text display for large views
 **********************************************/
 @media only screen and (min-width: 40.063em) {
-  /* line 216, ../sass/_common.scss */
+  /* line 268, ../sass/_common.scss */
   .ce-textpic.ce-intext.ce-left .ce-gallery {
     float: left;
     margin-right: 1.875rem;
     margin-bottom: 0.9375rem;
   }
-  /* line 221, ../sass/_common.scss */
+  /* line 273, ../sass/_common.scss */
   .ce-textpic.ce-intext.ce-right .ce-gallery {
     float: right;
     margin-bottom: 0.9375rem;
     margin-left: 1.875rem;
   }
-  /* line 227, ../sass/_common.scss */
+  /* line 279, ../sass/_common.scss */
   .ce-textpic.ce-intext:after {
     display: table;
     content: ' ';
     clear: both;
   }
-  /* line 234, ../sass/_common.scss */
+  /* line 286, ../sass/_common.scss */
   .ce-textpic.ce-intext .ce-gallery {
     max-width: 70%;
   }
-  /* line 243, ../sass/_common.scss */
+  /* line 295, ../sass/_common.scss */
   .ce-textpic.ce-right.ce-nowrap .ce-gallery {
     margin-right: -0.46875rem;
     margin-left: 1.40625rem;
     float: right;
   }
-  /* line 251, ../sass/_common.scss */
+  /* line 303, ../sass/_common.scss */
   .ce-textpic.ce-right.ce-nowrap .ce-gallery.has-1-columns {
     margin-right: 0;
     margin-left: 1.875rem;
   }
-  /* line 261, ../sass/_common.scss */
+  /* line 313, ../sass/_common.scss */
   .ce-textpic.ce-left.ce-nowrap .ce-gallery {
     margin-left: -0.46875rem;
     margin-right: 1.40625rem;
     float: left;
   }
-  /* line 266, ../sass/_common.scss */
+  /* line 318, ../sass/_common.scss */
   .ce-textpic.ce-left.ce-nowrap .ce-gallery.has-1-columns {
     margin-left: 0;
     margin-right: 1.875rem;

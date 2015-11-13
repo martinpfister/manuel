@@ -117,6 +117,58 @@ form ol li ol {
 
 
 /*********************************************
+    Responsive tables
+    This is an example tested with the
+    default setup. You might want to modify
+    or disable this entirely.
+**********************************************/
+@media #{$small-only} {
+
+    .ce-table[class*="table-header-position"] {
+        border:none;
+
+        tr, td {
+            display:block;
+            padding:initial;
+            margin:initial;
+        }
+
+        tr,
+        td,
+        tr:before,
+        td:before { line-height:$paragraph-line-height; }
+
+        // Hide regular headers
+        tr th,
+        thead { display:none; }
+
+        // Add correct font weight & basic styling to future headers
+        td:before {
+            display:inline;
+            font-weight:$table-head-font-weight;
+        }
+
+        tr { margin-bottom:$paragraph-margin-bottom;}
+
+        // Table header left (first column)
+        &.table-header-position-1 {
+            td:before { content:attr(data-columnheader) ' (' attr(data-rowheader) '): '; }
+            // Hide created header, if it is empty
+            td[data-columnheader=""],
+            td[data-columnheader=""]:before { display:none; }
+        }
+
+        // Table header top (first row)
+        &.table-header-position-2 {
+            // Hide first row (header row)
+            tr:first-child { display:none; }
+            td:before { content:attr(data-rowheader) ' (' attr(data-columnheader) '): '; }
+        }
+    }
+}
+
+
+/*********************************************
     Image / textmedia styling
 **********************************************/
 // Some basic ce styles copied from fluid_styled_content
