@@ -28,12 +28,6 @@ $hamburger-icon-color: $primary-color;
 /*********************************************
     Content elements
 **********************************************/
-// Clear every content element
-.element:after {
-    display:table;
-    content:' ';
-    clear:both;
-}
 // Allow iFrame widths (p.e. embedded videos)
 // to span 100% max!
 iframe { max-width:100%; }
@@ -149,7 +143,11 @@ form ol li ol {
         max-width:100%;
         margin-bottom:$pictureVsTextSpacing;
         float:none;
-
+        &:after {
+            display:table;
+            content:' ';
+            clear:both;
+        }
         .ce-column {
             margin-right:0;
             overflow:initial;
