@@ -73,9 +73,19 @@ TCEFORM.tt_content {
     layout.keepItems = 0,1
     layout.altLabels.1 = LLL:EXT:###PACKAGE_KEY###/Resources/Private/Language/Backend.xlf:tt_content.layout.examplelayout
 
-
     # Image border
     imageborder.disabled = 1
+
+    # Image positioning
+    # 0 - Above, center
+    # 1 - Above, right
+    # 2 - Above, left
+    # 8 - Below, center
+    # 9 - Below, right
+    # 10 - Below, left
+    # 17 - In text, right
+    # 18 - in text, left
+    imageorient.removeItems = 0,8,9
 }
 
 
