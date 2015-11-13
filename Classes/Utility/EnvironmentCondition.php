@@ -34,7 +34,7 @@ class EnvironmentCondition extends \TYPO3\CMS\Core\Configuration\TypoScript\Cond
         $result = FALSE;
 
         if (!empty($conditionParameters)) {
-            $packageKey = $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['Staempfli/TemplateBootstrap']['PackageKey'];
+            $packageKey = TemplateBootstrapUtility::getPackageKey();
             $extensionConfiguration = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$packageKey]);
 
             if (!empty($conditionParameters) && substr($conditionParameters[0], 0, 1) === '=') {
