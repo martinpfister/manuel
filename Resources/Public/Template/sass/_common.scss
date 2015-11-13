@@ -123,17 +123,25 @@ form ol li ol {
 
 
 /*********************************************
-    Image / textpic styling
+    Image / textmedia styling
 **********************************************/
-// Image scaling FF compatibility
-.ce-textpic {
-    figure { display:block; }
-    .ce-media { max-width:100%; }
-}
+// Some basic ce styles copied from fluid_styled_content
+// Styles/setup.txt
+.ce-left .ce-gallery,
+.ce-column { float: left; }
+.ce-right .ce-gallery { float: right; }
+.ce-center .ce-outer { position: relative; float: right; right: 50%; }
+.ce-center .ce-inner { position: relative; float: right; right: -50%; }
+.ce-gallery figure { display: table; margin: 0; }
+.ce-gallery figcaption { display: table-caption; caption-side: bottom; }
+.ce-above .ce-bodytext { clear: both; }
 
-// Resetting some default fluid_styled_content styles
+
+// Image scaling FF compatibility
+.ce-textpic .ce-media { max-width:100%; }
+
+// Applying 'our' styles to textmedia elements
 .ce-textpic {
-    overflow:initial;
 
     &.ce-center .ce-gallery { margin-left:auto; margin-right:auto; }
 
@@ -159,51 +167,42 @@ form ol li ol {
 
 // Add margins (in the shape of paddings) to the images
 @media #{$enableImageColumnsMediaQuery} {
-    .ce-textpic {
+    .ce-textpic .ce-gallery {
 
         // Main gallery positioning
         // Notice that the negative margins are used in order
         // to get a proper block grid.
-        .ce-gallery {
-            margin:0 (-$pictureSpacing / 2) ($pictureVsTextSpacing - $pictureSpacing) (-$pictureSpacing / 2);
-            &[data-ce-columns="1"] { margin-left:0; }
-        }
-
+        margin:0 (-$pictureSpacing / 2) ($pictureVsTextSpacing - $pictureSpacing) (-$pictureSpacing / 2);
+        &[data-ce-columns="1"] { margin-left:0; }
 
         // Create block grid
-        .ce-gallery {
+        $expectedMaxNumberOfColumns:10;
+        $numberOfColumns:2;
+        @while $numberOfColumns <= $expectedMaxNumberOfColumns {
 
-            $maxNumberOfColumns:10;
-            $numberOfColumns:2;
-            @while $numberOfColumns <= $maxNumberOfColumns {
+            &[data-ce-columns="#{$numberOfColumns}"] .ce-column {
+                width:100% / $numberOfColumns;
+                display:block;
+                float:left;
+                height:auto;
+                clear:none;
+                margin:0;
+                padding:0 $pictureSpacing/2;
 
-                &[data-ce-columns="#{$numberOfColumns}"] .ce-column {
-                    width:100% / $numberOfColumns;
-                    display:block;
-                    float:left;
-                    height:auto;
-                    clear:none;
-                    margin:0;
-                    padding:0 $pictureSpacing/2;
-
-                    &:nth-of-type(#{$numberOfColumns}n+1) {
-                        clear:both;
-                    }
+                &:nth-of-type(#{$numberOfColumns}n+1) {
+                    clear:both;
                 }
-
-                $numberOfColumns:$numberOfColumns+1;
             }
-        } // csc-textpic-imagewrap
-    } // csc-textpic
+
+            $numberOfColumns:$numberOfColumns+1;
+        }
+    }
 }
 
 /*********************************************
     Image captions
 **********************************************/
-.ce-textpic figcaption {
-    display:block;
-    padding-top:1%;
-}
+.ce-textpic figcaption { padding-top:1%; }
 
 
 /*********************************************
@@ -272,6 +271,5 @@ form ol li ol {
                 }
             }
         }
-
     }
 }

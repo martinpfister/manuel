@@ -89,6 +89,10 @@ site {
 # be downsized by browser when needed. Usually, this is the
 # main content column width.
 imageRenderingMaxWidth = 1200
+# This is the same figure, but when the images appear side-by-side
+# with the text. This should correspond with the max-width of the
+# gallery column set in _common.scss (usually 70%).
+imageRenderingMaxWidthInText = 840
 
 
 # **********************************************************

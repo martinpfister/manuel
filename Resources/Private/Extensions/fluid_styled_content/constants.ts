@@ -1,6 +1,6 @@
 styles.content.textmedia {
     maxW = {$imageRenderingMaxWidth}
-    maxWInText = {$imageRenderingMaxWidth}
+    maxWInText = {$imageRenderingMaxWidthInText}
     columnSpacing = 0
     rowSpacing = 0
     textMargin = 0

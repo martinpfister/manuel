@@ -11373,39 +11373,73 @@ form ol li ol {
 }
 
 /*********************************************
-    Image / textpic styling
+    Image / textmedia styling
 **********************************************/
 /* line 130, ../sass/_common.scss */
-.ce-textpic figure {
-  display: block;
+.ce-left .ce-gallery,
+.ce-column {
+  float: left;
 }
-/* line 131, ../sass/_common.scss */
+
+/* line 132, ../sass/_common.scss */
+.ce-right .ce-gallery {
+  float: right;
+}
+
+/* line 133, ../sass/_common.scss */
+.ce-center .ce-outer {
+  position: relative;
+  float: right;
+  right: 50%;
+}
+
+/* line 134, ../sass/_common.scss */
+.ce-center .ce-inner {
+  position: relative;
+  float: right;
+  right: -50%;
+}
+
+/* line 135, ../sass/_common.scss */
+.ce-gallery figure {
+  display: table;
+  margin: 0;
+}
+
+/* line 136, ../sass/_common.scss */
+.ce-gallery figcaption {
+  display: table-caption;
+  caption-side: bottom;
+}
+
+/* line 137, ../sass/_common.scss */
+.ce-above .ce-bodytext {
+  clear: both;
+}
+
+/* line 141, ../sass/_common.scss */
 .ce-textpic .ce-media {
   max-width: 100%;
 }
 
-/* line 135, ../sass/_common.scss */
-.ce-textpic {
-  overflow: initial;
-}
-/* line 138, ../sass/_common.scss */
+/* line 146, ../sass/_common.scss */
 .ce-textpic.ce-center .ce-gallery {
   margin-left: auto;
   margin-right: auto;
 }
-/* line 140, ../sass/_common.scss */
+/* line 148, ../sass/_common.scss */
 .ce-textpic .ce-gallery {
   max-width: 100%;
   margin-bottom: 1.875rem;
   float: none;
 }
-/* line 145, ../sass/_common.scss */
+/* line 153, ../sass/_common.scss */
 .ce-textpic .ce-gallery .ce-column {
   margin-right: 0;
   overflow: initial;
   float: none;
 }
-/* line 152, ../sass/_common.scss */
+/* line 160, ../sass/_common.scss */
 .ce-textpic .ce-gallery .ce-row figure,
 .ce-textpic .ce-gallery .ce-row .ce-media,
 .ce-textpic .ce-gallery .ce-column figure,
@@ -11414,15 +11448,15 @@ form ol li ol {
 }
 
 @media only screen and (min-width: 40.063em) {
-  /* line 167, ../sass/_common.scss */
+  /* line 170, ../sass/_common.scss */
   .ce-textpic .ce-gallery {
     margin: 0 -0.46875rem 0.9375rem -0.46875rem;
   }
-  /* line 169, ../sass/_common.scss */
+  /* line 176, ../sass/_common.scss */
   .ce-textpic .ce-gallery[data-ce-columns="1"] {
     margin-left: 0;
   }
-  /* line 180, ../sass/_common.scss */
+  /* line 183, ../sass/_common.scss */
   .ce-textpic .ce-gallery[data-ce-columns="2"] .ce-column {
     width: 50%;
     display: block;
@@ -11432,11 +11466,11 @@ form ol li ol {
     margin: 0;
     padding: 0 0.46875rem;
   }
-  /* line 189, ../sass/_common.scss */
+  /* line 192, ../sass/_common.scss */
   .ce-textpic .ce-gallery[data-ce-columns="2"] .ce-column:nth-of-type(2n+1) {
     clear: both;
   }
-  /* line 180, ../sass/_common.scss */
+  /* line 183, ../sass/_common.scss */
   .ce-textpic .ce-gallery[data-ce-columns="3"] .ce-column {
     width: 33.33333%;
     display: block;
@@ -11446,11 +11480,11 @@ form ol li ol {
     margin: 0;
     padding: 0 0.46875rem;
   }
-  /* line 189, ../sass/_common.scss */
+  /* line 192, ../sass/_common.scss */
   .ce-textpic .ce-gallery[data-ce-columns="3"] .ce-column:nth-of-type(3n+1) {
     clear: both;
   }
-  /* line 180, ../sass/_common.scss */
+  /* line 183, ../sass/_common.scss */
   .ce-textpic .ce-gallery[data-ce-columns="4"] .ce-column {
     width: 25%;
     display: block;
@@ -11460,11 +11494,11 @@ form ol li ol {
     margin: 0;
     padding: 0 0.46875rem;
   }
-  /* line 189, ../sass/_common.scss */
+  /* line 192, ../sass/_common.scss */
   .ce-textpic .ce-gallery[data-ce-columns="4"] .ce-column:nth-of-type(4n+1) {
     clear: both;
   }
-  /* line 180, ../sass/_common.scss */
+  /* line 183, ../sass/_common.scss */
   .ce-textpic .ce-gallery[data-ce-columns="5"] .ce-column {
     width: 20%;
     display: block;
@@ -11474,11 +11508,11 @@ form ol li ol {
     margin: 0;
     padding: 0 0.46875rem;
   }
-  /* line 189, ../sass/_common.scss */
+  /* line 192, ../sass/_common.scss */
   .ce-textpic .ce-gallery[data-ce-columns="5"] .ce-column:nth-of-type(5n+1) {
     clear: both;
   }
-  /* line 180, ../sass/_common.scss */
+  /* line 183, ../sass/_common.scss */
   .ce-textpic .ce-gallery[data-ce-columns="6"] .ce-column {
     width: 16.66667%;
     display: block;
@@ -11488,11 +11522,11 @@ form ol li ol {
     margin: 0;
     padding: 0 0.46875rem;
   }
-  /* line 189, ../sass/_common.scss */
+  /* line 192, ../sass/_common.scss */
   .ce-textpic .ce-gallery[data-ce-columns="6"] .ce-column:nth-of-type(6n+1) {
     clear: both;
   }
-  /* line 180, ../sass/_common.scss */
+  /* line 183, ../sass/_common.scss */
   .ce-textpic .ce-gallery[data-ce-columns="7"] .ce-column {
     width: 14.28571%;
     display: block;
@@ -11502,11 +11536,11 @@ form ol li ol {
     margin: 0;
     padding: 0 0.46875rem;
   }
-  /* line 189, ../sass/_common.scss */
+  /* line 192, ../sass/_common.scss */
   .ce-textpic .ce-gallery[data-ce-columns="7"] .ce-column:nth-of-type(7n+1) {
     clear: both;
   }
-  /* line 180, ../sass/_common.scss */
+  /* line 183, ../sass/_common.scss */
   .ce-textpic .ce-gallery[data-ce-columns="8"] .ce-column {
     width: 12.5%;
     display: block;
@@ -11516,11 +11550,11 @@ form ol li ol {
     margin: 0;
     padding: 0 0.46875rem;
   }
-  /* line 189, ../sass/_common.scss */
+  /* line 192, ../sass/_common.scss */
   .ce-textpic .ce-gallery[data-ce-columns="8"] .ce-column:nth-of-type(8n+1) {
     clear: both;
   }
-  /* line 180, ../sass/_common.scss */
+  /* line 183, ../sass/_common.scss */
   .ce-textpic .ce-gallery[data-ce-columns="9"] .ce-column {
     width: 11.11111%;
     display: block;
@@ -11530,11 +11564,11 @@ form ol li ol {
     margin: 0;
     padding: 0 0.46875rem;
   }
-  /* line 189, ../sass/_common.scss */
+  /* line 192, ../sass/_common.scss */
   .ce-textpic .ce-gallery[data-ce-columns="9"] .ce-column:nth-of-type(9n+1) {
     clear: both;
   }
-  /* line 180, ../sass/_common.scss */
+  /* line 183, ../sass/_common.scss */
   .ce-textpic .ce-gallery[data-ce-columns="10"] .ce-column {
     width: 10%;
     display: block;
@@ -11544,7 +11578,7 @@ form ol li ol {
     margin: 0;
     padding: 0 0.46875rem;
   }
-  /* line 189, ../sass/_common.scss */
+  /* line 192, ../sass/_common.scss */
   .ce-textpic .ce-gallery[data-ce-columns="10"] .ce-column:nth-of-type(10n+1) {
     clear: both;
   }
@@ -11552,9 +11586,8 @@ form ol li ol {
 /*********************************************
     Image captions
 **********************************************/
-/* line 203, ../sass/_common.scss */
+/* line 205, ../sass/_common.scss */
 .ce-textpic figcaption {
-  display: block;
   padding-top: 1%;
 }
 
@@ -11562,46 +11595,46 @@ form ol li ol {
     Picture / text display for large views
 **********************************************/
 @media only screen and (min-width: 40.063em) {
-  /* line 219, ../sass/_common.scss */
+  /* line 218, ../sass/_common.scss */
   .ce-textpic.ce-intext.ce-left .ce-gallery {
     float: left;
     margin-right: 1.875rem;
     margin-bottom: 0.9375rem;
   }
-  /* line 224, ../sass/_common.scss */
+  /* line 223, ../sass/_common.scss */
   .ce-textpic.ce-intext.ce-right .ce-gallery {
     float: right;
     margin-bottom: 0.9375rem;
     margin-left: 1.875rem;
   }
-  /* line 230, ../sass/_common.scss */
+  /* line 229, ../sass/_common.scss */
   .ce-textpic.ce-intext:after {
     display: table;
     content: ' ';
     clear: both;
   }
-  /* line 237, ../sass/_common.scss */
+  /* line 236, ../sass/_common.scss */
   .ce-textpic.ce-intext .ce-gallery {
     max-width: 70%;
   }
-  /* line 246, ../sass/_common.scss */
+  /* line 245, ../sass/_common.scss */
   .ce-textpic.ce-right.ce-nowrap .ce-gallery {
     margin-right: -0.46875rem;
     margin-left: 1.40625rem;
     float: right;
   }
-  /* line 254, ../sass/_common.scss */
+  /* line 253, ../sass/_common.scss */
   .ce-textpic.ce-right.ce-nowrap .ce-gallery.has-1-columns {
     margin-right: 0;
     margin-left: 1.875rem;
   }
-  /* line 264, ../sass/_common.scss */
+  /* line 263, ../sass/_common.scss */
   .ce-textpic.ce-left.ce-nowrap .ce-gallery {
     margin-left: -0.46875rem;
     margin-right: 1.40625rem;
     float: left;
   }
-  /* line 269, ../sass/_common.scss */
+  /* line 268, ../sass/_common.scss */
   .ce-textpic.ce-left.ce-nowrap .ce-gallery.has-1-columns {
     margin-left: 0;
     margin-right: 1.875rem;
