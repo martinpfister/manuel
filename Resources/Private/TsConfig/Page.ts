@@ -51,9 +51,6 @@ TCEFORM.pages {
 #-------------------------------------------------------------------------------
 TCEFORM.tt_content {
 
-    # Header position
-    header_position.disabled = 1
-
     # Date
     date.disabled = 1
 
@@ -97,11 +94,7 @@ mod.SHARED {
 TCAdefaults.tt_content {
     header_layout = 2
     imagecols = 1
-}
-# "imageorient" set on a per-content type basis
-mod.wizards.newContentElement.wizardItems.common.elements {
-    textpic.tt_content_defValues.imageorient = 18
-    image.tt_content_defValues.imageorient = 2
+    imageorient = 2
 }
 
 
