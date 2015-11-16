@@ -98,6 +98,25 @@ input[type="reset"] {
     @extend .alert;
 }
 
+form ol li:not(:last-child) {
+    margin-bottom:$column-gutter;
+}
+
+// Resetting some too general foundation error styling
+// in _forms.scss.
+span.error,
+small.error { display:initial; }
+
+// Form mandatory messages (em) & errors (strong)
+form label em {
+    font-style:normal;
+}
+form label strong {
+    display:block;
+    font-weight:$input-error-message-font-weight;
+    color:$alert-color;
+}
+
 
 /*********************************************
     Indexed search
