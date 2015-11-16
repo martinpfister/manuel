@@ -31,6 +31,12 @@ $(function() {
         $('html').addClass('no-placeholder');
     }
 
+    // Initialize video thumbnail (click-replace with embed code)
+    $('.video .preview[data-embedcode]').not('[class*=lightbox]').bind('click', function(clickEvent){
+        clickEvent.preventDefault();
+        $(this).replaceWith($(this).data('embedcode'));
+    })
+
     // Init slider (slick slider)
     var slickSliderSettings = {
         dots: true,
