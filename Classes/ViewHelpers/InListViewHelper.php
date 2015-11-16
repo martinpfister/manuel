@@ -1,5 +1,5 @@
 <?php
-namespace GeorgRinger\Modernpackage\ViewHelpers;
+namespace Staempfli\TemplateBootstrap\ViewHelpers;
 /***************************************************************
  *  Copyright notice
  *
