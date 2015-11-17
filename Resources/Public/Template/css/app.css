@@ -11423,60 +11423,63 @@ form ol li ol {
   }
 }
 /*********************************************
-    Image / textmedia styling
+    These styles are meant to format
+    the most commonly used textmedia
+    elements (text, images, videos).
 **********************************************/
-/* line 179, ../sass/_common.scss */
+/* line 9, ../sass/_common_textmedia.scss */
 .ce-left .ce-gallery,
 .ce-column {
   float: left;
 }
 
-/* line 181, ../sass/_common.scss */
+/* line 11, ../sass/_common_textmedia.scss */
 .ce-right .ce-gallery {
   float: right;
 }
 
-/* line 182, ../sass/_common.scss */
+/* line 12, ../sass/_common_textmedia.scss */
 .ce-center .ce-outer {
   position: relative;
   float: right;
   right: 50%;
 }
 
-/* line 183, ../sass/_common.scss */
+/* line 13, ../sass/_common_textmedia.scss */
 .ce-center .ce-inner {
   position: relative;
   float: right;
   right: -50%;
 }
 
-/* line 184, ../sass/_common.scss */
+/* line 14, ../sass/_common_textmedia.scss */
 .ce-gallery figure {
   display: table;
   margin: 0;
 }
 
-/* line 185, ../sass/_common.scss */
+/* line 15, ../sass/_common_textmedia.scss */
 .ce-gallery figcaption {
   display: table-caption;
   caption-side: bottom;
 }
 
-/* line 186, ../sass/_common.scss */
+/* line 16, ../sass/_common_textmedia.scss */
 .ce-above .ce-bodytext {
   clear: both;
 }
 
-/* line 190, ../sass/_common.scss */
+/* line 20, ../sass/_common_textmedia.scss */
 .ce-textpic .ce-media,
 .ce-textpic figure {
+  width: 100%;
   max-width: 100%;
 }
 
 /*********************************************
     Video
 **********************************************/
-/* line 196, ../sass/_common.scss */
+/* line 26, ../sass/_common_textmedia.scss */
 .ce-textpic .video {
   position: relative;
   padding-bottom: 56.25%;
@@ -11484,7 +11487,7 @@ form ol li ol {
   padding-top: 25px;
   height: 0;
 }
-/* line 202, ../sass/_common.scss */
+/* line 32, ../sass/_common_textmedia.scss */
 .ce-textpic .video .preview,
 .ce-textpic .video iframe {
   display: block;
@@ -11494,12 +11497,12 @@ form ol li ol {
   width: 100%;
   height: 100%;
 }
-/* line 212, ../sass/_common.scss */
+/* line 42, ../sass/_common_textmedia.scss */
 .ce-textpic .video .preview {
   background-position: center;
   background-size: cover;
 }
-/* line 215, ../sass/_common.scss */
+/* line 45, ../sass/_common_textmedia.scss */
 .ce-textpic .video .preview:after, .ce-textpic .video .preview:before {
   display: block;
   position: absolute;
@@ -11513,12 +11516,12 @@ form ol li ol {
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
-/* line 225, ../sass/_common.scss */
+/* line 55, ../sass/_common_textmedia.scss */
 .ce-textpic .video .preview:hover:before, .ce-textpic .video .preview:hover:after {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
-/* line 228, ../sass/_common.scss */
+/* line 58, ../sass/_common_textmedia.scss */
 .ce-textpic .video .preview:before {
   -moz-transform: translateX(-50%) translateY(-50%);
   -ms-transform: translateX(-50%) translateY(-50%);
@@ -11531,7 +11534,7 @@ form ol li ol {
   -webkit-border-radius: 40px;
   border-radius: 40px;
 }
-/* line 235, ../sass/_common.scss */
+/* line 65, ../sass/_common_textmedia.scss */
 .ce-textpic .video .preview:after {
   width: 0;
   height: 0;
@@ -11547,30 +11550,30 @@ form ol li ol {
 /*********************************************
     Images
 **********************************************/
-/* line 254, ../sass/_common.scss */
+/* line 84, ../sass/_common_textmedia.scss */
 .ce-textpic.ce-center .ce-gallery {
   margin-left: auto;
   margin-right: auto;
 }
-/* line 256, ../sass/_common.scss */
+/* line 86, ../sass/_common_textmedia.scss */
 .ce-textpic .ce-gallery {
   max-width: 100%;
   margin-bottom: 1.875rem;
   float: none;
 }
-/* line 260, ../sass/_common.scss */
+/* line 90, ../sass/_common_textmedia.scss */
 .ce-textpic .ce-gallery:after {
   display: table;
   content: ' ';
   clear: both;
 }
-/* line 265, ../sass/_common.scss */
+/* line 95, ../sass/_common_textmedia.scss */
 .ce-textpic .ce-gallery .ce-column {
   margin-right: 0;
   overflow: initial;
   float: none;
 }
-/* line 272, ../sass/_common.scss */
+/* line 102, ../sass/_common_textmedia.scss */
 .ce-textpic .ce-gallery .ce-row figure,
 .ce-textpic .ce-gallery .ce-row .ce-media,
 .ce-textpic .ce-gallery .ce-column figure,
@@ -11579,15 +11582,15 @@ form ol li ol {
 }
 
 @media only screen and (min-width: 40.063em) {
-  /* line 282, ../sass/_common.scss */
+  /* line 112, ../sass/_common_textmedia.scss */
   .ce-textpic .ce-gallery {
     margin: 0 -0.46875rem 0.9375rem -0.46875rem;
   }
-  /* line 288, ../sass/_common.scss */
+  /* line 118, ../sass/_common_textmedia.scss */
   .ce-textpic .ce-gallery[data-ce-columns="1"] {
     margin-left: 0;
   }
-  /* line 295, ../sass/_common.scss */
+  /* line 125, ../sass/_common_textmedia.scss */
   .ce-textpic .ce-gallery[data-ce-columns="2"] .ce-column {
     width: 50%;
     display: block;
@@ -11597,11 +11600,11 @@ form ol li ol {
     margin: 0;
     padding: 0 0.46875rem;
   }
-  /* line 304, ../sass/_common.scss */
+  /* line 134, ../sass/_common_textmedia.scss */
   .ce-textpic .ce-gallery[data-ce-columns="2"] .ce-column:nth-of-type(2n+1) {
     clear: both;
   }
-  /* line 295, ../sass/_common.scss */
+  /* line 125, ../sass/_common_textmedia.scss */
   .ce-textpic .ce-gallery[data-ce-columns="3"] .ce-column {
     width: 33.33333%;
     display: block;
@@ -11611,11 +11614,11 @@ form ol li ol {
     margin: 0;
     padding: 0 0.46875rem;
   }
-  /* line 304, ../sass/_common.scss */
+  /* line 134, ../sass/_common_textmedia.scss */
   .ce-textpic .ce-gallery[data-ce-columns="3"] .ce-column:nth-of-type(3n+1) {
     clear: both;
   }
-  /* line 295, ../sass/_common.scss */
+  /* line 125, ../sass/_common_textmedia.scss */
   .ce-textpic .ce-gallery[data-ce-columns="4"] .ce-column {
     width: 25%;
     display: block;
@@ -11625,11 +11628,11 @@ form ol li ol {
     margin: 0;
     padding: 0 0.46875rem;
   }
-  /* line 304, ../sass/_common.scss */
+  /* line 134, ../sass/_common_textmedia.scss */
   .ce-textpic .ce-gallery[data-ce-columns="4"] .ce-column:nth-of-type(4n+1) {
     clear: both;
   }
-  /* line 295, ../sass/_common.scss */
+  /* line 125, ../sass/_common_textmedia.scss */
   .ce-textpic .ce-gallery[data-ce-columns="5"] .ce-column {
     width: 20%;
     display: block;
@@ -11639,11 +11642,11 @@ form ol li ol {
     margin: 0;
     padding: 0 0.46875rem;
   }
-  /* line 304, ../sass/_common.scss */
+  /* line 134, ../sass/_common_textmedia.scss */
   .ce-textpic .ce-gallery[data-ce-columns="5"] .ce-column:nth-of-type(5n+1) {
     clear: both;
   }
-  /* line 295, ../sass/_common.scss */
+  /* line 125, ../sass/_common_textmedia.scss */
   .ce-textpic .ce-gallery[data-ce-columns="6"] .ce-column {
     width: 16.66667%;
     display: block;
@@ -11653,11 +11656,11 @@ form ol li ol {
     margin: 0;
     padding: 0 0.46875rem;
   }
-  /* line 304, ../sass/_common.scss */
+  /* line 134, ../sass/_common_textmedia.scss */
   .ce-textpic .ce-gallery[data-ce-columns="6"] .ce-column:nth-of-type(6n+1) {
     clear: both;
   }
-  /* line 295, ../sass/_common.scss */
+  /* line 125, ../sass/_common_textmedia.scss */
   .ce-textpic .ce-gallery[data-ce-columns="7"] .ce-column {
     width: 14.28571%;
     display: block;
@@ -11667,11 +11670,11 @@ form ol li ol {
     margin: 0;
     padding: 0 0.46875rem;
   }
-  /* line 304, ../sass/_common.scss */
+  /* line 134, ../sass/_common_textmedia.scss */
   .ce-textpic .ce-gallery[data-ce-columns="7"] .ce-column:nth-of-type(7n+1) {
     clear: both;
   }
-  /* line 295, ../sass/_common.scss */
+  /* line 125, ../sass/_common_textmedia.scss */
   .ce-textpic .ce-gallery[data-ce-columns="8"] .ce-column {
     width: 12.5%;
     display: block;
@@ -11681,11 +11684,11 @@ form ol li ol {
     margin: 0;
     padding: 0 0.46875rem;
   }
-  /* line 304, ../sass/_common.scss */
+  /* line 134, ../sass/_common_textmedia.scss */
   .ce-textpic .ce-gallery[data-ce-columns="8"] .ce-column:nth-of-type(8n+1) {
     clear: both;
   }
-  /* line 295, ../sass/_common.scss */
+  /* line 125, ../sass/_common_textmedia.scss */
   .ce-textpic .ce-gallery[data-ce-columns="9"] .ce-column {
     width: 11.11111%;
     display: block;
@@ -11695,11 +11698,11 @@ form ol li ol {
     margin: 0;
     padding: 0 0.46875rem;
   }
-  /* line 304, ../sass/_common.scss */
+  /* line 134, ../sass/_common_textmedia.scss */
   .ce-textpic .ce-gallery[data-ce-columns="9"] .ce-column:nth-of-type(9n+1) {
     clear: both;
   }
-  /* line 295, ../sass/_common.scss */
+  /* line 125, ../sass/_common_textmedia.scss */
   .ce-textpic .ce-gallery[data-ce-columns="10"] .ce-column {
     width: 10%;
     display: block;
@@ -11709,7 +11712,7 @@ form ol li ol {
     margin: 0;
     padding: 0 0.46875rem;
   }
-  /* line 304, ../sass/_common.scss */
+  /* line 134, ../sass/_common_textmedia.scss */
   .ce-textpic .ce-gallery[data-ce-columns="10"] .ce-column:nth-of-type(10n+1) {
     clear: both;
   }
@@ -11717,7 +11720,7 @@ form ol li ol {
 /*********************************************
     Image captions
 **********************************************/
-/* line 317, ../sass/_common.scss */
+/* line 147, ../sass/_common_textmedia.scss */
 .ce-textpic figcaption {
   padding-top: 1%;
 }
@@ -11726,46 +11729,46 @@ form ol li ol {
     Picture / text display for large views
 **********************************************/
 @media only screen and (min-width: 40.063em) {
-  /* line 330, ../sass/_common.scss */
+  /* line 160, ../sass/_common_textmedia.scss */
   .ce-textpic.ce-intext.ce-left .ce-gallery {
     float: left;
     margin-right: 1.875rem;
     margin-bottom: 0.9375rem;
   }
-  /* line 335, ../sass/_common.scss */
+  /* line 165, ../sass/_common_textmedia.scss */
   .ce-textpic.ce-intext.ce-right .ce-gallery {
     float: right;
     margin-bottom: 0.9375rem;
     margin-left: 1.875rem;
   }
-  /* line 341, ../sass/_common.scss */
+  /* line 171, ../sass/_common_textmedia.scss */
   .ce-textpic.ce-intext:after {
     display: table;
     content: ' ';
     clear: both;
   }
-  /* line 348, ../sass/_common.scss */
+  /* line 178, ../sass/_common_textmedia.scss */
   .ce-textpic.ce-intext .ce-gallery {
     max-width: 70%;
   }
-  /* line 357, ../sass/_common.scss */
+  /* line 187, ../sass/_common_textmedia.scss */
   .ce-textpic.ce-right.ce-nowrap .ce-gallery {
     margin-right: -0.46875rem;
     margin-left: 1.40625rem;
     float: right;
   }
-  /* line 365, ../sass/_common.scss */
+  /* line 195, ../sass/_common_textmedia.scss */
   .ce-textpic.ce-right.ce-nowrap .ce-gallery.has-1-columns {
     margin-right: 0;
     margin-left: 1.875rem;
   }
-  /* line 375, ../sass/_common.scss */
+  /* line 205, ../sass/_common_textmedia.scss */
   .ce-textpic.ce-left.ce-nowrap .ce-gallery {
     margin-left: -0.46875rem;
     margin-right: 1.40625rem;
     float: left;
   }
-  /* line 380, ../sass/_common.scss */
+  /* line 210, ../sass/_common_textmedia.scss */
   .ce-textpic.ce-left.ce-nowrap .ce-gallery.has-1-columns {
     margin-left: 0;
     margin-right: 1.875rem;
