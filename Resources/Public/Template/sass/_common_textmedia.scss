@@ -12,8 +12,10 @@
 .ce-right .ce-gallery { float: right; }
 .ce-center .ce-outer { position: relative; float: right; right: 50%; }
 .ce-center .ce-inner { position: relative; float: right; right: -50%; }
-.ce-gallery figure { display: table; margin: 0; }
-.ce-gallery figcaption { display: table-caption; caption-side: bottom; }
+.ce-gallery figure,
+.ce-gallery .ce-media { display: table; margin: 0; }
+.ce-gallery figcaption,
+.ce-gallery .ce-media .caption { display: table-caption; caption-side: bottom; }
 .ce-above .ce-bodytext { clear: both; }
 
 
@@ -22,12 +24,10 @@
 .ce-textpic figure { width:100%; max-width:100%; }
 
 /*********************************************
-    Video
+    iFrame embed preview
 **********************************************/
-.ce-textpic .video {
+.ce-textpic .onlineMedia {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 */
-  padding-top: 25px;
   height: 0;
 
   .preview,
@@ -72,6 +72,23 @@
       @include transform(translateX(-35%) translateY(-50%));
     }
   }
+}
+
+
+/*********************************************
+    Videos
+**********************************************/
+.ce-textpic .onlineMedia.type-4 {
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+}
+
+/*********************************************
+    Audio
+**********************************************/
+.ce-textpic .service-soundcloud {
+  padding-bottom: 25%;
+  padding-top: 25px;
 }
 
 
@@ -143,9 +160,10 @@
 }
 
 /*********************************************
-    Image captions
+    Image / media captions
 **********************************************/
-.ce-textpic figcaption { padding-top:1%; }
+.ce-textpic figcaption,
+.ce-textpic .caption { padding-top:1%; }
 
 
 /*********************************************

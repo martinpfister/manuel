@@ -13,32 +13,61 @@
                 <f:for each="{row.columns}" as="column">
                     <f:if condition="{column.media}">
                         <div class="ce-column">
+
+                            <f:comment>
+                                Put image in <figure> tag, if there is a description
+                                available. Filter by image types 2 (jpg, png, gif, etc.)
+                                and 5 (p.e. Illustrator files).
+                            </f:comment>
                             <f:if condition="{column.media.description}">
                                 <f:then>
-                                    <figure>
+                                    <s:inList item="{column.media.type}" list="2,5">
+                                        <f:then><figure></f:then>
+                                        <f:else><div class="ce-media"></f:else>
+                                    </s:inList>
                                 </f:then>
                                 <f:else>
                                     <div class="ce-media">
                                 </f:else>
                             </f:if>
-                            <f:if condition="{column.media.type} == 2">
-                                <f:render section="imageType" arguments="{_all}" />
-                            </f:if>
-                            <f:if condition="{column.media.type} == 4">
-                                <f:render section="videoType" arguments="{_all}" />
-                            </f:if>
 
+
+                            <f:comment>
+                                Ouput the media.
+                                Usually an image, but might also be embedded
+                                online media such as YouTube, Vimeo, SoundCloud...
+                            </f:comment>
+                            <s:inList item="{column.media.originalFile.properties.type}" list="3,4">
+                                <f:then>
+                                    <f:render section="mediaType" arguments="{_all}" />
+                                </f:then>
+                                <f:else>
+                                    <f:render section="imageType" arguments="{_all}" />
+                                </f:else>
+                            </s:inList>
+
+
+                            <f:comment>
+                                Close div tag containing the image. Conditionally
+                                close the <figure> tag, which has been opened, if
+                                there is a description available and it is an image (not a video et al).
+                            </f:comment>
                             <f:if condition="{column.media.description}">
                                 <f:then>
-                                        <figcaption>
-                                            {column.media.description}
-                                        </figcaption>
-                                    </figure>
+                                    <s:inList item="{column.media.type}" list="2,5">
+                                        <f:then>
+                                            <figcaption>{column.media.description}</figcaption></figure>
+                                        </f:then>
+                                        <f:else>
+                                            <div class="caption">{column.media.description}</div></div>
+                                        </f:else>
+                                    </s:inList>
                                 </f:then>
                                 <f:else>
                                     </div>
                                 </f:else>
                             </f:if>
+
                         </div>
                     </f:if>
                 </f:for>
@@ -73,21 +102,24 @@
     </f:if>
 </f:section>
 
-<f:section name="videoType">
-    <div class="video">
-        <s:inList item="{column.media.originalFile.properties.extension}" list="youtube,vimeo">
-            <f:then>
+
+<f:section name="mediaType">
+    <s:inList item="{column.media.originalFile.properties.extension}" list="youtube,vimeo,soundcloud">
+        <f:then>
+            <div class="onlineMedia type-{column.media.type} service-{column.media.originalFile.properties.extension}">
                 <a class="preview {f:if(condition:data.image_zoom, then:'lightbox-media" rel="lightbox[{data.pid}]')}"
                    href="{s:OnlineMediaPublicUrl(fileReference: column.media)}"
                    style="background-image:url({s:OnlineMediaPreviewImage(fileReference: column.media)});"
                    data-embedcode="<f:format.htmlentities><f:render section="media" arguments="{_all}" /></f:format.htmlentities>"></a>
-
-            </f:then>
-            <f:else>
+            </div>
+        </f:then>
+        <f:else>
+            <div class="media type-{column.media.type}">
                 <f:render section="media" arguments="{_all}" />
-            </f:else>
-        </s:inList>
-    </div>
+            </div>
+        </f:else>
+    </s:inList>
+
 </f:section>
 
 <f:section name="media">

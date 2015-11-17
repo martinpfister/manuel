@@ -32,7 +32,7 @@ $(function() {
     }
 
     // Initialize video thumbnail (click-replace with embed code)
-    $('.video .preview[data-embedcode]').not('[class*=lightbox]').bind('click', function(clickEvent){
+    $('.onlineMedia .preview[data-embedcode]').not('[class*=lightbox]').bind('click', function(clickEvent){
         clickEvent.preventDefault();
         $(this).replaceWith($(this).data('embedcode'));
     })
