@@ -105,7 +105,6 @@
 
 
 <f:section name="mediaType">
-    {column.media.originalFile.properties.extension}<br />
     <f:if condition="{s:inList(item: column.media.originalFile.properties.extension, list:'youtube,vimeo,soundcloud')}">
         <f:then>
             <div class="onlineMedia type-{column.media.type} service-{column.media.originalFile.properties.extension}">
