@@ -63,14 +63,3 @@ foreach($availableIcons as $icon) {
 	);
 }
 
-/******************************
- * Register helper & renderer
- * for online media
- * 'SoundCloud'
- ******************************/
-$GLOBALS['TYPO3_CONF_VARS']['SYS']['fal']['onlineMediaHelpers']['soundcloud'] = 'Staempfli\TemplateBootstrap\Helpers\SoundCloudHelper';
-$rendererRegistry = \TYPO3\CMS\Core\Resource\Rendering\RendererRegistry::getInstance();
-$rendererRegistry->registerRendererClass('Staempfli\TemplateBootstrap\Rendering\SoundCloudRenderer');
-$GLOBALS['TYPO3_CONF_VARS']['SYS']['FileInfo']['fileExtensionToMimeType']['soundcloud'] = 'audio/soundcloud';
-$GLOBALS['TYPO3_CONF_VARS']['SYS']['mediafile_ext'] .= ',soundcloud';
-
