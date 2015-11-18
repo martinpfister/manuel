@@ -27,7 +27,7 @@ namespace Staempfli\TemplateBootstrap\ViewHelpers;
  ***************************************************************/
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractConditionViewHelper;
+use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /**
  * This view helper implements a condition for an item list
@@ -42,7 +42,13 @@ use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractConditionViewHelper;
  * If the field "layout" of the current page contains either 1 or 2, the string "someClass" is shown.
  * </output>
  */
-class InListViewHelper extends AbstractConditionViewHelper {
+class InListViewHelper extends AbstractViewHelper {
+
+
+	public function initializeArguments() {
+		$this->registerArgument('list', 'string', 'list of values');
+		$this->registerArgument('item', 'string', 'item to compare values against');
+	}
 
 	/**
 	 * Check if given list contains given item. If yes, render the thenChild, otherwise
@@ -52,11 +58,11 @@ class InListViewHelper extends AbstractConditionViewHelper {
 	 * @param string $item item
 	 * @return string
 	 */
-	public function render($list, $item) {
-		if (GeneralUtility::inList($list, $item)) {
-			return $this->renderThenChild();
+	public function render() {
+		if (GeneralUtility::inList($this->arguments['list'], $this->arguments['item'])) {
+			return true;
 		} else {
-			return $this->renderElseChild();
+			return false;
 		}
 	}
 }
