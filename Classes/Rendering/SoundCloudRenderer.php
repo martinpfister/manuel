@@ -93,7 +93,7 @@ class SoundCloudRenderer implements FileRendererInterface
         if ($file instanceof FileReference) {
             $autoplay = $file->getProperty('autoplay');
             if ($autoplay !== null) {
-                $options['auto_play'] = $autoplay;
+                $options['autoplay'] = $autoplay;
             }
         }
 
