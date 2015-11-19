@@ -182,13 +182,14 @@ TCAdefaults.be_groups.non_exclude_fields (
     pages_language_overlay:author_email,pages_language_overlay:media,pages_language_overlay:hidden,pages_language_overlay:keywords,
     pages_language_overlay:nav_title,pages_language_overlay:shortcut_mode,pages_language_overlay:starttime,
     pages_language_overlay:endtime,pages_language_overlay:subtitle,pages_language_overlay:urltype,pages_language_overlay:doktype,
-    pages_language_overlay:url,
+    pages_language_overlay:url,pages_language_overlay:tx_realurl_pathsegment,
 
     sys_category:hidden,sys_category:sys_language_uid,sys_category:starttime,sys_category:endtime,sys_category:l10n_parent,
 
     sys_file_metadata:categories,sys_file_metadata:title,
 
-    sys_file_reference:alternative,sys_file_reference:description,sys_file_reference:crop,sys_file_reference:link,sys_file_reference:title,
+    sys_file_reference:alternative,sys_file_reference:description,sys_file_reference:crop,sys_file_reference:link,
+    sys_file_reference:title,sys_file_reference:autoplay,
     sys_file_collection:hidden,sys_file_collection:sys_language_uid,sys_file_collection:starttime,sys_file_collection:endtime,
     sys_file_collection:l10n_parent,
 
@@ -199,14 +200,15 @@ TCAdefaults.be_groups.non_exclude_fields (
     pages:tx_realurl_pathoverride,pages:shortcut_mode,pages:content_from_pid,pages:tx_realurl_pathsegment,pages:starttime,
     pages:php_tree_stop,pages:endtime,pages:subtitle,pages:target,pages:doktype,
 
-    tt_content:fe_group,tt_content:spaceAfter,tt_content:header_position,tt_content:table_bgColor,tt_content:spaceBefore,
-    tt_content:table_border,tt_content:imageborder,tt_content:categories,tt_content:table_cellpadding,tt_content:table_cellspacing,
-    tt_content:image_zoom,tt_content:select_key,tt_content:imagecols,tt_content:colPos,tt_content:date,tt_content:image_effects,
-    tt_content:table_delimiter,tt_content:section_frame,tt_content:imageheight,tt_content:hidden,tt_content:image_compression,
-    tt_content:sectionIndex,tt_content:sys_language_uid,tt_content:layout,tt_content:header_link,tt_content:image_noRows,
-    tt_content:imageorient,tt_content:recursive,tt_content:starttime,tt_content:endtime,tt_content:subheader,tt_content:table_caption,
-    tt_content:table_header_position,tt_content:table_enclosure,tt_content:linkToTop,tt_content:l18n_parent,tt_content:header_layout,
-    tt_content:table_tfoot,tt_content:imagewidth,tt_content:pi_flexform;login;sDEF;pages,
+    tt_content:rowDescription,tt_content:fe_group,tt_content:uploads_description,tt_content:uploads_type,
+    tt_content:categories,tt_content:date,tt_content:colPos,tt_content:hidden,
+    tt_content:table_enclosure,tt_content:table_delimiter,tt_content:table_caption,tt_content:table_tfoot,tt_content:table_header_position,
+    tt_content:image_zoom,tt_content:select_key,tt_content:imagecols,
+    tt_content:section_frame,tt_content:imagewidth,tt_content:imageheight,
+    tt_content:sectionIndex,tt_content:sys_language_uid,tt_content:layout,tt_content:header_link,
+    tt_content:imageorient,tt_content:recursive,tt_content:starttime,tt_content:endtime,tt_content:subheader,
+    tt_content:linkToTop,tt_content:l18n_parent,tt_content:header_layout,
+    tt_content:pi_flexform;login;sDEF;pages,
 
     fe_users:address,fe_users:city,fe_users:company,fe_users:country,fe_users:disable,fe_users:email,fe_users:fax,fe_users:first_name,
     fe_users:felogin_forgotHash,fe_users:image,fe_users:lastlogin,fe_users:last_name,fe_users:lockToDomain,
@@ -216,8 +218,8 @@ TCAdefaults.be_groups.non_exclude_fields (
 
 # Non-exclude fields
 TCAdefaults.be_groups.explicit_allowdeny (
-    tt_content:CType:--div--:ALLOW,tt_content:CType:header:ALLOW,tt_content:CType:text:ALLOW,tt_content:CType:textpic:ALLOW,
-    tt_content:CType:image:ALLOW,tt_content:CType:table:ALLOW,tt_content:CType:uploads:ALLOW,tt_content:CType:menu:ALLOW,
+    tt_content:CType:--div--:ALLOW,tt_content:CType:header:ALLOW,tt_content:CType:textmedia:ALLOW,
+    tt_content:CType:table:ALLOW,tt_content:CType:uploads:ALLOW,tt_content:CType:menu:ALLOW,
     tt_content:CType:shortcut:ALLOW,tt_content:CType:list:ALLOW,tt_content:CType:div:ALLOW,tt_content:CType:html:ALLOW,
     tt_content:CType:mailform:ALLOW,tt_content:list_type:indexedsearch_pi2:ALLOW
 )
@@ -240,7 +242,7 @@ TCAdefaults.be_groups.tables_modify (
 )
 
 # Modules
-TCAdefaults.be_groups.groupMods = web_layout,web_list,web_info,file_list,user_setup
+TCAdefaults.be_groups.groupMods = web_layout,web_list,web_info,file_FilelistList,user_setup
 
 # File permissions
 TCAdefaults.be_groups.file_permissions (
