@@ -6,12 +6,6 @@ $(function() {
     // Init foundation
     $(document).foundation();
 
-    // Init lightbox (fancybox)
-    $('.fancybox, .lightbox').fancybox();
-    $('.fancybox-media, .lightbox-media').fancybox({
-        helpers : {media : {}}
-    });
-
     // Init double tap menu
     $('.top-bar-section').doubleTapMenu();
 
@@ -31,11 +25,34 @@ $(function() {
         $('html').addClass('no-placeholder');
     }
 
-    // Initialize video thumbnail (click-replace with embed code)
-    $('.onlineMedia .preview[data-embedcode]').not('[class*=lightbox]').bind('click', function(clickEvent){
+
+    // Init regular (image) lightboxes
+    $('.lightbox').fancybox();
+
+    // Init media lightboxes (videos, etc.)
+    // Treat media lightboxes carefully! Do not
+    // open lightbox on media elements that have an embedding
+    // alternative, if the screen resolution is low.
+    $('.lightbox-media').fancybox({
+        helpers : {media : {}},
+        beforeLoad: function() {
+            var windowWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+            var windowHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+            if($(this.element).data('embedcode').length > 0 && (windowWidth < 600 || windowHeight < 600)) {
+                $(this.element).replaceWith($(this.element).data('embedcode'));
+                return false;
+            }
+        }
+    });
+    // Initialize preview content replacement
+    // (i.e. preview image with iFrame. Used for online media
+    // services such as YouTube.
+    $('.preview[data-embedcode]').not('[class*="lightbox"]').bind('click', function(clickEvent){
         clickEvent.preventDefault();
-        $(this).replaceWith($(this).data('embedcode'));
-    })
+        $(clickEvent.currentTarget).replaceWith($(clickEvent.currentTarget).data('embedcode'));
+    });
+
+
 
     // Init slider (slick slider)
     var slickSliderSettings = {

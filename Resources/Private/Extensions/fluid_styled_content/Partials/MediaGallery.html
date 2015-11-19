@@ -105,15 +105,37 @@
 
 
 <f:section name="mediaType">
-    <f:if condition="{s:inList(item: column.media.originalFile.properties.extension, list:'youtube,vimeo,soundcloud')}">
+
+    <f:comment>
+        Render any media type seperately that will be
+        activated (i.e. replaced by an iFrame) on click.
+    </f:comment>
+    <f:if condition="{s:inList(item: column.media.extension, list:'youtube,vimeo,soundcloud')}">
         <f:then>
-            <div class="onlineMedia type-{column.media.type} service-{column.media.originalFile.properties.extension}">
-                <a class="preview {f:if(condition:data.image_zoom, then:'lightbox-media" rel="lightbox[{data.pid}]')}"
+            <div class="onlineMedia type-{column.media.type} service-{column.media.extension}">
+
+                <f:comment>
+                    Exclude file types that are not 'lightboxable'
+                    - so ignore the 'image zoom' setting completely.
+                </f:comment>
+                <f:if condition="{column.media.extension} == 'soundcloud'">
+                    <f:then>
+                        <a class="preview"
+                    </f:then>
+                    <f:else>
+                        <a class="preview {f:if(condition:data.image_zoom, then:'lightbox-media" rel="lightbox[{data.pid}]')}"
+                    </f:else>
+                </f:if>
+
                    href="{s:OnlineMediaPublicUrl(fileReference: column.media)}"
                    style="background-image:url({s:OnlineMediaPreviewImage(fileReference: column.media)});"
                    data-embedcode="<f:format.htmlentities><f:render section="media" arguments="{_all}" /></f:format.htmlentities>"></a>
             </div>
         </f:then>
+
+        <f:comment>
+            Render regular media (i.e. images)
+        </f:comment>
         <f:else>
             <div class="media type-{column.media.type}">
                 <f:render section="media" arguments="{_all}" />
