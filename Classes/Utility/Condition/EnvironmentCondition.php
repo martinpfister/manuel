@@ -1,5 +1,6 @@
 <?php
 namespace Staempfli\TemplateBootstrap\Utility\Condition;
+
 /***************************************************************
  *  Copyright notice
  *
@@ -21,6 +22,7 @@ namespace Staempfli\TemplateBootstrap\Utility\Condition;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
+use Staempfli\TemplateBootstrap\Utility\TemplateBootstrapUtility;
 
 class EnvironmentCondition extends \TYPO3\CMS\Core\Configuration\TypoScript\ConditionMatching\AbstractCondition {
 
