@@ -69,6 +69,7 @@ site {
         url = http://{$plugin.templatebootstrap.packageKey}.local/
         enableRealURL = 0
         compressAndMergeAssets = 0
+        googleAnalytics = 0
     }
 [global]
 [Staempfli\TemplateBootstrap\Utility\Condition\EnvironmentCondition = development]
