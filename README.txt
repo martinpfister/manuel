@@ -17,7 +17,7 @@
 - Run "npm install" and then "grunt" from "typo3conf/ext/[YOUREXTENSIONKEY]/Resources/Public/Template" in order
     to install node modules and get going with SCSS.
 - Add static templates to your root ts template. What you'll usually want is:
-    - CSS Styled Content css_styled_content
+    - Content Elements (fluid_styled_content)
     - Default TS (form)
     - Gridelements (gridelements)
     - yourextension (yourextension)
@@ -25,5 +25,4 @@
     => Make sure, your extension constants are included last!
     => Choose option "Include before all static templates if root flag is set"
 
-- Import default usergroup & filemount, if desired.
 - Have fun!
