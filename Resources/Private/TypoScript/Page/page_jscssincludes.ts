@@ -100,3 +100,7 @@ page {
         )
     }
 [global]
+# Remove analytics, if user has set the 'Do Not Track' flag in the browser
+[Staempfli\TemplateBootstrap\Utility\Condition\DoNotTrackCondition]
+    page.footerData.100 >
+[global]
