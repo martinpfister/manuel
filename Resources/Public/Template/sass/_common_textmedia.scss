@@ -18,7 +18,6 @@
 .ce-gallery .ce-media .caption { display: table-caption; caption-side: bottom; }
 .ce-above .ce-bodytext { clear: both; }
 
-
 // Image scaling FF compatibility
 .ce-textpic .ce-media,
 .ce-textpic figure { width:100%; max-width:100%; }
@@ -84,7 +83,7 @@
 }
 
 /*********************************************
-    Audio
+    SoundCloud
 **********************************************/
 .ce-textpic .service-soundcloud {
   padding-bottom: 25%;
@@ -193,7 +192,8 @@
         clear:both;
       }
       // Set default max width of image container.
-      // This might get overridden via T3 inline-CSS on the element itself.
+      // The min width is used as if only non-image elements (e.g. external media)
+      // is inserted, there is no fixed width or aspect ratio available.
       .ce-gallery {
         max-width:$textpic-intext-defaultMaxWidth;
       }
