@@ -19,7 +19,7 @@ lib.logo {
         altText.insertData = 1
         stdWrap.typolink {
             title.data = LLL:EXT:{$plugin.templatebootstrap.packageKey}/Resources/Private/Language/locallang.xlf:home
-            parameter = {$site.url}
+            parameter = {$site.pageUids.home}
             ATagParams = id="logo" class="show-for-medium-up"
         }
     }
