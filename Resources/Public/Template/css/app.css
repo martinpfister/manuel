@@ -11456,15 +11456,14 @@ form ol li ol {
 /* line 15, ../sass/_common_textmedia.scss */
 .ce-gallery figure,
 .ce-gallery .ce-media {
-  display: table;
+  display: block;
   margin: 0;
 }
 
 /* line 17, ../sass/_common_textmedia.scss */
 .ce-gallery figcaption,
 .ce-gallery .ce-media .caption {
-  display: table-caption;
-  caption-side: bottom;
+  display: block;
 }
 
 /* line 19, ../sass/_common_textmedia.scss */

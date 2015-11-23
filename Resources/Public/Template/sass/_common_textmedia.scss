@@ -13,9 +13,9 @@
 .ce-center .ce-outer { position: relative; float: right; right: 50%; }
 .ce-center .ce-inner { position: relative; float: right; right: -50%; }
 .ce-gallery figure,
-.ce-gallery .ce-media { display: table; margin: 0; }
+.ce-gallery .ce-media { display: block; margin: 0; }
 .ce-gallery figcaption,
-.ce-gallery .ce-media .caption { display: table-caption; caption-side: bottom; }
+.ce-gallery .ce-media .caption { display: block; }
 .ce-above .ce-bodytext { clear: both; }
 
 // Image scaling FF compatibility
