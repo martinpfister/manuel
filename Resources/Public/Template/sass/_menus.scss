@@ -1,0 +1,87 @@
+/*********************************************
+    Menu settings
+**********************************************/
+$menu-font-size: $paragraph-font-size;
+$menu-line-height: $paragraph-line-height;
+$menu-item-padding-vertical:7px;
+$menu-item-padding-horizontal:12px;
+$large-menu-mediaquery: #{$large-up};
+
+/*********************************************
+    Menu definitions
+**********************************************/
+nav ul,
+nav ul li ul {
+    list-style-type:none;
+    margin:0 0 0 0;
+}
+nav a { text-decoration:none; }
+
+
+
+/*********************************************
+    Main (horizontal) menu
+**********************************************/
+nav#mainNavigation {
+    display:none;
+    // Un-hide menu if it has been toggled on smaller screens.
+    .mainMenuToggle-toggledActive & { display:block; }
+
+    // First level menu buttons as block elements
+    & > ul > li { display:block; }
+
+    ul li a {
+        font-size:$menu-font-size;
+        display:block;
+        padding:$menu-item-padding-vertical $menu-item-padding-horizontal;
+        color:$white;
+        background-color:$primary-color;
+    }
+    ul li:hover > a,
+    ul li > a:hover,
+    ul li.active > a {
+        color:$primary-color;
+        background-color:$secondary-color;
+    }
+
+    // Hide any sub-level elements
+    ul li ul {
+        padding-left:$menu-item-padding-horizontal * 2;
+        display:none;
+    }
+    // Show sub-level elements on hover/hovered (touch events)
+    ul li:hover > ul,
+    ul li.hovered > ul { display:block; }
+}
+
+
+
+
+
+// Large navigation (horizontal)
+@media #{$large-up} {
+
+    nav#mainNavigation {
+
+        // Always show menu on larger screens, even if 'toggled off'
+        display:block;
+
+        // First level menu buttons as inline-block elements
+        & > ul > li {
+            display:inline-block;
+        }
+
+        // Position sub-level menus
+        ul li ul {
+            position:absolute;
+            padding-left:0;
+        }
+
+        // Position sub-sub-level menus
+        ul li ul li ul {
+            left:100%;
+            min-width:100%;
+            margin-top:-(rem-calc($menu-item-padding-vertical)*2 + $menu-font-size * $menu-line-height);
+        }
+    }
+}

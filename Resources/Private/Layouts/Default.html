@@ -3,11 +3,10 @@
 
 
     <f:cObject typoscriptObjectPath="lib.skiplinks" />
-    <div class="row">
-        <f:render partial="Header" arguments="{_all}" />
-    </div>
-    <div class="row">
-        <f:cObject typoscriptObjectPath="lib.pagetitle" />
+    <div class="row collapse" id="header">
+        <div class="column">
+            <f:render partial="Header" arguments="{_all}" />
+        </div>
     </div>
     <div class="row">
         <!-- TYPO3SEARCH_begin -->

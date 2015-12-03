@@ -55,6 +55,10 @@
 /*********************************************
     Header area
 **********************************************/
+#header {
+    position:relative;
+    z-index:100;
+}
 #logo {
     display:block;
     box-sizing:border-box;

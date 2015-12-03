@@ -20,7 +20,6 @@
 # Load typoscript template objects
 # **********************************************************
 <INCLUDE_TYPOSCRIPT: source="FILE:./Content/temp/menu.ts">
-<INCLUDE_TYPOSCRIPT: source="FILE:./Content/temp/menu-foundation-topbar.ts">
 <INCLUDE_TYPOSCRIPT: source="FILE:./Content/temp/menu-language.ts">
 <INCLUDE_TYPOSCRIPT: source="FILE:./Content/temp/contentloader.ts">
 <INCLUDE_TYPOSCRIPT: source="FILE:./Content/temp/contentloader-slide.ts">

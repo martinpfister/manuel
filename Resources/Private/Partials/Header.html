@@ -1,19 +1,25 @@
 <html data-namespace-typo3-fluid="true"
       xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 
-
     <div class="row">
-        <div class="small-12 medium-6 columns">
+        <div class="small-12 medium-8 columns">
             <f:cObject typoscriptObjectPath="lib.logo" />
         </div>
-        <div class="small-12 medium-6 columns">
+        <div class="small-12 medium-4 columns">
             <f:cObject typoscriptObjectPath="lib.menu-language" />
+            <div class="hide-for-large-up">
+                <div class="hamburger-icon toggle" id="mainMenuToggle"></div>
+            </div>
+
         </div>
     </div>
 
-    <f:cObject typoscriptObjectPath="lib.menu" />
-
-    <h1>{pagetitle}</h1>
+    <div class="row">
+        <div class="columns">
+            <f:cObject typoscriptObjectPath="lib.menu" />
+            <h1>{pagetitle}</h1>
+        </div>
+    </div>
 
 
 </html>

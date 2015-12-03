@@ -7,14 +7,14 @@ $(function() {
     $(document).foundation();
 
     // Init double tap menu
-    $('.top-bar-section').doubleTapMenu();
+    $('nav#mainNavigation').doubleTapMenu();
 
     // Init toggle button(s)
     // Example implementation
-    //$('.hamburger-icon').toggler({
-    //   activeClassName:'activated',     // optional; default: 'active'
-    //   elementIdOverride:'myNavigation' // optional; default: HTML-id of element
-    //});
+    $('.hamburger-icon').toggler({
+       //activeClassName:'activated',     // optional; default: 'active'
+       //elementIdOverride:'myNavigation' // optional; default: HTML-id of element
+    });
 
     // Init placeholder
     // (for browsers not supporting placeholder attribute)

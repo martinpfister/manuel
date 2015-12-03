@@ -11276,29 +11276,19 @@ iframe {
 }
 
 /*********************************************
-    Menus
+    Hamburger icon
 **********************************************/
 /* line 41, ../sass/_common.scss */
-nav ul {
-  list-style-type: none;
-}
-
-/* line 42, ../sass/_common.scss */
-nav a {
-  text-decoration: none;
-}
-
-/* line 45, ../sass/_common.scss */
 .hamburger-icon {
   cursor: pointer;
-  display: block;
+  display: inline-block;
   margin: 16px auto 0 auto;
   width: 20px;
   border-top: 2px solid #008CBA;
   border-bottom: 2px solid #008CBA;
   padding: 4px 0;
 }
-/* line 55, ../sass/_common.scss */
+/* line 51, ../sass/_common.scss */
 .hamburger-icon:before {
   content: '';
   display: block;
@@ -11309,7 +11299,7 @@ nav a {
 /*********************************************
     Reset box sizing on certain elements
 **********************************************/
-/* line 66, ../sass/_common.scss */
+/* line 62, ../sass/_common.scss */
 .fancybox-wrap,
 .fancybox-wrap *,
 iframe * {
@@ -11319,7 +11309,7 @@ iframe * {
 /*********************************************
     Skiplinks
 **********************************************/
-/* line 76, ../sass/_common.scss */
+/* line 72, ../sass/_common.scss */
 #skiplinks {
   position: absolute;
   z-index: 1000;
@@ -11329,7 +11319,7 @@ iframe * {
   padding: 0;
   list-style-type: none;
 }
-/* line 85, ../sass/_common.scss */
+/* line 81, ../sass/_common.scss */
 #skiplinks a {
   position: absolute;
   display: block;
@@ -11337,13 +11327,13 @@ iframe * {
   text-align: center;
   color: #fff;
 }
-/* line 92, ../sass/_common.scss */
+/* line 88, ../sass/_common.scss */
 #skiplinks a span {
   display: inline-block;
   padding: 7px 10px;
   background: #008CBA;
 }
-/* line 98, ../sass/_common.scss */
+/* line 94, ../sass/_common.scss */
 #skiplinks a:focus,
 #skiplinks a:active,
 #skiplinks a:hover {
@@ -11355,7 +11345,7 @@ iframe * {
     Remove list style from lists
     of fields (form extension)
 **********************************************/
-/* line 111, ../sass/_common.scss */
+/* line 107, ../sass/_common.scss */
 form > ol,
 fieldset > ol,
 form ol li ol {
@@ -11373,51 +11363,51 @@ form ol li ol {
     or disable this entirely.
 **********************************************/
 @media only screen and (max-width: 40em) {
-  /* line 130, ../sass/_common.scss */
+  /* line 126, ../sass/_common.scss */
   .ce-table[class*="table-header-position"] {
     border: none;
   }
-  /* line 133, ../sass/_common.scss */
+  /* line 129, ../sass/_common.scss */
   .ce-table[class*="table-header-position"] tr, .ce-table[class*="table-header-position"] td {
     display: block;
     padding: initial;
     margin: initial;
   }
-  /* line 139, ../sass/_common.scss */
+  /* line 135, ../sass/_common.scss */
   .ce-table[class*="table-header-position"] tr,
   .ce-table[class*="table-header-position"] td,
   .ce-table[class*="table-header-position"] tr:before,
   .ce-table[class*="table-header-position"] td:before {
     line-height: 1.6;
   }
-  /* line 145, ../sass/_common.scss */
+  /* line 141, ../sass/_common.scss */
   .ce-table[class*="table-header-position"] tr th,
   .ce-table[class*="table-header-position"] thead {
     display: none;
   }
-  /* line 149, ../sass/_common.scss */
+  /* line 145, ../sass/_common.scss */
   .ce-table[class*="table-header-position"] td:before {
     display: inline;
     font-weight: bold;
   }
-  /* line 154, ../sass/_common.scss */
+  /* line 150, ../sass/_common.scss */
   .ce-table[class*="table-header-position"] tr {
     margin-bottom: 1.25rem;
   }
-  /* line 158, ../sass/_common.scss */
+  /* line 154, ../sass/_common.scss */
   .ce-table[class*="table-header-position"].table-header-position-1 td:before {
     content: attr(data-columnheader) " (" attr(data-rowheader) "): ";
   }
-  /* line 160, ../sass/_common.scss */
+  /* line 156, ../sass/_common.scss */
   .ce-table[class*="table-header-position"].table-header-position-1 td[data-columnheader=""],
   .ce-table[class*="table-header-position"].table-header-position-1 td[data-columnheader=""]:before {
     display: none;
   }
-  /* line 167, ../sass/_common.scss */
+  /* line 163, ../sass/_common.scss */
   .ce-table[class*="table-header-position"].table-header-position-2 tr:first-child {
     display: none;
   }
-  /* line 168, ../sass/_common.scss */
+  /* line 164, ../sass/_common.scss */
   .ce-table[class*="table-header-position"].table-header-position-2 td:before {
     content: attr(data-rowheader) " (" attr(data-columnheader) "): ";
   }
@@ -11796,6 +11786,86 @@ form ol li ol {
   }
 }
 /*********************************************
+    Menu settings
+**********************************************/
+/*********************************************
+    Menu definitions
+**********************************************/
+/* line 13, ../sass/_menus.scss */
+nav ul,
+nav ul li ul {
+  list-style-type: none;
+  margin: 0 0 0 0;
+}
+
+/* line 18, ../sass/_menus.scss */
+nav a {
+  text-decoration: none;
+}
+
+/*********************************************
+    Main (horizontal) menu
+**********************************************/
+/* line 25, ../sass/_menus.scss */
+nav#mainNavigation {
+  display: none;
+}
+/* line 28, ../sass/_menus.scss */
+.mainMenuToggle-toggledActive nav#mainNavigation {
+  display: block;
+}
+/* line 31, ../sass/_menus.scss */
+nav#mainNavigation > ul > li {
+  display: block;
+}
+/* line 33, ../sass/_menus.scss */
+nav#mainNavigation ul li a {
+  font-size: 1rem;
+  display: block;
+  padding: 7px 12px;
+  color: #FFFFFF;
+  background-color: #008CBA;
+}
+/* line 40, ../sass/_menus.scss */
+nav#mainNavigation ul li:hover > a,
+nav#mainNavigation ul li > a:hover,
+nav#mainNavigation ul li.active > a {
+  color: #008CBA;
+  background-color: #e7e7e7;
+}
+/* line 48, ../sass/_menus.scss */
+nav#mainNavigation ul li ul {
+  padding-left: 24px;
+  display: none;
+}
+/* line 53, ../sass/_menus.scss */
+nav#mainNavigation ul li:hover > ul,
+nav#mainNavigation ul li.hovered > ul {
+  display: block;
+}
+
+@media only screen and (min-width: 64.063em) {
+  /* line 64, ../sass/_menus.scss */
+  nav#mainNavigation {
+    display: block;
+  }
+  /* line 70, ../sass/_menus.scss */
+  nav#mainNavigation > ul > li {
+    display: inline-block;
+  }
+  /* line 75, ../sass/_menus.scss */
+  nav#mainNavigation ul li ul {
+    position: absolute;
+    padding-left: 0;
+  }
+  /* line 81, ../sass/_menus.scss */
+  nav#mainNavigation ul li ul li ul {
+    left: 100%;
+    min-width: 100%;
+    margin-top: -2.475rem;
+  }
+}
+/*********************************************
     Media query examples
 **********************************************/
 /*@media only screen { }
@@ -11848,13 +11918,19 @@ form ol li ol {
     Header area
 **********************************************/
 /* line 58, ../sass/_styles.scss */
+#header {
+  position: relative;
+  z-index: 100;
+}
+
+/* line 62, ../sass/_styles.scss */
 #logo {
   display: block;
   box-sizing: border-box;
   width: 100%;
   padding: 0.5rem 0;
 }
-/* line 63, ../sass/_styles.scss */
+/* line 67, ../sass/_styles.scss */
 #logo img {
   max-width: 100%;
   height: auto;
@@ -11864,7 +11940,7 @@ form ol li ol {
     Menus
 **********************************************/
 @media only screen and (min-width: 40.063em) {
-  /* line 73, ../sass/_styles.scss */
+  /* line 77, ../sass/_styles.scss */
   nav.language {
     float: right;
   }
@@ -11872,7 +11948,7 @@ form ol li ol {
 /*********************************************
     Slider
 **********************************************/
-/* line 81, ../sass/_styles.scss */
+/* line 85, ../sass/_styles.scss */
 .slide span {
   position: absolute;
   z-index: 2;
@@ -11885,23 +11961,23 @@ form ol li ol {
 /*********************************************
     Forms & form elements
 **********************************************/
-/* line 101, ../sass/_styles.scss */
+/* line 105, ../sass/_styles.scss */
 form ol li:not(:last-child) {
   margin-bottom: 1.875rem;
 }
 
-/* line 107, ../sass/_styles.scss */
+/* line 111, ../sass/_styles.scss */
 span.error,
 small.error {
   display: initial;
 }
 
-/* line 111, ../sass/_styles.scss */
+/* line 115, ../sass/_styles.scss */
 form label em {
   font-style: normal;
 }
 
-/* line 114, ../sass/_styles.scss */
+/* line 118, ../sass/_styles.scss */
 form label strong {
   display: block;
   font-weight: normal;
@@ -11911,12 +11987,12 @@ form label strong {
 /*********************************************
     Indexed search
 **********************************************/
-/* line 128, ../sass/_styles.scss */
+/* line 132, ../sass/_styles.scss */
 .searchbox ~ * {
   display: none;
 }
 
-/* line 129, ../sass/_styles.scss */
+/* line 133, ../sass/_styles.scss */
 .element.list-element .tx-indexedsearch .tx-indexedsearch-searchbox {
   display: none;
 }
@@ -11924,17 +12000,17 @@ form label strong {
 /*********************************************
     Footer
 **********************************************/
-/* line 134, ../sass/_styles.scss */
+/* line 138, ../sass/_styles.scss */
 footer.row {
   margin-top: 1rem;
   opacity: 0.5;
 }
-/* line 137, ../sass/_styles.scss */
+/* line 141, ../sass/_styles.scss */
 footer.row * {
   font-size: 0.8rem;
 }
 
-/* line 140, ../sass/_styles.scss */
+/* line 144, ../sass/_styles.scss */
 ul.address {
   list-style-type: none;
 }

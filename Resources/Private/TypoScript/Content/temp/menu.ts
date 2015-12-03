@@ -3,7 +3,7 @@
 #-------------------------------------------------------------------------------
 temp.menu = HMENU
 temp.menu {
-    wrap = <nav><ul>|</ul></nav>
+    wrap = <nav role="navigation"><ul>|</ul></nav>
 
     1 = TMENU
     1 {
@@ -12,11 +12,11 @@ temp.menu {
 
         NO = 1
         NO {
-        wrapItemAndSub = <li class="first">|</li>|*|<li>|</li>|*|<li class="last">|</li>
-        ATagParams = class="layout-{field:layout}"
-        allStdWrap.insertData = 1
-        stdWrap.htmlSpecialChars = 1
-        ATagTitle.field = subtitle // title
+            wrapItemAndSub = <li class="first">|</li>|*|<li>|</li>|*|<li class="last">|</li>
+            ATagParams = class="layout-{field:layout}"
+            allStdWrap.insertData = 1
+            stdWrap.htmlSpecialChars = 1
+            ATagTitle.field = subtitle // title
         }
 
         ACT <.NO
@@ -44,8 +44,8 @@ temp.menu {
     }#1
 
 
-    2 <.1
-    2 {
-        wrap = <ul>|</ul>
-    }
+    2 < .1
+    2.wrap = <ul>|</ul>
+
+    3 < .2
 }

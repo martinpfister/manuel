@@ -36,15 +36,11 @@ iframe {
 }
 
 /*********************************************
-    Menus
+    Hamburger icon
 **********************************************/
-nav ul { list-style-type:none; }
-nav a { text-decoration:none; }
-
-// Hamburger icon
 .hamburger-icon {
     cursor:pointer;
-    display:block;
+    display:inline-block;
     margin:$hamburger-icon-gap * 2 auto 0 auto;
 
     width:$hamburger-icon-width;
