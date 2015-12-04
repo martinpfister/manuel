@@ -1,7 +1,7 @@
 # Change Log
 All notable changes to this project will be documented in this file. Syntax according to http://keepachangelog.com/
 
-## [2.0.0-DEV]
+## [2.0.0]
 ### Added
 - TYPO3 7 LTS support
 - Advanced frontend rendering with fallback templates / layouts / partials
