@@ -15,7 +15,7 @@
  *          options) to parent menu item on first click, if
  *          it is a touch device. Prevents default behavior
  *          of link at the same time.
- *     2.   Respects default behavior of link on second click
+ *     2.   Respects default behavior of link on second touch
  *          or removes "touched" class if any other
  *          item has been clicked/touched.
  *
@@ -28,32 +28,54 @@
         var defaultOptions = {tapClassName:'touched'}
         var settings = $.extend( {}, defaultOptions, options );
 
-        // Catch click events
-        $(document).bind('click', {menu:menu, settings:settings}, function(event){
+        var lastTouchStartStamp = 0;
+        var tapMinimumMilliseconds = 500;
 
-            // Only respect click events for touch-enabled devices
-            // and if touched element is a link as well as a sub element
-            // of the passed reference.
-            if (!Modernizr.touch || !$(event.target).is('a') || $(event.target).parents(menu).length < 1) {
-                $(menu).find('.'+ settings.tapClassName).removeClass(settings.tapClassName);
-                return true;
+        // Handle touch events
+        // (triggers 'menutap' event, if necessary)
+        $(this).find('a').bind('touchstart touchend', {menu:menu, settings:settings}, function(event){
+            if (event.type == 'touchstart') {
+                lastTouchStartStamp = event.timeStamp;
+            } else if (event.type == 'touchend' && lastTouchStartStamp+tapMinimumMilliseconds >= event.timeStamp) {
+                $(event.currentTarget).trigger('menutap');
             }
+        });
 
-            var menuElement = $(event.target).closest('li');
-            event.stopPropagation();
+
+        // Handle tap event
+        $(this).find('a').bind('menutap', {menu:menu, settings:settings}, function(event){
+            var menuElement = $(event.currentTarget).closest('li');
             var hasSubmenu = $(menuElement).children('ul').length;
 
-            // Add class and prevent click default behavior (redirect to new
-            // page), if this link has been clicked the first time.
+            // Only adding 'tap' css class, if the menu element has submenus and
+            // does not have the class yet.
             if (hasSubmenu > 0 && !$(menuElement).hasClass(settings.tapClassName)) {
-                event.preventDefault();
                 $(menu).find('.'+ settings.tapClassName).removeClass(settings.tapClassName);
                 $(menuElement).parents('li').addClass(settings.tapClassName);
                 $(menuElement).addClass(settings.tapClassName);
+                return false;
+
+            // Triggering regular click, if there are no submenus or the submenu
+            // is already open (has the 'tap' css class assigned).
+            } else {
+                lastTouchStartStamp = 0;
+                $(event.currentTarget).trigger('click');
+                return true;
+            }
+        });
+
+
+        // Catch click events - prevent, if the touch start event
+        // has been triggered lately. Otherwise tap & click would both
+        // fire.
+        $(this).find('a').bind('click', {menu:menu, settings:settings}, function(event){
+            if (lastTouchStartStamp+tapMinimumMilliseconds >= event.timeStamp) {
+                return false;
             } else {
                 return true;
             }
         });
+
 
         // Return this same object for chained actions / processing
         return this;

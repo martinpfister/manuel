@@ -49,9 +49,9 @@ nav#mainNavigation {
         padding-left:$menu-item-padding-horizontal * 2;
         display:none;
     }
-    // Show sub-level elements on hover/hovered (touch events)
+    // Show sub-level elements on hover/touched
     ul li:hover > ul,
-    ul li.hovered > ul { display:block; }
+    ul li.touched > ul { display:block; }
 }
 
 

@@ -11840,7 +11840,7 @@ nav#mainNavigation ul li ul {
 }
 /* line 53, ../sass/_menus.scss */
 nav#mainNavigation ul li:hover > ul,
-nav#mainNavigation ul li.hovered > ul {
+nav#mainNavigation ul li.touched > ul {
   display: block;
 }
 
