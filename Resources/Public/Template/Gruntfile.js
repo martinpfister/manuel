@@ -108,7 +108,7 @@ module.exports = function(grunt) {
             },
             iconSource: {
                 files: [iconSourceFile],
-                tasks: ['createLogoBasedImages'],
+                tasks: ['createIcons'],
                 options: { event: ['changed'] }
             },
             logoSource: {
