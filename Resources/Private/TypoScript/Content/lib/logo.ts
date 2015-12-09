@@ -11,8 +11,8 @@ lib.logo {
         file {
             maxW = 600
             ext = png
-            # Add crop parameter to force re-rendering svg as png
-            crop = 0,0
+            # Add pseudo crop parameter to force re-rendering as png
+            crop = 0.1,0.1
         }
 
         altText = {LLL:EXT:{$plugin.templatebootstrap.packageKey}/Resources/Private/Language/locallang.xlf:logo} {$company.name}
