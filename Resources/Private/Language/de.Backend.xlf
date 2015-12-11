@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff version="1.0">
+<file source-language="en" datatype="plaintext" original="messages" product-name="templatebootstrap">
+    <header/>
+    <body>
+        <!-- PAGETREE ("PAGE CONTAINS X") -->
+        <trans-unit id="pagetree.page_contains_system" xml:space="preserve">
+            <source>[System] Collection</source>
+            <target state="translated">[System] Datensatzsammlung</target>
+        </trans-unit>
+        <trans-unit id="pagetree.page_contains_layouts" xml:space="preserve">
+            <source>[System] Layouts</source>
+             <target state="translated">[System] Layouts</target>
+        </trans-unit>
+        <trans-unit id="pagetree.page_contains_menufolder" xml:space="preserve">
+             <source>[System] Menu directory</source>
+              <target state="translated">[System] Navigation</target>
+         </trans-unit>
+
+        <!-- Ueberschriften -->
+        <trans-unit id="tt_content.header_layout.1" xml:space="preserve">
+            <source>Headline 1 (h1)</source>
+            <target state="translated">Überschrift 2 (h2)</target>
+        </trans-unit>
+        <trans-unit id="tt_content.header_layout.2" xml:space="preserve">
+            <source>Headline 2 (h2)</source>
+            <target state="translated">Überschrift 2 (h2)</target>
+        </trans-unit>
+        <trans-unit id="tt_content.header_layout.3" xml:space="preserve">
+            <source>Headline 3 (h3)</source>
+            <target state="translated">Überschrift 3 (h3)</target>
+        </trans-unit>
+        <trans-unit id="tt_content.header_layout.4" xml:space="preserve">
+            <source>Headline 4 (h4)</source>
+            <target state="translated">Überschrift 4 (h4)</target>
+        </trans-unit>
+
+        <!-- BACKEND LAYOUT NAMES -->
+        <trans-unit id="backend_layout.SingleColumn" xml:space="preserve" approved="yes">
+            <source>Single column</source>
+            <target state="translated">Einspaltig</target>
+        </trans-unit>
+        <trans-unit id="backend_layout.TwoColumns" xml:space="preserve" approved="yes">
+            <source>Two columns</source>
+            <target state="translated">Zweispaltig</target>
+        </trans-unit>
+
+
+        <!-- MOODIMAGERY PAGE PROPERTIES -->
+        <trans-unit id="pageproperties.imagery" xml:space="preserve">
+            <source>Imagery</source>
+            <target state="translated">Bilder</target>
+        </trans-unit>
+        <trans-unit id="pageproperties.imagery.moodimage" xml:space="preserve">
+            <source>Mood image</source>
+            <target state="translated">Stimmungsbild</target>
+        </trans-unit>
+        <trans-unit id="pageproperties.imagery.backgroundimage" xml:space="preserve">
+            <source>Background image</source>
+            <target state="translated">Hintergrundbild</target>
+        </trans-unit>
+
+
+        <!-- COLUMN NAMES -->
+        <trans-unit id="backend_layout.mainColumn" xml:space="preserve" approved="yes">
+            <source>Main column</source>
+            <target state="translated">Hauptspalte</target>
+        </trans-unit>
+        <trans-unit id="backend_layout.rightColumn" xml:space="preserve" approved="yes">
+            <source>Right</source>
+            <target state="translated">Rechts</target>
+        </trans-unit>
+
+
+        <!-- FRONTEND LAYOUT NAMES -->
+        <trans-unit id="frontend_layout.examplelayout" xml:space="preserve" approved="yes">
+            <source>Custom FE layout example</source>
+            <target state="translated">Benutzerdefiniertes FE-Layout (Beispiel)</target>
+        </trans-unit>
+
+        <!-- CONTENT ELEMENT LAYOUTS -->
+        <trans-unit id="tt_content.layout.examplelayout" xml:space="preserve" approved="yes">
+            <source>Custom content element layout example</source>
+            <target state="translated">Benutzerdefiniertes Inhaltselement-Layout (Beispiel)</target>
+        </trans-unit>
+
+
+        <!-- GRID ELEMENT LABELS -->
+        <trans-unit id="grid_elements.slider" xml:space="preserve">
+            <source>Slider</source>
+            <target state="translated">Slider</target>
+        </trans-unit>
+        <trans-unit id="grid_elements.slider.autoplay" xml:space="preserve">
+            <source>Autoplay</source>
+            <target state="translated">Automatisch abspielen</target>
+        </trans-unit>
+    </body>
+</file>
+</xliff>

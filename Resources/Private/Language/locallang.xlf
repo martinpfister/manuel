@@ -1,0 +1,39 @@
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" product-name="templatebootstrap">
+        <header/>
+        <body>
+            <trans-unit id="home" xml:space="preserve">
+                <source>Go to home page</source>
+            </trans-unit>
+            <trans-unit id="logo" xml:space="preserve">
+                <source>logo</source>
+            </trans-unit>
+            <trans-unit id="menu" xml:space="preserve">
+                <source>Menu</source>
+            </trans-unit>
+
+            <trans-unit id="skiplinks.pressEnter" xml:space="preserve">
+                <source>(press enter)</source>
+            </trans-unit>
+            <trans-unit id="skiplinks.home" xml:space="preserve">
+                <source>Skip to home page (press enter)</source>
+            </trans-unit>
+            <trans-unit id="skiplinks.navigation" xml:space="preserve">
+                <source>Skip to main navigation (press enter)</source>
+            </trans-unit>
+            <trans-unit id="skiplinks.content" xml:space="preserve">
+                <source>Skip to main content (press enter)</source>
+            </trans-unit>
+            <trans-unit id="skiplinks.contact" xml:space="preserve">
+                <source>Skip to contact page (press enter)</source>
+            </trans-unit>
+            <trans-unit id="skiplinks.sitemap" xml:space="preserve">
+                <source>Skip to sitemap (press enter)</source>
+            </trans-unit>
+            <trans-unit id="skiplinks.search" xml:space="preserve">
+                <source>Skip to search page (press enter)</source>
+            </trans-unit>
+
+        </body>
+    </file>
+</xliff>

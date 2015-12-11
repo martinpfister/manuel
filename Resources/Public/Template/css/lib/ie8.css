@@ -1,0 +1,26 @@
+
+.top-bar ul > li a {
+	padding: 10px 3px 0;
+}
+
+img {
+	position:relative;
+	width: 100%;
+}
+
+
+#main-menu .one.columns {
+	width: auto;
+}
+
+.top-bar ul>li.has-dropdown .dropdown li a {
+	border: 0;
+}
+
+.sl-slider p {
+	padding-left: 100px !important;
+	padding-right: 100px !important;
+}
+.sl-slide-inner {
+	padding-top: 30px;
+}

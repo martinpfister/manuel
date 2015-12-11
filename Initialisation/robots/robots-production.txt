@@ -1,0 +1,10 @@
+User-Agent: *
+Allow: /
+
+Disallow: /t3lib/
+Disallow: /typo3/
+Disallow: /*.bak
+Disallow: /*.bkp
+Disallow: /*.sql
+Disallow: /typo3conf/*
+Allow: /typo3conf/*/Public/

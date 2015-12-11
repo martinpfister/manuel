@@ -1,0 +1,1 @@
+<INCLUDE_TYPOSCRIPT: source="EXT:indexed_search/Configuration/TypoScript/constants.txt">

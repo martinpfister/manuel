@@ -1,0 +1,46 @@
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+    <div class="row">
+        <div class="small-12 medium-8 columns">
+            <f:cObject typoscriptObjectPath="lib.logo" />
+        </div>
+        <div class="small-12 medium-4 columns">
+            <f:cObject typoscriptObjectPath="lib.menu-language" />
+            <div class="hide-for-large-up">
+                <div class="hamburger-icon toggle" id="mainMenuToggle"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="columns">
+            <f:cObject typoscriptObjectPath="lib.menu" />
+            <h1>{pagetitle}</h1>
+            <p>
+                <small>
+                    Ok, this is an example output for the custom inherited mood image / background image fields in the page properties:<br />
+                    Mood image: <f:if condition="<f:cObject typoscriptObjectPath=\"lib.moodImage\" />">
+                        <f:then>
+                            <f:cObject typoscriptObjectPath="lib.moodImage" />
+                        </f:then>
+                        <f:else>
+                            (not set)
+                        </f:else>
+                    </f:if><br />
+                    Background image: <f:if condition="<f:cObject typoscriptObjectPath=\"lib.backgroundImage\" />">
+                        <f:then>
+                            <f:cObject typoscriptObjectPath="lib.backgroundImage" />
+                        </f:then>
+                        <f:else>
+                            (not set)
+                        </f:else>
+                    </f:if>
+
+                </small>
+            </p>
+        </div>
+    </div>
+
+</html>

@@ -1,0 +1,23 @@
+# cat=basic; type=options[none (do not include ext constants nor setup)=none,Local=local,Development=development,Production=production]; label=Site environment: Controls loading of corresponding constants & setup
+environment = local
+
+# cat=basic; type=boolean; label=Write robots.txt: Creates/replaces robots.txt according to chosen environment. Uses robots.txt-templates from ext directory /Initialisation/robots. Check backend log for any success/error messages.
+writerobots = 0
+
+# cat=Error handling; type=boolean; label=Enable custom error handling: Sets TYPO3_CONF_VARS['FE']['pageNotFound_handling'] to this extension's custom class. WARNING: After/if you disable this option, make sure you clear out previously written configuration in typo3conf/AdditionalConfiguration.php
+enableCustomErrorHandling = 0
+
+# cat=Error handling; type=string; label=Frontend language parameter: Usually "L". This parameter will be used to generate correct redirect links (will also be cross checked by realurl parameters if realurl is active).
+frontendLanguageParameter = L
+
+# cat=Error handling; type=string; label=404 Error page:Page UID or CSV list for each host (format: [host][.TLD (optional)]:[uid],[host][.TLD (optional)]:[uid],...).
+error404Uid =
+
+# cat=Error handling; type=string; label=401 Error page:Page UID. Usually you should redirect to a login page. Optionally on a per-host basis (see error404Uid).
+error401Uid =
+
+# cat=System; type=boolean; label=Generate trusted hosts pattern on next save: Saves pattern (according to sys_domain table) to AdditionalConfiguration.php. Overrides ['SYS']['trustedHostsPattern']! Example:'^(yourfirstdomain.com|yourotherdomain.com)$'. See T3 security guide.
+generateTrustedHostsPattern = 1
+
+# cat=System; type=string; label=Generate CLI backend users: This creates the desired backend users upon next save. Users will be given a random passwords and the user names will be prefixed with _cli_ automatically!
+createCLIUsers = lowlevel,scheduler,crawler

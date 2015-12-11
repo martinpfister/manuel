@@ -1,0 +1,169 @@
+/*********************************************
+    This file contains any stylings that
+    aren't specifically meant to design the
+    page but rather to set some commonly used
+    formatting such as no bullet lists in
+    menus or often used elements such
+    as a hamburger icon.
+**********************************************/
+
+
+/*********************************************
+    Settings
+**********************************************/
+
+// Image / textpic settings
+$pictureSpacing:$column-gutter / 2;         // Spacing between images
+$pictureVsTextSpacing:$column-gutter;       // Spacing between images & text (for textpic elements)
+$textpic-intext-defaultMaxWidth:70%;        // Picture container max default width (for textpic elements), if no width defined by editor.
+$enableImageColumnsMediaQuery:$medium-up;   // Screen size allowing multiple columns.
+
+// Hamburger icon settings
+$hamburger-icon-thickness:2px;
+$hamburger-icon-gap:$hamburger-icon-thickness * 4;
+$hamburger-icon-width:$hamburger-icon-thickness * 10;
+$hamburger-icon-color: $primary-color;
+
+
+/*********************************************
+    Content elements
+**********************************************/
+// Allow iFrame widths (p.e. embedded videos)
+// to span 100% max (& remove frame)
+iframe {
+    max-width:100%;
+    border:none;
+}
+
+/*********************************************
+    Hamburger icon
+**********************************************/
+.hamburger-icon {
+    cursor:pointer;
+    display:inline-block;
+    margin:$hamburger-icon-gap * 2 auto 0 auto;
+
+    width:$hamburger-icon-width;
+    border-top:$hamburger-icon-thickness solid $hamburger-icon-color;
+    border-bottom:$hamburger-icon-thickness solid $hamburger-icon-color;
+    padding:$hamburger-icon-gap / 2 0;
+
+    &:before {
+        content:'';
+        display:block;
+        width:100%;
+        border-top:$hamburger-icon-thickness solid $hamburger-icon-color;
+    }
+}
+
+/*********************************************
+    Reset box sizing on certain elements
+**********************************************/
+.fancybox-wrap,
+.fancybox-wrap *,
+iframe * {
+    box-sizing:initial;
+}
+
+
+/*********************************************
+    Skiplinks
+**********************************************/
+#skiplinks {
+    position:absolute;
+    z-index:1000;
+    top:-20000px;
+    width:100%;
+    margin:auto;
+    padding:0;
+    list-style-type:none;
+
+    a {
+        position:absolute;
+        display:block;
+        width:100%;
+        text-align:center;
+        color:#fff;
+
+        span {
+            display:inline-block;
+            padding:7px 10px;
+            background:$primary-color;
+        }
+    }
+    a:focus,
+    a:active,
+    a:hover {
+        top:20000px;
+        outline:0 none;
+    }
+}
+
+
+/*********************************************
+    Remove list style from lists
+    of fields (form extension)
+**********************************************/
+form > ol,
+fieldset > ol,
+form ol li ol {
+    list-style-type:none;
+    margin-top:auto;
+    margin-right:auto;
+    margin-bottom:auto;
+    margin-left:auto;
+}
+
+
+/*********************************************
+    Responsive tables
+    This is an example tested with the
+    default setup. You might want to modify
+    or disable this entirely.
+**********************************************/
+@media #{$small-only} {
+
+    .ce-table[class*="table-header-position"] {
+        border:none;
+
+        tr, td {
+            display:block;
+            padding:initial;
+            margin:initial;
+        }
+
+        tr,
+        td,
+        tr:before,
+        td:before { line-height:$paragraph-line-height; }
+
+        // Hide regular headers
+        tr th,
+        thead { display:none; }
+
+        // Add correct font weight & basic styling to future headers
+        td:before {
+            display:inline;
+            font-weight:$table-head-font-weight;
+        }
+
+        tr { margin-bottom:$paragraph-margin-bottom;}
+
+        // Table header left (first column)
+        &.table-header-position-1 {
+            td:before { content:attr(data-columnheader) ' (' attr(data-rowheader) '): '; }
+            // Hide created header, if it is empty
+            td[data-columnheader=""],
+            td[data-columnheader=""]:before { display:none; }
+        }
+
+        // Table header top (first row)
+        &.table-header-position-2 {
+            // Hide first row (header row)
+            tr:first-child { display:none; }
+            td:before { content:attr(data-rowheader) ' (' attr(data-columnheader) '): '; }
+        }
+    }
+}
+
+

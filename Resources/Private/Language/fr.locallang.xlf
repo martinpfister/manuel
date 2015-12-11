@@ -1,0 +1,48 @@
+<xliff version="1.0">
+     <file source-language="en" datatype="plaintext" original="messages" product-name="templatebootstrap">
+         <header/>
+         <body>
+            <trans-unit id="home" xml:space="preserve" approved="yes">
+                <source>Go to home page</source>
+                <target state="translated">Page d'accueil</target>
+            </trans-unit>
+            <trans-unit id="logo" xml:space="preserve" approved="yes">
+                <source>logo</source>
+                <target state="translated">logo</target>
+            </trans-unit>
+            <trans-unit id="menu" xml:space="preserve" approved="yes">
+                <source>Menu</source>
+                <target state="translated">Navigation</target>
+            </trans-unit>
+
+            <trans-unit id="skiplinks.pressEnter" xml:space="preserve" approved="yes">
+                <source>(press enter)</source>
+                <target state="translated">(appuyez sur ENTER)</target>
+            </trans-unit>
+            <trans-unit id="skiplinks.home" xml:space="preserve" approved="yes">
+                <source>Skip to home page (press enter)</source>
+                <target state="translated">Vers la page d'accueil (appuyez sur ENTER)</target>
+            </trans-unit>
+            <trans-unit id="skiplinks.navigation" xml:space="preserve" approved="yes">
+                <source>Skip to main navigation (press enter)</source>
+                <target state="translated">Vers la navigation principale (appuyez sur ENTER)</target>
+            </trans-unit>
+            <trans-unit id="skiplinks.content" xml:space="preserve" approved="yes">
+                <source>Skip to main content (press enter)</source>
+                <target state="translated">Vers le contenu principal (appuyez sur ENTER)</target>
+            </trans-unit>
+            <trans-unit id="skiplinks.contact" xml:space="preserve" approved="yes">
+                <source>Skip to contact page (press enter)</source>
+                <target state="translated">Vers la page contact (appuyez sur ENTER)</target>
+            </trans-unit>
+            <trans-unit id="skiplinks.sitemap" xml:space="preserve" approved="yes">
+                <source>Skip to sitemap (press enter)</source>
+                <target state="translated">Vers le plan du site (appuyez sur ENTER)</target>
+            </trans-unit>
+            <trans-unit id="skiplinks.search" xml:space="preserve" approved="yes">
+                <source>Skip to search page (press enter)</source>
+                <target state="translated">Vers la recherche (appuyez sur ENTER)</target>
+            </trans-unit>
+         </body>
+     </file>
+</xliff>

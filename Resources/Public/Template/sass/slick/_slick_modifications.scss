@@ -1,0 +1,15 @@
+/*********************************************
+    Slick slider modifications
+**********************************************/
+.slick-next { right:$slick-browse-buttons-size/4; }
+.slick-prev { left:$slick-browse-buttons-size/4; }
+.slick-next,
+.slick-prev {
+    width:$slick-browse-buttons-size;
+    height:$slick-browse-buttons-size;
+}
+.slick-next:before,
+.slick-prev:before {
+    font-size:$slick-browse-buttons-size;
+}
+.slick-dots { margin-left:0; }

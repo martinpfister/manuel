@@ -1,0 +1,26 @@
+<!--
+
+        COPY/PASTE THIS INTO THE TYPO3 GRID ELEMENTS RECORD (after customizing)!
+
+--><?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3DataStructure>
+    <meta>
+        <langDisable>1</langDisable>
+        <langChildren>0</langChildren>
+    </meta>
+    <ROOT type="array">
+        <type>array</type>
+        <el type="array">
+            <autoplay type="array">
+                <TCEforms type="array">
+                    <label>
+                        LLL:EXT:templatebootstrap/Resources/Private/Language/Backend.xlf:grid_elements.slider.autoplay
+                    </label>
+                    <config type="array">
+                        <type>check</type>
+                    </config>
+                </TCEforms>
+            </autoplay>
+        </el>
+    </ROOT>
+</T3DataStructure>

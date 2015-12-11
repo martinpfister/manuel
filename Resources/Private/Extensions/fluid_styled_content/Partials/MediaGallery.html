@@ -1,0 +1,157 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
+
+{namespace s=Staempfli\TemplateBootstrap\ViewHelpers}
+
+<f:if condition="{gallery.rows}">
+    <div style="width:{gallery.width}px" class="ce-gallery{f:if(condition: data.imageborder, then: ' ce-border')}" data-ce-columns="{gallery.count.columns}" data-ce-images="{gallery.count.files}">
+        <f:if condition="{gallery.position.horizontal} == 'center'">
+            <div class="ce-outer">
+                <div class="ce-inner">
+        </f:if>
+        <f:for each="{gallery.rows}" as="row">
+            <div class="ce-row">
+                <f:for each="{row.columns}" as="column">
+                    <f:if condition="{column.media}">
+                        <div class="ce-column">
+                            <f:comment>
+                                Put image in <figure> tag, if there is a description
+                                available. Filter by image types 2 (jpg, png, gif, etc.)
+                                and 5 (p.e. Illustrator files).
+                            </f:comment>
+                            <f:if condition="{column.media.description}">
+                                <f:then>
+                                    <f:if condition="{s:inList(item: column.media.originalFile.properties.type, list:'2,5')}">
+                                        <f:then><figure></f:then>
+                                        <f:else><div class="ce-media"></f:else>
+                                    </f:if>
+                                </f:then>
+                                <f:else>
+                                    <div class="ce-media">
+                                </f:else>
+                            </f:if>
+
+
+                            <f:comment>
+                                Ouput the media.
+                                Usually an image, but might also be embedded
+                                online media such as YouTube, Vimeo, SoundCloud...
+                            </f:comment>
+
+
+                            <f:if condition="{s:inList(item: column.media.originalFile.properties.type, list:'3,4')}">
+                                <f:then>
+                                    <f:render section="mediaType" arguments="{_all}" />
+                                </f:then>
+                                <f:else>
+                                    <f:render section="imageType" arguments="{_all}" />
+                                </f:else>
+                            </f:if>
+
+
+                            <f:comment>
+                                Close div tag containing the image. Conditionally
+                                close the <figure> tag, which has been opened, if
+                                there is a description available and it is an image (not a video et al).
+                            </f:comment>
+                            <f:if condition="{column.media.description}">
+                                <f:then>
+                                    <f:if condition="{s:inList(item: column.media.originalFile.properties.type, list:'2,5')}">
+                                        <f:then>
+                                            <figcaption>{column.media.description}</figcaption></figure>
+                                        </f:then>
+                                        <f:else>
+                                            <div class="caption">{column.media.description}</div></div>
+                                        </f:else>
+                                    </f:if>
+                                </f:then>
+                                <f:else>
+                                    </div>
+                                </f:else>
+                            </f:if>
+
+                        </div>
+                    </f:if>
+                </f:for>
+            </div>
+        </f:for>
+        <f:if condition="{gallery.position.horizontal} == 'center'">
+                </div>
+            </div>
+        </f:if>
+    </div>
+</f:if>
+
+<f:section name="imageType">
+    <f:if condition="{column.media.link}">
+        <f:then>
+            <f:link.typolink parameter="{column.media.link}">
+                <f:render section="media" arguments="{_all}" />
+            </f:link.typolink>
+        </f:then>
+        <f:else>
+            <f:if condition="{data.image_zoom}">
+                <f:then>
+                    <ce:link.clickEnlarge image="{column.media}" configuration="{settings.media.popup}">
+                        <f:render section="media" arguments="{_all}" />
+                    </ce:link.clickEnlarge>
+                </f:then>
+                <f:else>
+                    <f:render section="media" arguments="{_all}" />
+                </f:else>
+            </f:if>
+        </f:else>
+    </f:if>
+</f:section>
+
+
+<f:section name="mediaType">
+
+    <f:comment>
+        Render any media type seperately that will be
+        activated (i.e. replaced by an iFrame) on click.
+    </f:comment>
+    <f:if condition="{s:inList(item: column.media.extension, list:'youtube,vimeo,soundcloud')}">
+        <f:then>
+            <div class="onlineMedia type-{column.media.type} service-{column.media.extension}">
+
+                <f:comment>
+                    Exclude file types that are not 'lightboxable'
+                    - so ignore the 'image zoom' setting completely.
+                </f:comment>
+                <f:if condition="{column.media.extension} == 'soundcloud'">
+                    <f:then>
+                        <a class="preview"
+                    </f:then>
+                    <f:else>
+                        <a class="preview {f:if(condition:data.image_zoom, then:'lightbox-media" rel="lightbox[{data.pid}]')}"
+                    </f:else>
+                </f:if>
+
+                   href="{s:OnlineMediaPublicUrl(fileReference: column.media)}"
+                   style="background-image:url({s:OnlineMediaPreviewImage(fileReference: column.media)});"
+                   data-embedcode="<f:format.htmlentities><f:render section="media" arguments="{_all}" /></f:format.htmlentities>"></a>
+            </div>
+        </f:then>
+
+        <f:comment>
+            Render regular media (i.e. images)
+        </f:comment>
+        <f:else>
+            <div class="media type-{column.media.type}">
+                <f:render section="media" arguments="{_all}" />
+            </div>
+        </f:else>
+    </f:if>
+
+</f:section>
+
+<f:section name="media">
+    <f:media
+        file="{column.media}"
+        width="{column.dimensions.width}"
+        height="{column.dimensions.height}"
+        alt="{column.media.alternative}"
+        title="{column.media.title}"
+    />
+</f:section>
+</html>

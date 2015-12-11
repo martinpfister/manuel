@@ -1,0 +1,8 @@
+.idea/
+/Resources/Public/Template/.sass-cache
+/Resources/Public/Template/node_modules
+/Resources/Private/TypoScript/constants-local.ts
+/Resources/Private/TypoScript/setup-local.ts
+/Resources/Public/Template/.tmp
+/Resources/Public/Template/app/bower_components
+/Resources/Public/Template/images/*.min.*

@@ -1,0 +1,21 @@
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+
+    <f:cObject typoscriptObjectPath="lib.skiplinks" />
+    <div class="row collapse" id="header">
+        <div class="column">
+            <f:render partial="Header" arguments="{_all}" />
+        </div>
+    </div>
+    <div class="row">
+        <!-- TYPO3SEARCH_begin -->
+        <f:render section="Content" arguments="{_all}" />
+        <!-- TYPO3SEARCH_end -->
+    </div>
+    <footer class="row">
+        <f:render partial="Footer" arguments="{_all}" />
+    </footer>
+
+
+</html>

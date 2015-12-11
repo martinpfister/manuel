@@ -1,0 +1,65 @@
+/*********************************************
+    This file should only contain styles
+    for the TYPO3 RTE (backend).
+    We'll set some basic formatting
+    according to this site's styles to
+    get the editors closer to the site's
+    styling.
+**********************************************/
+/*********************************************
+    Compass
+    See http://compass-style.org/examples/
+    for reference
+**********************************************/
+/*********************************************
+    Own functions
+**********************************************/
+/*********************************************
+    Foundation
+**********************************************/
+/*********************************************
+    Set default values
+**********************************************/
+/*********************************************
+    General / global styles
+**********************************************/
+/* line 55, ../Template/sass/RTE.scss */
+p {
+  font-size: 1rem;
+  font-family: inherit;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+/* line 61, ../Template/sass/RTE.scss */
+i, em {
+  font-family: inherit;
+}
+
+/* line 63, ../Template/sass/RTE.scss */
+a {
+  text-decoration: none;
+  color: #008CBA;
+}
+
+/* line 67, ../Template/sass/RTE.scss */
+ul,
+ol,
+dl {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  list-style-position: outside;
+  font-family: inherit;
+}
+
+/*********************************************
+    Custom styles
+**********************************************/
+/* line 79, ../Template/sass/RTE.scss */
+.examplestyle {
+  border-bottom: 1px solid #f04124;
+  background: #e7e7e7;
+}
+
+/*# sourceMappingURL=RTE.css.map */

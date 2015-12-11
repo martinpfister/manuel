@@ -1,0 +1,18 @@
+#typo3-index-php .typo3-login-logo {
+    margin:8% auto;
+    display:block;
+    max-height:150px;
+}
+
+
+ul.templatebootstrap-installlog {
+    margin-left:0;
+    padding-left:10px;
+    margin-left:10px;
+    list-style-position:outside;
+}
+
+.templatebootstrap-installlog-title {
+    color:#dedede;
+    font-weight:bold;
+}

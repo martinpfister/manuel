@@ -1,0 +1,144 @@
+/*********************************************
+    Media query examples
+**********************************************/
+
+/*@media #{$small-up} { }
+@media #{$small-only} { }
+
+@media #{$medium-up} { }
+@media #{$medium-only} { }
+
+@media #{$large-up} { }
+@media #{$large-only} { }
+
+@media #{$xlarge-up} { }
+@media #{$xlarge-only} { }
+
+@media #{$xxlarge-up} { }
+@media #{$xxlarge-only} { }*/
+
+
+/*********************************************
+    Compass examples
+**********************************************/
+/*
+
+.myclass {
+
+    @include box-sizing(content-box);
+
+    @include background-image(linear-gradient(to bottom right, white, #dddddd));
+    @include background-size(cover);
+
+    @include border-radius(25px);
+    @include border-top-right-radius(30px);
+    @include border-bottom-radius(40px);
+    @include border-corner-radius(bottom, right, 10px);
+
+    @include box-shadow(red 2px 2px 10px);
+
+    @include box-sizing(content-box);
+
+    @include opacity(0.1);
+
+    @include text-shadow(rgba(blue, 0.2) 1px 1px 0);
+
+    @include transition-property(width);
+    @include transition-duration(2s);
+    @include transition-timing-function(ease-in);
+    @include transition-delay(2s);
+}
+
+*/
+
+
+/*********************************************
+    Header area
+**********************************************/
+#header {
+    position:relative;
+    z-index:100;
+}
+#logo {
+    display:block;
+    box-sizing:border-box;
+    width:100%;
+    padding:0.5rem 0;
+    img {
+        max-width:100%;
+        height:auto;
+    }
+}
+
+/*********************************************
+    Menus
+**********************************************/
+@media #{$medium-up} {
+    nav.language {
+        float:right;
+    }
+}
+
+/*********************************************
+    Slider
+**********************************************/
+.slide span {
+    position:absolute;
+    z-index:2;
+    top:1rem;
+    right:1rem;
+    color:#fff;
+    font-weight:$font-weight-bold;
+}
+
+/*********************************************
+    Forms & form elements
+**********************************************/
+input[type="submit"] {
+    @extend .button;
+}
+input[type="reset"] {
+    @extend .button;
+    @extend .alert;
+}
+
+form ol li:not(:last-child) {
+    margin-bottom:$column-gutter;
+}
+
+// Resetting some too general foundation error styling
+// in _forms.scss.
+span.error,
+small.error { display:initial; }
+
+// Form mandatory messages (em) & errors (strong)
+form label em {
+    font-style:normal;
+}
+form label strong {
+    display:block;
+    font-weight:$input-error-message-font-weight;
+    color:$alert-color;
+}
+
+
+/*********************************************
+    Indexed search
+**********************************************/
+// Searchbox: Hide any content (result list,
+// etc.) following the search form.
+// .. but hide search form in main content area
+// as it only needs to show the result list.
+.searchbox ~ * { display:none; }
+.element.list-element .tx-indexedsearch .tx-indexedsearch-searchbox { display:none; }
+
+/*********************************************
+    Footer
+**********************************************/
+footer.row {
+    margin-top:1rem;
+    opacity:0.5;
+    * { font-size:0.8rem; }
+}
+
+ul.address { list-style-type:none; }

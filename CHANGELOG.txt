@@ -1,0 +1,120 @@
+# Change Log
+All notable changes to this project will be documented in this file. Syntax according to http://keepachangelog.com/
+
+## [2.1.0-DEV]
+### Added
+- Additional media fields examples in pages (correctly inherited with language fallbacks).
+
+### Fixed
+-
+
+### Updated
+-
+
+### Removed
+-
+
+
+## [2.0.0]
+### Added
+- TYPO3 7 LTS support
+- Advanced frontend rendering with fallback templates / layouts / partials
+- $plugin.templatebootstrap.environment constant
+- templatebootstrap environment condition (see constants.ts for examples)
+- Render RTE css dynamically (grunt)
+- Templatebootstrap installation notifications now show up in the backend top bar
+- More accurate / verbose outputs of Templatebootstrap installation errors / messages.
+- Dynamic rendering of backend login logo
+- Backend login background is automatically set to the templatebootstrap default image (Resources/Public/Backend...)
+- Templatebootstrap Utility class. Mostly used by backend calls.
+- Gravatar Avatar provider for backend users
+- Responsive tables support (content element 'table').
+- Support for external media (YouTube, Vimeo, SoundCloud). Rendering respects privacy, performance issues. Will only embed media on request (click).
+- Respect 'Do Not Track' browser setting. Will prevent Google Analytics code to be rendered at all.
+
+### Fixed
+- Facebook OpenGraph meta tag attributes
+- Post-install methods will now abort immediately, if it is not the templatebootstrap extension being installed / configured.
+- indexed_search TS include path
+- fancybox left/right arrow positoining for external media (YouTube, Vimeo)
+
+### Updated
+- Uses jQuery 1.11.3.
+- Changed logo source files to ai format
+- Changed IconSources directory to LogoSources directory
+- FE language configuration now depends on new parameter config.sys_language_isocode
+- Static TS template file extensions now go by the '.ts' extension.
+- indexed_search now uses Fluid
+- Content elements will now be rendered in Fluid.
+- SCSS updated to match new ce rendering.
+- Page TSconfig adjusted according to new fields/tables since TYPO3 7 LTS.
+- Moved PostInstall* classes into dedicated directory.
+- Use new rootline field 'pagelayout' instead of getting correct layout manually.
+- New result list settings for indexed_search.
+- 'inList' view helper now returns boolean value. Fixes caching problems with child nodes (then & else children)
+
+### Removed
+- TYPO3 6 LTS support
+- Original page title configuration (pagetitle.ts). config.pageTitle now supports stdWrap
+- 'login' & 'news' configurations as they are not considered as basic as to include them in the default setup.
+- Users & user groups xml
+- Obsolete ext_autoload.php. Moved class mapping to ext_emconf.
+- tt_content rendering (TS).
+
+
+## [1.3.0]
+### Added
+- Cleaner textpic rendering, image size (display & rendering) handling, responsiveness.
+- Dynamic .ico & ext_icon.gif generation via grunt
+- Dynamic icon (png) generation for meta icons via TS.
+- Automatically initialize lightbox w/ fancybox "media" helper, if link has been assigned .lightbox-media or .fancybox-media
+- Configurable, css-only hamburger icon (.hamburger-icon) in common styles.
+- Default styles for indexed_search searchbox vs. result list display (hide unwanted contents in each).
+- 404 and 401 error pages may now be optionally defined on a per-domain/host basis (see error404Uid parameter in extension configuration).
+
+### Fixed
+- Change "boolval" type casting in PostInstallFileHandler to intval() in order to support older PHP versions.
+- Revert c4dd7bee4c5: Wrong configuration led to broken JS (p.e. linkTo_UnCryptMailTo was not available anymore).
+
+### Updated
+- Refactor version handling: Version in ext_emconf=templatebootstrap-version, everything else fetched by git (tags, branch) to avoid update conflicts.
+- Insert correct remote URL to templateboostrap in README.
+- Usergroups+Filemounts now include a default user, fixed permissions & case-sensitive filemount for cross-platform compatibility.
+
+### Removed
+- Replace "styles.content.imgtext.maxW" by "imageRenderingMaxWidth" which is used in templatebootstrap image rendering definition.
+- TYPO3 standard favicon definition (page.shortcutIcon)
+
+
+## [1.2.0]
+### Added
+- Add missing attribute "accesskey" to skiplinks.
+- Add TYPO3SEARCH_begin and TYPO3SEARCH_end around content section of default layout.
+- fixed typos in README.txt
+
+### Fixed
+- Get package revision version in FE mode only as it may throw errors when localconf is loaded via CLI.
+
+### Updated
+- Update foundation framework to latest version via npm package.
+- Update _foundation_components.scss to npm package.
+- Update _foundation_settings.scss to latest version.
+
+### Removed
+- Remove local (manually copied) foundation files.
+- Remove grunt's csscomb as it doesn't allow advanced formatting rules (p.e. one-liners where appropriate)
+
+
+## [1.1.0] - 2015-01-05
+### Added
+- Configure default language label (DE) and flag (CH) for TYPO3 backend.
+- Enable frontend admin panel for local environments.
+- Refactor whole grunt task structure. Implemented csscomb & imagemin.
+### Fixed
+- Replace normalize.css with most recent library (wrongfully contained HTML content).
+- Grunt task "watch" was broken as "scssChange" has been removed. Reroute to "buildCSS".
+### Updated
+- Include compass in scss per default. Examples available in _styles.scss
+- Update package.json to use Compass 1.0.x.
+### Removed
+- Delete unused font awesome files.

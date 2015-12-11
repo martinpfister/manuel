@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" product-name="templatebootstrap">
+    <header/>
+        <body>
+
+            <!-- PAGETREE ("PAGE CONTAINS X") -->
+            <trans-unit id="pagetree.page_contains_system" xml:space="preserve">
+                <source>[System] Collection</source>
+            </trans-unit>
+            <trans-unit id="pagetree.page_contains_layouts" xml:space="preserve">
+                <source>[System] Layouts</source>
+            </trans-unit>
+            <trans-unit id="pagetree.page_contains_menufolder" xml:space="preserve">
+                 <source>[System] Menu directory</source>
+             </trans-unit>
+
+
+            <!-- Ueberschriften -->
+            <trans-unit id="tt_content.header_layout.1" xml:space="preserve">
+                <source>Headline 1 (h1)</source>
+            </trans-unit>
+            <trans-unit id="tt_content.header_layout.2" xml:space="preserve">
+                <source>Headline 2 (h2)</source>
+            </trans-unit>
+            <trans-unit id="tt_content.header_layout.3" xml:space="preserve">
+                <source>Headline 3 (h3)</source>
+            </trans-unit>
+            <trans-unit id="tt_content.header_layout.4" xml:space="preserve">
+                <source>Headline 4 (h4)</source>
+            </trans-unit>
+
+            <!-- BACKEND LAYOUT NAMES -->
+            <trans-unit id="backend_layout.SingleColumn" xml:space="preserve">
+                <source>Single column</source>
+            </trans-unit>
+            <trans-unit id="backend_layout.TwoColumns" xml:space="preserve">
+               <source>Two columns</source>
+            </trans-unit>
+
+
+            <!-- RTE classes -->
+            <trans-unit id="rte.classes.examplestyle" xml:space="preserve">
+                <source>Example style</source>
+            </trans-unit>
+
+
+            <!-- IMAGERY PAGE PROPERTIES -->
+            <trans-unit id="pageproperties.imagery" xml:space="preserve">
+                <source>Imagery</source>
+            </trans-unit>
+            <trans-unit id="pageproperties.imagery.moodimage" xml:space="preserve">
+                <source>Mood image</source>
+            </trans-unit>
+            <trans-unit id="pageproperties.imagery.backgroundimage" xml:space="preserve">
+                <source>Background image</source>
+            </trans-unit>
+
+
+
+            <!-- COLUMN NAMES -->
+            <trans-unit id="backend_layout.mainColumn" xml:space="preserve">
+                <source>Main column</source>
+            </trans-unit>
+            <trans-unit id="backend_layout.rightColumn" xml:space="preserve">
+                <source>Right</source>
+            </trans-unit>
+
+
+            <!-- FRONTEND LAYOUT NAMES -->
+            <trans-unit id="frontend_layout.examplelayout" xml:space="preserve">
+                <source>Custom FE layout example</source>
+            </trans-unit>
+
+
+
+            <!-- CONTENT ELEMENT LAYOUTS -->
+            <trans-unit id="tt_content.layout.examplelayout" xml:space="preserve">
+                <source>Custom content element layout example</source>
+            </trans-unit>
+
+
+            <!-- GRID ELEMENT LABELS -->
+            <trans-unit id="grid_elements.slider" xml:space="preserve">
+                <source>Slider</source>
+            </trans-unit>
+            <trans-unit id="grid_elements.slider.autoplay" xml:space="preserve">
+                <source>Autoplay</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

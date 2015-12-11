@@ -1,0 +1,22 @@
+Autostart feature on line 2332 creates an error in production
+environment when script gets concatenated:
+
+~ snip ~
+    // Auto start
+    if ($("script[src*='jquery.fancybox.js']").attr('src').match(/autorun/) ){
+        $("a[href$='.jpg'],a[href$='.png'],a[href$='.gif'],.fancybox").attr('data-fancybox-group', 'gallery').fancybox();
+    }
+
+~ snip ~
+
+Reason: Library doesn't get included by hard-coded script name.
+
+Issue discussion:
+https://github.com/fancyapps/fancyBox/issues/713
+
+Patch (according to comments in issue discussion):
+~ snip ~
+    if ($("script[src*='jquery.fancybox.js']").length > 0 && $("script[src*='jquery.fancybox.js']").attr('src').match(/autorun/) ){
+        $("a[href$='.jpg'],a[href$='.png'],a[href$='.gif'],.fancybox").attr('data-fancybox-group', 'gallery').fancybox();
+    }
+~ snip ~

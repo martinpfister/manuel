@@ -1,0 +1,28 @@
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+
+    <ul class="address">
+        <li>{settings.company.name}</li>
+
+        <f:if condition="{settings.company.street}">
+            <li>{settings.company.street}</li>
+        </f:if>
+        <f:if condition="{settings.company.pobox}">
+            <li>{settings.company.pobox}</li>
+        </f:if>
+        <f:if condition="{settings.company.city}">
+            <li>{settings.company.city}</li>
+        </f:if>
+        <f:if condition="{settings.company.phone}">
+            <li>{settings.company.phone}</li>
+        </f:if>
+        <f:if condition="{settings.company.email}">
+            <li><f:link.email email="{settings.company.email}" /></li>
+        </f:if>
+    </ul>
+
+    <small>© <f:cObject typoscriptObjectPath="lib.currentyear" /> {settings.company.name}</small>
+
+
+</html>
