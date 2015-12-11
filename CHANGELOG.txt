@@ -1,6 +1,20 @@
 # Change Log
 All notable changes to this project will be documented in this file. Syntax according to http://keepachangelog.com/
 
+## [2.1.0-DEV]
+### Added
+-
+
+### Fixed
+-
+
+### Updated
+-
+
+### Removed
+-
+
+
 ## [2.0.0]
 ### Added
 - TYPO3 7 LTS support
