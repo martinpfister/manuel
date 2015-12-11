@@ -26,3 +26,18 @@
     => Choose option "Include before all static templates if root flag is set"
 
 - Have fun!
+
+
+########################################################################
+# Setup for custom inherited media fields in page properties such
+# as background images and/or mood images.
+########################################################################
+If you need additional media fields that get inherited and fall back to the default language properly,
+the easiest thing you could do is to uncomment the commands in ext_tables.sql. And you're good to go.
+
+If you need custom adjustments or want to tear down this feature have a look at:
+- ext_tables.sql
+- ext_localconf.php (look for 'pageOverlayFields')
+- TCA/Overrides/pages.php
+- Resources/Private/TypoScript/Content/temp/rootLineMedia.ts
+- Resources/Private/Language/Backend.xlf (plus [yourlocalization].Backend.xlf)

@@ -50,6 +50,16 @@ $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['Staempfli/TemplateBootstrap']['PackageKe
 
 
 /******************************
+ * Add mood image and background image
+ * to the page overlay field list.
+ * Inheritance (rootline
+ * functionality) will be implemented by
+ * the TSRootLineMedia class.
+ ******************************/
+$GLOBALS['TYPO3_CONF_VARS']['FE']['pageOverlayFields'] .= ',tx_'. $_EXTKEY .'_moodimage,tx_'. $_EXTKEY .'_backgroundimage';
+
+
+/******************************
  * Register helper & renderer
  * for online media
  * 'SoundCloud'
@@ -111,8 +121,6 @@ if (TYPO3_MODE === 'BE') {
         'Staempfli\\TemplateBootstrap\\Utility\\PostInstall\\PostInstallInfoLogger',
         'getTemplateBootstrapLogMessages'
     );
-
-
 }
 
 ?>

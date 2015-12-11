@@ -45,6 +45,18 @@
             </trans-unit>
 
 
+            <!-- IMAGERY PAGE PROPERTIES -->
+            <trans-unit id="pageproperties.imagery" xml:space="preserve">
+                <source>Imagery</source>
+            </trans-unit>
+            <trans-unit id="pageproperties.imagery.moodimage" xml:space="preserve">
+                <source>Mood image</source>
+            </trans-unit>
+            <trans-unit id="pageproperties.imagery.backgroundimage" xml:space="preserve">
+                <source>Background image</source>
+            </trans-unit>
+
+
 
             <!-- COLUMN NAMES -->
             <trans-unit id="backend_layout.mainColumn" xml:space="preserve">

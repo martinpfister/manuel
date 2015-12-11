@@ -3,7 +3,7 @@ All notable changes to this project will be documented in this file. Syntax acco
 
 ## [2.1.0-DEV]
 ### Added
--
+- Additional media fields examples in pages (correctly inherited with language fallbacks).
 
 ### Fixed
 -

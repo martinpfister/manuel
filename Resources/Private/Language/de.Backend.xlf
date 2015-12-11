@@ -46,6 +46,21 @@
         </trans-unit>
 
 
+        <!-- MOODIMAGERY PAGE PROPERTIES -->
+        <trans-unit id="pageproperties.imagery" xml:space="preserve">
+            <source>Imagery</source>
+            <target state="translated">Bilder</target>
+        </trans-unit>
+        <trans-unit id="pageproperties.imagery.moodimage" xml:space="preserve">
+            <source>Mood image</source>
+            <target state="translated">Stimmungsbild</target>
+        </trans-unit>
+        <trans-unit id="pageproperties.imagery.backgroundimage" xml:space="preserve">
+            <source>Background image</source>
+            <target state="translated">Hintergrundbild</target>
+        </trans-unit>
+
+
         <!-- COLUMN NAMES -->
         <trans-unit id="backend_layout.mainColumn" xml:space="preserve" approved="yes">
             <source>Main column</source>
