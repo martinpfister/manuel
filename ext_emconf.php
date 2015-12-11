@@ -9,7 +9,7 @@
 ########################################################################
 
 $EM_CONF[$_EXTKEY] = array(
-    'title' => 'Website template bootstrap',
+    'title' => 'Manuel Etter',
     'description' => '',
     'category' => 'fe',
     'shy' => 0,
@@ -55,5 +55,3 @@ $EM_CONF[$_EXTKEY] = array(
             )
         )
 );
-
-?>
