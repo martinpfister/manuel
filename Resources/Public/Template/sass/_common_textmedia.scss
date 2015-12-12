@@ -49,19 +49,14 @@
       left:50%;
       top:50%;
       content:' ';
-      @include opacity(0.6);
-      @include transition(all 0.2s);
     }
     &:hover:before,
-    &:hover:after { @include opacity(0.8); }
 
     &:before {
-      @include transform(translateX(-50%) translateY(-50%));
       border:2px solid $white;
       width:70px;
       height:70px;
       background:rgba(0,0,0,0.6);
-      @include border-radius(40px);
     }
     &:after {
       width: 0;
@@ -69,7 +64,6 @@
       border-top: 20px solid transparent;
       border-bottom: 20px solid transparent;
       border-left: 30px solid $white;
-      @include transform(translateX(-35%) translateY(-50%));
     }
   }
 }
@@ -104,7 +98,6 @@
 
   .ce-gallery {
     max-width:100%;
-    margin-bottom:$pictureVsTextSpacing;
     float:none;
     &:after {
       display:table;
@@ -116,47 +109,6 @@
       overflow:initial;
       float:none;
     }
-    .ce-row,
-    .ce-column {
-      figure,
-      .ce-media {
-        margin-bottom:$pictureSpacing;
-      }
-    }
-  }
-}
-
-// Add margins (in the shape of paddings) to the images
-@media #{$enableImageColumnsMediaQuery} {
-  .ce-textpic .ce-gallery {
-
-    // Main gallery positioning
-    // Notice that the negative margins are used in order
-    // to get a proper block grid.
-    margin:0 (-$pictureSpacing / 2) ($pictureVsTextSpacing - $pictureSpacing) (-$pictureSpacing / 2);
-    &[data-ce-columns="1"] { margin-left:0; }
-
-    // Create block grid
-    $expectedMaxNumberOfColumns:10;
-    $numberOfColumns:2;
-    @while $numberOfColumns <= $expectedMaxNumberOfColumns {
-
-      &[data-ce-columns="#{$numberOfColumns}"] .ce-column {
-        width:100% / $numberOfColumns;
-        display:block;
-        float:left;
-        height:auto;
-        clear:none;
-        margin:0;
-        padding:0 $pictureSpacing/2;
-
-        &:nth-of-type(#{$numberOfColumns}n+1) {
-          clear:both;
-        }
-      }
-
-      $numberOfColumns:$numberOfColumns+1;
-    }
   }
 }
 
@@ -165,74 +117,3 @@
 **********************************************/
 .ce-textpic figcaption,
 .ce-textpic .caption { padding-top:1%; }
-
-
-/*********************************************
-    Picture / text display for large views
-**********************************************/
-@media #{$enableImageColumnsMediaQuery} {
-
-  .ce-textpic {
-
-    // Clear content element after, if there are floated elements
-    &.ce-intext {
-
-      &.ce-left .ce-gallery {
-        float:left;
-        margin-right:$pictureVsTextSpacing;
-        margin-bottom:$pictureVsTextSpacing - $pictureSpacing;
-      }
-      &.ce-right .ce-gallery {
-        float:right;
-        margin-bottom:$pictureVsTextSpacing - $pictureSpacing;
-        margin-left:$pictureVsTextSpacing;
-      }
-
-      &:after {
-        display:table;
-        content:' ';
-        clear:both;
-      }
-      // Set default max width of image container.
-      // The min width is used as if only non-image elements (e.g. external media)
-      // is inserted, there is no fixed width or aspect ratio available.
-      .ce-gallery {
-        max-width:$textpic-intext-defaultMaxWidth;
-      }
-    }
-
-    // Pictures aligned right
-    &.ce-right.ce-nowrap {
-      // Float image container & compensate negative margins introduced by block grid
-      // in order to get the correct distance to the text.
-      .ce-gallery {
-        margin-right:-($pictureSpacing / 2);
-        margin-left:$pictureVsTextSpacing - ($pictureSpacing / 2);
-        float:right;
-
-        // Do not compensate for picture containers that only have 1 column as
-        // there haven't been any negative margins set (no horizontal spacing
-        // needed).
-        &.has-1-columns {
-          margin-right:0;
-          margin-left:$pictureVsTextSpacing;
-        }
-      }
-    }
-
-    // Pictures aligned left
-    // (see comments above).
-    &.ce-left.ce-nowrap {
-      .ce-gallery {
-        margin-left:-$pictureSpacing / 2;
-        margin-right:$pictureVsTextSpacing - ($pictureSpacing / 2);
-        float:left;
-
-        &.has-1-columns {
-          margin-left:0;
-          margin-right:$pictureVsTextSpacing;
-        }
-      }
-    }
-  }
-}

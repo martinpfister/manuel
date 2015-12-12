@@ -1,3 +1,0 @@
-@function get-hover-color($originalColor) {
-  @return scale-color($originalColor, $lightness:8%);
-}

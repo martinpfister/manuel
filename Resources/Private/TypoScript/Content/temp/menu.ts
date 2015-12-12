@@ -3,7 +3,6 @@
 #-------------------------------------------------------------------------------
 temp.menu = HMENU
 temp.menu {
-    wrap = <nav role="navigation"><ul>|</ul></nav>
 
     1 = TMENU
     1 {

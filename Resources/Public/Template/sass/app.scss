@@ -1,20 +1,10 @@
-/*********************************************
-    Compass
-    See http://compass-style.org/examples/
-    for reference
-**********************************************/
-@import "compass";
-
-/*********************************************
-    Own functions
-**********************************************/
-@import "functions";
+@import "variables";
 
 /*********************************************
     Foundation
 **********************************************/
-@import "foundation_settings";
-@import "foundation_components";
+@import '../bower_components/foundation-sites/foundation-sites';
+@include foundation-everything;
 
 /*********************************************
     Slick slider

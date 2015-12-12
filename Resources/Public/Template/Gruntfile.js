@@ -1,57 +1,29 @@
-
-
 module.exports = function(grunt) {
 
-    var path = require('path');
-    var packagePath = path.resolve('../../../');
-    var packagePathSplit = packagePath.split(path.sep);
-    var packageKey = packagePathSplit[packagePathSplit.length-1];
+    require( 'load-grunt-tasks' )( grunt );
 
-    var compressableImageFormats = 'jpg,gif,svg,jpeg,png';
-
-    // Icon/logo file paths
-
-    var logoSourceFile = '../../Private/LogoSources/logo-default.ai';
-    var logoSourceFileAbsolute = path.resolve(logoSourceFile +'[0]');
-    var iconSourceFile = '../../Private/LogoSources/icon-default.ai';
-    var iconSourceFileAbsolute = path.resolve(iconSourceFile +'[0]');
-
-    var faviconTargetFileAbsolute = path.resolve(packagePath +'/Resources/Public/Template/images/favicon.ico');
-    var packageIconTargetFileAbsolute = path.resolve(packagePath + '/ext_icon.gif');
-    var backendLogoTargetFileAbsolute = path.resolve(packagePath +'/Resources/Public/Backend/Skin/img/logo_login.png');
+    var config = {
+        app: 'app',
+        dist: 'dist',
+        path: require('path'),
+        //packagePath: this.path.resolve('../../../'),
+        //packagePathSplit: this.packagePath.split(this.path.sep),
+        //packageKey: this.packagePathSplit[this.packagePathSplit.length-1],
+        compressableImageFormats: 'jpg,gif,svg,jpeg,png',
+        logoSourceFile: '../../Private/LogoSources/logo-default.ai',
+        //logoSourceFileAbsolute: this.path.resolve(this.logoSourceFile +'[0]'),
+        iconSourceFile: '../../Private/LogoSources/icon-default.ai',
+        //iconSourceFileAbsolute: this.path.resolve(this.iconSourceFile +'[0]'),
+        //faviconTargetFileAbsolute: this.path.resolve(this.packagePath +'/Resources/Public/Template/images/favicon.ico'),
+       // packageIconTargetFileAbsolute: this.path.resolve(this.packagePath + '/ext_icon.gif'),
+        //backendLogoTargetFileAbsolute: this.path.resolve(this.packagePath +'/Resources/Public/Backend/Skin/img/logo_login.png')
+    };
 
     grunt.initConfig({
+
+
         pkg: grunt.file.readJSON('package.json'),
-
-
-        // SASS compiler job w/ compass
-        compass: {
-            options: {
-                raw:'unixNewlines =:true\n',
-                force: true,
-                relativeAssets: false,
-                httpPath: '/typo3conf/ext/'+ packageKey +'/Resources/Public/Template/',
-                imagesDir:'images',
-                fontsDir:'fonts',
-                sassDir:'sass',
-                sourcemap:true,
-            },
-            // Generate main css
-            app: {
-                options: {
-                    cssDir:'css',
-                    specify: ['sass/app.scss']
-                }
-            },
-            // Generate RTE css
-            rte: {
-                options: {
-                    cssDir:'../Backend/',
-                    specify: ['sass/RTE.scss']
-                }
-            }
-        },
-
+        config: config,
 
         // Compress images job
         imagemin: {
@@ -60,7 +32,7 @@ module.exports = function(grunt) {
                     expand: true,
                     cwd: 'images/',
                     dest: 'images/',
-                    src: ['**/*.{'+ compressableImageFormats +'}', '!**/*.min.*'],
+                    src: ['**/*.{'+ config.compressableImageFormats +'}', '!**/*.min.*'],
                     rename: function(destinationPath, filename){
                         var dotPosition = filename.lastIndexOf('.');
                         var fileExtension = '';
@@ -78,62 +50,76 @@ module.exports = function(grunt) {
         // Mainly used for image / icon generation.
         exec: {
             generateFavicon: {
-                command: 'convert -colorspace RGB -background transparent -define icon:auto-resize "' + iconSourceFileAbsolute + '" "'+ faviconTargetFileAbsolute +'"'
+                command: 'convert -colorspace RGB -background transparent -define icon:auto-resize "' + config.iconSourceFileAbsolute + '" "'+ config.faviconTargetFileAbsolute +'"'
             },
             generatePackageIcon: {
-                command: 'convert -colorspace RGB -alpha remove -antialias -background white "' + iconSourceFileAbsolute + '" "'+ packageIconTargetFileAbsolute +'"'
+                command: 'convert -colorspace RGB -alpha remove -antialias -background white "' + config.iconSourceFileAbsolute + '" "'+ config.packageIconTargetFileAbsolute +'"'
             },
             generateBackendLogo: {
-                command: 'convert -colorspace RGB -background transparent -antialias -density 400 -resize 500 "' + logoSourceFileAbsolute + '" "'+ backendLogoTargetFileAbsolute +'"'
+                command: 'convert -colorspace RGB -background transparent -antialias -density 400 -resize 500 "' + config.logoSourceFileAbsolute + '" "'+ config.backendLogoTargetFileAbsolute +'"'
             }
         },
 
+        // Compiles Sass to CSS and generates necessary files if requested
+        sass: {
+            options: {
+                sourceMap: true,
+                sourceMapEmbed: true,
+                sourceMapContents: true,
+                includePaths: ['bower_components/foundation-sites/scss',
+                               '/bower_components/foundation-sites/scss',
+                                '/bower_components/foundation-sites',
+                               '/bower_components']
+            },
+            dist: {
+                files: {
+                    'css/app.css': 'sass/app.scss'
+                }
+            }
+        },
 
         // File change watcher
         watch: {
             grunt: {
-                files: ['Gruntfile.js']
+                files: ['Gruntfile.js'],
+                tasks: ['sass']
             },
             sass: {
                 files: 'sass/**/*.scss',
-                tasks: ['buildCSS'],
-                options: {livereload:true}
+                tasks: ['sass']
             },
             images: {
-                files: ['images/**/*.{'+ compressableImageFormats +'}', '!**/*.min.*'],
+                files: ['images/**/*.{'+ config.compressableImageFormats +'}', '!**/*.min.*'],
                 tasks: ['compressImageAssets'],
                 options: {
                     event: ['changed', 'added']
                 }
             },
             iconSource: {
-                files: [iconSourceFile],
+                files: [config.iconSourceFile],
                 tasks: ['createIcons'],
                 options: { event: ['changed'] }
             },
             logoSource: {
-                files: [logoSourceFile],
+                files: [config.logoSourceFile],
                 tasks: ['createBackendLogo'],
                 options: { event: ['changed'] }
-            },
+            }
         }
 
     });
 
     // Load node modules
-    grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-exec');
 
     // Define tasks
-    grunt.registerTask('buildCSSWithCompass', ['compass']);
-    grunt.registerTask('buildCSS', ['buildCSSWithCompass']);
+    grunt.registerTask('compile-sass', ['sass']);
     grunt.registerTask('compressImageAssets', ['imagemin:imageAssets']);
     grunt.registerTask('createIcons', ['exec:generateFavicon', 'exec:generatePackageIcon']);
     grunt.registerTask('createBackendLogo', ['exec:generateBackendLogo']);
 
     // Define default task
-    grunt.registerTask('default', ['buildCSS', 'compressImageAssets', 'createIcons', 'createBackendLogo', 'watch']);
-
+    grunt.registerTask('default', ['compile-sass', 'watch']);
 }

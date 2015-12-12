@@ -6,3 +6,4 @@
 /Resources/Public/Template/.tmp
 /Resources/Public/Template/app/bower_components
 /Resources/Public/Template/images/*.min.*
+bower_components/

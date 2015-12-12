@@ -12,11 +12,6 @@
     Settings
 **********************************************/
 
-// Image / textpic settings
-$pictureSpacing:$column-gutter / 2;         // Spacing between images
-$pictureVsTextSpacing:$column-gutter;       // Spacing between images & text (for textpic elements)
-$textpic-intext-defaultMaxWidth:70%;        // Picture container max default width (for textpic elements), if no width defined by editor.
-$enableImageColumnsMediaQuery:$medium-up;   // Screen size allowing multiple columns.
 
 // Hamburger icon settings
 $hamburger-icon-thickness:2px;
@@ -114,14 +109,13 @@ form ol li ol {
     margin-left:auto;
 }
 
-
 /*********************************************
     Responsive tables
     This is an example tested with the
     default setup. You might want to modify
     or disable this entirely.
 **********************************************/
-@media #{$small-only} {
+@include breakpoint(small) {
 
     .ce-table[class*="table-header-position"] {
         border:none;
@@ -135,7 +129,6 @@ form ol li ol {
         tr,
         td,
         tr:before,
-        td:before { line-height:$paragraph-line-height; }
 
         // Hide regular headers
         tr th,
@@ -144,10 +137,7 @@ form ol li ol {
         // Add correct font weight & basic styling to future headers
         td:before {
             display:inline;
-            font-weight:$table-head-font-weight;
         }
-
-        tr { margin-bottom:$paragraph-margin-bottom;}
 
         // Table header left (first column)
         &.table-header-position-1 {

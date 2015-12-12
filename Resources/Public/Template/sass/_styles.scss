@@ -1,144 +1,649 @@
-/*********************************************
-    Media query examples
-**********************************************/
-
-/*@media #{$small-up} { }
-@media #{$small-only} { }
-
-@media #{$medium-up} { }
-@media #{$medium-only} { }
-
-@media #{$large-up} { }
-@media #{$large-only} { }
-
-@media #{$xlarge-up} { }
-@media #{$xlarge-only} { }
-
-@media #{$xxlarge-up} { }
-@media #{$xxlarge-only} { }*/
-
-
-/*********************************************
-    Compass examples
-**********************************************/
-/*
-
-.myclass {
-
-    @include box-sizing(content-box);
-
-    @include background-image(linear-gradient(to bottom right, white, #dddddd));
-    @include background-size(cover);
-
-    @include border-radius(25px);
-    @include border-top-right-radius(30px);
-    @include border-bottom-radius(40px);
-    @include border-corner-radius(bottom, right, 10px);
-
-    @include box-shadow(red 2px 2px 10px);
-
-    @include box-sizing(content-box);
-
-    @include opacity(0.1);
-
-    @include text-shadow(rgba(blue, 0.2) 1px 1px 0);
-
-    @include transition-property(width);
-    @include transition-duration(2s);
-    @include transition-timing-function(ease-in);
-    @include transition-delay(2s);
+*	{	margin: 0;
+  padding:0;
 }
 
-*/
-
-
-/*********************************************
-    Header area
-**********************************************/
-#header {
-    position:relative;
-    z-index:100;
-}
-#logo {
-    display:block;
-    box-sizing:border-box;
-    width:100%;
-    padding:0.5rem 0;
-    img {
-        max-width:100%;
-        height:auto;
-    }
+/* Mein Kommentar */
+/*--------------------
+Allgemeine Einstellungen
+---------------------*/
+header{ width: 30%;
+  text-align: center;
 }
 
-/*********************************************
-    Menus
-**********************************************/
-@media #{$medium-up} {
-    nav.language {
-        float:right;
-    }
+html {
+  min-height: 100%;
 }
 
-/*********************************************
-    Slider
-**********************************************/
-.slide span {
-    position:absolute;
-    z-index:2;
-    top:1rem;
-    right:1rem;
-    color:#fff;
-    font-weight:$font-weight-bold;
+body{
+  background-image: url('../img/manuel3.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  color: white;
+  font-family: "Josefin+Sans", sans-serif, "Josefin Slab", serif;
+  font-size: 101%; /* 16px=100%/1em = 16px */
+  min-height: 100%;
 }
 
-/*********************************************
-    Forms & form elements
-**********************************************/
-input[type="submit"] {
-    @extend .button;
-}
-input[type="reset"] {
-    @extend .button;
-    @extend .alert;
+@media only screen and (max-width : 768px)  {
+  body {
+    background-image: url('../img/manuel2.jpg');
+  }
 }
 
-form ol li:not(:last-child) {
-    margin-bottom:$column-gutter;
-}
-
-// Resetting some too general foundation error styling
-// in _forms.scss.
-span.error,
-small.error { display:initial; }
-
-// Form mandatory messages (em) & errors (strong)
-form label em {
-    font-style:normal;
-}
-form label strong {
-    display:block;
-    font-weight:$input-error-message-font-weight;
-    color:$alert-color;
+h1{
+  font-family: "Josefin Sans" sans-serif;
+  font-weight: normal;
+  line-height: 140%;
+  font-size: 210%;
+  font-weight: 400;
+  letter-spacing: .1em;
+  color: white;
+  text-align: center;
+  /*margin-top: 20%;*/
+  text-transform: uppercase;
+  padding-bottom:20px;
 }
 
 
-/*********************************************
-    Indexed search
-**********************************************/
-// Searchbox: Hide any content (result list,
-// etc.) following the search form.
-// .. but hide search form in main content area
-// as it only needs to show the result list.
-.searchbox ~ * { display:none; }
-.element.list-element .tx-indexedsearch .tx-indexedsearch-searchbox { display:none; }
-
-/*********************************************
-    Footer
-**********************************************/
-footer.row {
-    margin-top:1rem;
-    opacity:0.5;
-    * { font-size:0.8rem; }
+h2{
+  font-family: "Josefin Sans" sans-serif;
+  font-size: 130%;
+  font-weight: normal;
+  padding-top: 20px;
+  text-transform: uppercase;
+  letter-spacing:0.1em;
+  line-height: 140%
+}
+h3{
+  font-family: "Josefin Sans" sans-serif;
+  font-weight: normal;
+  line-height: 140%;
+  font-size: 250%;
+  font-weight: 400;
+  letter-spacing: .1em;
+  color: white;
+  text-align: center;
+  /*margin-top: 20%;*/
+  text-transform: uppercase;
+  padding-bottom:20px;
 }
 
-ul.address { list-style-type:none; }
+section{
+  text-align: center;
+}
+
+p{
+  font-family: "Josefin Sans";
+  line-height: 155%;
+  font-weight:150%;
+  text-align: center;
+  /*padding-right: 30px;*/
+  margin-bottom: 40px;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  #wrapper p {
+    font-weight: 300;
+    font-size: 130%;
+  }
+}
+
+img{
+  width: 100%;
+  height: auto;
+}
+
+.main {
+  /*background: rgba(0,0,0,.5);*/
+  float: left;
+  width: 100%;
+  margin-top: 130px;
+  /*padding-bottom: 80px;*/
+  /*padding: 40px 0;
+  margin-bottom: 20px;*/
+}
+
+.main.galerie {
+  margin-top: 100px;
+}
+
+/*@media only screen and (max-width : 768px)  {
+  .main {
+    margin-top: 20px;
+  }
+}*/
+
+/*------------------------
+ID's ###
+-------------------------*/
+
+#wrapper{
+  float: left;
+  width: 100%;
+  position: relative;
+  min-height: 100vh;
+}
+
+.player{
+  margin-top:100px;
+}
+
+.desk {
+  margin: auto;
+  width: 960px;
+  max-width: 94%;
+}
+
+
+#cssmenu #logo,
+#moblogo {
+  background-color: none;
+  width: 200px;
+  padding: 0;
+  height: 80px;
+  display: block;
+  background: url(../img/logo_final.svg) no-repeat 0 0;
+  -webkit-transition: background-image 0.5s ease-out;
+  -moz-transition: background-image 0.5s ease-out;
+  -o-transition: background-image 0.5s ease-out;
+  transition: background-image 0.5s ease-out;
+}
+#cssmenu #logo:hover,
+#cssmenu #logo:focus,
+#cssmenu #moblogo:hover,
+#cssmenu #moblogo:focus {
+  background-image: url(../img/logo_final_gold.svg);
+}
+
+#sprache{
+  position: absolute;
+  right: 10px;
+  top: 16px;
+  z-index: 2;
+  text-decoration: none;
+}
+
+
+@media only screen and (max-width : 825px)  {
+  #cssmenu  #logo {
+    width: 200px;
+
+  }
+}
+
+@media only screen and (max-width : 768px)  {
+  #cssmenu #logo {
+    display: none;
+  }
+  #sprache {
+    /*right: 17px;*/
+    z-index: 4;
+  }
+}
+
+#sprache a {
+  margin: 0 5px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#sprache a:hover {
+  color: rgb(173, 140, 89);
+}
+
+#mobile-logo {
+  margin: 40px auto 0;
+  display: block;
+  width: 200px;
+}
+
+@media only screen and (min-width : 769px)  {
+  #mobile-logo {
+    display: none;
+  }
+}
+#listen {
+  vertical-align: middle;
+  position: relative;
+  color: white;
+  line-height: 140%;
+  font-size: 90%;
+  outline-color: white;
+  outline-width: 2px;
+  outline-style: solid;
+  width: 40%;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all  0.5s ease-out;
+  -o-transition: all  0.5s ease-out;
+  transition: all  0.5s ease-out;
+}
+
+#listen:hover {
+  outline-color: transparent;
+}
+
+#listen a {
+  padding: 20px;
+  display: block;
+  color: rgb(173, 140, 89);
+  letter-spacing: .4em;
+  text-decoration: none;
+}
+
+@media only screen and (max-width : 500px)  {
+  #listen {
+    width: 75%;
+  }
+  #listen a {
+    font-size: 12px;
+    padding: 10px;
+    letter-spacing: .2em;
+  }
+}
+
+
+#listen a:hover{
+  color: black;
+  background-color: rgb(173, 140, 89);
+  -webkit-transition: background-color 0.5s ease-out;
+  -moz-transition: background-color  0.5s ease-out;
+  -o-transition: background-color  0.5s ease-out;
+  transition: background-color  0.5s ease-out;
+}
+
+#event {
+  vertical-align: middle;
+  float: left;
+  color: white;
+  line-height: 140%;
+  font-size: 90%;
+  outline-color: white;
+  outline-width: 2px;
+  outline-style: solid;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  margin-top: 20px;
+  display: block;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all  0.5s ease-out;
+  -o-transition: all  0.5s ease-out;
+  transition: all  0.5s ease-out;
+
+}
+
+#event:hover {
+  outline-color: transparent;
+}
+
+#event a {
+  padding: 5px 10px;
+  display: block;
+  width: 100px;
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: .4em;
+  color: rgb(173, 140, 89);
+  text-decoration: none;
+  font-family: "Josefin+Sans", sans-serif, "Josefin Slab", serif;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all  0.5s ease-out;
+  -o-transition: all  0.5s ease-out;
+  transition: all  0.5s ease-out;
+}
+
+@media only screen and (max-width : 840px)  {
+  #event {
+    float: none;
+    margin: 20px auto 0;
+    text-align: center;
+    width: 75%;
+  }
+  #event a {
+    font-size: 12px;
+    padding: 10px;
+    letter-spacing: .2em;
+    display: block;
+    text-align: center;
+    width: auto;
+  }
+}
+
+
+
+#event a:hover{
+  color: black;
+  background-color: rgb(173, 140, 89);
+  -webkit-transition: background-color 0.5s ease-out;
+  -moz-transition: background-color  0.5s ease-out;
+  -o-transition: background-color  0.5s ease-out;
+  transition: background-color  0.5s ease-out;
+  outline-color: transparent;
+}
+
+
+
+/*   FORMULAR   */
+
+.formular {
+  width: 40%;
+  margin: 0 auto;
+}
+
+
+@media only screen and (max-width : 768px)  {
+  .formular {
+    width: 80%;
+  }
+}
+
+.main fieldset {
+  border: none;
+}
+
+.main label {
+  width: 100%;
+  float: left;
+  display: block;
+  margin-bottom: 10px;
+  display: block;
+  letter-spacing:0.1em;
+  text-transform: uppercase;
+  font-weight: 300;
+  padding: 6px 0 5px;
+  text-align: left;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.main textarea,
+.main input {
+  float: left;
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  display: block;
+  font-size: 14px;
+  color: #000;
+  line-height: 1.6;
+  padding: 0 5px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Josefin+Sans", sans-serif, "Josefin Slab", serif;
+}
+
+.main textarea {
+  min-height: 120px;
+}
+
+.main .formsend {
+  float: left;
+  width: 100%;
+}
+.main input.submit {
+  appearance:button;
+  -moz-appearance:button;
+  -webkit-appearance:button;
+  width: 200px;
+  color: white;
+  line-height: 140%;
+  outline-color: white;
+  outline-width: 2px;
+  outline-style: solid;
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: 10px;
+  display: block;
+  color: rgb(173, 140, 89);
+  letter-spacing: .4em;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin: 25px auto 30px;
+  float: none;
+}
+
+.main input.submit:hover {
+  background: rgb(173, 140, 89);
+  color: #000;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all  0.5s ease-out;
+  -o-transition: all  0.5s ease-out;
+  transition: all  0.5s ease-out;
+  outline-color: transparent;
+}
+
+
+
+
+
+
+/*#youtube	{ 	float: left;
+				width: 5%;
+				padding-right: 2%;
+}*/
+
+
+/*-------
+nav a:link {	color: white;
+				text-decoration: none;
+}
+
+nav a:visited	{	color: red;
+					text-decoration: none;
+}
+
+nav a:hover, a:focus	{	color: #A4A4A4;
+}
+
+nav a:active	{	color:red;
+}
+
+li a:active, li a:hover{
+	color: red;
+}
+---------*/
+
+footer {
+  float: left;
+  width: 100%;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+footer.bottom 	{
+  position:absolute;
+  bottom:20px;
+  left: 0;
+  width: 100%;
+  height:40px;
+  margin: 0;
+}
+
+@media only screen and (max-width : 767px)  {
+  footer {
+    position: relative;
+    float: left;
+  }
+}
+
+.social {
+  margin: 0 auto;
+  display: block;
+  width: 150px;
+}
+
+.socialicon {
+  float: left;
+  display: block;
+  margin: 0 10px;
+}
+
+.socialicon a {
+  display: block;
+  -webkit-transition: background-image 0.5s ease-out;
+  -moz-transition: background-image 0.5s ease-out;
+  -o-transition: background-image 0.5s ease-out;
+  transition: background-image 0.5s ease-out;
+}
+.newsall{
+  margin: 0 auto;
+  width: 780px;
+}
+.news1, .news2{
+  width: 350px;
+  float: left;
+  text-align:left;
+  font-size:120%;
+  font-weight:100;
+  padding:20px;
+}
+
+.news2 {
+  padding-bottom: 120px;
+}
+
+.news1artikel{
+  padding-top:10px;
+  text-align: left;
+  font-family: "Josefin Sans";
+  line-height: 140%;
+  font-weight: 130%;
+  font-size: 90%;
+}
+
+.date{
+  font-size: 80%;
+  color: rgb(173, 140, 89);
+  letter-spacing: 0.1em;
+}
+
+
+@media only screen and (max-width : 840px)  {
+  .newsall {
+    /*float: left;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;*/
+    width: 350px;
+    max-width: 90%;
+  }
+  .news1, .news2 {
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+    text-align: center;
+  }
+  .news1artikel,
+  .date {
+    text-align: center;
+  }
+}
+
+
+
+
+.songsall{
+  margin: 0 auto;
+  width: 780px;
+}
+
+
+.song {
+  width: 350px;
+  text-align:left;
+  font-size:120%;
+  font-weight:100;
+  padding: 20px;
+}
+
+.song.left {
+  float: left;
+}
+.song.right {
+  float: right;
+}
+
+
+
+.songtext{
+  padding-top:10px;
+  text-align: left;
+  font-family: "Josefin Sans";
+  line-height: 140%;
+  font-weight: 130%;
+  font-size: 90%;
+}
+.umbruch{
+  padding-bottom: 5%;
+}
+
+@media only screen and (max-width : 840px)  {
+  .songsall {
+    /*float: left;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;*/
+    width: 350px;
+    max-width: 90%;
+  }
+  .song1, .song2, .song3, .song4 {
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+    text-align: center;
+  }
+  .songtext {
+    text-align: center;
+  }
+}
+
+
+
+/*--
+@media only screen and (max-width : 768px)  {
+  .songsall, .news1, .news2{
+    clear: both;
+  } --*/
+
+
+
+
+#youtube a {
+  width: 30px;
+  height: 24px;
+  background: url(../img/youtube_white.png) no-repeat 0 0;
+  background-size: 30px auto;
+}
+
+#facebook a {
+  width: 30px;
+  height: 24px;
+  background: url(../img/facebook_white.png) no-repeat 0 0;
+  background-size: 30px auto;
+}
+
+#soundcloud a {
+  width: 30px;
+  height: 24px;
+  background: url(../img/soundcloud_white.png) no-repeat 0 0;
+  background-size: 30px auto;
+}
+
+
+#youtube a:hover {
+  background-image: url(../img/youtube_gold.png);
+}
+#facebook a:hover {
+  background-image: url(../img/facebook_gold.png);
+}
+#soundcloud a:hover {
+  background-image: url(../img/soundcloud_gold.png);
+}

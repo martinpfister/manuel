@@ -2,45 +2,31 @@
       xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 
     <div class="row">
-        <div class="small-12 medium-8 columns">
-            <f:cObject typoscriptObjectPath="lib.logo" />
-        </div>
         <div class="small-12 medium-4 columns">
-            <f:cObject typoscriptObjectPath="lib.menu-language" />
-            <div class="hide-for-large-up">
-                <div class="hamburger-icon toggle" id="mainMenuToggle"></div>
+
+            <div id="sprache">
+                <f:cObject typoscriptObjectPath="lib.menu-language" />
+                <a href="index_DE.html">DE</a>
+                <a href="index.html">EN</a>
             </div>
 
         </div>
     </div>
 
     <div class="row">
-        <div class="columns">
-            <f:cObject typoscriptObjectPath="lib.menu" />
-            <h1>{pagetitle}</h1>
-            <p>
-                <small>
-                    Ok, this is an example output for the custom inherited mood image / background image fields in the page properties:<br />
-                    Mood image: <f:if condition="<f:cObject typoscriptObjectPath=\"lib.moodImage\" />">
-                        <f:then>
-                            <f:cObject typoscriptObjectPath="lib.moodImage" />
-                        </f:then>
-                        <f:else>
-                            (not set)
-                        </f:else>
-                    </f:if><br />
-                    Background image: <f:if condition="<f:cObject typoscriptObjectPath=\"lib.backgroundImage\" />">
-                        <f:then>
-                            <f:cObject typoscriptObjectPath="lib.backgroundImage" />
-                        </f:then>
-                        <f:else>
-                            (not set)
-                        </f:else>
-                    </f:if>
+        <nav id="cssmenu">
 
-                </small>
-            </p>
-        </div>
+            <ul class="sub1">
+                <f:cObject typoscriptObjectPath="lib.menu" />
+                <li class="navilogo"><a id="logo" href="index.html"></a></li>
+                <li><a href="lyrics.html"> LYRICS</a>
+                    <ul class="sub2">
+                        <li><a href='gallery.html'>GALLERY</a>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
     </div>
+
 
 </html>

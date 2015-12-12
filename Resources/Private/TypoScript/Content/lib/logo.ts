@@ -7,7 +7,7 @@ lib.logo {
     # Main logo
     10 = IMAGE
     10 {
-        file = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Private/LogoSources/logo-default.ai
+        file = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Private/LogoSources/logo_final_gold.svg
         file {
             maxW = 600
             ext = png
