@@ -1,0 +1,9 @@
+{
+  "name": "templatebootstrap",
+  "private": true,
+  "dependencies": {
+    "foundation-sites": "v6.0.*"
+  },
+  "devDependencies": {
+  }
+}
