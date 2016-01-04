@@ -1,6 +1,6 @@
 {
-  "name": "staempfli-typo3/[[YOUR PROJECT NAME]]",
-  "description": "[[YOUR PROJECT NAME]] website template bootstrap",
+  "name": "[[CUSTOMER NAME AS VENDOR]]/[[CUSTOMER NAME AS PACKAGE KEY]]",
+  "description": "[[YOUR PROJECT/CUSTOMER NAME]] website template bootstrap",
   "homepage": "http://www.[[YOUR PROJECT NAME]].ch",
 
   "license": ["GPL-2.0+"],
@@ -16,12 +16,16 @@
 
   "autoload": {
     "psr-4": {
-        "Staempfli\\TemplateBootstrap\\": "Classes/"
+      "Staempfli\\TemplateBootstrap\\": "Classes/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-        "Staempfli\\TemplateBootstrap\\Tests": "Tests/"
+      "Staempfli\\TemplateBootstrap\\Tests": "Tests/"
     }
+  },
+
+  "require": {
+      "typo3-ter/realurl": "*"
   }
 }
