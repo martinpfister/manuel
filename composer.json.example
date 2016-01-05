@@ -1,0 +1,31 @@
+{
+  "name": "[[CUSTOMER NAME AS VENDOR]]/[[CUSTOMER NAME AS PACKAGE KEY]]",
+  "description": "[[YOUR PROJECT/CUSTOMER NAME]] website template bootstrap",
+  "homepage": "http://www.[[YOUR PROJECT NAME]].ch",
+
+  "license": ["GPL-2.0+"],
+  "type": "typo3-cms-extension",
+
+  "authors": [
+    {
+      "name": "Stämpfli Webteam",
+      "email": "webteam@staempfli.com",
+      "role": "Developer"
+    }
+  ],
+
+  "autoload": {
+    "psr-4": {
+      "Staempfli\\TemplateBootstrap\\": "Classes/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Staempfli\\TemplateBootstrap\\Tests": "Tests/"
+    }
+  },
+
+  "require": {
+      "typo3-ter/realurl": "*"
+  }
+}
