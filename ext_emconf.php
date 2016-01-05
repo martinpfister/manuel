@@ -1,20 +1,10 @@
 <?php
 
-########################################################################
-# Extension Manager/Repository config file
-#
-# Manual updates:
-# Only the data in the array - everything else is removed by next
-# writing. "version" and "dependencies" must not be touched!
-########################################################################
-
 $EM_CONF[$_EXTKEY] = array(
     'title' => 'Manuel Etter',
     'description' => '',
     'category' => 'fe',
     'shy' => 0,
-    'dependencies' => 'extbase,fluid',  // DEPRECATED! Use 'constraints' instead!
-    'conflicts' => '',                  // DEPRECATED! Use 'constraints' instead!
     'priority' => '',
     'loadOrder' => '',
     'module' => '',
@@ -25,12 +15,12 @@ $EM_CONF[$_EXTKEY] = array(
     'modify_tables' => '',
     'clearCacheOnLoad' => 1,
     'lockType' => '',
-    'author' => 'Stämpfli AG, Internet+Systeme',
-    'author_email' => 'webteam@staempfli.com',
+    'author' => 'Martin Pfister',
+    'author_email' => 'mail@martinpfister.info',
     'author_company' => '',
     'CGLcompliance' => '',
     'CGLcompliance_note' => '',
-    'version' => '2.1.0-DEV',
+    'version' => '2.2',
     '_md5_values_when_last_written' => '',
     'constraints' => array(
         'depends' => array(
