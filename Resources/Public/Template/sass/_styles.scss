@@ -1,17 +1,14 @@
-*	{	margin: 0;
-  padding:0;
-}
-
-/* Mein Kommentar */
 /*--------------------
 Allgemeine Einstellungen
 ---------------------*/
-header{ width: 30%;
-  text-align: center;
-}
 
 html {
   min-height: 100%;
+}
+
+header{
+  width: 30%;
+  text-align: center;
 }
 
 body{
@@ -20,7 +17,7 @@ body{
   background-attachment: fixed;
   background-size: cover;
   color: white;
-  font-family: "Josefin+Sans", sans-serif, "Josefin Slab", serif;
+  /*font-family: "Josefin+Sans", sans-serif, "Josefin Slab", serif;*/
   font-size: 101%; /* 16px=100%/1em = 16px */
   min-height: 100%;
 }
@@ -32,21 +29,17 @@ body{
 }
 
 h1{
-  font-family: "Josefin Sans" sans-serif;
-  font-weight: normal;
   line-height: 140%;
   font-size: 210%;
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: .1em;
   color: white;
   text-align: center;
-  /*margin-top: 20%;*/
   text-transform: uppercase;
   padding-bottom:20px;
 }
 
 h2{
-  font-family: "Josefin Sans" sans-serif;
   font-size: 130%;
   font-weight: normal;
   padding-top: 20px;
@@ -55,7 +48,6 @@ h2{
   line-height: 140%
 }
 h3{
-  font-family: "Josefin Sans" sans-serif;
   font-weight: normal;
   line-height: 140%;
   font-size: 250%;
@@ -72,12 +64,8 @@ section{
   text-align: center;
 }
 
-p{
-  font-family: "Josefin Sans";
-  line-height: 155%;
-  font-weight:150%;
+p {
   text-align: center;
-  /*padding-right: 30px;*/
   margin-bottom: 40px;
 }
 
@@ -139,10 +127,13 @@ ID's ###
 #cssmenu #moblogo:hover,
 #cssmenu #moblogo:focus
 */
+
 #logo, #logo-iconesque {
-  background-color: none;
   width: 200px;
   padding: 0;
+  margin-top: 0;
+  position: relative;
+  top: 31px;
   height: 80px;
   display: block;
   background: url(../img/logo_final.svg) no-repeat 0 0;
@@ -154,6 +145,7 @@ ID's ###
     display: none;
   }
 }
+
 #logo-iconesque:hover,
 #logo-iconesque:focus,
 #logo:hover,

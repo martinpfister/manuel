@@ -15,7 +15,7 @@ use \TYPO3\CMS\Backend\Sprite\SpriteManager;
 $backendExtConf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['backend']);
 // Set login logo, if it has not previously been set
 if (empty($backendExtConf['loginLogo'])) {
-	$backendExtConf['loginLogo'] = 'EXT:' . $_EXTKEY . '/Resources/Public/Backend/Skin/img/logo_login.png';
+	$backendExtConf['loginLogo'] = 'EXT:' . $_EXTKEY . '/Resources/Public/Backend/Skin/img/logo_final_gold.svg';
 }
 // Set login background image, if it has not previously been set
 if (empty($backendExtConf['loginBackgroundImage'])) {

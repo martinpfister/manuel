@@ -25,6 +25,15 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         config: config,
 
+        // Adds vendor prefixes to given stylesheets.
+        autoprefixer: {
+            options: {
+
+            },
+            app: { src: 'css/app.css' },
+            rte: { src: '../Backend/RTE.css'}
+        },
+
         // Compress images job
         imagemin: {
             imageAssets: {
@@ -115,7 +124,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-exec');
 
     // Define tasks
-    grunt.registerTask('compile-sass', ['sass']);
+    grunt.registerTask('compile-sass', ['sass', 'autoprefixer']);
     grunt.registerTask('compressImageAssets', ['imagemin:imageAssets']);
     grunt.registerTask('createIcons', ['exec:generateFavicon', 'exec:generatePackageIcon']);
     grunt.registerTask('createBackendLogo', ['exec:generateBackendLogo']);

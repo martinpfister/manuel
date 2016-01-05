@@ -11,7 +11,7 @@ var web = (function(document, $) {
     },
     _positionLogo = function() {
         var logo = $('#logo').parent(),
-            middle = Math.ceil( ($("#cssmenu ul > li").length -1) / 2);
+            middle = Math.ceil( ($("#cssmenu ul > li").length) / 2);
         $("#cssmenu li:nth-child(" + middle + ")").before(logo);
     },
     _init = function() {

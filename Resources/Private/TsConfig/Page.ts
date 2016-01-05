@@ -59,7 +59,7 @@ TCEFORM.tt_content {
 
     # Only allow headers 2, 3, and 4
     header_layout {
-        keepItems = 2,3,4
+        keepItems = 2,3,4,100
         altLabels {
             1 = LLL:EXT:###PACKAGE_KEY###/Resources/Private/Language/Backend.xlf:tt_content.header_layout.1
             2 = LLL:EXT:###PACKAGE_KEY###/Resources/Private/Language/Backend.xlf:tt_content.header_layout.2
