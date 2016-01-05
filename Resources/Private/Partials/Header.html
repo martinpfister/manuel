@@ -2,31 +2,20 @@
       xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 
     <div class="row">
-        <div class="small-12 medium-4 columns">
-
+        <div class="small-12 columns">
             <div id="sprache">
                 <f:cObject typoscriptObjectPath="lib.menu-language" />
-                <a href="index_DE.html">DE</a>
-                <a href="index.html">EN</a>
             </div>
-
         </div>
     </div>
 
     <div class="row">
-        <nav id="cssmenu">
-
+        <nav id="cssmenu" class="small-12 columns">
             <ul class="sub1">
                 <f:cObject typoscriptObjectPath="lib.menu" />
-                <li class="navilogo"><a id="logo" href="index.html"></a></li>
-                <li><a href="lyrics.html"> LYRICS</a>
-                    <ul class="sub2">
-                        <li><a href='gallery.html'>GALLERY</a>
-                    </ul>
-                </li>
+                <li><f:cObject typoscriptObjectPath="lib.logo" /></li>
             </ul>
         </nav>
     </div>
-
 
 </html>

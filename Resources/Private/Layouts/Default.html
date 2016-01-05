@@ -4,13 +4,8 @@
 
     <f:cObject typoscriptObjectPath="lib.skiplinks" />
 
-    <div id="wrapper">
+    <div id="wrapper" data-background="<f:cObject typoscriptObjectPath="lib.backgroundImage" />">
         <div class="desk">
-
-            <div id="mobile-logo">
-                <a id="moblogo" href="index.html"></a>
-            </div>
-
 
             <div class="row collapse" id="header">
                 <div class="column">
@@ -21,37 +16,6 @@
             <div class="row">
                 <!-- TYPO3SEARCH_begin -->
                 <f:render section="Content" arguments="{_all}" />
-
-
-                <div class="columns">
-
-                    <h1>{pagetitle}</h1>
-                    <p>
-                        <small>
-                            Ok, this is an example output for the custom inherited mood image / background image fields in the page properties:<br />
-                            Mood image:
-
-                            <f:if condition="<f:cObject typoscriptObjectPath=\"lib.moodImage\" />">
-                            <f:then>
-                                <f:cObject typoscriptObjectPath="lib.moodImage" />
-                            </f:then>
-                            <f:else>
-                                (not set)
-                            </f:else>
-                            </f:if><br />
-                            Background image: <f:if condition="<f:cObject typoscriptObjectPath=\"lib.backgroundImage\" />">
-                            <f:then>
-                                <f:cObject typoscriptObjectPath="lib.backgroundImage" />
-                            </f:then>
-                            <f:else>
-                                (not set)
-                            </f:else>
-                            </f:if>
-
-                        </small>
-                    </p>
-                </div>
-
                 <!-- TYPO3SEARCH_end -->
             </div>
 
@@ -59,9 +23,6 @@
                 <f:render partial="Footer" arguments="{_all}" />
             </footer>
 
-
-        </div> <!-- ende desk -->
-
-
-    </div> <!-- Ende Wrapper -->
+        </div>
+    </div>
 </html>

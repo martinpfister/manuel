@@ -27,12 +27,12 @@ temp.menu {
 
         CURIFSUB = 1
         CURIFSUB < .ACT
-        CURIFSUB.wrapItemAndSub = <li>|</li>
+        CURIFSUB.wrapItemAndSub = <li class="has-sub"><span class="submenu-button"></span>|</li>
 
         IFSUB <.NO
         IFSUB {
-        wrapItemAndSub = <li>|</li>
-        ATagBeforeWrap = 1
+            wrapItemAndSub = <li class="has-sub"><span class="submenu-button"></span>|</li>
+            ATagBeforeWrap = 1
         }
 
         ACTIFSUB <.IFSUB
@@ -44,7 +44,7 @@ temp.menu {
 
 
     2 < .1
-    2.wrap = <ul>|</ul>
+    2.wrap = <ul class="sub2">|</ul>
 
     3 < .2
 }

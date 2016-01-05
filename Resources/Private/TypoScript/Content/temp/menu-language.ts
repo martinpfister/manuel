@@ -31,6 +31,8 @@ temp.menu-language {
 
         # Language that is NOT available:
         USERDEF1 < .NO
-        USERDEF1.doNotLinkIt = 1
+        USERDEF1 {
+            ATagParams = class="inactive"
+        }
     }
 }

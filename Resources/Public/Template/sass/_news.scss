@@ -1,0 +1,27 @@
+.news {
+  .news-list-view {
+    .article {
+      width: 350px;
+      float: left;
+      text-align: left;
+      font-size: 120%;
+      font-weight: 100;
+      padding: 20px;
+      h2 a {
+        color: $white;
+      }
+      p {
+        padding-top: 10px;
+        text-align: left;
+        font-family: "Josefin Sans";
+        line-height: 140%;
+        font-size: 90%;
+        font-weight: 100;
+      }
+    }
+  }
+}
+
+.news-img-wrap {
+  display: none;
+}

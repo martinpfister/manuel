@@ -45,7 +45,6 @@ h1{
   padding-bottom:20px;
 }
 
-
 h2{
   font-family: "Josefin Sans" sans-serif;
   font-size: 130%;
@@ -135,9 +134,12 @@ ID's ###
   max-width: 94%;
 }
 
-
-#cssmenu #logo,
-#moblogo {
+/*
+#moblogo
+#cssmenu #moblogo:hover,
+#cssmenu #moblogo:focus
+*/
+#logo, #logo-iconesque {
   background-color: none;
   width: 200px;
   padding: 0;
@@ -148,11 +150,14 @@ ID's ###
   -moz-transition: background-image 0.5s ease-out;
   -o-transition: background-image 0.5s ease-out;
   transition: background-image 0.5s ease-out;
+  img {
+    display: none;
+  }
 }
-#cssmenu #logo:hover,
-#cssmenu #logo:focus,
-#cssmenu #moblogo:hover,
-#cssmenu #moblogo:focus {
+#logo-iconesque:hover,
+#logo-iconesque:focus,
+#logo:hover,
+#logo:focus {
   background-image: url(../img/logo_final_gold.svg);
 }
 
@@ -168,7 +173,6 @@ ID's ###
 @media only screen and (max-width : 825px)  {
   #cssmenu  #logo {
     width: 200px;
-
   }
 }
 
@@ -188,6 +192,11 @@ ID's ###
   font-size: 12px;
   font-weight: bold;
   text-decoration: none;
+  &.inactive {
+      pointer-events: none;
+      cursor: default;
+      opacity: 0.6;
+  }
 }
 
 #sprache a:hover {

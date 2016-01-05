@@ -1,10 +1,10 @@
 @import "variables";
-
+@import "fonts";
 /*********************************************
     Foundation
 **********************************************/
 @import '../bower_components/foundation-sites/foundation-sites';
-@include foundation-everything;
+//@include foundation-everything;
 
 /*********************************************
     Slick slider
@@ -14,9 +14,15 @@
 @import "slick/slick_modifications";
 
 /*********************************************
+    Extensions
+**********************************************/
+@import "news";
+
+/*********************************************
     Site styles
 **********************************************/
 @import "common";
 @import "common_textmedia";
 @import "menus";
+@import "news";
 @import "styles";

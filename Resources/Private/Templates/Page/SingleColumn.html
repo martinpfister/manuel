@@ -1,25 +1,16 @@
 <html data-namespace-typo3-fluid="true"
       xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 
-
     <f:layout name="Default" />
 
     <f:section name="Content">
         <div class="column">
             <div class="main">
                 <section>
-                    <article id="zwei">
-                        <h1> WELCOME</h1>
-                        <p>Manuel Etter is a singer-songwriter from Switzerland. He blends elements of Pop, Folk and Soul in
-                            a constant effort to create the most organic and authentic music that he can. </p>
-                        <f:cObject typoscriptObjectPath="lib.contentloader" data="0" />
-
-                    </article>
-                    <div id="listen"><a href="https://soundcloud.com/manuelemusic" target="_blank"> LISTEN ON SOUNDCLOUD</a></div>
+                    <f:cObject typoscriptObjectPath="lib.contentloader" data="0" />
                 </section>
-            </div> <!-- Ende Main¨ -->
+            </div>
         </div>
     </f:section>
-
 
 </html>

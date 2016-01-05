@@ -34,8 +34,8 @@ site {
     pageTitleSuffix =
 
     # Languages
-    languageUids = 0,1,2
-    languageLabels = Deutsch |*| Français |*| Italiano
+    languageUids = 0,1
+    languageLabels = DE |*| EN
 
     # Compress / merge CSS / JS
     compressAndMergeAssets = 1
