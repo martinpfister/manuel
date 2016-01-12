@@ -88,6 +88,9 @@
   color: #dddddd;
   font-weight: 700;
   text-transform: uppercase;
+  &:hover {
+    color: $gold;
+  }
 }
 
 #cssmenu > ul > li > a.path {
@@ -107,13 +110,15 @@
     padding-bottom: 12px;
   }
 }
-
-
-
+/*
 #cssmenu > ul > li:hover > a {
   color: rgb(173, 140, 89);
-
 }
+#cssmenu ul ul li a:hover {
+  color: $gold;
+}
+*/
+
 #cssmenu > ul > li.has-sub > a {
   padding-right: 30px;
 }
@@ -193,10 +198,7 @@
 #cssmenu ul ul li.last-item > a {
   border-bottom: 0;
 }
-#cssmenu ul ul li:hover > a,
-#cssmenu ul ul li a:hover {
-  color: rgb(173, 140, 89);
-}
+
 #cssmenu ul ul li.has-sub > a:after {
   position: absolute;
   top: 16px;

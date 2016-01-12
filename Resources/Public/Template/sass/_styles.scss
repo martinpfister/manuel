@@ -6,19 +6,17 @@ html {
   min-height: 100%;
 }
 
-header{
+header {
   width: 30%;
   text-align: center;
 }
 
-body{
+body {
   background-image: url('../img/manuel3.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   color: white;
-  /*font-family: "Josefin+Sans", sans-serif, "Josefin Slab", serif;*/
-  font-size: 101%; /* 16px=100%/1em = 16px */
   min-height: 100%;
 }
 
@@ -28,28 +26,28 @@ body{
   }
 }
 
-h1{
-  line-height: 140%;
-  font-size: 210%;
+h1 {
+  line-height: 1.6;
+  font-size: 2.1rem;
   font-weight: 600;
-  letter-spacing: .1em;
+  letter-spacing: 0.1rem;
   color: white;
   text-align: center;
   text-transform: uppercase;
   padding-bottom:20px;
 }
 
-h2{
-  font-size: 130%;
+h2 {
+  font-size: 1.5rem;
   font-weight: normal;
   padding-top: 20px;
   text-transform: uppercase;
   letter-spacing:0.1em;
   line-height: 140%
 }
-h3{
+h3 {
   font-weight: normal;
-  line-height: 140%;
+  line-height: 1.2rem;
   font-size: 250%;
   font-weight: 400;
   letter-spacing: .1em;
@@ -66,7 +64,10 @@ section{
 
 p {
   text-align: center;
-  margin-bottom: 40px;
+}
+
+a {
+  font-weight: 500;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio:0) {
@@ -76,19 +77,19 @@ p {
   }
 }
 
-img{
+img {
   width: 100%;
   height: auto;
 }
 
 .main {
   /*background: rgba(0,0,0,.5);*/
-  float: left;
   width: 100%;
   margin-top: 130px;
+  /* float: left; */
   /*padding-bottom: 80px;*/
-  /*padding: 40px 0;
-  margin-bottom: 20px;*/
+  /*padding: 40px 0; */
+  /*margin-bottom: 20px;*/
 }
 
 .main.galerie {
@@ -106,7 +107,7 @@ ID's ###
 -------------------------*/
 
 #wrapper{
-  float: left;
+  /*float: left;*/
   width: 100%;
   position: relative;
   min-height: 100vh;
@@ -190,11 +191,11 @@ ID's ###
       opacity: 0.6;
   }
 }
-
+/*
 #sprache a:hover {
   color: rgb(173, 140, 89);
 }
-
+*/
 #mobile-logo {
   margin: 40px auto 0;
   display: block;
@@ -494,68 +495,11 @@ footer.bottom 	{
   -o-transition: background-image 0.5s ease-out;
   transition: background-image 0.5s ease-out;
 }
-.newsall{
-  margin: 0 auto;
-  width: 780px;
-}
-.news1, .news2{
-  width: 350px;
-  float: left;
-  text-align:left;
-  font-size:120%;
-  font-weight:100;
-  padding:20px;
-}
-
-.news2 {
-  padding-bottom: 120px;
-}
-
-.news1artikel{
-  padding-top:10px;
-  text-align: left;
-  font-family: "Josefin Sans";
-  line-height: 140%;
-  font-weight: 130%;
-  font-size: 90%;
-}
-
-.date{
-  font-size: 80%;
-  color: rgb(173, 140, 89);
-  letter-spacing: 0.1em;
-}
-
-
-@media only screen and (max-width : 840px)  {
-  .newsall {
-    /*float: left;
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;*/
-    width: 350px;
-    max-width: 90%;
-  }
-  .news1, .news2 {
-    width: 100%;
-    padding-right: 0;
-    padding-left: 0;
-    text-align: center;
-  }
-  .news1artikel,
-  .date {
-    text-align: center;
-  }
-}
-
-
-
 
 .songsall{
   margin: 0 auto;
   width: 780px;
 }
-
 
 .song {
   width: 350px;

@@ -25,6 +25,7 @@ plugin.tx_news {
 
     settings {
         cssFile >
+        cropMaxCharacters = 350
         defaultDetailPid = {$site.newsDetail}
         listPid = {$site.newsList}
         list {
@@ -70,7 +71,7 @@ plugin.tx_news {
             partialRootPath = EXT:trafag/Resources/Private/Extensions/news/home/Partials/
         }
         settings {
-            cropMaxCharacters = 100
+            cropMaxCharacters = 350
             list {
                 media.image {
                     maxWidth = 160

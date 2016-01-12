@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2014-06-02T11:47:10Z" product-name="news">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2014-06-02T11:47:10Z" product-name="news">
 		<header/>
 		<body>
 			<trans-unit id="search-text" xml:space="preserve">
@@ -22,7 +22,8 @@
 				<source>Maximum Date</source>
 			</trans-unit>
 			<trans-unit id="more-link" xml:space="preserve">
-				<source>Read more</source>
+				<source>Read dfasdf</source>
+				<target>mehr..</target>
 			</trans-unit>
 			<trans-unit id="back-link" xml:space="preserve">
 				<source>Back</source>
@@ -130,5 +131,5 @@
 				<source>No categories available.</source>
 			</trans-unit>
 		</body>
-    </file>
+	</file>
 </xliff>
