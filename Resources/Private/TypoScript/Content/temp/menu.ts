@@ -20,7 +20,7 @@ temp.menu {
 
         ACT <.NO
         ACT.wrapItemAndSub = <li class="first active">|</li>|*|<li class="active">|</li>|*|<li class="last active">|</li>
-        ACT.ATagParams = class="active layout-{field:layout}"
+        ACT.ATagParams = class="active layout-{field:layout} path"
         ACT.ATagBeforeWrap = 1
 
         CUR <.ACT

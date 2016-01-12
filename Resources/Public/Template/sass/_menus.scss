@@ -88,12 +88,10 @@
   color: #dddddd;
   font-weight: 700;
   text-transform: uppercase;
+  &.path {
+    color: rgb(173, 140, 89);
+  }
 }
-
-#cssmenu > ul > li > a.path {
-  color: rgb(173, 140, 89);
-}
-
 @media only screen and (max-width : 920px)  {
   #cssmenu > ul > li > a {
     padding-right: 10px;
@@ -234,9 +232,18 @@
   top: 17px;
   height: 0;
 }
+
+#logo-item {
+  display: none;
+}
+
+
 @media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 768px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 768px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 768px), only screen and (min-device-pixel-ratio: 2) and (max-width: 768px), only screen and (min-resolution: 192dpi) and (max-width: 768px), only screen and (min-resolution: 2dppx) and (max-width: 768px) {
   #cssmenu {
     width: 100%;
+  }
+  #logo-item {
+    display: none;
   }
   #cssmenu ul {
     width: 100%;

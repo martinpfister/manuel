@@ -1,22 +1,25 @@
 <html data-namespace-typo3-fluid="true"
       xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 
+<f:layout name="Default" />
 
-    <f:layout name="Default" />
+<f:section name="Content">
+    <div class="column">
+        <div class="main">
+            <section>
+                <h1>{pagetitle}</h1>
+                <div class="row">
+                    <div class="small-12 medium-6 columns">
+                        <f:cObject typoscriptObjectPath="lib.contentloader" data="0" />
+                    </div>
+                    <div class="small-12 medium-6 columns">
+                        <f:cObject typoscriptObjectPath="lib.contentloader" data="1" />
+                    </div>
 
-    <f:section name="Content">
-        <div class="small-12 columns">
-            <h1>{pagetitle}</h1>
-            <div class="row">
-                <div class="small-12 medium-6 columns">
-                    <f:cObject typoscriptObjectPath="lib.contentloader" data="0" />
                 </div>
-                <div class="small-12 medium-6 columns">
-                    <f:cObject typoscriptObjectPath="lib.contentloader" data="1" />
-                </div>
-            </div>
+            </section>
         </div>
-
-    </f:section>
+    </div>
+</f:section>
 
 </html>
