@@ -23,7 +23,7 @@ company {
 # **********************************************************
 site {
 
-    url = http://www.site.com
+    url = http://www.manueletter.ch
 
     enableRealURL = 1
     enableSocialMediaMetaTags = 1

@@ -1,24 +1,22 @@
 .news {
   .news-list-view {
     .article {
-      width: 350px;
+      width: 50%;
       float: left;
       text-align: left;
-      font-size: 120%;
-      font-weight: 100;
       padding: 20px;
 
       h2 a {
         color: $white;
+        &:hover {
+          color: $gold;
+        }
       }
 
       p {
         padding-top: 10px;
         text-align: left;
         font-family: "Josefin Sans";
-        line-height: 140%;
-        font-size: 90%;
-        font-weight: 100;
       }
     }
   }
@@ -26,4 +24,52 @@
 
 .news-img-wrap {
   display: none;
+}
+.newsall{
+  margin: 0 auto;
+  width: 780px;
+}
+.news1, .news2{
+  width: 350px;
+  float: left;
+  text-align:left;
+  font-size:120%;
+  font-weight:100;
+  padding:20px;
+}
+
+.news2 {
+  padding-bottom: 120px;
+}
+
+.news1artikel{
+  padding-top: 10px;
+  text-align: left;
+  font-family: "Josefin Sans";
+}
+
+.date{
+  color: $gold;
+  letter-spacing: 0.1em;
+}
+
+@media only screen and (max-width : 840px)  {
+  .newsall {
+    /*float: left;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;*/
+    width: 350px;
+    max-width: 90%;
+  }
+  .news1, .news2 {
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+    text-align: center;
+  }
+  .news1artikel,
+  .date {
+    text-align: center;
+  }
 }
