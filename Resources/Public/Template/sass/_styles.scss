@@ -83,13 +83,8 @@ img {
 }
 
 .main {
-  /*background: rgba(0,0,0,.5);*/
   width: 100%;
-  margin-top: 130px;
-  /* float: left; */
-  /*padding-bottom: 80px;*/
-  /*padding: 40px 0; */
-  /*margin-bottom: 20px;*/
+  margin: 130px 0;
 }
 
 .main.galerie {
@@ -258,44 +253,41 @@ ID's ###
   transition: background-color  0.5s ease-out;
 }
 
-#event {
+
+.button,
+#event a {
+  padding: 0.4rem 0.8rem;
+  display: block;
+  text-align: center;
+  letter-spacing: .4em;
+  color: rgb(173, 140, 89);
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all  0.5s ease-out;
+  -o-transition: all  0.5s ease-out;
+  transition: all  0.5s ease-out;
   vertical-align: middle;
   float: left;
-  color: white;
-  line-height: 140%;
-  font-size: 90%;
+  text-transform: uppercase;
   outline-color: white;
   outline-width: 2px;
   outline-style: solid;
   margin: 0 auto;
   margin-bottom: 40px;
   margin-top: 20px;
-  display: block;
-  -webkit-transition: all 0.5s ease-out;
-  -moz-transition: all  0.5s ease-out;
-  -o-transition: all  0.5s ease-out;
-  transition: all  0.5s ease-out;
-
-}
-
-#event:hover {
-  outline-color: transparent;
-}
-
-#event a {
-  padding: 5px 10px;
-  display: block;
-  width: 100px;
-  font-size: 12px;
-  text-align: center;
-  letter-spacing: .4em;
-  color: rgb(173, 140, 89);
-  text-decoration: none;
   font-family: "Josefin+Sans", sans-serif, "Josefin Slab", serif;
-  -webkit-transition: all 0.5s ease-out;
-  -moz-transition: all  0.5s ease-out;
-  -o-transition: all  0.5s ease-out;
-  transition: all  0.5s ease-out;
+  font-weight: 100;
+  font-size: 0.9rem;
+
+}
+.button:hover,
+#event a:hover{
+  color: black;
+  background-color: rgb(173, 140, 89);
+  -webkit-transition: background-color 0.5s ease-out;
+  -moz-transition: background-color  0.5s ease-out;
+  -o-transition: background-color  0.5s ease-out;
+  transition: background-color  0.5s ease-out;
+  outline-color: transparent;
 }
 
 @media only screen and (max-width : 840px)  {
@@ -313,18 +305,6 @@ ID's ###
     text-align: center;
     width: auto;
   }
-}
-
-
-
-#event a:hover{
-  color: black;
-  background-color: rgb(173, 140, 89);
-  -webkit-transition: background-color 0.5s ease-out;
-  -moz-transition: background-color  0.5s ease-out;
-  -o-transition: background-color  0.5s ease-out;
-  transition: background-color  0.5s ease-out;
-  outline-color: transparent;
 }
 
 
@@ -592,3 +572,4 @@ footer.bottom 	{
 #soundcloud a:hover {
   background-image: url(../img/soundcloud_gold.png);
 }
+

@@ -1,5 +1,5 @@
 <xliff version="1.0">
-     <file source-language="en" datatype="plaintext" original="messages" product-name="templatebootstrap">
+     <file source-language="en" target-language="de" datatype="plaintext" original="messages" product-name="templatebootstrap">
          <header/>
          <body>
             <trans-unit id="home" xml:space="preserve" approved="yes">

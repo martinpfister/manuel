@@ -21,12 +21,12 @@ TCEFORM.pages {
     # Frontend layouts
     # (disabled per default)
     layout {
-        disabled = 1
+        disabled = 0
 
         # Purge all items, only keep "default / inherit" (displayed as empty option field)
         #keepItems = 0
-        #addItems.1 = LLL:EXT:###PACKAGE_KEY###/Resources/Private/Language/Backend.xlf:frontend_layout.examplelayout
-        #addItems.1.icon = EXT:###PACKAGE_KEY###/path/to/your/icon.gif
+        addItems.1 = LLL:EXT:###PACKAGE_KEY###/Resources/Private/Language/Backend.xlf:frontend_layout.examplelayout
+        addItems.1.icon = EXT:###PACKAGE_KEY###/path/to/your/icon.gif
     }
 
     # Backend layouts

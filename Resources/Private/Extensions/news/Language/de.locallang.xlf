@@ -23,7 +23,7 @@
 			</trans-unit>
 			<trans-unit id="more-link" xml:space="preserve">
 				<source>Read dfasdf</source>
-				<target>mehr..</target>
+				<target>mehr</target>
 			</trans-unit>
 			<trans-unit id="back-link" xml:space="preserve">
 				<source>Back</source>
