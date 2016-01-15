@@ -26,7 +26,7 @@
 				<f:render partial="Detail/Opengraph" arguments="{newsItem: newsItem, settings:settings}" />
 			</n:format.nothing>
 			<div class="header">
-				<h3 itemprop="headline">{newsItem.title}</h3>
+				<h1 itemprop="headline">{newsItem.title}</h1>
 			</div>
 			<div class="footer">
 				<p>
@@ -83,7 +83,7 @@
 			<f:if condition="{settings.backPid}">
 				<!-- Link Back -->
 				<div class="news-backlink-wrap">
-					<f:link.page pageUid="{settings.backPid}">
+					<f:link.page pageUid="{settings.backPid}" class="button">
 						<f:translate key="back-link" />
 					</f:link.page>
 				</div>

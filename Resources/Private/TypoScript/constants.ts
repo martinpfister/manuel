@@ -3,18 +3,18 @@
 # **********************************************************
 <INCLUDE_TYPOSCRIPT: source="FILE:./../Extensions/fluid_styled_content/constants.ts">
 <INCLUDE_TYPOSCRIPT: source="FILE:./../Extensions/indexed_search/constants.ts">
-
+<INCLUDE_TYPOSCRIPT: source="FILE:./../Extensions/formhandler/contact/ts/constants.ts">
 
 # **********************************************************
 #    Company constants
 # **********************************************************
 company {
-    name = Muster AG
-    street = Musterstrasse 44
+    name = Manuel Etter
+    street =
     pobox =
-    city = 9999 Musterhausen
-    phone = 099 999 99 99
-    email = muster@musterag.com
+    city =
+    phone =
+    email =
 }
 
 

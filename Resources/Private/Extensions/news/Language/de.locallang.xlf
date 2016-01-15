@@ -122,7 +122,8 @@
 				<source>Sunday</source>
 			</trans-unit>
 			<trans-unit id="dateFormat" xml:space="preserve">
-				<source>%m/%d/%Y</source>
+				<source>%d/%m/%Y</source>
+				<target>%d/%m/%Y</target>
 			</trans-unit>
 			<trans-unit id="list_nonewsfound" xml:space="preserve">
 				<source>No news available.</source>

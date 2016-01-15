@@ -51,6 +51,7 @@
   float: none;
   display: inline-block;
   margin-top: 0;
+  position: relative;
 }
 
 @media only screen and (max-width : 768px)  {
@@ -80,18 +81,24 @@
 #cssmenu.align-right > ul > li {
   float: right;
 }
-#cssmenu > ul > li > a:not(#logo) {
-  padding: 17px 17px 10px 17px;
-  font-size: 12px;
-  letter-spacing: 1px;
-  text-decoration: none;
-  color: #dddddd;
-  font-weight: 700;
-  text-transform: uppercase;
-  &.path,
-  &:hover {
-    color: $gold;
+#cssmenu > ul > li {
+  &.has-sub  > a:not(#logo) {
+    padding-right: 30px;
   }
+  > a:not(#logo) {
+    padding: 17px 17px 10px 17px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #dddddd;
+    font-weight: 700;
+    text-transform: uppercase;
+    &.path,
+    &:hover {
+      color: $gold;
+    }
+}
+
 }
 @media only screen and (max-width : 920px)  {
   #cssmenu > ul > li > a {
@@ -106,14 +113,14 @@
     padding-bottom: 12px;
   }
 }
-/*
+
 #cssmenu > ul > li:hover > a {
   color: rgb(173, 140, 89);
 }
 #cssmenu ul ul li a:hover {
   color: $gold;
 }
-*/
+
 
 #cssmenu > ul > li.has-sub > a {
   padding-right: 30px;
@@ -161,6 +168,10 @@
   -ms-transition: all .25s ease;
   -o-transition: all .25s ease;
   transition: all .25s ease;
+  &.submenu-button {
+    position: absolute;
+    right: 0;
+  }
 }
 #cssmenu li:hover > ul {
   left: 50%;
@@ -238,7 +249,12 @@
 }
 
 
-@media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 768px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 768px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 768px), only screen and (min-device-pixel-ratio: 2) and (max-width: 768px), only screen and (min-resolution: 192dpi) and (max-width: 768px), only screen and (min-resolution: 2dppx) and (max-width: 768px) {
+@media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 768px),
+only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 768px),
+only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 768px),
+only screen and (min-device-pixel-ratio: 2) and (max-width: 768px),
+only screen and (min-resolution: 192dpi) and (max-width: 768px),
+only screen and (min-resolution: 2dppx) and (max-width: 768px) {
   #cssmenu {
     width: 100%;
   }

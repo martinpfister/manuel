@@ -29,12 +29,13 @@ body {
 h1 {
   line-height: 1.6;
   font-size: 2.1rem;
-  font-weight: 600;
-  letter-spacing: 0.1rem;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
   color: white;
   text-align: center;
   text-transform: uppercase;
   padding-bottom:20px;
+  font-family: "Josefin+Sans",sans-serif,"Josefin Slab",serif;
 }
 
 h2 {
@@ -266,7 +267,6 @@ ID's ###
   -o-transition: all  0.5s ease-out;
   transition: all  0.5s ease-out;
   vertical-align: middle;
-  float: left;
   text-transform: uppercase;
   outline-color: white;
   outline-width: 2px;
@@ -277,7 +277,10 @@ ID's ###
   font-family: "Josefin+Sans", sans-serif, "Josefin Slab", serif;
   font-weight: 100;
   font-size: 0.9rem;
-
+  width: 120px;
+  &.left {
+    float: left;
+  }
 }
 .button:hover,
 #event a:hover{
