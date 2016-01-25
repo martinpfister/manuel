@@ -60,10 +60,7 @@ config {
 
     # Version & creator notes in a header comment
     headerComment (
-        Stämpfli AG // www.staempfli.com
-
-Package version: {$plugin.templatebootstrap.packageVersion}
-Bootstrap package version: {$plugin.templatebootstrap.bootstrapPackageVersion}
+        Martin Pfister - www.martinpfister.info
     )
 
 

@@ -1,7 +1,6 @@
 page {
     # CSS files to be included
     includeCSS {
-
         normalizer = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Public/Template/css/lib/normalize.css
         normalizer.media = screen,print
         mainCSS = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Public/Template/css/app.css
@@ -10,12 +9,10 @@ page {
         fancyboxThumbnailHelper = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Public/Template/js/jquery/fancybox/jquery.fancybox-thumbs.css
     }
 
-
     # JS libs header
     includeJSLibs {
         modernizr = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Public/Template/js/modernizr/modernizr.js
     }
-
 
     # JS libs footer
     includeJSFooterlibs {

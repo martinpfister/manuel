@@ -93,8 +93,8 @@ TCEFORM.tt_content {
 #  Default language
 #-------------------------------------------------------------------------------
 mod.SHARED {
-    defaultLanguageLabel = Deutsch
-    defaultLanguageFlag = ch
+    defaultLanguageLabel = English
+    defaultLanguageFlag = gb
 }
 
 
