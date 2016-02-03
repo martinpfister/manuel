@@ -35,7 +35,7 @@ site {
 
     # Languages
     languageUids = 0,1
-    languageLabels = DE |*| EN
+    languageLabels = EN |*| DE
 
     # Compress / merge CSS / JS
     compressAndMergeAssets = 1
