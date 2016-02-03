@@ -18,7 +18,7 @@ temp.menu-language {
             #wrapItemAndSub = <li class="first">|</li>|*|<li>|</li>|*|<li class="last">|</li>
             stdWrap.cObject = TEXT
             stdWrap.cObject.value = {$site.languageLabels}
-            ATagParams = class="inactive"
+            #ATagParams = class="inactive"
         }
 
         # Active
