@@ -124,7 +124,7 @@
 				<source>%d/%m/%Y</source>
 			</trans-unit>
 			<trans-unit id="list_nonewsfound" xml:space="preserve">
-				<source>No news available.</source>
+				<source>Nothing available.</source>
 			</trans-unit>
 			<trans-unit id="list_nocategoriesfound" xml:space="preserve">
 				<source>No categories available.</source>
