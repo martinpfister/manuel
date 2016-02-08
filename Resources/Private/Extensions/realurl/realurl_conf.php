@@ -43,8 +43,8 @@ $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['realurl'] = array(
                                 'en' => '0',
                                 'de' => '1'
                             ),
-                        'noMatch' => 'de',
-                        'valueDefault' => 'de',
+                        'noMatch' => 'en',
+                        'valueDefault' => 'en',
                     ),
                 ),
             'postVarSets' =>

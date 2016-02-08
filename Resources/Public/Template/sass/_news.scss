@@ -46,13 +46,25 @@
 }
 
 @media only screen and (max-width : 840px)  {
-  .newsall {
-    /*float: left;
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;*/
-    width: 350px;
-    max-width: 90%;
+  .news {
+    .news-list-view {
+      .article {
+        width: 100%;
+        float: none;
+        text-align: left;
+        padding: 20px;
+
+        h2 a {
+          color: $white;
+          &:hover {
+            color: $gold;
+          }
+        }
+        p {
+          text-align: left;
+        }
+      }
+    }
   }
   .news1, .news2 {
     width: 100%;
