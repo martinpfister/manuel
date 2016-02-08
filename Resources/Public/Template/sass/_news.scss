@@ -51,9 +51,7 @@
       .article {
         width: 100%;
         float: none;
-        text-align: left;
-        padding: 20px;
-
+        text-align: center;
         h2 a {
           color: $white;
           &:hover {
@@ -61,7 +59,7 @@
           }
         }
         p {
-          text-align: left;
+          text-align: center;
         }
       }
     }
