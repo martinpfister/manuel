@@ -40,10 +40,8 @@ $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['realurl'] = array(
                         'GETvar' => 'L',
                         'valueMap' =>
                             array(
-                                'de' => '0',
-                                'fr' => '1',
-                                'it' => '2',
-                                'en' => '3'
+                                'en' => '0',
+                                'de' => '1'
                             ),
                         'noMatch' => 'de',
                         'valueDefault' => 'de',
