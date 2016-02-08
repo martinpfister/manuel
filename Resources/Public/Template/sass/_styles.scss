@@ -59,6 +59,12 @@ h3 {
 
 section{
   text-align: center;
+  > div.row > div.columns > div {
+    margin-bottom: 2rem;
+  }
+  .ce-bodytext > p {
+    margin-bottom: 1.2rem;
+  }
 }
 
 p {
@@ -288,7 +294,6 @@ ID's ###
     width: 75%;
   }
   #event a {
-    font-size: 12px;
     padding: 10px;
     letter-spacing: .2em;
     display: block;
@@ -338,7 +343,6 @@ ID's ###
   width: 100%;
   display: block;
   margin-bottom: 10px;
-  display: block;
   font-size: 14px;
   color: #000;
   line-height: 1.6;
