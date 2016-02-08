@@ -87,7 +87,8 @@
   }
   > a:not(#logo) {
     padding: 17px 17px 10px 17px;
-    font-size: 12px;
+    /* font-size: 12px; */
+    font-size: 0.8rem;
     letter-spacing: 1px;
     text-decoration: none;
     color: #dddddd;
@@ -194,9 +195,8 @@
 }
 #cssmenu ul ul li a {
   border-bottom: 1px solid rgba(150, 150, 150, 0.15);
-  padding: 0px 15px;
+  padding: 0 15px;
   width: 100px;
-  font-size: 12px;
   text-decoration: none;
   color: #dddddd;
   font-weight: 400;
@@ -231,7 +231,6 @@
   content: '';
   -webkit-transition: all .25s ease;
   -moz-transition: all .25s ease;
-  -ms-transition: all .25s ease;
   -o-transition: all .25s ease;
   transition: all .25s ease;
 }
@@ -271,6 +270,9 @@ only screen and (min-resolution: 2dppx) and (max-width: 768px) {
   #cssmenu ul li {
     width: 100%;
     border-top: 1px solid rgba(120, 120, 120, 0.2);
+    &#logo-item {
+      display: none;
+    }
   }
   #cssmenu ul ul li,
   #cssmenu li:hover > ul > li {
@@ -318,7 +320,6 @@ only screen and (min-resolution: 2dppx) and (max-width: 768px) {
     padding: 17px;
     color: #dddddd;
     cursor: pointer;
-    font-size: 12px;
     text-transform: uppercase;
     font-weight: 700;
     text-indent: -9999px;
@@ -334,7 +335,7 @@ only screen and (min-resolution: 2dppx) and (max-width: 768px) {
     top: 22px;
     left: 17px;
     display: block;
-    height: 4px;
+    height: 8px;
     width: 20px;
     border-top: 2px solid #dddddd;
     border-bottom: 2px solid #dddddd;
@@ -430,19 +431,15 @@ only screen and (min-resolution: 2dppx) and (max-width: 768px) {
   #cssmenu .submenu-button:before {
     top: 15px;
   }
-
   #cssmenu .submenu-button:after {
     top: 18px;
   }
-
   #cssmenu ul li a {
-    font-size: 14px;
     font-weight: normal;
   }
   #cssmenu ul li ul li a {
     text-align: center;
     padding: 10px 0;
-    font-size: 12px;
   }
   #cssmenu ul li ul {
     background: #222;

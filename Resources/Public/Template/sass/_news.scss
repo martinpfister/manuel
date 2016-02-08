@@ -17,11 +17,8 @@
           color: $gold;
         }
       }
-
       p {
-        padding-top: 10px;
         text-align: left;
-        font-family: "Josefin Sans";
       }
     }
   }
@@ -38,19 +35,9 @@
   width: 350px;
   float: left;
   text-align:left;
-  font-size:120%;
+  font-size: 1rem;
   font-weight:100;
   padding:20px;
-}
-
-.news2 {
-  padding-bottom: 120px;
-}
-
-.news1artikel{
-  padding-top: 10px;
-  text-align: left;
-  font-family: "Josefin Sans";
 }
 
 .date{
