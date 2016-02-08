@@ -46,6 +46,10 @@
 }
 
 @media only screen and (max-width : 840px)  {
+  .newsall{
+    margin: 0 auto;
+    width: auto;
+  }
   .news {
     .news-list-view {
       .article {
