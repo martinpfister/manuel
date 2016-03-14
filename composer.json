@@ -14,7 +14,8 @@
   ],
   "autoload": {
     "psr-4": {
-      "Staempfli\\TemplateBootstrap\\": "typo3conf/ext/manueletter/Classes"
+      "Staempfli\\TemplateBootstrap\\": "typo3conf/ext/manueletter/Classes",
+      "Staempfli\\TemplateBootstrap\\ViewHelpers\\": "typo3conf/ext/manueletter/Classes/ViewHelpers"
     }
   }
 }
