@@ -59,18 +59,6 @@ $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['Staempfli/TemplateBootstrap']['PackageKe
 $GLOBALS['TYPO3_CONF_VARS']['FE']['pageOverlayFields'] .= ',tx_'. $_EXTKEY .'_moodimage,tx_'. $_EXTKEY .'_backgroundimage';
 
 
-/******************************
- * Register helper & renderer
- * for online media
- * 'SoundCloud'
- ******************************/
-$GLOBALS['TYPO3_CONF_VARS']['SYS']['fal']['onlineMediaHelpers']['soundcloud'] = 'Staempfli\TemplateBootstrap\Helpers\SoundCloudHelper';
-$rendererRegistry = \TYPO3\CMS\Core\Resource\Rendering\RendererRegistry::getInstance();
-$rendererRegistry->registerRendererClass('Staempfli\TemplateBootstrap\Rendering\SoundCloudRenderer');
-$GLOBALS['TYPO3_CONF_VARS']['SYS']['FileInfo']['fileExtensionToMimeType']['soundcloud'] = 'audio/soundcloud';
-$GLOBALS['TYPO3_CONF_VARS']['SYS']['mediafile_ext'] .= ',soundcloud';
-
-
 # Use signal 'afterExtensionConfigurationWrite' to handle post installation tasks
 if (TYPO3_MODE === 'BE') {
 
@@ -89,38 +77,6 @@ if (TYPO3_MODE === 'BE') {
 
     # Instantiate signal slot dispatcher
     $signalSlotDispatcher = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\SignalSlot\Dispatcher::class);
-
-    // Handle/write robots.txt
-    $signalSlotDispatcher->connect(
-        \TYPO3\CMS\Extensionmanager\Controller\ConfigurationController::class,
-        'afterExtensionConfigurationWrite',
-        'Staempfli\\TemplateBootstrap\\Utility\\PostInstall\\PostInstallFileHandler',
-        'handleRobotsTxt'
-    );
-
-    // Handle/write AdditionalConfiguration.php
-    $signalSlotDispatcher->connect(
-        \TYPO3\CMS\Extensionmanager\Controller\ConfigurationController::class,
-        'afterExtensionConfigurationWrite',
-        'Staempfli\\TemplateBootstrap\\Utility\\PostInstall\\PostInstallFileHandler',
-        'writeAdditionalConfiguration'
-    );
-
-    // Handle creating DB users (cli)
-    $signalSlotDispatcher->connect(
-        \TYPO3\CMS\Extensionmanager\Controller\ConfigurationController::class,
-        'afterExtensionConfigurationWrite',
-        'Staempfli\\TemplateBootstrap\\Utility\\PostInstall\\PostInstallDatabaseHandler',
-        'createCLIUsers'
-    );
-
-    // Extend system information toolbar item (in the top bar in TYPO3 backend)
-    $signalSlotDispatcher->connect(
-        \TYPO3\CMS\Backend\Backend\ToolbarItems\SystemInformationToolbarItem::class,
-        'loadMessages',
-        'Staempfli\\TemplateBootstrap\\Utility\\PostInstall\\PostInstallInfoLogger',
-        'getTemplateBootstrapLogMessages'
-    );
 }
 
 ?>

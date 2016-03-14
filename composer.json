@@ -11,6 +11,11 @@
       "email": "mail@martinpfister.info",
       "role": "Developer"
     }
-  ]
+  ],
+  "autoload": {
+    "psr-4": {
+      "Staempfli\\TemplateBootstrap\\": "typo3conf/ext/manueletter/Classes"
+    }
+  }
 }
 
