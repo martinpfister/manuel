@@ -1,0 +1,16 @@
+{
+  "name": "manueletter/manueletter",
+  "description": "wohnwerkheim worben website",
+
+  "license": ["GPL-2.0+"],
+  "type": "typo3-cms-extension",
+
+  "authors": [
+    {
+      "name": "Martin Pfister",
+      "email": "mail@martinpfister.info",
+      "role": "Developer"
+    }
+  ]
+}
+
