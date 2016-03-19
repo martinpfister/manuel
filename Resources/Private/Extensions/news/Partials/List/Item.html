@@ -2,7 +2,10 @@
 	=====================
 		Partials/List/Item.html
 -->
-<div class="article articletype-{newsItem.type}{f:if(condition: newsItem.istopnews, then: ' topnews')}" itemscope="itemscope" itemtype="http://schema.org/Article">
+<article class="article articletype-{newsItem.type}{f:if(condition: newsItem.istopnews, then: ' topnews')}"
+         itemscope="itemscope"
+         itemtype="http://schema.org/Article">
+
 	<n:excludeDisplayedNews newsItem="{newsItem}"/>
 		<div class="news-list-date date">
 			<time datetime="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}">
@@ -144,4 +147,4 @@
 			</f:if>
 		</p>
 	</div>
-</div>
+</article>

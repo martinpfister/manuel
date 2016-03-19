@@ -1,6 +1,6 @@
 {
   "name": "manueletter/manueletter",
-  "description": "wohnwerkheim worben website",
+  "description": "www.manueletter.com",
 
   "license": ["GPL-2.0+"],
   "type": "typo3-cms-extension",
@@ -19,4 +19,3 @@
     }
   }
 }
-
