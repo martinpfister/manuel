@@ -16,7 +16,10 @@ page {
 
     # JS libs footer
     includeJSFooterlibs {
-        jQuery = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Public/Template/js/jquery/jquery-1.11.3.min.js
+        jQuery = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Public/Template/bower_components/jquery/dist/jquery.min.js
+        unitegallery-base = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Public/Template/js/unitegallery/unitegallery.min.js
+        #unitegallery = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Public/Template/sass/unitegallery/themes/default/ug-theme-default.js
+        unitegalleryt = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Public/Template/sass/unitegallery/themes/tiles/ug-theme-tiles.js
         #jQueryCookie = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Public/Template/js/jquery/jquery.cookie.js
         #jQueryDoubleTapMenu = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Public/Template/js/jquery/jquery.doubleTapMenu.js
         #jQueryToggler = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Public/Template/js/jquery/jquery.toggler.js
@@ -29,14 +32,14 @@ page {
         #jQueryFancyboxMediahelper = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Public/Template/js/jquery/fancybox/jquery.fancybox-media.js
         #jQueryFancyboxThumbnailHelper = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Public/Template/js/jquery/fancybox/jquery.fancybox-thumbs.js
 
-        foundation = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Public/Template/js/foundation/foundation.js
+        #foundation = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Public/Template/js/foundation/foundation.js
         #foundationClearing = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Public/Template/js/foundation/foundation.clearing.js
         #foundationOffcanvas = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Public/Template/js/foundation/foundation.offcanvas.js
 
         #slickslider = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Public/Template/js/jquery/slick/slick.js
 
         # Click delay removal for mobile browsers
-        fastclick = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Public/Template/js/fastclick/fastclick.js
+        #fastclick = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Public/Template/js/fastclick/fastclick.js
 
     } #includeJSFooterlibs
 

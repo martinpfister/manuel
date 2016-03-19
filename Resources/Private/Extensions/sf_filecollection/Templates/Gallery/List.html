@@ -1,0 +1,20 @@
+{namespace s=SKYFILLERS\SfFilecollectionGallery\ViewHelpers}
+
+<f:layout name="Default"/>
+
+<f:section name="main">
+
+
+    <div id="gallery" style="display:none;">
+
+        <f:for each="{imageItems}" as="object">
+
+            <img alt="{object.properties.alternative}"
+                 src="{f:uri.image(src:'{object.uid}' treatIdAsReference:0 maxWidth:'100')}"
+                 data-image="{f:uri.image(src:'{object.uid}' treatIdAsReference:0 maxWidth:'1200')}"
+                 data-description="{object.properties.title}">
+
+        </f:for>
+
+    </div>
+</f:section>

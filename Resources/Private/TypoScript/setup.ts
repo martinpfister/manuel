@@ -17,6 +17,7 @@
 <INCLUDE_TYPOSCRIPT: source="FILE:./../Extensions/form/setup.ts">
 <INCLUDE_TYPOSCRIPT: source="FILE:./../Extensions/news/setup.ts">
 <INCLUDE_TYPOSCRIPT: source="FILE:./../Extensions/formhandler/contact/ts/setup.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:./../Extensions/sf_filecollection/setup.txt">
 
 # **********************************************************
 # Load typoscript template objects
