@@ -2723,7 +2723,8 @@ img.ug-sepia-effect {
     .news .news-list-view .article h2 a:hover {
       color: #ad8c59; }
   .news .news-list-view .article p {
-    text-align: left; }
+    text-align: left;
+    font-weight: 300; }
 
 .news-img-wrap {
   display: none; }
@@ -3301,7 +3302,8 @@ small.error {
     .news .news-list-view .article h2 a:hover {
       color: #ad8c59; }
   .news .news-list-view .article p {
-    text-align: left; }
+    text-align: left;
+    font-weight: 300; }
 
 .news-img-wrap {
   display: none; }
