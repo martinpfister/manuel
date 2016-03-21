@@ -16,7 +16,7 @@ page {
 
     # JS libs footer
     includeJSFooterlibs {
-        jQuery = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Public/Template/bower_components/jquery/dist/jquery.min.js
+        jQuery = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Public/Template/js/jquery-1.12.2.min.js
         unitegallery-base = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Public/Template/js/unitegallery/unitegallery.min.js
         #unitegallery = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Public/Template/sass/unitegallery/themes/default/ug-theme-default.js
         unitegalleryt = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Public/Template/sass/unitegallery/themes/tiles/ug-theme-tiles.js
