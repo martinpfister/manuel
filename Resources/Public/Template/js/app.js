@@ -119,7 +119,10 @@ $(function() {
     web.init();
 
     jQuery("#gallery").unitegallery({
-        tiles_type:"justified"
+        tiles_type:"justified",
+        tile_enable_textpanel: true,
+        lightbox_textpanel_enable_description: true,
+        tile_textpanel_title_text_align: "center"
     });
 
 

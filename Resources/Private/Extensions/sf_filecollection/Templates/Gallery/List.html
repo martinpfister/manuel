@@ -9,10 +9,10 @@
 
         <f:for each="{imageItems}" as="object">
 
-            <img alt="{object.properties.alternative}"
+            <img alt="{object.properties.title}"
                  src="{f:uri.image(src:'{object.uid}' treatIdAsReference:0 maxWidth:'300')}"
                  data-image="{f:uri.image(src:'{object.uid}' treatIdAsReference:0 maxWidth:'1200')}"
-                 data-description="{object.properties.title}">
+                 data-description="{object.properties.description}">
 
         </f:for>
 
