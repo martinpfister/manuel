@@ -117,8 +117,10 @@ var web = (function(document, $) {
 $(function() {
 
     web.init();
-    //http://unitegallery.net/index.php?page=tiles-nested
-    jQuery("#gallery").unitegallery();
+
+    jQuery("#gallery").unitegallery({
+        tiles_type:"justified"
+    });
 
 
 });
