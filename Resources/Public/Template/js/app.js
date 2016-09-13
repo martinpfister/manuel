@@ -125,5 +125,7 @@ $(function() {
         tile_textpanel_title_text_align: "center"
     });
 
+    $('.news-list-view').equalize('innerHeight');
+
 
 });

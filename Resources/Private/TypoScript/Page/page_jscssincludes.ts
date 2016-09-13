@@ -37,6 +37,7 @@ page {
         #foundationOffcanvas = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Public/Template/js/foundation/foundation.offcanvas.js
 
         #slickslider = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Public/Template/js/jquery/slick/slick.js
+        equalize = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Public/Template/js/equalize/equalize.min.js
 
         # Click delay removal for mobile browsers
         #fastclick = EXT:{$plugin.templatebootstrap.packageKey}/Resources/Public/Template/js/fastclick/fastclick.js
